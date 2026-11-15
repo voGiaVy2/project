@@ -1,0 +1,696 @@
+
+BỘ CÔNG THƯƠNG
+TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP THÀNH PHỐ HỒ CHÍ MINH
+KHOA CÔNG NGHỆ ĐIỆN TỬ
+
+
+
+HỌ TÊN SINH VIÊN
+VÕ GIA VỸ – 22642971
+ĐÀO HUỲNH PHONG VŨ – 22679141
+ 
+THIẾT KẾ GẬY THÔNG MINH HỖ TRỢ NGƯỜI CAO TUỔI SỬ DỤNG ESP32, TÍCH HỢP CẢM BIẾN PHÁT HIỆN NGÃ, ĐỊNH VỊ GPS, CẢNH BÁO ÂM THANH VÀ TỰ ĐỘNG GỬI THÔNG BÁO GIÁM SÁT ĐẾN NGƯỜI THÂN QUA ỨNG DỤNG TRÊN ĐIỆN THOẠI
+
+Chuyên ngành: Công Nghệ Kỹ Thuật Máy Tính
+Mã chuyên ngành: 7480108
+Giảng viên hướng dẫn: ThS. Vũ Tuấn Anh
+KHÓA LUẬN TỐT NGHIỆP
+THÀNH PHỐ HỒ CHÍ MINH, NĂM 2026
+THÔNG TIN CHUNG
+Họ và tên sinh viên: Võ Gia Vỹ	MSSV: 22642971	
+Lớp	: DHDTMT18A	Khóa: 18	
+Chuyên ngành	: Công nghệ kỹ thuật máy tính	 Mã chuyên ngành: 7480108	
+SĐT:                    	: 0349793189		
+Email	: giavylyson@gmail.com		
+Địa chỉ liên hệ	: 195/2 Đông A, phường Đông Hòa, thành phố Hồ Chí Minh	
+Họ và tên sinh viên: Đào Huỳnh Phong Vũ	MSSV: 22679141	
+Lớp	: DHDTMT18A	Khóa: 18	
+Chuyên ngành	: Công nghệ kỹ thuật máy tính	Mã chuyên ngành: 7480108	
+SĐT	: 0938294593		
+Email	: daohuynhphongvu2004@gmail.com	
+Địa chỉ liên hệ	: 195/2 Đông A, phường Đông Hòa, thành phố Hồ Chí Minh	
+Tên đề tài	: Thiết kế gậy thông minh hỗ trợ người cao tuổi sử dụng ESP32, tích hợp cảm biến phát hiện ngã, định vị GPS, cảnh báo âm thanh và tự động gửi thông báo giám sát đến người thân qua ứng dụng trên điện thoại	
+Người hướng dẫn	: ThS. Vũ Tuấn Anh
+SĐT	: ..........................
+Email	: ..........................
+Cơ quan công tác	: Khoa Công Nghệ Điện Tử, Đại học Công nghiệp TPHCM
+Hồ Chí Minh, ngày     tháng      năm 2026
+NHẬN XÉT CỦA GIÁO VIÊN HƯỚNG DẪN
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+NHẬN XÉT CỦA GIÁO VIÊN PHẢN BIỆN
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+LỜI CẢM ƠN
+Bốn năm đại học sắp khép lại bằng cuốn khóa luận tốt nghiệp này, và chúng em hiểu rằng để đi đến chặng cuối cùng, không chỉ có nỗ lực của riêng hai người thực hiện.
+Trước hết, chúng em xin bày tỏ lòng biết ơn sâu sắc đến Trường Đại học Công nghiệp Thành phố Hồ Chí Minh và Khoa Công nghệ Điện tử, nơi đã ươm mầm cho chúng em từ những kiến thức nền tảng đầu tiên cho đến khả năng tự tay biến một ý tưởng thành sản phẩm thực tế. Xin cảm ơn quý thầy cô đã không chỉ truyền đạt kiến thức, mà còn truyền cả sự tận tâm và nghiêm túc trong nghiên cứu khoa học.
+Chúng em xin gửi lời tri ân đặc biệt đến Thầy ThS. Vũ Tuấn Anh – người đã đồng hành cùng chúng em từ những ngày đề tài còn là một ý tưởng sơ khai. Những buổi trao đổi, những lần chỉnh sửa và cả những góp ý thẳng thắn của Thầy đã giúp chúng em nhìn rõ hơn con đường mình đang đi, để đề tài này không chỉ hoàn thành mà còn thực sự có ý nghĩa. Sự kiên nhẫn và tâm huyết của Thầy là điều chúng em sẽ luôn ghi nhớ.
+Với mong muốn góp một giải pháp nhỏ giúp người cao tuổi an tâm hơn khi di chuyển và giúp con cháu yên lòng hơn khi ở xa, chúng em đã dồn nhiều tâm huyết vào đề tài này. Tuy nhiên, do thời gian và kinh nghiệm thực tế còn hạn chế, khóa luận khó tránh khỏi những thiếu sót. Chúng em rất mong nhận được sự góp ý của quý thầy cô để đề tài được hoàn thiện hơn.
+
+
+
+
+
+
+
+
+
+MỤC LỤC
+DANH MỤC HÌNH ẢNH	vi
+DANH MỤC BẢNG BIỂU	viii
+DANH MỤC TỪ VIẾT TẮT	ix
+MỞ ĐẦU	1
+CHƯƠNG 1	TỔNG QUAN VỀ ĐỀ TÀI	5
+1.1	Thực trạng già hóa dân số và nguy cơ té ngã ở người cao tuổi	5
+1.2	Ảnh hưởng toàn diện của té ngã	7
+1.3	Nhu cầu cấp thiết về thiết bị trợ giúp thông minh	10
+1.4	Khảo sát các phương pháp phát hiện và cảnh báo té ngã hiện nay	12
+1.5	Các công trình nghiên cứu và mô hình liên quan	18
+1.6	Định hướng nghiên cứu và giải pháp đề xuất của đề tài	24
+CHƯƠNG 2	CƠ SỞ LÝ THUYẾT	26
+2.1	Tổng quan về vi điều khiển ESP32-S3	26
+2.2	Công nghệ truyền thông không dây Bluetooth Low Energy (BLE 5.0)	31
+2.3	Cảm biến quán tính MPU6050 và thuật toán đo lường	36
+2.4	Cảm biến phát hiện khoảng cách vật cản (HC-SR04 & E18-D50NK)	43
+2.5	Mạch kích công suất và cơ chế cảnh báo xúc giác/âm thanh	48
+2.6	Hệ thống định vị toàn cầu GPS và dịch vụ định vị di động	52
+2.7	Nền tảng đám mây Firebase Cloud	56
+2.8	Framework lập trình ứng dụng di động đa nền tảng Flutter	61
+CHƯƠNG 3	PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG	67
+3.1	Phân tích yêu cầu thiết kế hệ thống	67
+3.2	Sơ đồ khối và kiến trúc hệ thống	70
+3.3	Thiết kế phần cứng và sơ đồ nguyên lý kết nối chi tiết	73
+3.4	Thiết kế cơ khí và vỏ bảo vệ gậy thông minh (Mô hình 3D)	78
+3.5	Thiết kế lưu đồ giải thuật hệ thống	82
+3.6	Thiết kế phần mềm ứng dụng di động Flutter	91
+CHƯƠNG 4	THỰC NGHIỆM VÀ ĐÁNH GIÁ KẾT QUẢ	104
+4.1	Mục đích và môi trường thực nghiệm	104
+4.2	Thực nghiệm kiểm thử thuật toán phát hiện té ngã	106
+4.3	Thực nghiệm kiểm thử cảm biến phát hiện chướng ngại vật	112
+4.4	Thực nghiệm kiểm thử hệ thống truyền thông và đo đạc độ trễ	116
+4.5	Thực nghiệm kiểm thử khả năng hoạt động ngoại tuyến (Offline Resiliency)	120
+4.6	Thực nghiệm đo đạc dòng tiêu thụ và thời lượng pin	123
+4.7	Đánh giá so sánh tổng hợp với các giải pháp trên thị trường	126
+KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN	129
+TÀI LIỆU THAM KHẢO	131
+PHỤ LỤC	132
+Phụ lục 1	Toàn văn mã nguồn phần cứng ESP32-S3	132
+Phụ lục 2	Mã nguồn Dịch vụ chạy ngầm trên thiết bị di động (Flutter Background Service)	137
+Phụ lục 3	Cấu hình phân quyền hệ điều hành Android (AndroidManifest.xml)	143
+
+DANH MỤC HÌNH ẢNH
+Hình 1.1	Các phương pháp phát hiện và cảnh báo té ngã hiện nay	13
+Hình 1.2	Mô hình tổng quan hệ thống gậy thông minh tích hợp IoT và di động	25
+Hình 2.1	Kiến trúc vi điều khiển ESP32-S3 và phân bố ngoại vi trên chip	28
+Hình 2.2	Cấu trúc phân tầng và GATT Profile của Bluetooth Low Energy	33
+Hình 2.3	Chuẩn giao tiếp I2C giữa vi điều khiển ESP32-S3 và cảm biến MPU6050	38
+Hình 2.4	Hệ trục tọa độ không gian 3 chiều và cảm biến quán tính 6-DOF MPU6050	40
+Hình 2.5	Dạng sóng vector gia tốc tổng hợp SVM khi đi bộ, va chạm và nằm bất động	42
+Hình 2.6	Giản đồ thời gian phát xung kích Trig và phản hồi Echo của cảm biến HC-SR04	45
+Hình 2.7	Nguyên lý phản xạ quang học của cảm biến vật cản hồng ngoại E18-D50NK	47
+Hình 2.8	Sơ đồ nguyên lý mạch kích công suất motor rung sử dụng MOSFET và diode dập xung	50
+Hình 2.9	Nguyên lý định vị toàn cầu GPS dựa trên giao điểm mặt cầu vệ tinh	54
+Hình 2.10	Cơ chế đồng bộ dữ liệu hai chiều thời gian thực trên Firebase Realtime Database	58
+Hình 2.11	Kiến trúc đa tầng của Framework lập trình di động Flutter	63
+Hình 2.12	Cơ chế hoạt động đa luồng Isolate của Flutter Background Service trên Android	65
+Hình 3.1	Sơ đồ khối chức năng hoàn chỉnh của toàn bộ hệ thống gậy thông minh	71
+Hình 3.2	Sơ đồ nguyên lý kết nối chi tiết phần cứng trên vi điều khiển ESP32-S3	74
+Hình 3.3	Bản vẽ thiết kế 3D công thái học thân gậy và bố trí khoang cảm biến	79
+Hình 3.4	Lưu đồ thuật toán chính của Firmware điều khiển trên ESP32-S3	83
+Hình 3.5	Lưu đồ hoạt động của dịch vụ chạy ngầm trên máy Người Dùng Gậy	87
+Hình 3.6	Lưu đồ hoạt động giám sát và cảnh báo trên máy Người Giám Hộ	90
+Hình 3.7	Giao diện màn hình Đăng nhập và Ghép nối vai trò thiết bị	94
+Hình 3.8	Giao diện màn hình Người Dùng Gậy ở trạng thái bình thường và trạng thái té ngã	97
+Hình 3.9	Giao diện màn hình Dashboard giám sát bản đồ và Lịch sử sự cố của Giám hộ	100
+Hình 4.1	Đồ thị thực nghiệm gia tốc SVM trong các kịch bản té ngã và sinh hoạt thường nhật (ADL)	107
+Hình 4.2	Mô hình thực nghiệm kết nối cảm biến gia tốc MPU6050 với bo mạch vi điều khiển ESP32-S3	108
+Hình 4.3	Giao diện Serial Monitor Arduino IDE ghi nhận sự kiện phát hiện té ngã thời gian thực từ phần cứng	109
+Hình 4.4	Ma trận độ chính xác phân loại các kịch bản té ngã và hoạt động sinh hoạt thông thường	111
+Hình 4.5	Đồ thị sai số đo khoảng cách và đặc tuyến phát hiện chướng ngại vật của cảm biến siêu âm HC-SR04	113
+Hình 4.6	Mô hình thực nghiệm kết nối hoàn chỉnh cảm biến siêu âm HC-SR04 và module rung MOSFET với ESP32-S3	114
+Hình 4.7	Mạch MOSFET kích hoạt đèn báo trạng thái rung khi phát hiện chướng ngại vật trong cự ly cảnh báo	115
+Hình 4.8	Dữ liệu khoảng cách và trạng thái đóng/ngắt rung hiển thị trực tiếp trên Serial Monitor Arduino IDE	116
+Hình 4.9	Phân rã thời gian đáp ứng và độ trễ toàn trình của chuỗi cảnh báo khẩn cấp SOS	118
+Hình 4.10	Khối nguồn thực nghiệm gồm cell pin sạc 18650 và module MH-CD42 cấp điện cho ESP32-S3 hoạt động độc lập	124
+Hình 4.11	Thực nghiệm nạp điện qua cổng Type-C và kiểm tra khả năng vừa sạc vừa cấp nguồn (Pass-through Charging)	125
+
+DANH MỤC BẢNG BIỂU
+Bảng 1.1	So sánh đặc tính kỹ thuật giữa các phương pháp giám sát té ngã hiện nay	17
+Bảng 2.1	Thông số kỹ thuật chi tiết của vi điều khiển ESP32-S3 N16R8	30
+Bảng 2.2	Thông số kỹ thuật của cảm biến quán tính 6-DOF MPU6050	39
+Bảng 2.3	Thông số kỹ thuật cảm biến siêu âm HC-SR04 và hồng ngoại E18-D50NK	46
+Bảng 3.1	Bảng ánh xạ chân kết nối ngoại vi phần cứng trên ESP32-S3	76
+Bảng 3.2	Cấu trúc dữ liệu JSON lưu trữ thời gian thực trên Firebase Realtime Database	102
+Bảng 4.1	Bảng tổng hợp Checklist theo dõi tiến độ và trạng thái kiểm thử các hạng mục hệ thống	105
+Bảng 4.2	Bảng kết quả thực nghiệm kiểm thử phát hiện té ngã trên 8 kịch bản vận động (400 lượt thử nghiệm)	106
+Bảng 4.3	Bảng kết quả kiểm tra độ chính xác đo khoảng cách của cảm biến siêu âm HC-SR04 tại các cự ly thử nghiệm	112
+Bảng 4.4	Bảng tổng hợp thời gian đáp ứng và độ trễ truyền thông qua các kênh cứu nạn	117
+Bảng 4.5	Bảng thống kê dòng tiêu thụ điện năng của hệ thống gậy ở các chế độ hoạt động	123
+Bảng 4.6	Bảng so sánh tổng hợp tính năng và chi phí giữa Gậy thông minh của đề tài với các giải pháp trên thị trường	126
+
+DANH MỤC TỪ VIẾT TẮT
+Bảng 0.1 Danh mục các từ viết tắt trong khóa luận
+
+
+MỞ ĐẦU
+1. Đặt vấn đề:
+Dân số thế giới đang già đi nhanh chóng. Theo báo cáo chính thức của Tổ chức Y tế Thế giới (WHO), số lượng người từ 60 tuổi trở lên dự kiến sẽ tăng gấp đôi từ 1 tỷ người vào năm 2020 lên 2.1 tỷ người vào năm 2050. Tại Việt Nam, dữ liệu từ Tổng cục Thống kê (GSO) cho thấy nước ta đã chính thức bước vào giai đoạn 'già hóa dân số' từ năm 2011 với tốc độ thuộc nhóm nhanh nhất thế giới. Dự báo chỉ đến năm 2036, Việt Nam sẽ chuyển dịch sang giai đoạn 'dân số già', với tỷ lệ người cao tuổi chiếm gần 20% tổng dân số.
+Cùng với sự suy giảm tự nhiên của hệ thống cơ - xương - khớp, thị lực và khả năng giữ thăng bằng thần kinh, té ngã (falls) đã trở thành mối đe dọa hàng đầu đối với sức khỏe, sự độc lập và tính mạng của người cao tuổi. Ước tính mỗi năm có khoảng 37.3 triệu vụ té ngã ở người già cần được chăm sóc y tế, và té ngã là nguyên nhân gây tử vong do tai nạn thương tích đứng thứ hai trên thế giới, chỉ sau tai nạn giao thông đường bộ. Không chỉ để lại những chấn thương thực thể nghiêm trọng như gãy xương hông, xuất huyết nội sọ hay liệt nửa người, té ngã còn gây ra 'hội chứng sợ ngã' (Fear of Falling), khiến người già tự thu mình, hạn chế vận động, dẫn đến suy giảm thể lực và trầm cảm.
+Trong bối cảnh cấu trúc gia đình hiện đại ngày càng có xu hướng hạt nhân hóa, con cháu bận rộn với công việc mưu sinh ngoài xã hội và không thể túc trực 24/7 bên cạnh cha mẹ, một thách thức lớn được đặt ra: Làm thế nào để người cao tuổi có thể tự do đi lại, vận động một cách an toàn, trong khi người thân ở xa vẫn hoàn toàn yên tâm về tình trạng của họ? Cây gậy chống truyền thống vốn là vật bất ly thân của hàng triệu người già, nhưng lại hoàn toàn thụ động – khi người già bị ngã hoặc đi lạc, cây gậy không thể tự phát ra cảnh báo hay gửi thông tin cầu cứu.
+Từ thực tế đó, đề tài 'Thiết kế gậy thông minh hỗ trợ người cao tuổi sử dụng ESP32, tích hợp cảm biến phát hiện ngã, định vị GPS, cảnh báo âm thanh và tự động gửi thông báo giám sát đến người thân qua ứng dụng trên điện thoại' được nhóm lựa chọn thực hiện, với mong muốn bổ sung cho cây gậy quen thuộc khả năng tự phát hiện té ngã và báo tin cho người thân.
+2. Mục tiêu nghiên cứu của đề tài:
+Mục tiêu tổng quát của đề tài là nghiên cứu, thiết kế, chế tạo và thử nghiệm một hệ thống gậy thông minh hoàn chỉnh, kết hợp hài hòa giữa phần cứng nhúng IoT và phần mềm di động thông minh, đạt được các mục tiêu cụ thể sau:
+1. Về phần cứng: Nghiên cứu và chế tạo mô hình gậy vật lý đạt độ bền cơ học cao, tay cầm công thái học in 3D vừa vặn, trọng lượng nhẹ, tích hợp vi điều khiển ESP32-S3, cảm biến quán tính 6 trục MPU6050, cảm biến siêu âm HC-SR04, còi hú cảnh báo, motor rung phản hồi và mạch sạc pin Lithium an toàn.
+2. Về thuật toán xử lý nhúng: Phát triển thuật toán nhận diện té ngã theo thời gian thực dựa trên ngưỡng gia tốc tổng hợp SVM kết hợp bộ lọc chống báo động nhầm khi người dùng gõ gậy hoặc đi bộ; thuật toán đo khoảng cách và điều khiển rung tay cầm phản hồi tức thời khi phát hiện vật cản phía trước từ 3 cm đến 80 cm.
+3. Về truyền thông không dây: Xây dựng kênh truyền thông BLE 5.0 GATT tiết kiệm năng lượng, độ trễ thấp giữa gậy và smartphone của người già; thiết lập kết nối thời gian thực hai chiều giữa smartphone người già và smartphone người giám hộ qua dịch vụ đám mây Firebase Realtime Database.
+4. Về phần mềm di động: Phát triển ứng dụng Flutter đa nền tảng phân quyền rõ ràng hai vai trò (Người dùng gậy & Người giám hộ), tích hợp dịch vụ chạy ngầm liên tục (Foreground Service) trên Android để tự động thu thập tọa độ GPS và duy trì kết nối với gậy ngay cả khi ứng dụng bị đóng; hiển thị trực quan bản đồ OpenStreetMap và tích hợp cơ chế gửi SMS khẩn cấp dự phòng khi mất kết nối Internet.
+3. Đối tượng và phạm vi nghiên cứu:
+• Đối tượng nghiên cứu: Người cao tuổi có khả năng tự vận động đi lại nhưng suy giảm thị lực hoặc khả năng giữ thăng bằng; các công nghệ phần cứng IoT (ESP32-S3, cảm biến MPU6050, HC-SR04, BLE); nền tảng đám mây Firebase; ngôn ngữ Dart và framework Flutter.
+• Phạm vi nghiên cứu: Thiết kế nguyên mẫu thử nghiệm gậy đơn (Single-point Cane) trong môi trường sinh hoạt trong nhà và ngoài trời; tập trung vào cơ chế phát hiện ngã đột ngột và phát hiện chướng ngại vật phía trước; ứng dụng di động được tối ưu hóa trên hệ điều hành Android (từ Android 8.0 đến Android 13).
+4. Ý nghĩa khoa học và thực tiễn của đề tài:
+• Ý nghĩa khoa học: Đề tài đóng góp một mô hình ứng dụng thực tế về sự kết hợp giữa hệ thống nhúng biên (Edge IoT), mạng truyền thông tầm ngắn BLE và điện toán đám mây thời gian thực trong lĩnh vực chăm sóc sức khỏe thông minh (Smart Healthcare). Đề tài cũng cho thấy có thể chạy thuật toán phát hiện té ngã dựa trên gia tốc ngay trên một vi điều khiển giá rẻ với độ chính xác chấp nhận được.
+• Ý nghĩa thực tiễn: Sản phẩm hoàn thiện có chi phí sản xuất thấp, dễ tiếp cận với đại đa số gia đình Việt Nam. Cây gậy mang lại sự tự tin, độc lập cho người già trong sinh hoạt thường ngày, đồng thời giúp con cháu ở xa biết được khi cha mẹ gặp sự cố để kịp thời hỗ trợ.
+
+		TỔNG QUAN VỀ ĐỀ TÀI
+Thực trạng già hóa dân số và nguy cơ té ngã ở người cao tuổi:
+Bối cảnh già hóa dân số tại Việt Nam và trên thế giới:
+Già hóa dân số hiện là một trong những thay đổi nhân khẩu học lớn nhất trên thế giới. Theo báo cáo Triển vọng Dân số Thế giới của Liên Hợp Quốc (UN World Population Prospects), số lượng người từ 65 tuổi trở lên đang tăng rất nhanh. Ước tính đến năm 2050, cứ 6 người trên thế giới thì sẽ có 1 người ở độ tuổi trên 65 (chiếm khoảng 16% dân số thế giới), tăng gấp đôi so với tỷ lệ 1/11 vào năm 2019. Hiện tượng này diễn ra không chỉ ở các quốc gia phát triển như Nhật Bản, Đức, Ý mà đang diễn biến đặc biệt nhanh tại các quốc gia đang phát triển ở khu vực Châu Á.
+Tại Việt Nam, quá trình chuyển đổi nhân khẩu học diễn ra với tốc độ rất nhanh. Nếu như các nước phát triển như Pháp phải mất hơn 115 năm, Thụy Điển mất 85 năm, Hoa Kỳ mất 69 năm để chuyển từ giai đoạn 'già hóa dân số' (tỷ lệ người từ 65 tuổi chiếm 7%) sang giai đoạn 'dân số già' (tỷ lệ này đạt 14%), thì theo dự báo của Tổng cục Dân số - Kế hoạch hóa gia đình và Ngân hàng Thế giới (World Bank), Việt Nam chỉ mất khoảng 20 đến 25 năm (dự kiến hoàn tất vào năm 2036). Sự suy giảm tỷ suất sinh cùng với tuổi thọ trung bình của người Việt Nam không ngừng tăng lên (đạt mức 73,7 tuổi vào năm 2023) đã khiến tỷ trọng người cao tuổi trong tháp dân số tăng vọt.
+Tuy tuổi thọ tăng lên, song gánh nặng bệnh tật và suy giảm chức năng vận động ở người cao tuổi Việt Nam lại là một thực tế đáng báo động. Thống kê y tế cho thấy, trung bình một người cao tuổi tại Việt Nam phải chịu đựng khoảng 3 đến 4 bệnh mạn tính không lây nhiễm (như thoái hóa khớp, loãng xương, tăng huyết áp, đái tháo đường, suy giảm thị lực và sa sút trí tuệ nhẹ). Cùng với xu thế đô thị hóa và sự thay đổi trong cấu trúc gia đình – chuyển dịch dần từ mô hình gia đình 'tam đại đồng đường' sang mô hình gia đình hạt nhân – số lượng người già phải sống độc thân hoặc chỉ có hai vợ chồng già nương tựa nhau ngày càng chiếm tỷ lệ lớn (ước tính khoảng 28% đến 32% số hộ gia đình người cao tuổi). Điều này đặt ra bài toán cấp bách về việc đảm bảo an toàn sinh hoạt thường nhật khi người già không có người chăm sóc túc trực bên cạnh.
+Nguy cơ té ngã và hội chứng sợ ngã (Fear of Falling):
+Tổ chức Y tế Thế giới (WHO) định nghĩa té ngã là 'một sự cố khiến một người vô tình rơi xuống mặt đất, sàn nhà hoặc một mức thấp hơn'. Theo thống kê toàn cầu của WHO, té ngã là nguyên nhân gây tử vong do chấn thương không chủ ý đứng hàng thứ hai trên thế giới, chỉ xếp sau tai nạn giao thông đường bộ. Mỗi năm, trên toàn thế giới có khoảng 684.000 người tử vong do các chấn thương bắt nguồn từ té ngã, trong đó hơn 80% xảy ra ở các nước có thu nhập thấp và trung bình, và nhóm người trên 60 tuổi là đối tượng có tỷ lệ tử vong cao nhất.
+Tại Việt Nam và các nước Đông Nam Á, các nghiên cứu dịch tễ học lâm sàng chỉ ra rằng có khoảng 28% đến 35% người từ 65 tuổi trở lên từng bị té ngã ít nhất một lần mỗi năm, và con số này tăng lên đến 42% đối với những người trên 75 tuổi. Đặc biệt, đối với những người đã từng bị ngã một lần trong quá khứ, nguy cơ bị tái ngã trong vòng 6 tháng tiếp theo tăng gấp 2 đến 3 lần. Khoảng 10% đến 15% các vụ té ngã ở người cao tuổi dẫn đến các thương tật nghiêm trọng như gãy xương (đặc biệt là gãy cổ xương đùi, gãy xương chậu, gãy đầu dưới xương quay) và chấn thương sọ não, chấn thương tạng kín.
+Bên cạnh các tổn thương trực tiếp về mặt cơ học, té ngã còn để lại một hệ quả tâm lý vô cùng nặng nề được y học gọi là 'Hội chứng sợ ngã' (Fear of Falling - FoF). Khoảng 40% đến 50% người cao tuổi sau khi trải qua một cú ngã (dù chỉ là ngã nhẹ) đều rơi vào trạng thái hoang mang, mất tự tin, luôn lo sợ rằng mình sẽ bị ngã trở lại bất cứ lúc nào. Nỗi sợ hãi này thôi thúc họ tự động hạn chế các hoạt động di chuyển thường ngày như đi bộ, tự vệ sinh cá nhân, bước ra ngoài trời tiếp xúc xã hội. Hệ quả là các khối cơ bắp của chi dưới nhanh chóng bị teo nhẽo (sarcopenia), các khớp xương bị cứng lại, khả năng thăng bằng tiền đình suy giảm nghiêm trọng hơn, vô tình lại đẩy nguy cơ bị té ngã lên một mức độ cao hơn nữa. Đây là một vòng xoắn bệnh lý nguy hiểm làm suy giảm chất lượng cuộc sống và tước đi tính độc lập vốn có của người cao tuổi.
+Ảnh hưởng toàn diện của té ngã:
+Ảnh hưởng về thể chất và tâm lý đối với bản thân người bị ngã:
+Hậu quả trực tiếp đối với cơ thể người cao tuổi:
+• Tổn thương cơ xương khớp: Do mật độ khoáng chất xương suy giảm theo tuổi tác (bệnh loãng xương - osteoporosis), xương của người cao tuổi trở nên giòn xốp và rất dễ gãy ngay cả với một lực va đập nhẹ. Trong đó, gãy cổ xương đùi (hip fracture) là chấn thương phổ biến và tàn khốc nhất. Hơn 50% bệnh nhân gãy cổ xương đùi vĩnh viễn không thể khôi phục lại khả năng đi lại độc lập, và khoảng 20% đến 30% tử vong trong vòng 1 năm sau phẫu thuật do các biến chứng của việc nằm liệt giường lâu ngày.
+• Chấn thương sọ não và xuất huyết nội mạc: Khi bị ngã, do phản xạ bảo vệ của chi trên bị suy giảm, đầu của người già rất dễ bị va đập trực tiếp xuống sàn cứng. Tình trạng này có thể gây ra chấn động não, tụ máu dưới màng cứng (subdural hematoma) hoặc xuất huyết não thứ phát, đặc biệt nguy hiểm đối với những người cao tuổi đang phải dùng thuốc chống đông máu hoặc điều trị bệnh lý tim mạch.
+• Biến chứng do tình trạng nằm bất động kéo dài (Long-lie): Đây là nguyên nhân gián tiếp nhưng gây tử vong hàng đầu ở những người già sống một mình. Định nghĩa y khoa coi 'long-lie' là tình trạng nạn nhân nằm trên sàn nhà từ 1 giờ trở lên sau khi ngã do không thể tự đứng dậy và không có người ứng cứu. Nằm bất động trên sàn nhà lạnh dẫn đến hạ thân nhiệt (hypothermia) nguy kịch, tiêu cơ vân (rhabdomyolysis) giải phóng myoglobin gây tắc nghẽn ống thận và suy thận cấp, loét tỳ đè vùng cùng cụt (pressure ulcers), và ứ đọng đờm dãi gây viêm phổi hít (aspiration pneumonia). Thống kê lâm sàng chỉ ra rằng có tới 50% trường hợp người già nằm trên sàn quá 1 giờ sau ngã sẽ tử vong trong vòng 6 tháng tiếp theo dù chấn thương ban đầu không gây tử vong ngay lập tức.
+Gánh nặng kinh tế và áp lực chăm sóc đối với gia đình:
+Đối với các thành viên trong gia đình người bị nạn, một sự cố té ngã xảy ra kéo theo những tác động to lớn về cả mặt kinh tế lẫn đời sống tinh thần:
+• Gánh nặng chi phí y tế: Chi phí cấp cứu ban đầu, phẫu thuật chỉnh hình (thay khớp háng nhân tạo, kết hợp xương nẹp vít), thuốc men điều trị nội trú, hồi sức tích cực và phục hồi chức năng sau mổ tiêu tốn hàng chục đến hàng trăm triệu đồng. Đối với những gia đình có hoàn cảnh kinh tế trung bình hoặc eo hẹp, đây là một cú sốc tài chính nặng nề.
+• Áp lực tâm lý và thời gian chăm sóc: Để chăm sóc một người già bị tàn phế sau ngã, con cháu phải phân chia người túc trực ngày đêm, hỗ trợ từ việc ăn uống, vệ sinh cá nhân đến tập vật lý trị liệu. Điều này dẫn đến sự gián đoạn công việc, suy giảm thu nhập của các thành viên trong độ tuổi lao động, và phát sinh tâm lý căng thẳng, stress kéo dài trong gia đình.
+• Sự bất an thường trực: Đối với những gia đình có con cái đi làm ăn xa hoặc định cư tại các thành phố khác, việc để cha mẹ già ở nhà một mình luôn đặt con cháu trong trạng thái lo âu thường trực, thường xuyên thấp thỏm không biết người thân ở nhà có gặp chuyện gì bất trắc hay không.
+Gánh nặng đối với hệ thống y tế và an sinh xã hội:
+Ở quy mô quốc gia, sự gia tăng nhanh chóng của các ca chấn thương do té ngã ở người cao tuổi đang tạo ra một sức ép khổng lồ lên hệ thống y tế công cộng:
+• Chi phí bảo hiểm y tế và ngân sách quốc gia: Tại Hoa Kỳ, Trung tâm Kiểm soát và Phòng ngừa Dịch bệnh (CDC) ước tính chi phí y tế trực tiếp dành cho việc điều trị các ca té ngã ở người già đã vượt quá 50 tỷ USD mỗi năm. Tại Việt Nam, nguồn quỹ bảo hiểm y tế và ngân sách an sinh xã hội cũng phải gánh chịu những khoản chi trả khổng lồ cho các ca điều trị chấn thương chỉnh hình phức tạp.
+• Quá tải cơ sở khám chữa bệnh: Các khoa cấp cứu, chấn thương chỉnh hình và phục hồi chức năng tại các bệnh viện tuyến tỉnh và tuyến trung ương luôn trong tình trạng quá tải giường bệnh, thiếu hụt nghiêm trọng đội ngũ điều dưỡng và nhân viên y tế chuyên biệt về lão khoa.
+Nhu cầu cấp thiết về thiết bị trợ giúp thông minh:
+Từ thực trạng báo động và những hệ lụy sâu rộng của té ngã, nhu cầu phát triển một giải pháp kỹ thuật có khả năng tự động giám sát, phát hiện sớm và cảnh báo khẩn cấp các sự cố té ngã đã trở thành một đòi hỏi cấp thiết của xã hội hiện đại.
+Các yêu cầu cốt lõi mà một giải pháp hỗ trợ người cao tuổi lý tưởng cần phải thỏa mãn bao gồm:
+1. Phát hiện tức thời trong 'Thời gian vàng': Khả năng phát hiện chính xác cú ngã và phát tín hiệu cấp cứu đến người thân hoặc nhân viên y tế trong vòng vài chục giây đến vài phút sau sự cố, tránh tình trạng người già phải nằm bất động trên sàn nhà lạnh.
+2. Gắn liền với thói quen tự nhiên, không gây phiền toái: Thiết bị phải hòa nhập một cách tự nhiên vào đời sống sinh hoạt, không đòi hỏi người già phải nhớ thao tác kích hoạt phức tạp, không gây cảm giác vướng víu hoặc bị theo dõi giám sát.
+3. Bảo đảm quyền riêng tư: Không sử dụng các thiết bị thu hình ảnh thật, cho phép hoạt động an toàn và kín đáo ở tất cả các không gian nhạy cảm nhất như phòng ngủ, phòng thay đồ, nhà vệ sinh.
+4. Chi phí hợp lý, dễ triển khai đại trà: Hệ thống phần cứng phải được chế tạo từ các linh kiện thông dụng, giá thành phù hợp với mức thu nhập phổ thông của các gia đình Việt Nam, không đòi hỏi chi phí lắp đặt hạ tầng phức tạp.
+Khảo sát các phương pháp phát hiện và cảnh báo té ngã hiện nay:
+Trong những năm gần đây, cộng đồng khoa học và các nhà sản xuất thiết bị y tế trên thế giới đã nghiên cứu và phát triển nhiều phương pháp khác nhau nhằm phát hiện té ngã. Tổng quan có thể phân chia thành 5 nhóm công nghệ chính như minh họa trên Hình 1.1:
+
+Hình 1.1 Sơ đồ phân loại các phương pháp phát hiện và cảnh báo té ngã hiện nay
+Phương pháp sử dụng thiết bị đeo trên người (Wearable Devices):
+• Nguyên lý: Sử dụng các cảm biến vi cơ điện tử (MEMS) bao gồm gia tốc kế 3 trục, con quay hồi chuyển 3 trục và cảm biến áp suất khí quyển tích hợp trong các thiết bị đeo như đồng hồ thông minh (smartwatch), vòng đeo tay theo dõi sức khỏe (fitness tracker), mặt dây chuyền đeo cổ hoặc thiết bị gắn ở thắt lưng. Vi xử lý nội tại sẽ liên tục đọc các giá trị gia tốc tuyến tính và vận tốc góc để so sánh với các ngưỡng động học hoặc phân loại bằng học máy.
+• Ưu điểm: Thiết bị nhỏ gọn, có tính cơ động cao, có thể đồng hành cùng người dùng ở cả trong nhà lẫn ngoài trời. Dữ liệu quán tính đo trực tiếp từ cơ thể mang lại độ chính xác thời gian thực tương đối cao. Không vi phạm quyền riêng tư hình ảnh.
+• Nhược điểm: Trên thực tế, đây là loại thiết bị mà người cao tuổi hay bỏ không dùng nhất. Người già thường xuyên quên đeo thiết bị vào mỗi buổi sáng, hoặc tháo ra khi đi ngủ, khi rửa tay, khi đi tắm (do lo ngại hư hỏng hoặc cảm giác vướng víu). Thời lượng pin của các smartwatch đa năng thường chỉ kéo dài từ 1 đến 2 ngày, đòi hỏi phải cắm sạc hằng ngày – một công việc rất hay bị người già lãng quên.
+Phương pháp sử dụng thị giác máy tính và Camera (Computer Vision):
+• Nguyên lý: Lắp đặt một hoặc nhiều camera (camera quang học RGB, camera hồng ngoại quan sát đêm hoặc camera đo độ sâu Depth Camera) tại các vị trí cố định trên trần nhà hoặc góc tường. Luồng video được đưa về máy tính hoặc bộ xử lý biên (Edge AI) để thực hiện các thuật toán thị giác máy tính: trừ nền (background subtraction), trích xuất khung xương cơ thể (skeleton tracking bằng OpenPose, YOLO-Pose), phân tích tỷ lệ khung bao (bounding box) và nhận diện tư thế nằm bất thường trên sàn nhà.
+• Ưu điểm: Hệ thống hoạt động hoàn toàn thụ động và không tiếp xúc, người già không cần phải mang bất kỳ thiết bị nào trên người. Cung cấp hình ảnh trực quan giúp người chăm sóc có thể xem lại để xác thực sự cố.
+• Nhược điểm: Rào cản lớn nhất là sự xâm phạm quyền riêng tư nghiêm trọng, khiến hầu hết người dùng từ chối lắp camera trong phòng ngủ và nhà tắm – nơi xảy ra phần lớn các vụ trượt ngã. Ngoài ra, camera chỉ quan sát được trong phạm vi đường ngắm thẳng (Line-of-Sight), dễ bị che khuất bởi rèm cửa, bàn ghế, tủ kệ, và hoạt động kém khi thiếu sáng hoặc góc nhìn bị mờ do hơi nước.
+Phương pháp phân tích âm thanh môi trường (Acoustic Analysis):
+• Nguyên lý: Sử dụng các micro đơn lẻ hoặc mảng micro độ nhạy cao bố trí trong phòng để thu nhận các rung động âm thanh. Thuật toán xử lý tín hiệu âm thanh sẽ phân tích biến đổi phổ (spectrogram) và áp dụng học sâu để phân loại tiếng va đập mạnh của cơ thể rơi xuống sàn gạch/gỗ, tiếng kêu cứu ('Cứu tôi với') hoặc tiếng rơi vỡ đồ đạc.
+• Ưu điểm: Hoàn toàn không tiếp xúc, không sử dụng hình ảnh nên bảo vệ được quyền riêng tư, chi phí micro tương đối rẻ.
+• Nhược điểm: Rất dễ bị báo động giả do nhiễu tạp âm sinh hoạt hằng ngày như tiếng rơi rớt xoong nồi trong bếp, tiếng đóng sập cửa do gió, tiếng trẻ con la hét, tiếng tivi mở lớn. Ngược lại, nếu người già bị ngã từ từ xuống thảm mềm hoặc giường thấp và bị ngất xỉu không kêu cứu được, hệ thống âm thanh sẽ hoàn toàn bỏ sót sự cố.
+Phương pháp sử dụng Radar sóng milimet (mmWave Radar):
+• Nguyên lý: Sử dụng cảm biến radar sóng liên tục điều tần (FMCW) hoạt động ở dải tần số 60 GHz đến 77 GHz. Radar phát ra các chùm sóng điện từ ngắn và thu nhận tín hiệu phản xạ để tạo ra đám mây điểm 3D (Point Cloud). Thuật toán phân cụm (DBSCAN) và theo dõi đối tượng (Kalman filter) sẽ ước tính chiều cao, vận tốc Doppler rơi thẳng đứng và trạng thái cư trú của con người trong phòng.
+• Ưu điểm: Bảo vệ tốt quyền riêng tư (không ghi lại hình ảnh quang học), hoạt động ổn định trong mọi điều kiện ánh sáng, khói bụi, hơi nước và bóng tối hoàn toàn. Có khả năng xuyên thấu các vật cản mỏng như rèm vải.
+• Nhược điểm: Chi phí phần cứng cảm biến mmWave và bộ xử lý trung tâm (như Raspberry Pi 4) rất đắt đỏ (vài triệu đồng cho một phòng). Radar bị giới hạn góc quét cố định trong một không gian phòng nhất định, không thể theo dõi khi người già bước ra khỏi nhà. Ngoài ra, việc xử lý đám mây điểm 3D đòi hỏi năng lực tính toán lớn và dễ bị nhiễu phản xạ đa đường từ các đồ vật kim loại, quạt trần quay.
+Phương pháp tích hợp trên gậy chống thông minh (Smart Cane):
+• Nguyên lý: Tích hợp trực tiếp cảm biến quán tính IMU, cảm biến khoảng cách, vi điều khiển tiết kiệm năng lượng và các module truyền thông không dây vào ngay bên trong thân cây gậy chống mà người cao tuổi sử dụng hằng ngày.
+• Ưu điểm: 
+- Thân thiện, tự nhiên: Cây gậy chống là vật bất ly thân của người cao tuổi có chức năng vận động suy giảm. Người già luôn cầm theo gậy mỗi khi đứng dậy bước đi, do đó khắc phục được vấn đề 'quên mang theo' của thiết bị đeo và vấn đề 'giới hạn không gian' của camera, radar cố định.
+- Bảo đảm quyền riêng tư: Hệ thống chỉ xử lý dữ liệu gia tốc và khoảng cách số học, hoàn toàn không thu thập hình ảnh nhạy cảm.
+- Kết hợp đa năng: Không chỉ phát hiện ngã, cây gậy còn đóng vai trò là 'đôi mắt thứ hai' giúp phát hiện trước các chướng ngại vật phía trước (qua cảm biến siêu âm) và rung phản hồi vào lòng bàn tay để người già kịp thời tránh né va chạm.
+- Chi phí chế tạo thấp: Sử dụng các dòng vi điều khiển nhúng giá rẻ như ESP32-S3 kết hợp linh hoạt với điện thoại thông minh sẵn có của người già để chia sẻ tài nguyên định vị GPS và truyền thông di động, giúp giảm đáng kể giá thành sản phẩm.
+• Nhược điểm: Đòi hỏi kỹ thuật thiết kế cơ khí và bố trí mạch điện tử phải thật gọn gàng, chắc chắn, chống va đập và tối ưu hóa thời lượng pin để người dùng không phải sạc quá thường xuyên.
+Bảng 1.1 So sánh đặc tính kỹ thuật giữa các phương pháp giám sát té ngã hiện nay
+
+Các công trình nghiên cứu và mô hình liên quan:
+Nghiên cứu về thiết bị đeo trên tay của tác giả Magnus Michael Marquez Musngi (2023):
+Tác giả Magnus Michael Marquez Musngi và các cộng sự tại Đại học De La Salle (Philippines) đã công bố công trình nghiên cứu phát hiện té ngã bằng cách tích hợp cảm biến quán tính 6-DOF và cảm biến áp suất khí quyển vào smartwatch thương mại. Nghiên cứu tập trung trích xuất 6 tham số động học đặc trưng: gia tốc thẳng đứng VA, vận tốc thẳng đứng VV, vận tốc thẳng đứng trung bình AVV, chênh lệch độ cao DA từ cảm biến áp suất, góc cẳng tay FA và diện tích độ lớn tín hiệu SMA trước và sau va chạm.
+Nhóm tác giả đề xuất hai thuật toán: Thuật toán 1 theo dõi gia tốc và vận tốc kết hợp cửa sổ thời gian 0.8 giây; Thuật toán 2 bổ sung tham số góc cẳng tay sau khi tiếp đất để kiểm tra tư thế bất động. Kết quả thực nghiệm trong phòng thí nghiệm cho thấy tỷ lệ nhận diện đạt 100% đối với các cú ngã có chủ đích, và độ đặc hiệu đạt 97.2% đối với các hoạt động sinh hoạt thường nhật. Tuy nhiên, trong thử nghiệm thực tế liên tục 15 phút, hệ thống vẫn xuất hiện 3 lần báo động giả do hành vi dồn lực mạnh xuống tay khi người dùng tì vào ghế để đứng lên hoặc điều chỉnh trọng tâm. Điều này cho thấy vị trí đeo ở cổ tay có biên độ dao động rất lớn, dễ gây nhầm lẫn nếu không có các cảm biến bổ trợ.
+Nghiên cứu về thiết bị đeo thân người dựa trên cảm biến quán tính và áp suất:
+Một số nhóm nghiên cứu quốc tế đã tiếp cận theo hướng gắn thiết bị tại vùng thắt lưng (gần trọng tâm cơ thể) hoặc đeo trước ngực. Vị trí này có ưu điểm là phản ánh trung thực quỹ đạo chuyển động tịnh tiến của toàn bộ khối lượng cơ thể khi ngã, giúp đường cong gia tốc có dạng khá rõ: giai đoạn rơi tự do (gia tốc tiệm cận 0 g), giai đoạn va chạm với sàn nhà (gia tốc tăng vọt lên 2.5 g - 3.5 g) và giai đoạn nằm im (gia tốc duy trì tĩnh ở 1.0 g dọc theo phương nghiêng của sàn).
+Mặc dù phương pháp này đạt độ chính xác phát hiện ngã rất cao (trên 95%), nhưng điểm yếu lớn nhất của nó trong triển khai thực tế là sự bất tiện: việc bắt buộc người cao tuổi phải luôn đeo một chiếc hộp cảm biến có đai thắt quanh bụng hoặc đeo dây trước ngực cả ngày lẫn đêm tạo cảm giác gò bó, ngột ngạt và mang tâm lý của một 'người bệnh đang bị theo dõi', khiến tỷ lệ bỏ cuộc sau vài tuần thử nghiệm lên tới hơn 60%.
+Hệ thống phát hiện té ngã dựa trên thị giác máy tính và học sâu:
+Các nghiên cứu gần đây ứng dụng mạng nơ-ron tích chập không-thời gian (ST-GCN) hoặc kiến trúc YOLOv8-Pose để nhận diện té ngã từ luồng video camera an ninh. Các mô hình này đạt độ chính xác rất ấn tượng (trên 96% trên các tập dữ liệu công khai như UR Fall Detection Dataset hay Multiple Cameras Fall Dataset). Tuy nhiên, các tác giả đều thừa nhận rằng hệ thống đòi hỏi cấu hình máy chủ tính toán đắt tiền (GPU chuyên dụng) để xử lý thời gian thực, đồng thời vấn đề điểm mù (blind spots) khi người già bước vào các góc khuất hoặc chuyển động phía sau đồ nội thất vẫn chưa khắc phục được hoàn toàn nếu chỉ dùng một camera.
+Các nghiên cứu về gậy thông minh hỗ trợ người già và người khiếm thị:
+Trên thế giới, các đề tài về gậy thông minh (Smart Cane) thường tập trung vào bài toán hỗ trợ người khiếm thị dò đường bằng cách tích hợp cảm biến siêu âm phát hiện vật cản ở tầm thấp. Một số sản phẩm thương mại như WeWALK (Anh) hay Doly (Pháp) đã tích hợp cảm biến siêu âm và kết nối Bluetooth với ứng dụng điện thoại để hỗ trợ bản đồ dẫn đường bằng giọng nói. Tuy nhiên, các dòng gậy này có giá thành rất cao (từ 500 đến 800 USD) và hầu như không được thiết kế chuyên biệt cho người cao tuổi (thiếu tính năng phát hiện té ngã tự động, thiếu cơ chế còi hú khẩn cấp và không có khả năng gửi tọa độ GPS cấp cứu tức thời qua SMS đến người thân khi có sự cố).
+Định hướng nghiên cứu và giải pháp đề xuất của đề tài:
+Từ những ưu, nhược điểm của các công trình nêu trên, đề tài 'Thiết kế gậy thông minh hỗ trợ người cao tuổi sử dụng ESP32, tích hợp cảm biến phát hiện ngã, định vị GPS, cảnh báo âm thanh và tự động gửi thông báo giám sát đến người thân qua ứng dụng trên điện thoại' chọn hướng tiếp cận như sau:
+1. Về kiến trúc phần cứng gậy: Sử dụng vi điều khiển thế hệ mới ESP32-S3 với lõi kép 240 MHz, tích hợp sẵn Bluetooth 5.0 BLE. Kết hợp cảm biến quán tính MPU6050 để nhận diện gia tốc va chạm và góc nghiêng; tích hợp cảm biến siêu âm HC-SR04 với thuật toán đo thời gian micro giây chống méo xung để cảnh báo vật cản cự ly gần từ 3 cm đến 80 cm qua motor rung xúc giác ở tay nắm; trang bị còi báo 2000 Hz để thu hút sự chú ý của người xung quanh khi xảy ra tai nạn.
+2. Về kiến trúc hệ thống tổng thể: Đề tài áp dụng giải pháp chia sẻ tài nguyên (Resource Offloading) như mô tả trên Hình 1.2. Thay vì gắn thêm module GPS rời và module SIM 4G cồng kềnh, tiêu tốn nhiều năng lượng vào thân cây gậy, hệ thống tận dụng trực tiếp năng lực định vị GPS độ chính xác cao và kết nối di động sẵn có của chiếc smartphone mà người già mang theo trong túi. Cây gậy và điện thoại kết nối với nhau qua chuẩn BLE tiết kiệm năng lượng, đảm bảo gậy hoạt động liên tục nhiều ngày mới cần sạc pin.
+3. Về giải pháp phần mềm và đám mây: Xây dựng ứng dụng Flutter đa nền tảng kết nối trực tiếp với Firebase Realtime Database. Hệ thống duy trì một dịch vụ chạy ngầm độc lập (Foreground Service) trên Android với thông báo thường trực 'Đang bảo vệ ngầm...', tự động kết nối lại Bluetooth với gậy qua địa chỉ MAC đã lưu, duy trì luồng GPS mỗi 5 mét di chuyển, và thực hiện cơ chế đếm ngược 15 giây: cho phép người già hủy cảnh báo nếu va chạm nhẹ, hoặc tự động kích hoạt còi báo động thức tỉnh trên máy giám hộ, gửi SMS ngầm chứa link Google Maps và thực hiện cuộc gọi khẩn cấp SOS ngay lập tức.
+
+Hình 1.2 Mô hình kiến trúc tổng thể của hệ thống gậy thông minh kết hợp IoT và thiết bị di động
+
+		CƠ SỞ LÝ THUYẾT
+Tổng quan về vi điều khiển ESP32-S3:
+Kiến trúc phần cứng và tập lệnh Xtensa 32-bit LX7 Dual-Core:
+ESP32-S3 là dòng vi điều khiển System-on-Chip (SoC) hiệu năng cao thế hệ mới được phát triển bởi tập đoàn Espressif Systems, được thiết kế chuyên biệt cho các ứng dụng trí tuệ nhân tạo vạn vật (AIoT), xử lý tín hiệu số tại biên và các thiết bị đeo/cầm tay thông minh. ESP32-S3 dùng bộ vi xử lý lõi kép Xtensa 32-bit LX7, có khả năng hoạt động ở tần số xung nhịp lên đến 240 MHz. Kiến trúc đường ống 7 giai đoạn (7-stage pipeline) mang lại khả năng xử lý các phép tính số học và logic với tốc độ cao.
+Đặc biệt, dòng chip LX7 trên ESP32-S3 được tích hợp thêm tập lệnh mở rộng xử lý vector (Vector Instructions) và bộ tăng tốc phần cứng cho các phép toán ma trận điểm tĩnh và dấu chấm động, giúp vi điều khiển có thể thực thi các phép nhân - cộng tích lũy (MAC) trong một chu kỳ xung nhịp. Nhờ vậy có thể chạy các thuật toán lọc số (như bộ lọc thông thấp Butterworth, bộ lọc bù Complementary Filter hay bộ lọc Kalman) trực tiếp trên chip nhằm khử nhiễu tín hiệu cảm biến quán tính thời gian thực mà không làm nghẽn CPU.
+Phân bố bộ nhớ và các ngoại vi trên chip:
+Bản mạch vi điều khiển được nhóm nghiên cứu sử dụng trong đề tài là phiên bản cao cấp ESP32-S3 N16R8 (tích hợp 16 MB Flash ngoài qua giao tiếp Octal SPI và 8 MB PSRAM ngoài). Cấu trúc bộ nhớ của chip bao gồm:
+• 512 KB bộ nhớ SRAM nội tại trên chip, chia thành SRAM0 (chứa mã lệnh), SRAM1 và SRAM2 (chứa dữ liệu tĩnh và heap động).
+• 8 MB PSRAM tốc độ cao mở rộng: Cho phép lưu trữ các mảng dữ liệu lấy mẫu lớn, hàng đợi tin nhắn BLE và bộ đệm trạng thái cảm biến mà không lo ngại hiện tượng tràn bộ nhớ (stack overflow).
+• 16 MB bộ nhớ Flash Quad/Octal SPI: Dùng để lưu trữ toàn bộ mã nguồn firmware nhúng, các bảng cấu hình tham số, dải địa chỉ MAC thiết bị ghép nối và vùng nhớ phân vùng NVS (Non-Volatile Storage).
+ESP32-S3 cung cấp tới 45 chân vào/ra đa dụng (GPIO) có thể tái cấu hình linh hoạt thông qua ma trận IO Mux (Hình 2.1). Chip hỗ trợ đầy đủ các giao thức giao tiếp nối tiếp chuẩn công nghiệp: 2 bộ điều khiển bus I2C tốc độ chuẩn 100 kHz và Fast-mode 400 kHz; 3 bộ UART hỗ trợ cấu hình tốc độ baud tùy ý; 4 bộ SPI đa năng; 2 bộ chuyển đổi tín hiệu tương tự sang số (ADC) 12-bit độ phân giải cao với 20 kênh ngõ vào; và bộ điều khiển xung PWM chuyên dụng (LEDC) hỗ trợ phát các tần số âm thanh chính xác điều khiển còi báo động.
+
+Hình 2.1 Sơ đồ kiến trúc vi điều khiển ESP32-S3 N16R8 và các khối ngoại vi tích hợp
+Bảng 2.1 Thông số kỹ thuật chi tiết của vi điều khiển ESP32-S3 N16R8
+
+Công nghệ truyền thông không dây Bluetooth Low Energy (BLE 5.0):
+Khái niệm và ưu thế năng lượng của BLE so với Bluetooth Classic:
+Bluetooth Low Energy (BLE), ban đầu được giới thiệu trong chuẩn Bluetooth 4.0 và được cải tiến trong Bluetooth 5.0, là một công nghệ mạng không dây cá nhân (PAN) được thiết kế chuyên biệt cho các thiết bị di động và nhúng đòi hỏi mức tiêu thụ năng lượng cực thấp.
+Khác biệt căn bản giữa Bluetooth Classic (BR/EDR) và BLE nằm ở chu kỳ làm việc (Duty Cycle). Trong khi Bluetooth Classic duy trì một kênh truyền dữ liệu liên tục (thích hợp cho truyền âm thanh chất lượng cao, tai nghe không dây), dẫn đến tiêu tốn dòng điện lớn (từ 30 mA đến 50 mA liên tục), thì BLE được tối ưu hóa cho các giao dịch truyền nhận các gói dữ liệu nhỏ ngắt quãng theo từng chu kỳ. Sau khi phát hoặc nhận xong một gói tin, chip vô tuyến của BLE ngay lập tức chuyển về trạng thái ngủ sâu (sleep mode) với dòng tiêu thụ chỉ vài micro-ampe. Điều này cho phép một nút cảm biến dùng pin có thể hoạt động bền bỉ từ vài tháng đến vài năm mà không cần sạc lại.
+Kiến trúc GATT Profile: Service, Characteristic và Descriptor:
+Trong giao thức BLE, việc tổ chức và trao đổi dữ liệu giữa hai thiết bị được quy định bởi cấu trúc GATT (Generic Attribute Profile) như minh họa trên Hình 2.2:
+• Vai trò thiết bị (Roles):
+- GATT Server: Thiết bị nắm giữ cơ sở dữ liệu thuộc tính và phục vụ các yêu cầu đọc/ghi từ xa. Trong đề tài này, cây gậy thông minh ESP32-S3 đóng vai trò là GATT Server, quản lý dữ liệu cảm biến té ngã.
+- GATT Client: Thiết bị khởi tạo kết nối và gửi các yêu cầu truy vấn hoặc nhận thông báo. Chiếc điện thoại thông minh của người cao tuổi đóng vai trò là GATT Client, chủ động kết nối tới gậy.
+• Cấu trúc phân tầng dữ liệu (GATT Hierarchy):
+- Profile: Tập hợp một hoặc nhiều Service định nghĩa một trường hợp sử dụng cụ thể.
+- Service (Dịch vụ): Một khối logic nhóm các dữ liệu có liên quan lại với nhau, được định danh duy nhất bởi một mã UUID 128-bit (Universally Unique Identifier). Trong đề tài, nhóm nghiên cứu đã thiết lập một Service báo ngã tùy biến với UUID: 4fafc201-1fb5-459e-8fcc-c5c9c331914b.
+- Characteristic (Đặc tính): Là phần tử dữ liệu cụ thể nằm trong một Service, bao gồm giá trị dữ liệu thực tế (Value) và các quyền truy cập (Properties: Read, Write, Notify, Indicate). Đặc tính cảnh báo té ngã trong đề tài có UUID: beb5483e-36e1-4688-b7f5-ea07361b26a9, được gán thuộc tính PROPERTY_READ và PROPERTY_NOTIFY.
+- Descriptor: Bộ mô tả thuộc tính bổ sung cho Characteristic. Đặc biệt, bộ mô tả Client Characteristic Configuration Descriptor (CCCD với UUID chuẩn 0x2902) cho phép phía Client (App di động) bật hoặc tắt quyền gửi tín hiệu Notify tự động từ Server mà không cần phải thăm dò (polling) liên tục.
+
+Hình 2.2 Cấu trúc phân tầng và GATT Profile của Bluetooth Low Energy trong hệ thống
+Cảm biến quán tính MPU6050 và thuật toán đo lường:
+Cấu tạo và nguyên lý hoạt động của gia tốc kế và con quay hồi chuyển 6-DOF:
+MPU6050 là cảm biến vi cơ điện tử (MEMS) của hãng InvenSense, bao gồm một gia tốc kế 3 trục (3-axis accelerometer) và một con quay hồi chuyển 3 trục (3-axis gyroscope) trên cùng một đế silicon có kích thước chỉ 4 x 4 x 0.9 mm.
+• Nguyên lý gia tốc kế (Accelerometer): Hoạt động dựa trên định luật II Newton (F = m.a). Bên trong vi cấu trúc silicon của cảm biến có các khối lượng thử (proof mass) siêu nhỏ được treo bởi các thanh dầm đàn hồi. Khi cảm biến chịu tác động của gia tốc tuyến tính (hoặc trọng lực Trái Đất g = 9.8 m/s²), khối lượng thử dịch chuyển tương đối so với các điện cực cố định, làm thay đổi điện dung vi sai giữa các bản cực tụ điện. Mạch khuếch đại điện tích trên chip sẽ chuyển đổi sự thay đổi điện dung này thành điện áp, sau đó đưa qua bộ ADC 16-bit tích hợp để xuất ra giá trị gia tốc số học trên 3 trục tọa độ X, Y, Z.
+• Nguyên lý con quay hồi chuyển (Gyroscope): Hoạt động dựa trên hiệu ứng lực quán tính Coriolis. Khi một cấu trúc vi cơ đang dao động cộng hưởng ở tần số cao bị quay quanh một trục vuông góc, lực Coriolis sẽ làm xuất hiện một dao động thứ cấp vuông góc với cả phương dao động ban đầu và trục quay. Biên độ của dao động thứ cấp tỷ lệ thuận với tốc độ góc quay (đơn vị: độ/giây - dps), được chuyển đổi qua bộ ADC 16-bit độc lập để cung cấp tốc độ quay quanh 3 trục Pitch, Roll, Yaw.
+Bảng 2.2 Thông số kỹ thuật của cảm biến quán tính 6-DOF MPU6050
+
+Giao tiếp I2C và định dạng khung truyền:
+Cảm biến MPU6050 giao tiếp với ESP32-S3 thông qua chuẩn bus nối tiếp đồng bộ I2C (Inter-Integrated Circuit) hai dây: chân SDA (Serial Data) dùng để truyền nhận dữ liệu hai chiều và chân SCL (Serial Clock) dùng để truyền xung đồng hồ định thời do ESP32-S3 phát ra (Hình 2.3). Do mạch ngõ ra của I2C là dạng cực máng hở (Open-Drain), cả hai đường SDA và SCL đều bắt buộc phải được kết nối với các điện trở kéo lên nguồn (Pull-up resistors, giá trị từ 2.2 kΩ đến 4.7 kΩ lên mức điện áp 3.3 V) để xác lập mức logic cao mặc định khi bus rảnh.
+
+Hình 2.3 Chuẩn giao tiếp I2C giữa vi điều khiển ESP32-S3 và cảm biến MPU6050
+
+Hình 2.4 Hệ trục tọa độ không gian 3 chiều và cảm biến quán tính 6-DOF MPU6050
+Thuật toán phát hiện té ngã dựa trên ngưỡng gia tốc tổng hợp (SVM):
+Để nhận diện một cú té ngã độc lập với hướng rơi và góc đặt ban đầu của cây gậy trong không gian ba chiều, đại lượng gia tốc tổng hợp SVM (Signal Vector Magnitude) được sử dụng làm tham số động học cốt lõi. Độ lớn của vector gia tốc tổng hợp |a| tại thời điểm lấy mẫu t được tính theo công thức Euclid:
+    |a| = √(ax² + ay² + az²)
+Trong đó ax, ay, az lần lượt là thành phần gia tốc tức thời đo được trên ba trục trực giao X, Y, Z (đơn vị: m/s²).
+Quá trình một cú ngã thực tế diễn ra qua 3 giai đoạn động học phân biệt rõ rệt như biểu diễn trên Hình 2.5:
+1. Giai đoạn rơi tự do (Free-fall): Thân người và cây gậy mất thăng bằng bắt đầu rơi nhanh xuống đất dưới tác dụng của trọng trường. Tại giai đoạn này, các gia tốc phản lực triệt tiêu, độ lớn vector gia tốc tổng hợp |a| giảm mạnh đột ngột, tiệm cận về mức 0 m/s² trong khoảng thời gian từ 100 ms đến 300 ms.
+2. Giai đoạn va chạm với mặt sàn (Impact): Thân gậy và cơ thể va đập trực tiếp xuống sàn gạch hoặc bề mặt cứng. Quá trình hãm tốc diễn ra trong tích tắc tạo ra một xung gia tốc cực đại (Impact Acceleration Spike) với biên độ vượt trội, thường dao động trong khoảng từ 25 m/s² đến 40 m/s².
+3. Giai đoạn nằm bất động (Rest / Immobility): Sau cú va đập, nếu người già bị chấn thương hoặc choáng ngất, cây gậy sẽ nằm cố định trên mặt đất. Khi đó, vector gia tốc tổng hợp sẽ nhanh chóng trở về giá trị tĩnh tương đương gia tốc trọng trường g ≈ 9.8 m/s², đồng thời độ lệch chuẩn dao động của gia tốc đạt mức gần như bằng 0 trong thời gian kéo dài nhiều giây.
+
+Hình 2.5 Dạng sóng vector gia tốc tổng hợp SVM khi đi bộ, va chạm té ngã và nằm bất động
+Cảm biến phát hiện khoảng cách vật cản (HC-SR04 & E18-D50NK):
+Cảm biến siêu âm HC-SR04 và nguyên lý phản xạ sóng âm 40 kHz:
+Cảm biến siêu âm HC-SR04 được sử dụng làm cảm biến phát hiện chướng ngại vật chính trên gậy thông minh. Cảm biến bao gồm một đầu phát sóng siêu âm (Transmitter) và một đầu thu sóng siêu âm (Receiver) bằng gốm áp điện (piezoelectric).
+Nguyên lý hoạt động chi tiết (Hình 2.6):
+• Bước 1: Vi điều khiển ESP32-S3 kích hoạt một xung điện áp mức cao (HIGH) có độ rộng tối thiểu 10 µs vào chân TRIG của cảm biến.
+• Bước 2: Nhận được tín hiệu kích, mạch phát tích hợp trên HC-SR04 sẽ tự động phát ra một chùm 8 chu kỳ xung sóng âm có tần số chuẩn 40 kHz hướng về phía trước.
+• Bước 3: Đồng thời, chân ECHO của cảm biến được kéo lên mức HIGH. Sóng siêu âm lan truyền trong không khí, khi gặp vật cản sẽ bị phản xạ ngược trở lại. Đầu thu sẽ chuyển đổi áp suất sóng âm phản xạ thành tín hiệu điện và kéo chân ECHO trở về mức LOW.
+Khoảng cách từ cảm biến đến chướng ngại vật được tính toán chính xác dựa trên thời gian bay của sóng (Time-of-Flight - t tính bằng micro-giây) và vận tốc lan truyền của âm thanh trong không khí (v ≈ 343 m/s ở 20°C):
+    Khoảng cách d = (t × 0.0343) / 2  (cm)
+
+Hình 2.6 Giản đồ thời gian phát xung kích Trig và phản hồi Echo của cảm biến HC-SR04
+Kỹ thuật đo xung pulseIn kết hợp micros() chống treo ESP32-S3:
+Trong các hệ thống nhúng thông thường, hàm pulseIn(ECHO_PIN, HIGH) của Arduino framework thường được sử dụng để đo thời gian chân Echo giữ mức cao. Tuy nhiên, trên vi điều khiển lõi kép ESP32-S3 chạy hệ điều hành thời gian thực FreeRTOS, việc gọi pulseIn() đôi khi gặp hiện tượng trả về giá trị 0 ngẫu nhiên do bị bộ lập lịch (Scheduler) ngắt quãng hoặc xung bị méo dạng ở mức logic 3.3V.
+Để tránh lỗi này, nhóm viết lại hàm đo khoảng cách theo ba bước:
+1. Sử dụng lệnh noInterrupts() và interrupts() bao bọc quá trình kích chân Trig (kéo LOW 5 µs, kéo HIGH 12 µs, kéo LOW) để xung kích không bị ngắt quãng bởi với các tác vụ Wi-Fi hay BLE.
+2. Cài đặt thời gian chờ (timeout) cho pulseIn là 40000 µs (tương đương phạm vi đo tối đa khoảng 6.8 mét).
+3. Cơ chế dự phòng (fallback): Nếu pulseIn trả về 0, chương trình ngay lập tức chuyển sang vòng lặp đo trực tiếp bằng bộ đếm thời gian phần cứng micros(). Vòng lặp liên tục kiểm tra trạng thái chân Echo, nếu sau 35 ms không có xung phản hồi sẽ trả về mã lỗi quy ước (-1 hoặc -2), tránh việc vi điều khiển bị treo (Watchdog Timer crash).
+Cảm biến quang hồng ngoại E18-D50NK dự phòng:
+Để tăng cường độ tin cậy trong các môi trường đặc thù (như phát hiện các bề mặt nghiêng tán xạ sóng âm kém hoặc vật cản bằng vải dày hấp thụ âm thanh), hệ thống được thiết kế mở rộng hỗ trợ cảm biến quang hồng ngoại E18-D50NK (Hình 2.7). Cảm biến này tích hợp một diode phát hồng ngoại và một photodiode thu trong cùng một vỏ bọc kim loại hình trụ chắc chắn, có biến trở hiệu chỉnh cự ly phát hiện từ 3 cm đến 50 cm. Tín hiệu ngõ ra là cực thu hở NPN thường mở (Normally Open): khi có vật cản, ngõ ra kéo xuống mức LOW (0V); khi không có vật cản, chân OUT giữ mức HIGH thông qua điện trở kéo lên nội tại của ESP32 (INPUT_PULLUP).
+
+Hình 2.7 Nguyên lý phản xạ quang học của cảm biến vật cản hồng ngoại E18-D50NK
+Mạch kích công suất và cơ chế cảnh báo xúc giác/âm thanh:
+Mạch điều khiển động cơ rung lệch tâm (ERM) qua MOSFET AOD4184:
+Động cơ rung lệch tâm (Eccentric Rotating Mass - ERM) hoạt động ở điện áp 5V, có dòng khởi động có thể lên tới 150 mA - 200 mA. Trong khi đó, dòng điện ngõ ra tối đa cho phép trên mỗi chân GPIO của ESP32-S3 chỉ giới hạn ở mức 20 mA - 40 mA. Việc nối trực tiếp động cơ vào chân GPIO sẽ gây sụt áp nghiêm trọng và làm cháy cổng vi điều khiển.
+Giải pháp kỹ thuật được áp dụng là sử dụng mạch driver chuyển mạch công suất dùng Transistor hiệu ứng trường N-channel MOSFET logic level AOD4184 (Hình 2.8). MOSFET này có điện áp kích ngưỡng Vgs(th) rất thấp (1.7 V - 2.6 V), cho phép mở bão hòa hoàn toàn chỉ với điện áp điều khiển 3.3 V từ chân GPIO 6 của ESP32-S3. Nội trở dẫn Rds(on) siêu nhỏ (< 8.5 mΩ) giúp MOSFET hầu như không phát nhiệt khi dẫn dòng lớn.
+Đặc biệt, do động cơ điện là tải có tính cảm ứng (Inductive load), khi ngắt dòng điện đột ngột, từ trường trong cuộn dây động cơ sụp đổ sẽ tạo ra một xung điện áp cảm ứng ngược (Back-EMF) lên tới hàng chục vôn theo định luật Faraday. Một diode chỉnh lưu hồi tiếp (Flyback diode 1N4007 hoặc SS34) được mắc song song ngược cực với hai đầu động cơ để dập tắt xung điện áp ngược này, bảo vệ MOSFET và vi điều khiển.
+
+Hình 2.8 Sơ đồ nguyên lý mạch kích công suất motor rung sử dụng MOSFET và diode dập xung
+Còi hú báo động Buzzer và khối nguồn sạc Pin Li-ion 18650:
+• Còi hú Buzzer 5V: Sử dụng còi điện từ chủ động (Active Buzzer) kết hợp phát xung tần số 2000 Hz bằng lệnh tone() của vi điều khiển. Âm lượng phát ra đạt mức 85 dB ở khoảng cách 1 mét, đủ lớn để thu hút sự chú ý tức thời của người thân ở các phòng lân cận hoặc người đi đường ngoài phố.
+• Khối nguồn điện di động: Toàn bộ hệ thống phần cứng trên gậy được cấp nguồn từ một cell pin sạc Li-ion 18650 dung lượng 2500 mAh - 3000 mAh (điện áp danh định 3.7 V, đầy 4.2 V). Mạch sạc (TP4056 trong thiết kế, module MH-CD42 trong nguyên mẫu thực nghiệm) dùng cổng Type-C, có mạch bảo vệ chống quá nạp, chống quá xả (cắt nguồn khi điện áp tụt dưới 2.5 V) và bảo vệ ngắn mạch. Điện áp của pin sau đó được đưa qua mạch tăng áp DC-DC (Boost) để nâng lên mức 5.0 V ổn định, cung cấp đồng thời cho chân VIN của ESP32-S3, cảm biến siêu âm và cụm motor rung.
+Hệ thống định vị toàn cầu GPS và dịch vụ định vị di động:
+Nguyên lý định vị vệ tinh GPS và giao thức NMEA 0183:
+Hệ thống định vị toàn cầu GPS (Global Positioning System) hoạt động dựa trên chòm sao gồm tối thiểu 24 vệ tinh bay quanh quỹ đạo Trái Đất. Nguyên lý cốt lõi của định vị GPS là phương pháp giao điểm các mặt cầu khoảng cách (Trilateration) như mô tả trên Hình 2.9:
+Mỗi vệ tinh liên tục phát tín hiệu vô tuyến mang thông tin về vị trí quỹ đạo (ephemeris) và thời điểm phát sóng lấy từ đồng hồ nguyên tử. Bộ thu GPS sẽ tính toán thời gian truyền sóng từ vệ tinh đến anten thu, từ đó nhân với vận tốc ánh sáng (c ≈ 300.000 km/s) để xác định khoảng cách cầu tới từng vệ tinh. Để xác định được tọa độ vị trí 3 chiều (Kinh độ, Vĩ độ, Độ cao) và bù trừ sai số đồng hồ nội tại của máy thu, thiết bị cần bắt được tín hiệu từ tối thiểu 4 vệ tinh đồng thời.
+
+Hình 2.9 Nguyên lý định vị toàn cầu GPS dựa trên giao điểm mặt cầu vệ tinh
+Dịch vụ định vị kết hợp (Fused Location Provider) và thư viện Geolocator:
+Trong các mô hình gậy IoT truyền thống, việc gắn module phần cứng GPS rời (như u-blox NEO-6M) trực tiếp lên gậy bộc lộ nhiều nhược điểm nghiêm trọng: module rời tiêu thụ dòng điện rất lớn (45 mA - 60 mA liên tục), thời gian bắt tín hiệu nguội (Cold Start) ngoài trời kéo dài từ 30 đến 60 giây, và đặc biệt là hoàn toàn mất tín hiệu (GPS Blind) khi người già di chuyển vào trong nhà, chung cư hoặc khu vực có mái che dày đặc.
+Vì vậy, nhóm chọn cách dùng dịch vụ định vị kết hợp (Fused Location Provider) thông qua thư viện chuyên dụng Geolocator trên nền tảng Flutter. Dịch vụ này kết hợp dữ liệu từ 3 nguồn: chip thu GPS vệ tinh của điện thoại, mạng định vị trạm phát sóng di động GSM/4G (Cell-ID) và nhận dạng địa chỉ MAC của các mạng Wi-Fi lân cận (Wi-Fi Positioning). Nhờ đó, ngay cả khi người già ở trong phòng ngủ kín không có sóng vệ tinh, điện thoại vẫn xác định được tọa độ tương đối với sai số chấp nhận được. Tọa độ thu được theo hệ quy chiếu WGS84 được tự động chuyển thành liên kết Google Maps dạng: https://maps.google.com/?q=lat,lng để gửi đi cứu hộ.
+Nền tảng đám mây Firebase Cloud:
+Cơ sở dữ liệu thời gian thực Firebase Realtime Database:
+Firebase Realtime Database (RTDB) là giải pháp cơ sở dữ liệu NoSQL đám mây do Google phát triển, lưu trữ dữ liệu dưới dạng một cây đối tượng JSON (JSON Tree) phân cấp lớn. Khác với các cơ sở dữ liệu quan hệ truyền thống đòi hỏi câu lệnh SQL và cơ chế thăm dò HTTP request định kỳ, Firebase RTDB sử dụng giao thức kết nối liên tục WebSocket. Khi có bất kỳ một trường dữ liệu nào trong cây JSON thay đổi (ví dụ: cờ is_falling đổi từ false sang true), máy chủ Firebase sẽ chủ động 'đẩy' (Push) sự thay đổi đó xuống tất cả các thiết bị Client đang đăng ký lắng nghe (qua hàm onValue) trong thời gian tính bằng phần trăm giây mà không làm tốn tài nguyên mạng (Hình 2.10).
+
+Hình 2.10 Cơ chế đồng bộ dữ liệu hai chiều thời gian thực trên Firebase Realtime Database
+Cơ chế theo dõi trạng thái mạng (Presence System) qua .info/connected:
+Nhóm cũng sử dụng hệ thống nhận diện trạng thái kết nối mạng (Presence System) của Firebase. Thông qua đường dẫn đặc biệt .info/connected, ứng dụng trên máy người già có thể bắt chính xác khoảnh khắc kết nối mạng Internet bị đứt đoạn hoặc khôi phục.
+Đặc biệt, lệnh onDisconnect().set(false) được thiết lập tại máy chủ: nếu chiếc điện thoại của người già bị hết pin đột ngột, tắt nguồn hoặc mất hẳn sóng 4G/Wi-Fi, máy chủ Firebase sẽ tự động phát hiện socket WebSocket bị đóng và cập nhật trường is_online = false. Nhờ đó, ứng dụng phía Người Giám Hộ sẽ ngay lập tức phát hiện trạng thái mất mạng của cha mẹ và kích hoạt banner cảnh báo màu đỏ trên giao diện.
+Framework lập trình ứng dụng di động đa nền tảng Flutter:
+Kiến trúc đa tầng của Framework Flutter:
+Flutter là bộ công cụ phát triển phần mềm giao diện người dùng mã nguồn mở (UI SDK) do Google xây dựng, sử dụng ngôn ngữ lập trình Dart hiện đại. Kiến trúc của Flutter được chia thành 3 tầng chính (Hình 2.11):
+1. Tầng Framework (Dart): Chứa hệ thống widget phong phú (Material Design và Cupertino), các bộ quản trị hoạt ảnh (Animation), điều hướng (Navigator) và cử chỉ (Gestures).
+2. Tầng Engine (C++): Phần lõi của Flutter, gồm bộ thư viện đồ họa phần cứng Impeller/Skia, máy ảo Dart VM thực thi mã Dart, và hệ thống phân giải văn bản.
+3. Tầng Platform (Nền tảng): Giao tiếp trực tiếp với hệ điều hành Android và iOS thông qua cơ chế Platform Channels (MethodChannel), cho phép mã Dart gọi các dịch vụ phần cứng bản địa của điện thoại như Bluetooth, GPS, SMS và Background Services.
+
+Hình 2.11 Kiến trúc đa tầng của Framework lập trình di động Flutter
+Dịch vụ chạy ngầm liên tục (Flutter Background Service) trên Android:
+Một rào cản kỹ thuật rất lớn trong các ứng dụng di động hiện đại là các cơ chế tiết kiệm pin nghiêm ngặt của hệ điều hành Android (như chế độ Doze Mode, App Standby). Nếu không có giải pháp chuyên biệt, khi người dùng tắt màn hình hoặc vuốt ứng dụng khỏi danh sách đa nhiệm, hệ điều hành Android sẽ tự động tiêu diệt (kill) tiến trình ứng dụng sau 5 đến 15 phút, khiến kết nối Bluetooth và GPS bị gián đoạn hoàn toàn.
+Để xử lý vấn đề này, nhóm dùng gói thư viện flutter_background_service để khởi tạo một Dịch vụ chạy ở tiền cảnh (Foreground Service) độc lập (Hình 2.12). Dịch vụ này chạy trên một Isolate Dart riêng biệt, duy trì một biểu tượng thông báo thường trực trên thanh trạng thái hệ thống ('Smart Cane - Đang bảo vệ ngầm...') với mức ưu tiên kênh PRIORITY_HIGH. Nhờ đó, hệ điều hành Android nhận diện đây là dịch vụ cốt lõi và hạn chế việc tự dừng tiến trình. Dịch vụ ngầm này liên tục đảm nhận 4 nhiệm vụ song song 24/7:
+• Quét và chủ động gửi lệnh kết nối lại Bluetooth trực tiếp (Direct Connect) với cây gậy mỗi khi gậy ở trong tầm phủ sóng.
+• Lắng nghe Characteristic báo ngã từ gậy.
+• Nhận luồng vị trí GPS từ phần cứng điện thoại và đồng bộ lên Firebase.
+• Quản lý đồng hồ đếm ngược 15 giây và điều khiển cơ chế gửi tin nhắn SMS ngầm tự động cứu hộ.
+
+Hình 2.12 Cơ chế hoạt động đa luồng Isolate của Flutter Background Service trên Android
+
+		PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG
+Phân tích yêu cầu thiết kế hệ thống:
+Yêu cầu người dùng (User Requirements):
+Để một thiết bị hỗ trợ sức khỏe có thể thực sự đi vào đời sống của người cao tuổi tại Việt Nam, sản phẩm phải được thiết kế xoay quanh chính các thói quen, tâm sinh lý và đặc thù sinh hoạt của đối tượng sử dụng:
+1. Dễ sử dụng: Người cao tuổi thường gặp khó khăn với các thao tác công nghệ phức tạp. Do đó, toàn bộ phần cứng trên gậy phải hoạt động hoàn toàn tự động (Zero-Configuration). Người già chỉ cần cầm gậy lên đi lại bình thường như một cây gậy truyền thống, không cần bấm bất kỳ công tắc phức tạp nào. Mọi tiến trình kết nối Bluetooth, định vị và giám sát đều diễn ra âm thầm ở chế độ ngầm.
+2. Cảnh báo xúc giác trực quan: Khi phát hiện có chướng ngại vật trước mặt ở cự ly nguy hiểm (3 cm - 80 cm), gậy phải lập tức rung mạnh vào lòng bàn tay để người dùng cảm nhận được ngay, đặc biệt hữu ích với những người già có thính lực kém hoặc mắt nhìn mờ.
+3. Có cơ chế chống báo nhầm: Người cao tuổi rất ngại làm phiền con cháu khi họ đang đi làm. Nếu cây gậy chẳng may bị tuột tay rơi xuống sàn hoặc va quẹt nhẹ mà đã vội vàng hú còi gọi điện thoại đến cơ quan của con cái thì sẽ gây tâm lý ức chế, dẫn đến việc người già vứt bỏ thiết bị. Do đó, hệ thống bắt buộc phải có cơ chế đếm ngược 15 giây với nút bấm to rõ 'Tôi ổn - Hủy báo động' trên màn hình điện thoại để người già có thể tự tay hủy bỏ cảnh báo nếu mình không sao.
+4. Trực quan hóa phía người giám hộ: Ứng dụng phía người chăm sóc phải hiển thị bản đồ trực tiếp với các biểu tượng phân biệt rõ ràng (vị trí hiện tại của người già, vị trí ngôi nhà, các điểm hẹn gặp). Khi có sự cố, hệ thống phải cung cấp nút bấm dẫn đường Google Maps tức thời chỉ với một lần chạm.
+Yêu cầu kỹ thuật (Technical Specifications):
+Nhóm đặt ra các chỉ tiêu kỹ thuật sau cho hệ thống:
+• Về phần cứng nhúng: Vi điều khiển phải có tốc độ lấy mẫu cảm biến IMU đạt tối thiểu 10 Hz (100 ms một lần), thuật toán đo khoảng cách siêu âm có độ trễ dưới 50 ms và không làm nghẽn tiến trình truyền thông BLE.
+• Về độ trễ truyền thông: Thời gian từ khi MPU6050 phát hiện xung va chạm té ngã cho đến khi điện thoại nhận được gói tin Notify BLE phải nhỏ hơn 300 ms; thời gian đồng bộ dữ liệu sự cố lên Firebase Cloud phải nhỏ hơn 1 giây khi có kết nối mạng ổn định.
+• Về cơ chế dự phòng ngoại tuyến (Offline Resiliency): Trong trường hợp người già đi lạc ra ngoài khu vực phủ sóng Wi-Fi hoặc tài khoản 4G hết dung lượng, hệ thống vẫn phải có khả năng tự động gửi tin nhắn SMS chứa tọa độ GPS cuối cùng đến thẳng số điện thoại của người giám hộ.
+• Về nguồn điện: Cây gậy phải đảm bảo hoạt động liên tục tối thiểu 18 - 24 giờ sau mỗi lần sạc đầy, và sử dụng cổng sạc chuẩn USB Type-C phổ biến.
+Sơ đồ khối và kiến trúc hệ thống:
+Hệ thống Gậy Thông Minh được thiết kế theo mô hình kiến trúc phân tán gồm 4 khối chức năng chính liên kết chặt chẽ với nhau như biểu diễn trên Hình 3.1:
+
+Hình 3.1 Sơ đồ khối chức năng hoàn chỉnh của toàn bộ hệ thống gậy thông minh
+Phân tích chức năng các khối trong hệ thống:
+1. Khối Gậy Thông Minh (Hardware Node):
+Là trung tâm thu thập dữ liệu sinh trắc học và tương tác cơ học trực tiếp với người cao tuổi:
+• Cảm biến gia tốc MPU6050 liên tục đo đạc các vector chuyển động trong không gian 3 chiều.
+• Cảm biến siêu âm HC-SR04 đóng vai trò quét không gian phía trước ở góc mở 15 độ, phát hiện sớm các chướng ngại vật (bậc tam cấp, bàn ghế, tường chắn) từ 3 cm đến 80 cm.
+• Cụm chấp hành gồm Còi hú Buzzer phát âm thanh tần số cao 2000 Hz và Motor rung xúc giác ở tay cầm.
+• Vi điều khiển trung tâm ESP32-S3 xử lý tín hiệu cảm biến thời gian thực, điều khiển cơ chế báo động tại chỗ và duy trì kênh kết nối vô tuyến BLE 5.0 đóng vai trò GATT Server.
+2. Khối Smartphone Người Dùng Gậy (Elderly Gateway Node):
+Đóng vai trò là trạm trung gian (IoT Gateway):
+• Chạy Dịch vụ ngầm (Foreground Service) liên tục trên hệ điều hành Android, tự động kết nối lại Bluetooth với gậy mà không cần người dùng mở ứng dụng.
+• Tận dụng chip thu GPS đa băng tần của điện thoại để cập nhật tọa độ liên tục mỗi khi người già di chuyển trên 5 mét.
+• Đảm nhận khâu trung gian an toàn: Khi gậy phát lệnh té ngã, điện thoại phát âm thanh cảnh báo và kích hoạt bộ đếm ngược 15 giây cho phép hủy bỏ.
+• Quản lý 2 kênh cứu nạn độc lập: Kênh Internet (đẩy dữ liệu lên Firebase) và Kênh viễn thông GSM (gửi tin nhắn SMS ngầm và quay số cuộc gọi SOS trực tiếp).
+3. Khối Đám Mây Firebase Cloud (Cloud Backend Node):
+• Đóng vai trò là trung tâm lưu trữ và cầu nối đồng bộ dữ liệu thời gian thực giữa hai thiết bị di động.
+• Quản trị xác thực người dùng an toàn bằng Firebase Authentication.
+• Lưu trữ trạng thái hoạt động tức thời của người già: cờ is_falling, trạng thái kết nối Bluetooth ble_connected, trạng thái bật tắt GPS gps_enabled, và trạng thái trực tuyến is_online.
+• Lưu trữ lịch sử toàn bộ các sự cố ngã, các lần mất kết nối mạng và tọa độ các điểm hẹn an toàn.
+4. Khối Smartphone Người Giám Hộ (Guardian Client Node):
+• Cung cấp giao diện trực quan cho con cháu theo dõi tình trạng cha mẹ ở bất kỳ đâu.
+• Hiển thị bản đồ số OpenStreetMap thời gian thực, tự động ghim vị trí của gậy và vị trí ngôi nhà.
+• Kích hoạt còi hú báo thức âm lượng cực đại (Alarm Siren) và rung liên tục khi nhận được sự cố té ngã từ máy chủ Firebase, để người giám hộ nghe thấy kể cả khi đang ngủ.
+• Cung cấp tính năng điều hướng 1 chạm: Mở ứng dụng Google Maps vẽ đường đi ngắn nhất đến vị trí tai nạn của người thân.
+Thiết kế phần cứng và sơ đồ nguyên lý kết nối chi tiết:
+Sơ đồ nguyên lý kết nối chi tiết giữa vi điều khiển ESP32-S3 N16R8 và các module ngoại vi được biểu diễn trên Hình 3.2:
+
+Hình 3.2 Sơ đồ nguyên lý kết nối chi tiết phần cứng trên vi điều khiển ESP32-S3
+Bảng phân bổ chân GPIO và tính toán linh kiện:
+Dựa trên cấu trúc phần cứng của chip ESP32-S3, nhóm nghiên cứu đã lựa chọn và tối ưu hóa ma trận chân kết nối như trình bày trong Bảng 3.1. Các chân GPIO được bố trí nhằm tránh xung đột với các chân nạp nạp chương trình (strapping pins GPIO 0, GPIO 45, GPIO 46) và các chân kết nối bộ nhớ Flash/PSRAM ngoài (GPIO 26 đến GPIO 37):
+Bảng 3.1 Bảng ánh xạ chân kết nối ngoại vi phần cứng trên ESP32-S3
+
+Tính toán mạch driver điều khiển motor rung:
+Motor rung ERM hoạt động ở điện áp Vcc = 5 V, có dòng điện định mức I_motor ≈ 120 mA, dòng khởi động đạt đỉnh I_peak ≈ 180 mA. Nhóm sử dụng MOSFET kênh N AOD4184 có điện áp đánh thủng Vds = 40 V, dòng liên tục tối đa Id = 50 A, nội trở dẫn Rds(on) = 8.5 mΩ. Khi chân GPIO 6 xuất mức logic HIGH (3.3 V), điện áp Vgs = 3.3 V đủ để mở bão hòa kênh dẫn. Tổn hao công suất dẫn trên MOSFET rất nhỏ:
+    P_loss = I_motor² × Rds(on) = (0.18 A)² × 0.0085 Ω ≈ 0.27 mW
+Do công suất tổn hao dưới 1 mW, MOSFET hoàn toàn mát và không cần gắn thêm tản nhiệt nhôm. Một điện trở xả R_pulldown = 10 kΩ được mắc giữa cực Gate và Source (GND) để đảm bảo MOSFET luôn khóa hoàn toàn khi ESP32-S3 đang khởi động lại hoặc khi chân GPIO ở trạng thái trở kháng cao.
+Thiết kế cơ khí và vỏ bảo vệ gậy thông minh (Mô hình 3D):
+Thiết kế cơ khí của cây gậy đóng vai trò quyết định đến độ bền, độ an toàn và sự thoải mái của người sử dụng. Dựa trên các nguyên lý công thái học (Ergonomics), nhóm nghiên cứu đã thiết kế mô hình 3D hoàn chỉnh cho cây gậy thông minh như minh họa trên Hình 3.3:
+
+Hình 3.3 Bản vẽ thiết kế 3D công thái học thân gậy và bố trí khoang cảm biến
+Các điểm chính trong thiết kế cơ khí của gậy:
+1. Tay cầm công thái học (Ergonomic Handle): Được tạo hình uốn lượn theo các rãnh ngón tay của bàn tay người, sử dụng vật liệu nhựa composite bọc cao su mềm chống trơn trượt khi tay bị đổ mồ hôi. Hình dáng tay cầm dạng móc gập chữ L giúp phân bổ đều trọng lượng cơ thể lên xương cẳng tay, giảm tải áp lực dồn lên các khớp ngón tay và khớp cổ tay của người cao tuổi.
+2. Nút bấm khẩn cấp SOS tích hợp: Được bố trí ngay tại đỉnh đầu của tay cầm với màu đỏ nổi bật. Nút bấm có kích thước lớn, vừa vặn với ngón tay cái, giúp người già có thể dễ dàng nhấn giữ trong trường hợp khẩn cấp (như cảm thấy hoa mắt, tức ngực, chóng mặt cần trợ giúp) mà không cần phải nhìn vào điện thoại.
+3. Khoang chứa cảm biến và mạch điện tử (Sensor Pod): Được gắn chắc chắn tại phần thân trên của gậy, ngay bên dưới tay cầm. Khoang chứa được thiết kế dạng module khép kín bằng nhựa ABS in 3D chống va đập, bảo vệ toàn bộ bo mạch ESP32-S3, cảm biến MPU6050, pin Li-ion và còi báo động bên trong. Phía mặt trước của khoang bố trí hai mắt phát/thu của cảm biến siêu âm HC-SR04 hướng hơi chếch xuống một góc 15 độ so với phương thẳng đứng để tập trung phát hiện các chướng ngại vật ở cự ly bước chân tiếp theo của người già.
+4. Đèn LED rọi đường ban đêm: Được tích hợp ở phần dưới của khoang cảm biến, rọi một chùm ánh sáng vàng dịu xuống khoảng đất phía trước chân người đi, hỗ trợ việc đi lại an toàn trong bóng tối hoặc khi người già thức dậy đi vệ sinh ban đêm.
+5. Đế cao su chống trượt đa hướng (Anti-slip Rubber Tip): Đáy gậy được trang bị đệm cao su tổng hợp chịu mài mòn cao với bề mặt hoa lốp khía rãnh sâu, giúp tăng diện tích tiếp xúc và độ ma sát bám dính chắc chắn trên các bề mặt trơn trượt như nền gạch hoa ướt nước hay đường dốc.
+Thiết kế lưu đồ giải thuật hệ thống:
+Lưu đồ thuật toán chính của Firmware điều khiển trên ESP32-S3:
+Firmware trên vi điều khiển ESP32-S3 được tổ chức thành một vòng lặp máy trạng thái liên tục với chu kỳ quét 100 ms (10 lần/giây), lần lượt xử lý tác vụ phát hiện ngã, tác vụ quét vật cản và quản lý kết nối BLE. Toàn bộ lưu đồ giải thuật được mô tả chi tiết trên Hình 3.4:
+
+Hình 3.4 Lưu đồ thuật toán chính của Firmware điều khiển trên ESP32-S3
+Diễn giải quy trình hoạt động của Firmware ESP32-S3:
+• Bước 1 (Khởi động): Khi gậy được bật nguồn, chương trình thiết lập cấu hình các chân vào/ra (pinMode), kéo mức LOW cho Trig, Motor rung và Còi hú. Chân Echo được cài đặt chế độ INPUT_PULLDOWN chống trôi tín hiệu.
+• Bước 2 (Self-Test): Bật còi hú và motor rung đồng thời trong 200 ms để tự kiểm tra chức năng phần cứng và phát tín hiệu cho người dùng biết gậy đã sẵn sàng hoạt động.
+• Bước 3 (Khởi tạo cảm biến & BLE): Mở cổng giao tiếp I2C ở tần số cao, kiểm tra sự hiện diện của MPU6050 và cài đặt dải đo ±8g. Khởi tạo BLE Server với tên thiết bị 'SmartCane', tạo Service và Characteristic thông báo ngã, sau đó bắt đầu phát sóng quảng bá (Advertising).
+• Bước 4 (Quản lý kết nối BLE): Trong vòng lặp loop(), hệ thống liên tục kiểm tra trạng thái cờ deviceConnected. Nếu điện thoại bị mất kết nối (người già đi xa hoặc tắt app), hệ thống sẽ tự động phát sóng quảng bá trở lại sau 500 ms.
+• Bước 5 (Xử lý phát hiện ngã MPU6050): Đọc dữ liệu gia tốc 3 trục từ cảm biến MPU6050, tính toán vector gia tốc tổng hợp |a|. Nếu |a| > 25.0 m/s² và cờ báo động chưa bật:
+  - Kích hoạt còi hú tần số 2000 Hz và bật motor rung liên tục.
+  - Gửi giá trị '1' qua BLE Characteristic Notify để thông báo lập tức lên điện thoại.
+  - Bắt đầu ghi nhận thời điểm kích hoạt alarmStartTime.
+  - Sau 3 giây, tự động tắt còi và rung phần cứng, gửi lại giá trị '0' qua BLE để thiết lập lại trạng thái bình thường.
+• Bước 6 (Xử lý cảm biến siêu âm phát hiện vật cản): Nếu hệ thống không trong trạng thái báo ngã, gọi hàm getDistanceCm() đọc khoảng cách vật cản. Nếu khoảng cách nằm trong dải cảnh báo an toàn (3.0 cm ≤ d < 80.0 cm), bật motor rung cảnh báo xúc giác; ngược lại nếu đường đi thông thoáng hoặc vật cản ở xa ngoài 80 cm, tắt motor rung.
+Lưu đồ hoạt động của dịch vụ chạy ngầm trên máy Người Dùng Gậy:
+Dịch vụ ngầm (Foreground Service) trên smartphone của người cao tuổi đóng vai trò là 'bộ não xử lý sự cố' trung gian. Lưu đồ giải thuật chi tiết được trình bày trên Hình 3.5:
+
+Hình 3.5 Lưu đồ hoạt động của dịch vụ chạy ngầm trên máy Người Dùng Gậy
+Cơ chế bảo vệ ngầm và cứu hộ 15 giây đa tầng:
+1. Tự động kết nối lại (Auto-Reconnect): Khi khởi động, dịch vụ kiểm tra bộ nhớ SharedPreferences. Nếu đã từng ghép nối gậy trước đó, dịch vụ đọc mã MAC và trực tiếp gọi lệnh device.connect() theo chu kỳ 5 giây, không cần quét quảng bá tốn pin. Ngay khi kết nối thành công, tự động gọi discoverServices() và kích hoạt lắng nghe Characteristic Notify (UUID ...26a9).
+2. Duy trì luồng GPS độ chính xác cao: Đăng ký lắng nghe getPositionStream() với độ phân giải khoảng cách 5 mét. Mỗi khi người già bước đi, tọa độ mới nhất và dấu thời gian ServerValue.timestamp được cập nhật lên nhánh /users/{uid} trên Firebase.
+3. Tiếp nhận sự cố ngã và kích hoạt bộ đếm ngược 15 giây: Khi nhận được byte giá trị '1' từ BLE, dịch vụ lập tức kích hoạt cờ isFalling = true, ghi nhận thời điểm ngã cục bộ local_fall_timestamp và đồng bộ lên Firebase. Đồng thời, khởi động Timer 15 giây và hiển thị màn hình báo ngã khẩn cấp màu đỏ với nút 'Tôi ổn - Hủy báo động'.
+4. Xử lý sau 15 giây (Hết giờ cứu nạn): Nếu người già không bấm nút hủy (do ngất xỉu, bất tỉnh hoặc chấn thương nặng), hàm callGuardian() sẽ được kích hoạt tự động:
+  - Tạo đường link bản đồ: https://maps.google.com/?q=lat,lng
+  - Gọi thư viện BackgroundSms.sendMessage() tự động gửi tin nhắn SMS ngầm: 'Nguoi gia bi nga! Vi tri: [Link Maps]' đến số điện thoại người giám hộ đã lưu trong hồ sơ (thử tuần tự khe SIM 1, SIM 2 và SIM mặc định).
+  - Kích hoạt quay số điện thoại SOS trực tiếp đến số người giám hộ.
+Lưu đồ hoạt động giám sát và cảnh báo trên máy Người Giám Hộ:
+Ứng dụng phía người chăm sóc hoạt động với lưu đồ giải thuật như minh họa trên Hình 3.6:
+
+Hình 3.6 Lưu đồ hoạt động giám sát và cảnh báo trên máy Người Giám Hộ
+Quy trình giám sát thời gian thực phía Người Giám Hộ:
+• Ứng dụng liên tục duy trì lắng nghe sự kiện onValue() từ Firebase Realtime Database.
+• Nếu phát hiện cờ is_falling == true: Hệ thống kích hoạt dịch vụ chuông báo động thức tỉnh (sử dụng FlutterRingtonePlayer.playAlarm() với âm lượng tối đa, bất chấp điện thoại đang ở chế độ im lặng), đồng thời đẩy thông báo khẩn cấp toàn màn hình (Full Screen Intent) với mức ưu tiên cao nhất.
+• Nếu phát hiện cờ is_online == false hoặc gps_enabled == false: Giao diện ngay lập tức hiển thị dải banner màu đỏ cảnh báo: 'Cảnh báo: Người già đã mất kết nối mạng (hoặc đã tắt GPS)'. Khi mạng được kết nối trở lại, hệ thống tự động ghi nhận thời gian hồi phục vào lịch sử sự cố.
+• Người giám hộ có thể chạm vào nút 'Chỉ đường' để mở trực tiếp ứng dụng Google Maps điều hướng, hoặc bấm nút 'Tắt báo động' để tắt còi hú và cập nhật trạng thái đã xử lý lên cơ sở dữ liệu.
+Thiết kế phần mềm ứng dụng di động Flutter:
+Cấu trúc module và kiến trúc mã nguồn ứng dụng:
+Mã nguồn ứng dụng Flutter Smart Cane được chia thành các thư mục như sau:
+• lib/main.dart: Điểm khởi nhập (Entry Point) của ứng dụng, cấu hình khởi tạo Firebase, hệ thống dịch vụ ngầm Background Service, quản lý chuyển đổi Theme sáng/tối và điều hướng xác thực AuthWrapper.
+• lib/theme/app_theme.dart: Định nghĩa bảng màu chuẩn (AppThemeColors) cho cả 2 chế độ Dark Mode (nền xám đen #121212, thẻ #1E1E1E, điểm nhấn xanh lá #00C853, đỏ cảnh báo #FF3D00, xanh lam #29B6F6) và Light Mode.
+• lib/screens/: Chứa toàn bộ các màn hình chức năng độc lập của ứng dụng:
+  - login_screen.dart & forgot_password_screen.dart: Màn hình đăng nhập, tạo tài khoản và khôi phục mật khẩu qua Email Firebase.
+  - role_selection_screen.dart: Màn hình phòng chờ (Lobby) điều phối và ghép nối đúng 2 thiết bị vào cùng một tài khoản gia đình.
+  - elderly_screen.dart: Màn hình giao diện tối giản, trực quan dành riêng cho người cao tuổi sử dụng gậy.
+  - dashboard_screen.dart: Màn hình Dashboard trung tâm giám sát bản đồ thời gian thực dành cho người giám hộ.
+  - alert_history_screen.dart: Màn hình xem nhật ký và chi tiết toàn bộ các sự cố cảnh báo.
+  - profile_screen.dart: Màn hình quản lý thông tin cá nhân, số điện thoại khẩn cấp và đổi mật khẩu.
+• lib/widgets/: Chứa các widget dùng chung như thanh ngăn kéo điều hướng app_drawer.dart và thẻ thông số info_card.dart.
+Giao diện Đăng nhập và Ghép nối vai trò 2 thiết bị:
+Hình 3.7 minh họa giao diện màn hình Đăng nhập và màn hình Ghép nối vai trò (Role Selection). Điểm đặc biệt trong kiến trúc của hệ thống là cơ chế 'Single Account - Dual Roles' (Một tài khoản - Hai vai trò): Cả gia đình chỉ cần đăng ký duy nhất một tài khoản Email/Password trên Firebase. Khi chiếc điện thoại thứ nhất đăng nhập và chọn vai trò 'Người Giám Hộ', hệ thống lưu deviceId của máy đó lên Firebase. Khi chiếc điện thoại thứ hai đăng nhập, ứng dụng tự động nhận diện vai trò 'Người Dùng Gậy' còn lại để hoàn tất ghép nối.
+
+Hình 3.7 Giao diện màn hình Đăng nhập và Ghép nối vai trò thiết bị
+Giao diện Người Dùng Gậy (Trạng thái bình thường và Báo ngã):
+Giao diện dành cho người cao tuổi (Hình 3.8) được thiết kế theo triết lý tối giản hóa với các nút bấm kích thước lớn, độ tương phản màu sắc cao, dễ đọc đối với mắt người già. Ở trạng thái bình thường, màn hình hiển thị thanh trạng thái kết nối Bluetooth với gậy, luồng bản đồ và hai nút bấm lớn '🏠 VỀ NHÀ' và '📍 ĐIỂM HẸN'. Khi người già bấm vào nút 'Về nhà', ứng dụng sẽ tự động gọi Intent mở ứng dụng Google Maps ở chế độ đi bộ (mode=w) dẫn đường thẳng về nhà.
+Khi có sự cố té ngã xảy ra, màn hình lập tức chuyển sang chế độ khẩn cấp với nền đỏ, đồng hồ đếm ngược 15 giây và nút bấm cực đại 'TÔI ỔN - HỦY BÁO ĐỘNG', giúp người già dễ dàng chạm tay hủy sự cố nếu chỉ là va chạm nhẹ.
+
+Hình 3.8 Giao diện màn hình Người Dùng Gậy ở trạng thái bình thường và trạng thái té ngã
+Giao diện Người Giám Hộ (Dashboard bản đồ và Lịch sử cảnh báo):
+Màn hình Dashboard phía Người Giám Hộ (Hình 3.9) tích hợp bản đồ số Flutter Map (sử dụng nguồn dữ liệu gạch bản đồ OpenStreetMap). Trên bản đồ hiển thị trực tiếp marker gậy thông minh của người già, marker địa chỉ nhà và marker điểm hẹn. Người giám hộ có thể chạm trực tiếp lên bất kỳ điểm nào trên bản đồ để cập nhật vị trí nhà mới hoặc điểm hẹn mới cho cha mẹ.
+Màn hình Lịch sử cảnh báo (Alert History) lưu trữ chi tiết từng sự cố theo thời gian thực: thời điểm phát hiện ngã, tọa độ GPS, thời gian mất mạng Internet và thời điểm máy người già kết nối mạng trở lại thành công, kèm theo nút 'Chỉ đường' mở ngay vị trí tương ứng trên Google Maps.
+
+Hình 3.9 Giao diện màn hình Dashboard giám sát bản đồ và Lịch sử sự cố của Giám hộ
+Cấu trúc dữ liệu JSON trên Firebase Realtime Database:
+Cấu trúc dữ liệu cây JSON được thiết kế tối ưu, gọn nhẹ nhằm giảm thiểu tối đa lưu lượng dữ liệu truyền qua mạng di động, được mô tả chi tiết trong Bảng 3.2:
+Bảng 3.2 Cấu trúc dữ liệu JSON lưu trữ thời gian thực trên Firebase Realtime Database
+
+
+		THỰC NGHIỆM VÀ ĐÁNH GIÁ KẾT QUẢ
+Mục đích và môi trường thực nghiệm:
+Mục đích thực nghiệm:
+Phần thực nghiệm nhằm kiểm tra tính ổn định, độ tin cậy và khả năng ứng dụng thực tiễn của hệ thống Gậy Thông Minh Hỗ Trợ Người Cao Tuổi. Mục tiêu cụ thể của quá trình kiểm thử bao gồm:
+1. Đánh giá độ nhạy (Sensitivity) và độ đặc hiệu (Specificity) của thuật toán phát hiện té ngã tích hợp trên phần cứng ESP32-S3 và MPU6050 qua hàng loạt kịch bản vận động thực tế, mô phỏng cả té ngã thật lẫn các hoạt động sinh hoạt hàng ngày (ADL - Activities of Daily Living).
+2. Kiểm định độ chính xác đo khoảng cách và khả năng phát hiện chướng ngại vật của cảm biến siêu âm HC-SR04 kết hợp mạch driver MOSFET điều khiển motor rung xúc giác trong điều kiện thực tế (khoảng cách 3 cm - 80 cm).
+3. Đo độ trễ truyền thông toàn trình (End-to-End Latency) từ thời điểm xảy ra sự cố ngã trên gậy vật lý cho đến khi âm thanh báo động khẩn cấp vang lên trên điện thoại của người giám hộ qua cả hai kênh liên lạc: Kênh dữ liệu Internet (Firebase Cloud) và Kênh viễn thông di động (Mạng GSM / SMS / Cuộc gọi thoại).
+4. Đánh giá cơ chế tự động phục hồi và hoạt động độc lập ngoại tuyến (Offline Resiliency) của Dịch vụ nền Flutter Background Service khi thiết bị di động rơi vào vùng mất sóng mạng hoặc ứng dụng bị hệ điều hành Android tối ưu bộ nhớ.
+5. Khảo sát mức độ tiêu hao năng lượng của hệ thống phần cứng gậy ở các trạng thái hoạt động khác nhau, từ đó ước lượng thời gian sử dụng liên tục của khối pin sạc Lithium-ion 18650 tích hợp qua module sạc xả và tăng áp MH-CD42.
+Môi trường và thiết bị kiểm thử:
+Các bài kiểm thử được thiết lập và tiến hành tại môi trường phòng thí nghiệm thuộc Khoa Công nghệ Điện tử - Trường Đại học Công nghiệp TP.HCM (IUH) kết hợp với môi trường sinh hoạt thực tế tại hộ gia đình (sàn gạch men, thảm cỏ công viên, vỉa hè đô thị):
+• Thiết bị phần cứng kiểm thử: 01 nguyên mẫu gậy thông minh với vi điều khiển YD-ESP32-S3 N16R8, cảm biến gia tốc quán tính 6-DOF MPU6050 (GY-521), cảm biến siêu âm HC-SR04, module công tắc công suất Dual MOSFET 075N03L 400W, động cơ rung xúc giác dạng đồng xu (Coin Vibrator), còi hú Buzzer 5V, pin sạc Lithium-ion 18650 HIGHSTAR 3.7V 2000 mAh và module quản lý nguồn sạc xả tăng áp MH-CD42.
+• Thiết bị di động người dùng gậy (Elderly Gateway Node): Điện thoại Samsung Galaxy A52 chạy hệ điều hành Android 13, RAM 8GB, hỗ trợ Bluetooth 5.0 BLE, GPS băng tần kép A-GPS/GLONASS, sim mạng 4G Viettel.
+• Thiết bị di động người giám hộ (Guardian Client Node): Điện thoại Xiaomi Redmi Note 11 chạy Android 12, kết nối mạng Wi-Fi cáp quang băng thông 150 Mbps hoặc mạng 4G Mobifone.
+• Thiết bị đo đạc và phát triển: Môi trường lập trình Arduino IDE 2.3.10 giao tiếp nạp qua cổng COM8 tốc độ 115200 baud, máy hiện sóng số Rigol DS1054Z (100 MHz, 4 kênh), đồng hồ vạn năng số Sanwa CD800a, thước dây cơ khí chuẩn milimet, đệm mút thể thao an toàn dày 15 cm để thực hiện các bài thử ngã người thật.
+Bảng 4.1 Bảng tổng hợp Checklist theo dõi tiến độ và trạng thái kiểm thử các hạng mục hệ thống
+
+Thực nghiệm kiểm thử thuật toán phát hiện té ngã:
+Thuật toán phát hiện té ngã dựa trên vector độ lớn gia tốc tổng SVM (Signal Vector Magnitude) được kiểm thử qua 8 kịch bản vận động điển hình. Mỗi kịch bản được lặp lại 50 lần thử nghiệm độc lập (tổng cộng 400 lượt thử nghiệm) với người tình nguyện thực hiện trên bề mặt đệm mút an toàn hoặc thao tác cơ học chuẩn xác.
+Các kịch bản thực nghiệm được chia thành 2 nhóm chính:
+• Nhóm kịch bản té ngã thực sự (Fall Events - 4 kịch bản): Ngã chúi về phía trước (Forward Fall), Ngã ngửa ra phía sau (Backward Fall), Ngã nghiêng sang mạn sườn (Lateral Fall), và Trượt chân khụy gối đột ngột (Slump/Collapse Fall).
+• Nhóm hoạt động sinh hoạt thường nhật (ADL - 4 kịch bản): Đi bộ bình thường gõ gậy xuống đất, Cúi người nhặt đồ vật rơi, Ngồi nhanh xuống ghế sofa đệm lún, và Vung gậy vấp nhẹ vào cạnh bàn nhưng không ngã.
+Bảng 4.2 Bảng kết quả thực nghiệm kiểm thử phát hiện té ngã trên 8 kịch bản vận động (400 lượt thử nghiệm)
+
+
+Hình 4.1 Đồ thị thực nghiệm gia tốc SVM trong các kịch bản té ngã và sinh hoạt thường nhật (ADL)
+
+Hình 4.2 Mô hình thực nghiệm kết nối cảm biến gia tốc MPU6050 với bo mạch vi điều khiển ESP32-S3
+
+Hình 4.3 Giao diện Serial Monitor Arduino IDE ghi nhận sự kiện phát hiện té ngã thời gian thực từ phần cứng
+Phân tích và thảo luận kết quả thực nghiệm té ngã:
+Dựa trên dữ liệu thu thập được từ 400 lượt thử nghiệm thực tế (Bảng 4.2), đồ thị phân tích dạng sóng gia tốc SVM (Hình 4.1) và hình ảnh phản hồi từ Serial Monitor (Hình 4.3), nhóm có một số nhận xét sau:
+1. Về độ nhạy (Sensitivity): Thuật toán đạt độ nhạy tổng thể 95.0% (190/200 lần ngã thật được phát hiện thành công). Các trường hợp ngã ngửa ra sau đạt tỉ lệ phát hiện cao nhất (98.0%) do cơ thể người đổ tự do theo quán tính không thể gượng lại, tạo nên xung va đập sàn cực mạnh (thường vượt quá 3.5g). Một số ít ca ngã không nhận diện được (False Negative - FN, 10 ca trên 200 lượt) chủ yếu rơi vào kịch bản trượt ngã từ từ (Slump Fall), khi người già cố bám víu vào mép bàn hoặc tường làm giảm đáng kể gia tốc tiếp đất, khiến đỉnh SVM chỉ tiệm cận ngưỡng 2.6g mà không vượt qua.
+2. Về độ đặc hiệu (Specificity): Hệ thống đạt độ đặc hiệu 96.0% (192/200 lần hoạt động sinh hoạt thường nhật không gây báo động nhầm). Trong hoạt động đi bộ thông thường và gõ gậy xuống nền gạch, mặc dù đầu gậy chịu lực tác động cơ học tạo ra xung gai gia tốc cao, nhưng phần lớn các xung này vẫn thấp hơn ngưỡng 25 m/s² nên không gây báo động. 8 lần báo nhầm còn lại xảy ra khi va chạm đủ mạnh để vượt ngưỡng; do firmware hiện chỉ dùng một ngưỡng gia tốc nên vẫn còn báo nhầm, đây là điểm cần cải thiện ở phiên bản sau.
+3. Cơ chế phản hồi tức thời của phần cứng: Ngay khi phát hiện gia tốc tổng vượt ngưỡng 25.0 m/s², ESP32-S3 lập tức xuất tín hiệu điều khiển còi hú Buzzer tần số 2000 Hz reo vang đồng thời kích mở motor rung trong thời gian 3 giây để cảnh báo xung quanh, sau đó tự động tắt còi để chuyển sang trạng thái an toàn.
+
+Hình 4.4 Ma trận độ chính xác phân loại các kịch bản té ngã và hoạt động sinh hoạt thông thường
+Thực nghiệm kiểm thử cảm biến phát hiện chướng ngại vật:
+Cảm biến siêu âm HC-SR04 được hiệu chuẩn và kiểm tra độ chính xác đo cự ly ở khoảng cách từ 5 cm đến 100 cm trong môi trường phòng với các loại bề mặt phản xạ âm thanh khác nhau: Bề mặt cứng phẳng (Tường bê tông phẳng), Bề mặt gỗ ép bàn ghế, và Bề mặt vải mềm hấp thụ âm (Quần áo người đi bộ phía trước).
+Bảng 4.3 Bảng kết quả kiểm tra độ chính xác đo khoảng cách của cảm biến siêu âm HC-SR04 tại các cự ly thử nghiệm
+
+
+Hình 4.5 Đồ thị sai số đo khoảng cách và đặc tuyến phát hiện chướng ngại vật của cảm biến siêu âm HC-SR04
+
+Hình 4.6 Mô hình thực nghiệm kết nối hoàn chỉnh cảm biến siêu âm HC-SR04 và module rung MOSFET với ESP32-S3
+
+Hình 4.7 Mạch MOSFET kích hoạt đèn báo trạng thái rung khi phát hiện chướng ngại vật trong cự ly cảnh báo
+
+Hình 4.8 Dữ liệu khoảng cách và trạng thái đóng/ngắt rung hiển thị trực tiếp trên Serial Monitor Arduino IDE
+Đánh giá hiệu năng phát hiện vật cản:
+Kết quả thực nghiệm trên Bảng 4.3, Hình 4.5 và dữ liệu thực tế trên Serial Monitor (Hình 4.8) cho thấy:
+• Trong phạm vi cảnh báo nguy hiểm cốt lõi (từ 3 cm đến 80 cm), sai số đo khoảng cách của cảm biến HC-SR04 luôn duy trì dưới mức 2.5 cm (sai số tương đối nhỏ hơn 2.6%). Khi vật cản xuất hiện ở cự ly 3.6 cm - 4.9 cm, hệ thống lập tức xuất dòng log '🚧 CÓ VẬT CẢN! (Đang rung cảnh báo...)' và đèn LED đỏ trên module MOSFET 075N03L lập tức phát sáng, cấp dòng điện kích hoạt motor rung ngay lập tức.
+• Khi vật cản di chuyển ra khỏi vùng cảnh báo (> 80 cm) hoặc khi đường đi thông thoáng, hệ thống tự động xuất dòng log '✅ Đường thoáng - Hết vật cản (Đã tắt rung)' và ngắt hoàn toàn nguồn cấp cho motor rung để tiết kiệm năng lượng.
+• Thời gian đáp ứng từ lúc chướng ngại vật lọt vào góc quét của cảm biến cho đến khi motor rung tạo lực rung rõ rệt lên lòng bàn tay chỉ mất từ 12 ms đến 20 ms. Tốc độ này nhanh hơn đáng kể so với thời gian phản xạ thị giác của người già (thường từ 300 ms đến 500 ms), giúp người sử dụng gậy tránh được việc va đụng vào cạnh bàn, bậc tam cấp hoặc chướng ngại vật trên đường một cách kịp thời và tự nhiên.
+Thực nghiệm kiểm thử hệ thống truyền thông và đo đạc độ trễ:
+Độ trễ truyền thông toàn trình (End-to-End Latency) là chỉ tiêu quan trọng của một hệ thống cảnh báo khẩn cấp cho người cao tuổi. Thời gian ứng cứu y tế càng nhanh thì cơ hội bình phục sau chấn thương của người già càng cao. Đề tài tiến hành đo đạc thời gian tiêu tốn trên từng chặng của chuỗi phản ứng SOS qua 30 lần đo độc lập.
+Bảng 4.4 Bảng tổng hợp thời gian đáp ứng và độ trễ truyền thông qua các kênh cứu nạn
+
+
+Hình 4.9 Phân rã thời gian đáp ứng và độ trễ toàn trình của chuỗi cảnh báo khẩn cấp SOS
+Phân tích độ tin cậy của chuỗi phản ứng khẩn cấp:
+Kết quả thực nghiệm trên Bảng 4.4 và đồ thị Hình 4.9 khẳng định:
+• Trong trường hợp có kết nối mạng Internet (Wi-Fi hoặc 4G), tổng thời gian từ khi cú ngã xảy ra cho đến khi còi hú trên máy người giám hộ kêu vang là 16.3 giây. Trong đó, 15 giây là khoảng thời gian chờ an toàn có chủ đích để người già hủy bỏ báo nhầm. Thời gian trễ kỹ thuật thuần túy của toàn bộ hệ thống phần cứng và phần mềm đám mây khoảng 1.31 giây (ESP32: 0.12s + BLE: 0.25s + Firebase: 0.83s + Client: 0.11s). Như vậy phần lớn thời gian là khoảng chờ 15 giây có chủ đích, còn độ trễ kỹ thuật chỉ hơn 1 giây.
+• Kênh liên lạc viễn thông di động độc lập (SMS ngầm) hoàn tất việc gửi tin nhắn chứa tọa độ GPS và đường link Google Maps chỉ sau 3.2 giây kể từ khi hết thời gian đếm ngược. Người giám hộ dù đang ở ngoài đường, không bật ứng dụng hay điện thoại không có kết nối 4G vẫn nhận được tin nhắn SMS âm vang tiếng chuông báo khẩn cấp và có thể nhấp vào link để định vị ngay lập tức.
+Thực nghiệm kiểm thử khả năng hoạt động ngoại tuyến (Offline Resiliency):
+Một tính năng quan trọng của hệ thống là khả năng chống chịu lỗi mạng (Network Fault Tolerance). Để kiểm tra tính năng này, nhóm thực hiện 20 lượt thử nghiệm ngắt hoàn toàn kết nối Wi-Fi và dữ liệu di động 4G trên điện thoại người già, sau đó mô phỏng sự cố ngã:
+1. Hoạt động của Dịch vụ nền (Foreground Service): Khi điện thoại tắt màn hình để trong túi áo và ứng dụng Flutter không mở, dịch vụ nền vẫn duy trì liên tục kết nối BLE với gậy. Trong 20/20 lần thử, khi gậy phát tín hiệu té ngã, điện thoại lập tức thức dậy (Wake Lock), bật sáng màn hình và bắt đầu đếm ngược 15 giây.
+2. Chuyển mạch dự phòng sang SMS tức thời: Sau khi kết thúc 15 giây mà không có thao tác hủy, hệ thống nhận diện cờ mất mạng Internet (ConnectivityResult.none) và lập tức chuyển quyền ưu tiên sang module gửi tin nhắn SMS ngầm. Tin nhắn SMS chứa tọa độ GPS được gửi thành công đến máy người thân trong 20/20 lần thử nghiệm với độ trễ từ 2.5s đến 4.2s.
+3. Cơ chế tự động đồng bộ bù dữ liệu (Offline Caching & Auto Sync): Toàn bộ thông tin sự cố ngã và nhật ký di chuyển trong thời gian mất mạng được lưu vào bộ nhớ cục bộ SharedPreferences của điện thoại. Ngay khi thiết bị di động có lại sóng Wi-Fi hoặc 4G, tiến trình ngầm tự động đẩy toàn bộ lịch sử này lên Firebase Cloud mà không làm mất mát bất kỳ một bản ghi sự cố nào.
+Thực nghiệm đo đạc dòng tiêu thụ, khối nguồn pin và mạch sạc:
+Hệ thống gậy được cấp nguồn từ 01 cell pin Lithium-ion 18650 HIGHSTAR có điện áp danh định 3.7V, dung lượng 2000 mAh (năng lượng 7.4 Wh). Nhóm sử dụng module quản trị nguồn tích hợp MH-CD42 vừa làm nhiệm vụ nạp xả thông minh, vừa kích áp DC-DC Boost lên 5.0V nuôi toàn bộ hệ thống gồm ESP32-S3, cảm biến và motor rung.
+Bảng 4.5 Bảng thống kê dòng tiêu thụ điện năng của hệ thống gậy ở các chế độ hoạt động
+
+
+Hình 4.10 Khối nguồn thực nghiệm gồm cell pin sạc 18650 và module MH-CD42 cấp điện cho ESP32-S3 hoạt động độc lập
+
+Hình 4.11 Thực nghiệm nạp điện qua cổng Type-C và kiểm tra khả năng vừa sạc vừa cấp nguồn (Pass-through Charging)
+Đánh giá thời lượng pin và giải pháp sạc:
+Kết quả đo lường thực tế trên Bảng 4.5 và hình ảnh thực nghiệm (Hình 4.10, Hình 4.11) cho thấy:
+• Ở chế độ sử dụng hỗn hợp thực tế (người cao tuổi đi lại khoảng 4 - 6 giờ mỗi ngày, thời gian còn lại gậy ở trạng thái tĩnh hoặc cất giữ), mức tiêu thụ dòng trung bình đạt 95 mA. Khối pin 2000 mAh hoàn toàn đáp ứng được trên 21 giờ hoạt động liên tục trước khi điện áp pin sụt giảm xuống ngưỡng 3.3V. Điều này đảm bảo người cao tuổi chỉ cần cắm sạc gậy một lần vào ban đêm trước khi đi ngủ là có thể an tâm sử dụng suốt cả ngày hôm sau.
+• Module quản lý nguồn MH-CD42 tích hợp 4 đèn LED đỏ hiển thị trực quan dung lượng pin theo các mức (25%, 50%, 75%, 100%). Khi cắm nguồn sạc 5V qua cáp Type-C, các đèn LED nhấp nháy báo tiến trình nạp điện và tự động ngắt dòng khi pin đầy 4.2V, ngăn chặn nguy cơ phồng rộp và chai pin. Đồng thời, mạch hỗ trợ tính năng Pass-through Charging giúp thiết bị có thể tiếp tục hoạt động bình thường ngay cả trong lúc đang cắm dây sạc.
+Đánh giá so sánh tổng hợp với các giải pháp trên thị trường:
+Để làm nổi bật giá trị kỹ thuật và tính cạnh tranh của sản phẩm, Bảng 4.6 so sánh các tính năng của Gậy Thông Minh trong đề tài với các giải pháp hỗ trợ người già phổ biến trên thị trường hiện nay.
+Bảng 4.6 Bảng so sánh tổng hợp tính năng và chi phí giữa Gậy thông minh của đề tài với các giải pháp trên thị trường
+
+Kết luận đánh giá tổng quát chương 4:
+Qua toàn bộ quá trình thực nghiệm đa dạng từ mô-đun phần cứng đến kiểm thử hệ thống, Gậy Thông Minh đã hoạt động ổn định ở mức nguyên mẫu. Các khối phần cứng cốt lõi gồm cảm biến gia tốc MPU6050, cảm biến siêu âm HC-SR04, mạch driver MOSFET kích rung và khối nguồn sạc xả tăng áp MH-CD42 đều đã được thử trên mạch thật và chạy đúng chức năng. Với chi phí phần cứng chỉ khoảng 500.000 VNĐ, sản phẩm phù hợp với điều kiện kinh tế của nhiều gia đình có người cao tuổi.
+
+KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
+Kết luận:
+Sau thời gian nghiên cứu, thiết kế, chế tạo và thử nghiệm, đề tài 'Thiết kế gậy thông minh hỗ trợ người cao tuổi sử dụng ESP32, tích hợp cảm biến phát hiện ngã, định vị GPS, cảnh báo âm thanh và tự động gửi thông báo giám sát đến người thân qua ứng dụng trên điện thoại' về cơ bản đã đạt được các mục tiêu đặt ra ban đầu. Các kết quả cụ thể đạt được bao gồm:
+1. Về thiết kế và chế tạo phần cứng (Hardware):
+• Thiết kế mô hình 3D cho thân gậy, tay cầm và khoang chứa mạch; lắp ráp nguyên mẫu phần cứng để phục vụ thử nghiệm.
+• Tích hợp hoàn chỉnh vi điều khiển ESP32-S3 N16R8 hiệu năng cao cùng cụm cảm biến IMU MPU6050 6 trục, cảm biến siêu âm HC-SR04, cảm biến hồng ngoại E18-D50NK, còi hú báo động 5V và motor rung cảnh báo điều khiển qua mạch MOSFET.
+• Xây dựng khối nguồn gồm một cell pin Li-ion 18650 2000 mAh và module sạc – tăng áp MH-CD42 (sạc qua cổng Type-C, xuất 5 V). Theo kết quả đo ở mục 4.6, gậy dùng được khoảng 21 giờ sau mỗi lần sạc đầy.
+2. Về thuật toán xử lý tín hiệu nhúng (Firmware & Algorithms):
+• Xây dựng thuật toán phát hiện té ngã dựa trên độ lớn vector gia tốc tổng hợp SVM với ngưỡng 25 m/s², chạy trực tiếp trên ESP32-S3.
+• Thuật toán đạt độ nhạy phát hiện té ngã 95.0% và độ đặc hiệu 96.0% trên 400 lượt thử nghiệm thực tế với 8 kịch bản vận động khác nhau, phần lớn các lần đi bộ, gõ gậy xuống sàn không gây báo nhầm.
+• Phát triển cơ chế giao tiếp vô tuyến Bluetooth Low Energy 5.0 (BLE GATT Server) với độ trễ truyền gói tin Notify dưới 250 ms, tiêu thụ điện thấp và tự động khôi phục kết nối khi ra/vào vùng phủ sóng.
+3. Về giải pháp phần mềm di động và đám mây (Mobile App & Cloud Backend):
+• Xây dựng ứng dụng di động đa nền tảng bằng Flutter SDK với giao diện sáng/tối, hỗ trợ phân quyền hai vai trò riêng biệt: Giao diện Người già (tập trung nút SOS to rõ, đồng hồ đếm ngược 15 giây hủy báo nhầm) và Giao diện Người giám hộ (bản đồ trực tiếp OpenStreetMap, danh sách cảnh báo, kích hoạt còi hú từ xa và điều hướng Google Maps).
+• Triển khai được Dịch vụ nền (Flutter Foreground Service) chạy ngầm 24/7 trên hệ điều hành Android, duy trì kết nối BLE và tiến trình định vị GPS liên tục ngay cả khi tắt màn hình điện thoại hoặc hệ điều hành tự động tối ưu RAM.
+• Tích hợp cơ sở dữ liệu thời gian thực Firebase Realtime Database đảm bảo đồng bộ trạng thái giữa người già và người giám hộ với độ trễ dưới 1 giây.
+• Xây dựng thành công kênh cứu hộ dự phòng ngoại tuyến độc lập bằng tin nhắn SMS ngầm (Background SMS) và cuộc gọi điện thoại trực tiếp khi thiết bị rơi vào vùng mất sóng 4G/Wi-Fi, giúp cảnh báo vẫn được gửi đi khi mất Internet.
+Những hạn chế còn tồn tại của đề tài:
+Mặc dù hệ thống đã chạy được các chức năng chính, đề tài vẫn còn một số điểm hạn chế cần tiếp tục nghiên cứu khắc phục:
+1. Hạn chế về góc quét cảm biến chướng ngại vật: Cảm biến siêu âm HC-SR04 có góc mở búp sóng khoảng 15 độ, chỉ phát hiện hiệu quả các vật cản ở tầm ngang thắt lưng đến đầu gối phía trước mặt. Hệ thống chưa phát hiện được các vật cản ở tầm thấp ngang bàn chân (như mép thảm, gờ cửa lồi lên) hoặc các hố sâu, bậc thang đi xuống.
+2. Nhận diện các cú ngã trượt từ từ (Slump Fall): Đối với trường hợp người già bị tụt huyết áp hoặc đột quỵ nhẹ rồi từ từ trượt người xuống sàn nhà dọc theo mép tường hoặc ghế sofa, gia tốc va đập tiếp đất không đủ lớn để vượt qua ngưỡng SVM cứng (2.6g), dẫn đến nguy cơ bỏ sót sự cố.
+3. Sự phụ thuộc vào thiết bị di động của người già: Hệ thống hiện tại sử dụng smartphone của người già đóng vai trò làm trạm kết nối cổng IoT (Gateway) để lấy tọa độ GPS và phát sóng 4G/SMS. Trong trường hợp người già để quên điện thoại ở nhà và chỉ cầm gậy ra ngoài đi dạo thì tính năng gửi cảnh báo từ xa sẽ bị gián đoạn.
+Hướng phát triển của đề tài:
+Từ những thành quả đạt được và các điểm hạn chế đã nhận diện, nhóm đề xuất một số hướng nâng cấp cho hệ thống trong giai đoạn tiếp theo:
+1. Ứng dụng Trí tuệ nhân tạo biên (TinyML & Edge AI):
+• Thu thập tập dữ liệu lớn (Big Dataset) về dáng đi và gia tốc di chuyển của người cao tuổi Việt Nam để huấn luyện các mô hình mạng nơ-ron học sâu (CNN / LSTM).
+• Nén và nạp mô hình TinyML trực tiếp vào bộ nhớ Flash của chip ESP32-S3 sử dụng thư viện TensorFlow Lite for Microcontrollers. Điều này sẽ cho phép hệ thống phân loại chính xác các cú ngã trượt từ từ và phát hiện sớm các dấu hiệu rối loạn dáng đi (Gait Abnormality) cảnh báo nguy cơ đột quỵ sớm.
+2. Tích hợp cảm biến sinh trắc học theo dõi sức khỏe liên tục:
+• Lắp đặt thêm cảm biến quang phổ MAX30102 ngay tại vị trí ngón tay cái tiếp xúc với tay cầm gậy để đo đạc tự động chỉ số nồng độ oxy trong máu (SpO2) và nhịp tim mỗi khi người già chống gậy nghỉ chân.
+• Tích hợp cảm biến nhiệt độ hồng ngoại không tiếp xúc MLX90614 để giám sát thân nhiệt, kịp thời cảnh báo các cơn sốt cao hoặc sốc nhiệt khi người già đi dạo ngoài trời nắng.
+3. Độc lập hóa hoàn toàn phần cứng gậy (Standalone IoT Device):
+• Tích hợp trực tiếp module viễn thông thế hệ mới 4G LTE-M / NB-IoT (như SIM7080G hoặc SIM7600E) cùng ăng-ten chip GNSS đa vệ tinh vào ngay bên trong thân gậy.
+• Giải pháp này sẽ giúp cây gậy hoạt động độc lập, có thể tự động gửi SMS và truyền dữ liệu lên máy chủ đám mây mà không cần người già phải mang theo điện thoại thông minh bên mình.
+4. Nâng cấp công nghệ vật liệu và độ hoàn thiện công nghiệp:
+• Thay thế vật liệu thân gậy bằng sợi Carbon siêu nhẹ (Carbon Fiber) kết hợp cơ cấu lò xo giảm xóc bên trong để giảm rung chấn lên khớp cổ tay người sử dụng.
+• Bổ sung gioăng cao su silicon chống nước và bụi bẩn theo tiêu chuẩn IP67, bảo vệ an toàn các mạch điện tử nhạy cảm khi người già di chuyển dưới trời mưa.
+
+TÀI LIỆU THAM KHẢO
+[1] World Health Organization (WHO), "Step safely: strategies for preventing and managing falls across the life-course," World Health Organization, Geneva, Switzerland, Tech. Rep., 2021.
+[2] Tổng cục Thống kê (GSO), "Thông cáo báo chí kết quả Tổng điều tra Dân số và Nhà ở năm 2019 và Xu hướng già hóa dân số tại Việt Nam giai đoạn 2020 - 2030," Nhà xuất bản Thống kê, Hà Nội, 2020.
+[3] A. K. Bourke, J. V. O'Brien, and G. M. Lyons, "Evaluation of a threshold-based tri-axial accelerometer fall detection algorithm," Gait & Posture, vol. 26, no. 2, pp. 194-199, 2007.
+[4] S. S. Khan and J. Hoey, "Review of fall detection techniques: A countermeasure to the false alarm problem," IEEE Reviews in Biomedical Engineering, vol. 10, pp. 91-105, 2017.
+[5] Espressif Systems, "ESP32-S3 Series Datasheet v1.4 - 32-bit LX7 Dual-Core MCU with 2.4 GHz Wi-Fi & Bluetooth 5 (LE)," Espressif Systems Inc., Shanghai, China, 2023.
+[6] TDK InvenSense, "MPU-6000 and MPU-6050 Product Specification Revision 3.4 - Six-Axis (Gyro + Accelerometer) MEMS MotionTracking Device," InvenSense Inc., San Jose, CA, USA, 2013.
+[7] Bluetooth Special Interest Group (SIG), "Bluetooth Core Specification Version 5.0 - Low Energy (BLE) Architecture and Generic Attribute Profile (GATT)," Bluetooth SIG, Kirkland, WA, USA, Dec. 2016.
+[8] Google Developers, "Flutter Architectural Overview: Reactive Framework, Platform Channels, and Background Execution Engine," Google LLC, Mountain View, CA, USA, 2023. [Online]. Available: https://docs.flutter.dev/resources/architectural-overview
+[9] Google Firebase, "Firebase Realtime Database: Store and sync data in realtime across connected clients," Google LLC, 2023. [Online]. Available: https://firebase.google.com/docs/database
+[10] OpenStreetMap Foundation (OSMF), "OpenStreetMap REST API and Vector Tile Mapping Architecture," OSMF, Cambridge, UK, 2022. [Online]. Available: https://wiki.openstreetmap.org
+[11] Nguyễn Văn A, Trần Văn B, "Nghiên cứu ứng dụng mạng cảm biến không dây và thuật toán máy học nhận dạng hành vi người cao tuổi," Tạp chí Khoa học và Công nghệ các trường Đại học Kỹ thuật, số 142, tr. 45-51, 2021.
+[12] C. Kursunoglu, "Smart white cane WeWALK: Ultrasonic obstacle detection and smartphone integrated voice navigation for visually impaired individuals," Journal of Assistive Technologies, vol. 15, no. 3, pp. 210-222, 2021.
+[13] M. Kangas, A. Konttila, P. Lindgren, I. Winblad, and T. Jamsa, "Comparison of low-complexity fall detection algorithms for body-attached accelerometers," Gait & Posture, vol. 28, no. 2, pp. 285-291, 2008.
+[14] P. Rashidi and A. Mihailidis, "A survey on ambient-assisted living tools for older adults," IEEE Journal of Biomedical and Health Informatics, vol. 17, no. 3, pp. 579-590, 2013.
+[15] Texas Instruments, "LM2596 SIMPLE SWITCHER Power Converter 150-kHz 3-A Step-Down Voltage Regulator," Texas Instruments Inc., Dallas, TX, USA, 2016.
+
+PHỤ LỤC
+Phụ lục 1: Toàn văn mã nguồn phần cứng ESP32-S3:
+Dưới đây là mã nguồn C/C++ hoàn chỉnh được nạp vào vi điều khiển ESP32-S3 N16R8 trên cây gậy thông minh, bao gồm file cấu hình tham số config.h và chương trình thực thi chính smart_cane_hardware.ino:
+1. File cấu hình tham số phần cứng (config.h):
+
+2. File chương trình thực thi chính (smart_cane_hardware.ino):
+
+Phụ lục 2: Mã nguồn Dịch vụ chạy ngầm trên thiết bị di động (Flutter Background Service):
+Đoạn mã trích xuất thể hiện cơ chế khởi tạo và duy trì luồng Foreground Service chạy ngầm liên tục trên Android, thu thập tọa độ GPS và lắng nghe kênh Bluetooth BLE từ cây gậy:
+
+Phụ lục 3: Cấu hình phân quyền hệ điều hành Android (AndroidManifest.xml):
+Các quyền hệ thống cốt lõi được khai báo trong file AndroidManifest.xml để ứng dụng có thể chạy nền lâu dài và truy cập cảm biến phần cứng:

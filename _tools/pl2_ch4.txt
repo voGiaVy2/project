@@ -1,0 +1,104 @@
+P1233 [Heading 1]: THỰC NGHIỆM VÀ ĐÁNH GIÁ KẾT QUẢ
+
+P1234 [Heading 2]: Mục đích và phạm vi thực nghiệm:
+
+P1235 [Content]: Nội dung trọng tâm của chương này là tập trung vào việc triển khai và kiểm chứng khả năng hoạt động của hệ thống trong thực tế. Thông qua các kết quả thu được, đánh giá về mức độ ổn định, tính chính xác của hệ thống trong việc nhận diện té ngã. Phạm vi thực nghiệm được giới hạn trong điều kiện triển khai thực tế của đề tài.
+
+P1236 [Heading 2]: Mô hình và môi trường thực nghiệm:
+
+P1237 [Content]: Chương này trình bày quá trình triển khai thực nghiệm hệ thống đã thiết kế, bao gồm việc lắp đặt các thành phần phần cứng, kết nối và cấu hình các module, đồng thời cài đặt phần mềm giám sát. Quá trình được thực hiện theo từng bước nhằm đảm bảo tính đồng bộ giữa phần cứng và phần mềm, từ đó giúp hệ thống vận hành theo đúng yêu cầu thiết kế ban đầu.
+
+P1238 [Content]: Bên cạnh đó, các thử nghiệm được tiến hành trong điều kiện thực tế nhằm đánh giá khả năng nhận diện đối tượng, độ tin cậy của việc thu thập và truyền dữ liệu qua mạng, cũng như tính độ ổn định của hệ thống trong quá trình hoạt động liên tục. Kết quả thi được từ quá trình thực nghiệm là cơ sở quan trọng để phân tích hiệu quả vận hành, xác định các hạn chế và đề xuất các hướng hoàn thiện hệ thống trong tương lai.
+
+P1239 [Heading 2]: Quá trình thực nghiệm:
+
+P1240 [Content]: Chuẩn bị vị trí: lựa chọn các vị trí phù hợp để lắp đặt để radar không bị che khuất, tránh các vật cản và các thiết bị gây ảnh hưởng đến kết quả như quạt, thiết bị điện từ.
+
+P1241 [Content]: Lắp đặt hệ thống: hệ thống được lắp đặt ở vị trí trên cao (trần nhà, tường) với độ cao tối ưu là 270cm.
+
+P1243 [Caption]: Hình 4.1 Vị trí lắp đặt thực nghiệm
+
+P1244 [Content]: Mô phỏng các tư thế:
+
+P1246 [Caption]: Hình 4.2 Mô phỏng đứng bình thường dưới radar
+
+P1251 [Caption]: Hình 4.3 Mô phỏng đứng khom lưng dưới radar
+
+P1255 [Caption]: Hình 4.4 Mô phỏng ngồi trên ghế dưới radar
+
+P1257 [Caption]: Hình 4.5 Mô phỏng té ngã
+
+P1259 [Caption]: Hình 4.6 Mô phỏng bất tỉnh sau khi ngã
+
+P1264 [Caption]: Hình 4.7 Mô phỏng cử động sau khi ngã
+
+P1265 [Content]: Nhận và xử lý dữ liệu từ cảm biến:
+
+P1266 [Content]: RP sau khi nhận và xử lý dữ liệu từ cảm biến. Xuất ra kết quả để sẵn sàng gửi đến đám mây Cloud.
+
+P1268 [Caption]: Hình 4.8 Dữ liệu được xử lý
+
+P1269 [List Paragraph]: Biểu đồ hóa dữ liệu thực tế:
+
+P1270 [Content]: Kết quả thu được từ cảm biến sẽ được RP mô tả trực quan hóa theo dạng biểu đồ hình học các chuyển động thực tế.
+
+P1274 [Caption]: Hình 4.9 Biểu đồ đi lại
+
+P1276 [Caption]: Hình 4.10 Biểu đồ ngã bất tỉnh
+
+P1281 [Caption]: Hình 4.11 Biểu đồ ngã bình thường
+
+P1282 [Content]: Dữ liệu được đẩy lên Cloud (Firrebase):
+
+P1283 [Content]: Dữ liệu được đưa lên hệ thống lưu trữ đám mây Firebase theo dạng JSON. Đây là CSDL theo thời gian thực, từ đó thiết kế và xây dựng giao diện giúp giám sát chi tiết thông tin người dùng mà không xâm phạm đến thông tin cá nhân.
+
+P1285 [Caption]: Hình 4.12 Dữ liệu JSON từ Firebase
+
+P1286 [List Paragraph]: Kết quả hiển thị giao diện:
+
+P1287 [Content]: Ứng dụng được thiết lập dữ liệu trực tuyến được lưu từ CSDL đám mây. Từ các thuộc tính, giao diện không chỉ hiển thị các thông số được theo dõi mà còn phát đi cảnh báo chính xác đến người giám sát với diễn biến hiện tại, giúp các biện pháp y tế được can thiệp nhanh chóng. Bên cạnh đó, ứng dụng còn có khả năng lưu lại lịch sử các vụ té ngã để cơ sở y tế phân tích tần suất và đưa ra các giải pháp hỗ trợ sức khỏe thích hợp.
+
+P1289 [Caption]: Hình 4.13 Giao diện khi không có người - không té ngã
+
+P1291 [Caption]: Hình 4.14 Giao diện khi có người – không té ngã
+
+P1294 [Caption]: Hình 4.15 Giao diện cảnh báo té ngã
+
+P1295 [Caption]: a) Té ngã nhưng còn cử động.
+
+P1296 [Caption]: b) Té ngã nhung bất động
+
+P1301 [Caption]: Hình 4.16 Giao diện theo dõi bất động
+
+P1302 [Caption]: a) Không có bất động lâu
+
+P1303 [Caption]: b) Bất động quá 3 phút
+
+P1304 [Content]: Đối với trường hợp hệ thống bị mất kết nối mạng, hệ thống vẫn duy trì cảnh báo. Các thiết bị như còi báo vẫn phát tín hiệu khẩn cấp tại chỗ và thiết bị liên lạc trực tiếp gọi đến số điện thoại của người giám sát để đưa ra thông báo cứu hộ khẩn cấp. Sau khi có mạng trở lại, các sự kiện té ngã vẫn được ghi nhận trong lịch sử té ngã của ứng dụng.
+
+P1305 [Heading 2]: Đánh giá chung:
+
+P1306 [Content]: Ưu điểm:
+
+P1307 [Content]: Dựa trên thử nghiệm ở nhiều dáng người khác nhau. Hệ thống phát hiện chính xác các trường hợp té ngã và bất động.
+
+P1308 [Content]: Hệ thống cảnh báo gồm còi báo phát tín hiệu, gọi điện trực tiếp đến cho người thân hầu như ngay lập tức khi phát hiện có sự cố khẩn cấp.
+
+P1309 [Content]: Các trường hợp ngã từ trên ghế hoặc ngã từ từ sau đó bất tỉnh cũng được phát hiện.
+
+P1310 [Content]: Với các tình huống dễ gây nhầm lẫn như các ADL, chạy nhảy, nằm ngủ có thể phân biệt được và chỉ thông báo khi thấy có dấu hiệu bất thường về chuyển động hoặc bất động quá lâu.
+
+P1311 [Content]: Ứng dụng cảnh báo phản ánh đúng với thực tế.
+
+P1312 [Content]: Hệ thống hoạt động tốt trong các điều kiện môi trường: ẩm ướt, thiếu sáng.
+
+P1313 [Content]: Hiệu năng ổn định trong thời gian dài hoạt động.
+
+P1314 [Content]: Nhược điểm:
+
+P1315 [Content]: Chưa thử nghiệm với môi trường nhiều người.
+
+P1316 [Content]: Hệ thống có thể bị treo khi nhiệt độ môi trường quá cao.
+
+P1317 [Content]: Kích cỡ hệ thống còn to.
+

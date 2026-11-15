@@ -1,0 +1,102 @@
+Paragraphs: 687
+Tables: 18
+Sections: 1
+Total headings: 98
+  [Heading 1N] MỤC LỤC
+  [Heading 1N] DANH MỤC HÌNH ẢNH
+  [Heading 1N] DANH MỤC BẢNG BIỂU
+  [Heading 1N] DANH MỤC TỪ VIẾT TẮT
+  [Heading 1N] MỞ ĐẦU
+  [Heading 1] TỔNG QUAN VỀ ĐỀ TÀI
+  [Heading 2] Thực trạng già hóa dân số và nguy cơ té ngã ở người cao tuổi:
+  [Heading 3] Bối cảnh già hóa dân số tại Việt Nam và trên thế giới:
+  [Heading 3] Nguy cơ té ngã và hội chứng sợ ngã (Fear of Falling):
+  [Heading 2] Ảnh hưởng toàn diện của té ngã:
+  [Heading 3] Ảnh hưởng về thể chất và tâm lý đối với bản thân người bị ngã:
+  [Heading 3] Gánh nặng kinh tế và áp lực chăm sóc đối với gia đình:
+  [Heading 3] Gánh nặng đối với hệ thống y tế và an sinh xã hội:
+  [Heading 2] Nhu cầu cấp thiết về thiết bị trợ giúp thông minh:
+  [Heading 2] Khảo sát các phương pháp phát hiện và cảnh báo té ngã hiện nay:
+  [Heading 3] Phương pháp sử dụng thiết bị đeo trên người (Wearable Devices):
+  [Heading 3] Phương pháp sử dụng thị giác máy tính và Camera (Computer Vision):
+  [Heading 3] Phương pháp phân tích âm thanh môi trường (Acoustic Analysis):
+  [Heading 3] Phương pháp sử dụng Radar sóng milimet (mmWave Radar):
+  [Heading 3] Phương pháp tích hợp trên gậy chống thông minh (Smart Cane):
+  [Heading 2] Các công trình nghiên cứu và mô hình liên quan:
+  [Heading 3] Nghiên cứu về thiết bị đeo trên tay của tác giả Magnus Michael Marquez Musngi (2023):
+  [Heading 3] Nghiên cứu về thiết bị đeo thân người dựa trên cảm biến quán tính và áp suất:
+  [Heading 3] Hệ thống phát hiện té ngã dựa trên thị giác máy tính và học sâu:
+  [Heading 3] Các nghiên cứu về gậy thông minh hỗ trợ người già và người khiếm thị:
+  [Heading 2] Định hướng nghiên cứu và giải pháp đề xuất của đề tài:
+  [Heading 1] CƠ SỞ LÝ THUYẾT
+  [Heading 2] Tổng quan về vi điều khiển ESP32-S3:
+  [Heading 3] Kiến trúc phần cứng và tập lệnh Xtensa 32-bit LX7 Dual-Core:
+  [Heading 3] Phân bố bộ nhớ và các ngoại vi trên chip:
+  [Heading 2] Công nghệ truyền thông không dây Bluetooth Low Energy (BLE 5.0):
+  [Heading 3] Khái niệm và ưu thế năng lượng của BLE so với Bluetooth Classic:
+  [Heading 3] Kiến trúc GATT Profile: Service, Characteristic và Descriptor:
+  [Heading 2] Cảm biến quán tính MPU6050 và thuật toán đo lường:
+  [Heading 3] Cấu tạo và nguyên lý hoạt động của gia tốc kế và con quay hồi chuyển 6-DOF:
+  [Heading 3] Giao tiếp I2C và định dạng khung truyền:
+  [Heading 3] Thuật toán phát hiện té ngã dựa trên ngưỡng gia tốc tổng hợp (SVM):
+  [Heading 2] Cảm biến phát hiện khoảng cách vật cản (HC-SR04 & E18-D50NK):
+  [Heading 3] Cảm biến siêu âm HC-SR04 và nguyên lý phản xạ sóng âm 40 kHz:
+  [Heading 3] Kỹ thuật đo xung pulseIn kết hợp micros() chống treo ESP32-S3:
+  [Heading 3] Cảm biến quang hồng ngoại E18-D50NK dự phòng:
+  [Heading 2] Mạch kích công suất và cơ chế cảnh báo xúc giác/âm thanh:
+  [Heading 3] Mạch điều khiển động cơ rung lệch tâm (ERM) qua MOSFET AOD4184:
+  [Heading 3] Còi hú báo động Buzzer và khối nguồn sạc Pin Li-ion 18650:
+  [Heading 2] Hệ thống định vị toàn cầu GPS và dịch vụ định vị di động:
+  [Heading 3] Nguyên lý định vị vệ tinh GPS và giao thức NMEA 0183:
+  [Heading 3] Dịch vụ định vị kết hợp (Fused Location Provider) và thư viện Geolocator:
+  [Heading 2] Nền tảng đám mây Firebase Cloud:
+  [Heading 3] Cơ sở dữ liệu thời gian thực Firebase Realtime Database:
+  [Heading 3] Cơ chế theo dõi trạng thái mạng (Presence System) qua .info/connected:
+  [Heading 2] Framework lập trình ứng dụng di động đa nền tảng Flutter:
+  [Heading 3] Kiến trúc đa tầng của Framework Flutter:
+  [Heading 3] Dịch vụ chạy ngầm liên tục (Flutter Background Service) trên Android:
+  [Heading 1] PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG
+  [Heading 2] Phân tích yêu cầu thiết kế hệ thống:
+  [Heading 3] Yêu cầu người dùng (User Requirements):
+  [Heading 3] Yêu cầu kỹ thuật (Technical Specifications):
+  [Heading 2] Sơ đồ khối và kiến trúc hệ thống:
+  [Heading 3] Phân tích chức năng các khối trong hệ thống:
+  [Heading 2] Thiết kế phần cứng và sơ đồ nguyên lý kết nối chi tiết:
+  [Heading 3] Bảng phân bổ chân GPIO và tính toán linh kiện:
+  [Heading 2] Thiết kế cơ khí và vỏ bảo vệ gậy thông minh (Mô hình 3D):
+  [Heading 2] Thiết kế lưu đồ giải thuật hệ thống:
+  [Heading 3] Lưu đồ thuật toán chính của Firmware điều khiển trên ESP32-S3:
+  [Heading 3] Lưu đồ hoạt động của dịch vụ chạy ngầm trên máy Người Dùng Gậy:
+  [Heading 3] Lưu đồ hoạt động giám sát và cảnh báo trên máy Người Giám Hộ:
+  [Heading 2] Thiết kế phần mềm ứng dụng di động Flutter:
+  [Heading 3] Cấu trúc module và kiến trúc mã nguồn ứng dụng:
+  [Heading 3] Giao diện Đăng nhập và Ghép nối vai trò 2 thiết bị:
+  [Heading 3] Giao diện Người Dùng Gậy (Trạng thái bình thường và Báo ngã):
+  [Heading 3] Giao diện Người Giám Hộ (Dashboard bản đồ và Lịch sử cảnh báo):
+  [Heading 3] Cấu trúc dữ liệu JSON trên Firebase Realtime Database:
+  [Heading 1] THỰC NGHIỆM VÀ ĐÁNH GIÁ KẾT QUẢ
+  [Heading 2] Mục đích và môi trường thực nghiệm:
+  [Heading 3] Mục đích thực nghiệm:
+  [Heading 3] Môi trường và thiết bị kiểm thử:
+  [Heading 2] Thực nghiệm kiểm thử thuật toán phát hiện té ngã:
+  [Heading 3] Phân tích và thảo luận kết quả thực nghiệm té ngã:
+  [Heading 2] Thực nghiệm kiểm thử cảm biến phát hiện chướng ngại vật:
+  [Heading 3] Đánh giá hiệu năng phát hiện vật cản:
+  [Heading 2] Thực nghiệm kiểm thử hệ thống truyền thông và đo đạc độ trễ:
+  [Heading 3] Phân tích độ tin cậy của chuỗi phản ứng khẩn cấp:
+  [Heading 2] Thực nghiệm kiểm thử khả năng hoạt động ngoại tuyến (Offline Resiliency):
+  [Heading 2] Thực nghiệm đo đạc dòng tiêu thụ và thời lượng pin:
+  [Heading 3] Đánh giá thời lượng pin và giải pháp sạc:
+  [Heading 2] Đánh giá so sánh tổng hợp với các giải pháp trên thị trường:
+  [Heading 3] Kết luận đánh giá tổng quát chương 4:
+  [Heading 1N] KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
+  [Heading 2] Kết luận:
+  [Heading 2] Những hạn chế còn tồn tại của đề tài:
+  [Heading 2] Hướng phát triển của đề tài:
+  [Heading 1N] TÀI LIỆU THAM KHẢO
+  [Heading 1N] PHỤ LỤC
+  [Heading 2] Phụ lục 1: Toàn văn mã nguồn phần cứng ESP32-S3:
+  [Heading 3] 1. File cấu hình tham số phần cứng (config.h):
+  [Heading 3] 2. File chương trình thực thi chính (smart_cane_hardware.ino):
+  [Heading 2] Phụ lục 2: Mã nguồn Dịch vụ chạy ngầm trên thiết bị di động (Flutter Background Service):
+  [Heading 2] Phụ lục 3: Cấu hình phân quyền hệ điều hành Android (AndroidManifest.xml):

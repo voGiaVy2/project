@@ -1,0 +1,139 @@
+Created At: 2026-11-02T20:56:58+07:00
+Completed At: 2026-11-02T20:56:58+07:00
+Showing lines 101-236 of 236
+101:   digitalWrite(VIBRATOR_PIN, HIGH);
+102:   digitalWrite(BUZZER_PIN, HIGH);
+103:   delay(200);
+104:   digitalWrite(VIBRATOR_PIN, LOW);
+105:   digitalWrite(BUZZER_PIN, LOW);
+106:   Serial.println(">> Rung & Còi hoạt động tốt!");
+107: 
+108:   // 3. Khởi tạo cảm biến MPU6050 (I2C)
+109:   Wire.begin(I2C_SDA_PIN, I2C_SCL_PIN); 
+110:   if (!mpu.begin()) {
+111:     Serial.println("⚠️ CẢNH BÁO: Chưa tìm thấy MPU6050 (Kiểm tra chân SDA/SCL). Hệ thống vẫn tiếp tục chạy!");
+112:     mpuFound = false;
+113:   } else {
+114:     Serial.println("✅ MPU6050 đã kết nối thành công!");
+115:     mpu.setAccelerometerRange(MPU6050_RANGE_8_G);
+116:     mpuFound = true;
+117:   }
+118: 
+119:   // 4. Khởi tạo Bluetooth BLE
+120:   BLEDevice::init(BLE_DEVICE_NAME);
+121:   pServer = BLEDevice::createServer();
+122:   pServer->setCallbacks(new MyServerCallbacks());
+123: 
+124:   BLEService *pService = pServer->createService(BLE_SERVICE_UUID);
+125: 
+126:   // Đặc tính (Characteristic) báo té ngã cho App
+127:   pCharacteristicFall = pService->createCharacteristic(
+128:                       BLE_CHARACTERISTIC_FALL,
+129:                       BLECharacteristic::PROPERTY_READ   |
+130:                       BLECharacteristic::PROPERTY_NOTIFY
+131:                     );
+132:   pCharacteristicFall->addDescriptor(new BLE2902());
+133:   pCharacteristicFall->setValue("0"); // Mặc định là 0 (Bình thường)
+134: 
+135:   pService->start();
+136:   
+137:   // Phát sóng BLE để App quét và tự động kết nối
+138:   BLEAdvertising *pAdvertising = BLEDevice::getAdvertising();
+139:   pAdvertising->addServiceUUID(BLE_SERVICE_UUID);
+140:   pAdvertising->setScanResponse(false);
+141:   pAdvertising->setMinPreferred(0x0);
+142:   BLEDevice::startAdvertising();
+143:   
+144:   Serial.println("✅ Bluetooth đang phát sóng! Đợi App kết nối...");
+145:   Serial.println("========================================================\n");
+146: }
+147: 
+148: void loop() {
+149:   // 1. Quản lý kết nối Bluetooth (Tự động phát sóng lại nếu App ngắt kết nối)
+150:   if (!deviceConnected && oldDeviceConnected) {
+151:       delay(500); 
+152:       pServer->startAdvertising(); 
+153:       Serial.println("🔄 Bắt đầu phát sóng lại Bluetooth...");
+154:       oldDeviceConnected = deviceConnected;
+155:   }
+156:   if (deviceConnected && !oldDeviceConnected) {
+157:       oldDeviceConnected = deviceConnected;
+158:   }
+159: 
+160:   // 2. Xử lý cảm biến gia tốc MPU6050 (Phát hiện té ngã)
+161:   if (mpuFound) {
+162:     sensors_event_t a, g, temp;
+163:     mpu.getEvent(&a, &g, &temp);
+164:     float totalAccel = sqrt(a.acceleration.x * a.acceleration.x + 
+165:                             a.acceleration.y * a.acceleration.y + 
+166:                             a.acceleration.z * a.acceleration.z);
+167: 
+168:     // Khi gia tốc đột ngột > 25.0 m/s^2 -> PHÁT HIỆN TÉ NGÃ!
+169:     if (totalAccel > 25.0 && !isAlarmActive) {
+170:       Serial.println("\n🚨🚨🚨 PHÁT HIỆN TÉ NGÃ! 🚨🚨🚨");
+171:       
+172:       // Kích hoạt còi hú báo động và motor rung
+173:       digitalWrite(VIBRATOR_PIN, HIGH);
+174:       digitalWrite(BUZZER_PIN, HIGH); 
+175:       tone(BUZZER_PIN, 2000);
+176:       
+177:       isAlarmActive = true;
+178:       alarmStartTime = millis();
+179: 
+180:       // Bắn tín hiệu "1" qua Bluetooth cho App để App lấy GPS & gọi người thân
+181:       if (deviceConnected) {
+182:         pCharacteristicFall->setValue("1");
+183:         pCharacteristicFall->notify();
+184:         Serial.println("📡 Đã bắn tín hiệu BÁO TÉ NGÃ lên App!");
+185:       }
+186:     }
+187:   }
+188: 
+189:   // Tắt báo động té ngã sau 3 giây (tránh hú liên tục)
+190:   if (isAlarmActive && (millis() - alarmStartTime > 3000)) {
+191:     digitalWrite(VIBRATOR_PIN, LOW);
+192:     digitalWrite(BUZZER_PIN, LOW);
+193:     noTone(BUZZER_PIN);
+194:     isAlarmActive = false;
+195:     
+196:     // Gửi tín hiệu "0" qua Bluetooth cho App để reset trạng thái
+197:     if (deviceConnected) {
+198:       pCharacteristicFall->setValue("0");
+199:       pCharacteristicFall->notify();
+200:     }
+201:     Serial.println("✅ Đã tắt báo động té ngã phần cứng.\n");
+202:   }
+203: 
+204:   // 3. XỬ LÝ CẢM BIẾN SIÊU ÂM HC-SR04 (Chỉ hoạt động khi không có báo động ngã)
+205:   static bool wasObstacle = false;
+206: 
+207:   if (!isAlarmActive) {
+208:     float distance = getDistanceCm();
+209: 
+210:     // Kiểm tra vật cản theo ngưỡng cài đặt trong config.h (mặc định 3cm - 80cm)
+211:     bool isCurrentObstacle = (distance >= OBSTACLE_DISTANCE_MIN_CM && distance < OBSTACLE_DISTANCE_MAX_CM);
+212: 
+213:     if (isCurrentObstacle) {
+214:       // CÓ VẬT CẢN TRƯỚC MẶT -> BẬT MOTOR RUNG
+215:       digitalWrite(VIBRATOR_PIN, HIGH);
+216: 
+217:       if (!wasObstacle) {
+218:         Serial.print(" CÓ VẬT CẢN! Khoảng cách: ");
+219:         Serial.print(distance, 1);
+220:         Serial.println(" cm (Đang rung cảnh báo...)");
+221:         wasObstacle = true;
+222:       }
+223:     } 
+224:     else {
+225:       // HẾT VẬT CẢN -> TẮT MOTOR RUNG
+226:       digitalWrite(VIBRATOR_PIN, LOW);
+227: 
+228:       if (wasObstacle) {
+229:         Serial.println("Đường thoáng - Hết vật cản (Đã tắt rung).");
+230:         wasObstacle = false;
+231:       }
+232:     }
+233:   }
+234: 
+235:   delay(100); // Tốc độ quét 10 lần / giây (phản hồi cực nhạy)
+236: }

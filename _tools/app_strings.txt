@@ -1,0 +1,388 @@
+﻿=== main.dart
+import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'theme/app_theme.dart';
+import 'screens/login_screen.dart';
+import 'screens/role_selection_screen.dart';
+import 'package:flutter_background_service/flutter_background_service.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter_background_service_android/flutter_background_service_android.dart';
+import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
+import 'package:flutter_blue_plus/flutter_blue_plus.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:latlong2/latlong.dart';
+import 'package:background_sms/background_sms.dart';
+import 'package:android_intent_plus/android_intent.dart';
+import 'package:android_intent_plus/flag.dart';
+title: 'Gậy Thông Minh',
+'my_foreground_silent',
+'Cảnh Báo Té Ngã',
+description: 'Kênh thông báo cho chức năng Giám hộ',
+notificationChannelId: 'my_foreground_silent',
+initialNotificationTitle: 'Smart Cane',
+initialNotificationContent: 'Đang bảo vệ ngầm...',
+@pragma('vm:entry-point')
+@pragma('vm:entry-point')
+service.on('setAsForeground').listen((event) {
+service.on('setAsBackground').listen((event) {
+FirebaseDatabase.instance.ref('users/${user.uid}').update({
+'ble_connected': status,
+FirebaseDatabase.instance.ref('users/${user.uid}').onValue.listen((event) {
+if (data.containsKey('guardianPhone')) {
+guardianPhone = data['guardianPhone'].toString();
+final onlineRef = FirebaseDatabase.instance.ref('users/${user.uid}/is_online');
+FirebaseDatabase.instance.ref('users/${user.uid}').update({'ble_enabled': isBleOn});
+FirebaseDatabase.instance.ref('users/${user.uid}').update({'gps_enabled': isGpsOn});
+FirebaseDatabase.instance.ref('users/${user.uid}').update({'gps_enabled': isGpsOn});
+FirebaseDatabase.instance.ref('users/${user.uid}').update({
+FirebaseDatabase.instance.ref('users/${user.uid}').update({
+'ble_connected': isBleConnected,
+final mapLink = 'https://maps.google.com/?q=${currentLocation.latitude},${currentLocation.longitude}';
+FirebaseDatabase.instance.ref('users/${user.uid}').update({'is_falling': false});
+final url = 'https://maps.google.com/?q=${currentLocation.latitude},${currentLocation.longitude}';
+FirebaseDatabase.instance.ref('users/${user.uid}').update({
+'local_fall_timestamp': localTime,  // Dùng để đo đếm độ trễ do Offline
+'fall_location_url': url,
+await prefs.setString('cane_mac_address', r.device.remoteId.str);
+String? savedMac = prefs.getString('cane_mac_address');
+await prefs.remove('cane_mac_address'); // Xóa MAC cũ
+final snapshot = await FirebaseDatabase.instance.ref('users/${user.uid}/is_falling').get();
+final lastNotif = prefs.getInt('last_notif_time') ?? 0;
+prefs.setInt('last_notif_time', now);
+var ringtone = prefs.getString('alarm_ringtone') ?? 'alarm';
+'Ông/Bà vừa bị ngã! Mở app ngay để xem vị trí!',
+'my_foreground_silent',
+'Cảnh Báo Té Ngã',
+=== alert_history_screen.dart
+import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:url_launcher/url_launcher.dart';
+FirebaseDatabase.instance.ref('users/${user.uid}/alert_history').onValue.listen((event) {
+await FirebaseDatabase.instance.ref('users/${user.uid}/alert_history').remove();
+title: Text(isFall ? 'Chi tiết Báo Động' : 'Chi tiết Sự Kiện', style: TextStyle(color: isFall ? Colors.red : colors.textPrimary, fontWeight: FontWeight.bold)),
+Text(data.containsKey('resolved_time') ? 'Mất mạng lúc: ${data['time']}' : 'Thời gian: ${data['time']}', style: TextStyle(color: colors.textPrimary, fontSize: 16)),
+if (data.containsKey('resolved_time')) ...[
+Text('Khôi phục lúc: ${data['resolved_time']}', style: TextStyle(color: colors.primaryGreen, fontSize: 16, fontWeight: FontWeight.bold)),
+Text(isFall ? 'Đã phát hiện người dùng bị ngã tại vị trí này.' : (data.containsKey('resolved_time') ? 'Máy người già đã tự động kết nối lại mạng thành công.' : msg), style: TextStyle(color: colors.textSecondary)),
+child: const Text('Đóng', style: TextStyle(color: Colors.grey)),
+final url = Uri.parse('https://www.google.com/maps/search/?api=1&query=${data['lat']},${data['lng']}');
+if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Không thể mở Google Maps!')));
+label: const Text('Chỉ Đường', style: TextStyle(color: Colors.white)),
+title: const Text('Lịch Sử Cảnh Báo'),
+centerTitle: true,
+title: Text('Xóa lịch sử', style: TextStyle(color: colors.textPrimary)),
+content: Text('Bạn có chắc chắn muốn xóa toàn bộ lịch sử?', style: TextStyle(color: colors.textSecondary)),
+TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Hủy')),
+child: const Text('Xóa', style: TextStyle(color: Colors.white)),
+? Center(child: Text('Chưa có cảnh báo nào', style: TextStyle(color: colors.textSecondary)))
+title: Text(msg, style: TextStyle(color: color, fontWeight: FontWeight.bold)),
+subtitle: Text(data['time'] ?? '', style: TextStyle(color: colors.textSecondary)),
+=== dashboard_screen.dart
+import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:intl/intl.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
+import 'package:vibration/vibration.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
+import 'package:flutter_background_service/flutter_background_service.dart';
+_roleSubscription = FirebaseDatabase.instance.ref('users/${user.uid}').onValue.listen((event) {
+if (data['guardianDeviceId'] != myDeviceId) {
+if (data.containsKey('home_location')) {
+final homeData = data['home_location'] as Map<dynamic, dynamic>;
+if (data.containsKey('alert_history')) {
+final historyMap = data['alert_history'] as Map<dynamic, dynamic>;
+_addAlertToFirebase(currentGps ? 'Thông tin: Người Già ĐÃ BẬT lại GPS' : 'Cảnh báo: Người Già ĐÃ TẮT GPS');
+_addAlertToFirebase('Cảnh báo: Người Già ĐÃ MẤT KẾT NỐI Mạng (WiFi/4G)');
+_addAlertToFirebase(currentBleEnabled ? 'Thông tin: Người Già ĐÃ BẬT lại Bluetooth' : 'Cảnh báo: Người Già ĐÃ TẮT Bluetooth!');
+if (data.containsKey('ble_connected')) {
+final currentBle = data['ble_connected'] == true;
+_addAlertToFirebase(currentBle ? 'Thông tin: Gậy ĐÃ KẾT NỐI lại với điện thoại' : 'Cảnh báo: Gậy ĐÃ MẤT KẾT NỐI Bluetooth');
+final fallTime = data['local_fall_timestamp'] ?? 0;
+_addAlertToFirebase('Người Già đã ngã (trong lúc mất mạng)');
+content: Text('Cập nhật: Có 1 sự cố té ngã xảy ra trong lúc Người Già mất kết nối mạng!'),
+_addAlertToFirebase('PHÁT HIỆN TÉ NGÃ KHẨN CẤP!');
+final timeStr = DateFormat('HH:mm - dd/MM/yyyy').format(DateTime.now());
+'map_url': 'https://www.google.com/maps/search/?api=1&query=${_currentLocation.latitude},${_currentLocation.longitude}',
+final ref = FirebaseDatabase.instance.ref('users/${user.uid}/alert_history');
+final ref = FirebaseDatabase.instance.ref('users/${user.uid}/alert_history');
+if (map['message'].toString().contains('MẤT KẾT NỐI Mạng') && !map.containsKey('resolved_time')) {
+final nowFormat = DateFormat('HH:mm - dd/MM/yyyy').format(DateTime.now());
+'resolved_time': nowFormat,
+'message': 'Sự cố Mạng (Đã kết nối lại)',
+debugPrint('Error resolving wifi loss: $e');
+title: const Text('🚨 BÁO ĐỘNG TÉ NGÃ 🚨', style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold)),
+content: const Text('Phát hiện ông/bà vừa té ngã. Bản đồ đã cập nhật vị trí mới nhất!'),
+child: const Text('Đã Rõ', style: TextStyle(color: Colors.grey)),
+child: const Text('Chỉ Đường (Google Maps)', style: TextStyle(color: Colors.white)),
+await FirebaseDatabase.instance.ref('users/${user.uid}').update({
+title: Text('Mở Google Maps?', style: TextStyle(color: colors.textPrimary, fontWeight: FontWeight.bold)),
+content: Text('Bạn có muốn mở ứng dụng Google Maps để xem chi tiết vị trí này không?', style: TextStyle(color: colors.textSecondary)),
+child: const Text('Hủy', style: TextStyle(color: Colors.grey)),
+final url = Uri.parse('https://www.google.com/maps/search/?api=1&query=${_currentLocation.latitude},${_currentLocation.longitude}');
+if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Không thể mở Google Maps!')));
+label: const Text('Đồng Ý', style: TextStyle(color: Colors.white)),
+title: Text(isFall ? 'Chi tiết Báo Động' : 'Chi tiết Sự Kiện', style: TextStyle(color: isFall ? Colors.red : colors.textPrimary, fontWeight: FontWeight.bold)),
+Text(data.containsKey('resolved_time') ? 'Mất mạng lúc: ${data['time']}' : 'Thời gian: ${data['time']}', style: TextStyle(color: colors.textPrimary, fontSize: 16)),
+if (data.containsKey('resolved_time')) ...[
+Text('Khôi phục lúc: ${data['resolved_time']}', style: TextStyle(color: colors.primaryGreen, fontSize: 16, fontWeight: FontWeight.bold)),
+Text(isFall ? 'Đã phát hiện người dùng bị ngã tại vị trí này.' : (data.containsKey('resolved_time') ? 'Máy người già đã tự động kết nối lại mạng thành công.' : msg), style: TextStyle(color: colors.textSecondary)),
+child: const Text('Đóng', style: TextStyle(color: Colors.grey)),
+final url = Uri.parse('https://www.google.com/maps/search/?api=1&query=${data['lat']},${data['lng']}');
+if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Không thể mở Google Maps!')));
+label: const Text('Chỉ Đường', style: TextStyle(color: Colors.white)),
+title: const Text('Quản lý Điểm Hẹn'),
+content: const Text('Điểm hẹn đã được thiết lập. Bạn muốn thay đổi vị trí mới hay xóa điểm hẹn hiện tại?'),
+TextButton(onPressed: () { Navigator.pop(context); _clearLocation('destination'); }, child: const Text('Xóa', style: TextStyle(color: Colors.red))),
+TextButton(onPressed: () { Navigator.pop(context); setState(() => _selectingLocationType = 'destination'); }, child: const Text('Thay Đổi')),
+title: const Text('Quản lý Địa chỉ Nhà'),
+content: const Text('Địa chỉ nhà đã được thiết lập. Bạn muốn thay đổi vị trí mới hay xóa vị trí hiện tại?'),
+TextButton(onPressed: () { Navigator.pop(context); _clearLocation('home_location'); }, child: const Text('Xóa', style: TextStyle(color: Colors.red))),
+TextButton(onPressed: () { Navigator.pop(context); setState(() => _selectingLocationType = 'home_location'); }, child: const Text('Thay Đổi')),
+setState(() => _selectingLocationType = 'home_location');
+await FirebaseDatabase.instance.ref('users/${user.uid}/$type').set({
+final message = type == 'home_location' ? 'Thông tin: Giám hộ đã cài đặt Địa chỉ Nhà mới' : 'Thông tin: Giám hộ đã thiết lập Điểm Hẹn mới';
+ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(type == 'home_location' ? 'Đã lưu địa chỉ nhà!' : 'Đã lưu điểm hẹn thành công!')));
+await FirebaseDatabase.instance.ref('users/${user.uid}/$type').remove();
+=== elderly_screen.dart
+import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
+import 'package:flutter_background_service/flutter_background_service.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_blue_plus/flutter_blue_plus.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:flutter/services.dart';
+_roleSubscription = FirebaseDatabase.instance.ref('users/${user.uid}').onValue.listen((event) async {
+if (data['elderlyDeviceId'] != myDeviceId) {
+if (data.containsKey('home_location')) {
+final homeData = data['home_location'] as Map<dynamic, dynamic>;
+title: Text('Mở Google Maps?', style: TextStyle(color: colors.textPrimary, fontWeight: FontWeight.bold)),
+content: Text('Bạn có muốn mở ứng dụng Google Maps để xem chi tiết vị trí này không?', style: TextStyle(color: colors.textSecondary)),
+child: const Text('Hủy', style: TextStyle(color: Colors.grey)),
+final url = Uri.parse('https://www.google.com/maps/search/?api=1&query=${_currentLocation.latitude},${_currentLocation.longitude}');
+if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Không thể mở Google Maps!')));
+label: const Text('Đồng Ý', style: TextStyle(color: Colors.white)),
+await prefs.remove('cached_password');
+Text('Đang lấy vị trí GPS...', style: TextStyle(color: colors.textSecondary)),
+urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+userAgentPackageName: 'com.example.smart_cane',
+? 'Vui lòng BẬT BLUETOOTH\nđể kết nối với Gậy Thông Minh'
+: 'Vui lòng BẬT VỊ TRÍ (GPS)\nđể Giám Hộ có thể theo dõi',
+label: Text(!_isBleEnabled ? 'Bật Bluetooth Ngay' : 'Bật Vị Trí', style: const TextStyle(color: Colors.white)),
+Text('ĐÃ TÉ NGÃ!', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: colors.warningRed)),
+!_isBleEnabled ? 'ĐANG TẮT Bluetooth (BẤM VÀO ĐÂY ĐỂ BẬT)' : (_isBleConnected ? 'Gậy đã kết nối' : 'Đang tìm Gậy...'),
+_isGpsEnabled ? 'GPS đang bật' : 'ĐANG TẮT GPS (BẤM VÀO ĐÂY ĐỂ BẬT)',
+final url = Uri.parse('google.navigation:q=${_homeLocation!.latitude},${_homeLocation!.longitude}&mode=w');
+if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Không thể mở Google Maps!')));
+label: const Text('VỀ NHÀ', style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.bold)),
+final url = Uri.parse('google.navigation:q=${_destination!.latitude},${_destination!.longitude}&mode=w');
+if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Không thể mở Google Maps!')));
+label: const Text('ĐIỂM HẸN', style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.bold)),
+const MethodChannel('com.example.smart_cane/app_killer').invokeMethod('closeAppAndRemoveFromRecents');
+label: const Text('Đóng hoàn toàn', style: TextStyle(color: Colors.orange)),
+label: Text('Đăng xuất', style: TextStyle(color: colors.warningRed)),
+=== forgot_password_screen.dart
+import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+_showMessage('Vui lòng nhập Email của bạn!');
+title: Row(
+Flexible(child: Text('Đã Gửi Link Thành Công!', style: TextStyle(color: colors.textPrimary, fontSize: 18))),
+'Chúng tôi đã gửi một đường dẫn khôi phục mật khẩu đến email của bạn. Vui lòng bấm vào đường dẫn đó để đặt lại mật khẩu mới.',
+'LƯU Ý: Thư khôi phục có thể bị Google lọc nhầm vào mục HỘP THƯ RÁC (SPAM). Vui lòng kiểm tra thật kỹ hòm thư của bạn!',
+child: const Text('Đã Hiểu', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+_showMessage('Đã xảy ra lỗi: ${e.toString()}');
+case 'user-not-found':
+return 'Email này chưa được đăng ký trong hệ thống!';
+case 'invalid-email':
+return 'Định dạng Email không hợp lệ!';
+return 'Lỗi: $errorCode';
+title: const Text('Khôi Phục Mật Khẩu'),
+'Quên Mật Khẩu?',
+'Đừng lo lắng! Vui lòng nhập địa chỉ Email bạn đã dùng để đăng ký. Chúng tôi sẽ gửi cho bạn một đường dẫn bảo mật để đặt lại mật khẩu mới.',
+hintText: 'Nhập Email của bạn...',
+=== login_screen.dart
+import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'role_selection_screen.dart';
+import 'forgot_password_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+final savedPassword = prefs.getString('cached_password');
+await prefs.setString('cached_password', password);
+_showMessage('Vui lòng nhập Email và Mật khẩu!');
+_showMessage('Đã xảy ra lỗi: ${e.toString()}');
+case 'invalid-credential':
+case 'INVALID_LOGIN_CREDENTIALS':
+case 'invalid-login-credentials':
+return 'Tài khoản chưa được đăng ký hoặc sai mật khẩu!';
+case 'user-not-found':
+return 'Tài khoản chưa được đăng ký.';
+case 'wrong-password':
+return 'Mật khẩu không chính xác.';
+case 'email-already-in-use':
+return 'Email này đã được sử dụng để đăng ký.';
+case 'invalid-email':
+return 'Định dạng email không hợp lệ.';
+case 'weak-password':
+return 'Mật khẩu quá yếu (cần ít nhất 6 ký tự).';
+return 'Lỗi xác thực: $errorCode';
+_isLoginMode ? 'Đăng Nhập' : 'Tạo Tài Khoản',
+'Gậy Thông Minh - Bảo vệ an toàn',
+hintText: 'Email (ví dụ: abcd@gmail.com)',
+hintText: 'Mật khẩu (ít nhất 6 ký tự)',
+'Quên mật khẩu?',
+_isLoginMode ? 'Bạn chưa có tài khoản? ' : 'Đã có tài khoản? ',
+=== profile_screen.dart
+import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_database/firebase_database.dart';
+child: const Text('ĐÃ HIỂU', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+final snapshot = await FirebaseDatabase.instance.ref('users/${user!.uid}/guardianPhone').get();
+await FirebaseDatabase.instance.ref('users/${user!.uid}').update({
+'guardianPhone': newPhone,
+_showMessage('Thành Công!', 'Hồ sơ của bạn đã được cập nhật.', Icons.check_circle, AppTheme.colors(context).primaryGreen);
+_showMessage('Có lỗi xảy ra', e.toString(), Icons.error_outline, AppTheme.colors(context).warningRed);
+_showMessage('Thiếu thông tin', 'Vui lòng nhập đủ mật khẩu cũ và mới!', Icons.warning_amber_rounded, AppTheme.colors(context).warningRed);
+_showMessage('Mật khẩu quá ngắn', 'Mật khẩu mới phải từ 6 ký tự trở lên!', Icons.warning_amber_rounded, AppTheme.colors(context).warningRed);
+if (prefs.getString('cached_password') != null) {
+await prefs.setString('cached_password', newPassword);
+_showMessage('Thành Công!', 'Mật khẩu của bạn đã được cập nhật.', Icons.check_circle, AppTheme.colors(context).primaryGreen);
+String msg = 'Đã xảy ra lỗi hệ thống';
+if (e.code == 'wrong-password' || e.code == 'invalid-credential') {
+msg = 'Mật khẩu cũ không chính xác!';
+_showMessage('Có lỗi xảy ra', e.toString(), Icons.error_outline, AppTheme.colors(context).warningRed);
+title: Text(
+'Hồ Sơ Của Tôi',
+Text('Tài khoản Email', style: TextStyle(color: colors.textSecondary, fontWeight: FontWeight.bold)),
+Text('Tên Hiển Thị', style: TextStyle(color: colors.textSecondary, fontWeight: FontWeight.bold)),
+hintText: 'Nhập tên của bạn...',
+Text('Số Điện Thoại Khẩn Cấp (Người Giám Hộ)', style: TextStyle(color: colors.textSecondary, fontWeight: FontWeight.bold)),
+hintText: 'Nhập SĐT để gọi khi té ngã...',
+child: const Text('Lưu Thông Tin Hồ Sơ', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
+Text('Đổi Mật Khẩu', style: TextStyle(color: colors.textPrimary, fontSize: 18, fontWeight: FontWeight.bold)),
+hintText: 'Mật khẩu cũ',
+hintText: 'Mật khẩu mới (Tối thiểu 6 ký tự)',
+child: const Text('CẬP NHẬT MẬT KHẨU', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
+=== role_selection_screen.dart
+import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'dashboard_screen.dart';
+import 'elderly_screen.dart';
+import 'login_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+deviceId = 'device_${DateTime.now().millisecondsSinceEpoch}';
+_showMessage('Vai trò này đã có thiết bị kết nối hoặc lỗi thiết bị!');
+final String roleName = role == 'guardian' ? 'Người Giám Hộ' : 'Người Dùng Gậy';
+title: Text('Xác nhận vai trò', style: TextStyle(color: colors.textPrimary)),
+'Bạn có chắc chắn thiết bị này sẽ đóng vai trò là\n[$roleName]?',
+child: Text('Hủy', style: TextStyle(color: colors.textSecondary)),
+child: const Text('Chắc chắn', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+final dbRef = FirebaseDatabase.instance.ref('users/${user!.uid}');
+if (role == 'guardian') 'guardianDeviceId': _myDeviceId,
+if (role == 'elderly') 'elderlyDeviceId': _myDeviceId,
+_showMessage('Đã chọn thành công! Đang chờ thiết bị kia...', color: colors.primaryGreen);
+_showMessage('Lỗi cập nhật: ${e.toString()}');
+await FirebaseDatabase.instance.ref('users/${user!.uid}').update({
+'guardianDeviceId': null,
+'elderlyDeviceId': null,
+_showMessage('Đã hủy kết nối thành công!', color: colors.primaryGreen);
+_showMessage('Lỗi hủy kết nối: ${e.toString()}');
+title: Text('Đăng Xuất', style: TextStyle(color: colors.textPrimary)),
+content: Text('Bạn có chắc chắn muốn đăng xuất khỏi tài khoản này?', style: TextStyle(color: colors.textSecondary)),
+child: Text('Hủy', style: TextStyle(color: colors.textSecondary)),
+child: const Text('Đăng Xuất', style: TextStyle(color: Colors.white)),
+await prefs.remove('cached_password');
+title: const Text('Ghép Nối Thiết Bị'),
+stream: FirebaseDatabase.instance.ref('users/${user!.uid}').onValue,
+Text('Đang kiểm tra kết nối...', style: TextStyle(color: colors.textSecondary)),
+guardianDeviceId = data['guardianDeviceId']?.toString();
+elderlyDeviceId = data['elderlyDeviceId']?.toString();
+Text('Ghép nối thành công! Đang chuyển trang...', style: TextStyle(color: colors.textPrimary)),
+'Tài khoản này đã đủ 2 thiết bị kết nối!',
+'Một máy đang làm Giám Hộ, một máy đang làm Gậy. Máy của bạn không thể tham gia trừ khi chủ tài khoản tự hủy kết nối trên máy của họ.',
+'Bạn là:\n${isGuardian ? "NGƯỜI GIÁM HỘ" : "NGƯỜI DÙNG GẬY"}',
+'Vui lòng dùng thiết bị còn lại đăng nhập vào tài khoản này và chọn vai trò còn lại để hoàn tất ghép nối.',
+Text('Đang chờ thiết bị thứ 2...', style: TextStyle(color: colors.iconBlue, fontWeight: FontWeight.bold)),
+label: Text(
+'Hủy & Cài đặt lại vai trò',
+title: 'Người Giám Hộ',
+subtitle: hasGuardian ? 'Đã có thiết bị kết nối' : 'Theo dõi thông số, cảnh báo và định vị gậy',
+title: 'Người Dùng Gậy',
+subtitle: hasElderly ? 'Đã có thiết bị kết nối' : 'Chế độ SOS và tự động phát định vị GPS',
+=== app_theme.dart
+import 'package:flutter/material.dart';
+centerTitle: true,
+centerTitle: true,
+=== app_drawer.dart
+import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
+import 'package:flutter_background_service/flutter_background_service.dart';
+import 'package:flutter/services.dart';
+title: Text('Đăng Xuất', style: TextStyle(color: colors.textPrimary)),
+content: Text('Bạn có chắc chắn muốn đăng xuất khỏi tài khoản này?', style: TextStyle(color: colors.textSecondary)),
+child: Text('Hủy', style: TextStyle(color: colors.textSecondary)),
+child: const Text('Đăng Xuất', style: TextStyle(color: Colors.white)),
+await prefs.remove('cached_password');
+title: Text('Đổi Vai Trò', style: TextStyle(color: colors.textPrimary)),
+content: Text('Bạn có chắc chắn muốn HỦY kết nối của cả 2 máy để chọn lại vai trò không?', style: TextStyle(color: colors.textSecondary, height: 1.5)),
+child: Text('Hủy', style: TextStyle(color: colors.textSecondary)),
+child: const Text('Chắc chắn', style: TextStyle(color: Colors.white)),
+await FirebaseDatabase.instance.ref('users/${user.uid}').update({
+'guardianDeviceId': null,
+'elderlyDeviceId': null,
+final snapshot = await FirebaseDatabase.instance.ref('users/${user.uid}/guardianPhone').get();
+title: Text('Cài đặt Cuộc gọi Khẩn cấp', style: TextStyle(color: colors.textPrimary)),
+Text('Nhập số điện thoại của bạn để App Người Già tự động gọi khi phát hiện té ngã:', style: TextStyle(color: colors.textSecondary, height: 1.5)),
+hintText: 'VD: 0912345678',
+child: Text('Hủy', style: TextStyle(color: colors.textSecondary)),
+child: const Text('Lưu số', style: TextStyle(color: Colors.white)),
+await FirebaseDatabase.instance.ref('users/${user.uid}').update({
+'guardianPhone': phoneController.text.trim(),
+'Lưu Thành Công!',
+'App Người Già sẽ tự động gọi vào số này khi phát hiện té ngã.',
+child: const Text('ĐÃ HIỂU', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+String selectedRingtone = prefs.getString('alarm_ringtone') ?? 'alarm';
+{'name': 'Chuông Báo Thức To', 'file': 'alarm'},
+{'name': 'Chuông Cuộc Gọi', 'file': 'ringtone'},
+title: Text('Cài đặt Chuông Báo Động', style: TextStyle(color: colors.textPrimary)),
+title: Text(ringtone['name']!, style: TextStyle(color: colors.textPrimary)),
+child: Text('Hủy', style: TextStyle(color: colors.textSecondary)),
+child: const Text('Lưu', style: TextStyle(color: Colors.white)),
+await prefs.setString('alarm_ringtone', selectedRingtone);
+ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Đã lưu chuông báo động!')));
+final email = user?.email ?? 'Người dùng Ẩn danh';
+roleName == 'Người Giám Hộ' ? Icons.security : Icons.elderly,
+final emailText = currentUser?.email ?? 'Người dùng Ẩn danh';
+title: Text('Hồ sơ của tôi', style: TextStyle(color: colors.textPrimary)),
+if (roleName == 'Người Giám Hộ') ...[
+title: Text('🏠 Cài Đặt Địa Chỉ Nhà', style: TextStyle(color: colors.textPrimary)),
+title: Text('📍 Quản lý Điểm Hẹn', style: TextStyle(color: colors.textPrimary)),
+title: Text('Lịch Sử Cảnh Báo', style: TextStyle(color: colors.textPrimary)),
+title: Text('Hướng dẫn sử dụng', style: TextStyle(color: colors.textPrimary)),
+title: Text(isDark ? 'Chế độ Tối' : 'Chế độ Sáng', style: TextStyle(color: colors.textPrimary)),
+if (roleName == 'Người Giám Hộ') ...[
+title: Text('SĐT Gọi Khẩn Cấp', style: TextStyle(color: colors.textPrimary)),
+title: Text('Cài Đặt Chuông Báo', style: TextStyle(color: colors.textPrimary)),
+title: Text('Đổi Vai Trò (Hủy kết nối)', style: TextStyle(color: colors.primaryGreen, fontWeight: FontWeight.bold)),
+title: Text('Đóng Hoàn Toàn Ứng Dụng', style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold)),
+const MethodChannel('com.example.smart_cane/app_killer').invokeMethod('closeAppAndRemoveFromRecents');
+title: Text('Đăng Xuất', style: TextStyle(color: colors.warningRed, fontWeight: FontWeight.bold)),
+=== info_card.dart
+import 'package:flutter/material.dart';

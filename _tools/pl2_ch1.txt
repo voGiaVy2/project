@@ -1,0 +1,332 @@
+P319 [Heading 1]: TỔNG QUAN VỀ ĐỀ TÀI
+
+P320 [Heading 2]: Thực trạng:
+
+P321 [Heading 3]: Thực trạng té ngã trong xã hội:
+
+P322 [Content]: Theo Tổ chức Y tế Thế giới (WHO), té ngã là nguyên nhân gây tử vong do chấn thương không cố ý xếp thứ hai thế giới, chỉ sau tai nạn giao thông. Đối với những người trên 79 tuổi, té ngã là được đánh giá là nguyên nhân hàng đầu. Mỗi năm, ước tính có khoảng 684.000 ca tử vong do té ngã. Trong đó, nhóm người cao tuổi chiếm tỉ lệ  từ 28-35% (cứ bốn người trên 65 tuổi thì có một người ngã mỗi năm).
+
+P323 [Content]: Không chỉ dừng lại ở con số tử vong, gánh nặng từ các sự cố té ngã cũng vô cùng lớn. Có đến khoảng 10-15% các vụ té ngã gây ra những tổn thương như chấn thương sọ não, gãy xương, chấn thương phần mềm… Với những người cao tuổi, các chấn thương này để lại ảnh hưởng nghiêm trọng. Đáng lo hơn khi hiện nay xu hướng người cao tuổi sống đơn độc, không có người chăm sóc trong xã hội chiếm khoảng 27-30%. Khi xảy ra sự cố, nếu không có người thân hoặc các hệ thống phát hiện có thể dẫn đến tình trạng chấn thương nghiêm trọng và tử vong.
+
+P324 [Heading 3]: Ảnh hưởng của té ngã:
+
+P325 [Heading 4]: Đối với cá nhân người bị ngã:
+
+P326 [Content]: Hậu quả trực tiếp về thể chất và tính mạng: té ngã gây ra các chấn thương từ nhẹ như trầy xước, bầm tím đến nghiêm trọng như chấn thương sọ não, gãy xương, chấn thương nội tạng. Các trường hợp nằm lâu (long-lie) sau khi ngã do không được phát hiện xử lý kịp thời còn dẫn đến các biến chứng nguy hiểm như hạ thân nhiệt, viêm phổi, suy đa tạng,…
+
+P327 [Content]: Về tâm lý: Sau tai nạn, người cao tuổi thường rơi vào tình trạng ám ảnh, lo âu được gọi là “Hội chứng sợ ngã”. Nỗi sợ ngã khiến họ tự ti, hạn chế các hoạt động di chuyển cơ bản dẫn đến giảm khả năng vận động làm đẩy nhanh quá trình lão hóa.
+
+P328 [Content]: Mất đi sự độc lập: phụ thuộc hoàn toàn vào người chăm sóc hoặc các thiết bị hỗ trợ làm giảm đáng kể chất lượng cuộc sống.
+
+P329 [Heading 4]: Đối với gia đình:
+
+P330 [Content]: Gánh nặng tài chính: các chi phí y tế cho phẫu thuật, thuốc men và trị liệu phục hồi chức năng cho nạn nhân thường rất tốn kém. Các trường hợp nặng, các chi phí này có thể kéo dài suốt đời gây áp lực kinh tế cho các thành viên trong gia đình.
+
+P331 [Content]: Áp lực chăm sóc: người thân phải dành nhiều thời gian, công sức để chăm sóc bệnh nhân. Điều này dẫn đến sự xáo trộn công việc, ảnh hưởng sức khỏe dẫn đến duy giảm thu nhập và gây ra tâm lý stress.
+
+P332 [Content]: Sự lo âu: những gia đình có người cao tuổi sống đơn độc, người thân ở xa luôn trong trạng thái sợ người thân bị ngã không ai phát hiện gây ra sự bất an trong cuộc sống hằng ngày.
+
+P333 [Heading 4]: Đối với xã hội:
+
+P334 [Content]: Ngân sách y tế: Với một số quốc gia có sự già hóa tăng cao, ngân sách dành cho việc điều trị chấn thương té ngã là rất lớn (hàng chục tỷ USD ở Hoa Kì). Điều này làm tốn nhiều nguồn tài nguyên và nguồn lực quốc gia để dành cho các sự phát triển khác.
+
+P335 [Content]: Áp lực nguồn lực y tế: Sự gia tăng các ca té ngã gây ra tình trạng quá tải cho các bệnh viện, trung tâm hồi phục và ngày càng khan hiếm nhân viên y tế, nhân viên chăm sóc điều dưỡng chuyên nghiệp.
+
+P336 [Content]: Ảnh hưởng đến an sinh xã hội: Khi một bộ phận người cao tuổi suy giảm khả năng tự lập do té ngã, xã hội phải đối mặt với những thách thức trong việc xây dựng các mô hình hỗ trợ, viện dưỡng lão và hệ thống giám sát.
+
+P337 [Heading 3]: Nhu cầu phòng tránh té ngã:
+
+P338 [Content]: Xuất phát từ thực trạng báo động và hệ lụy đa chiều, việc phát triển các giải pháp phòng tránh té ngã không còn là một lựa chọn mà trở thành một nhu cầu cấp thiết trong thời đại công nghệ hóa.
+
+P339 [Content]: Sau các cú ngã, hiện tượng nằm lâu (long-lie) và nguyên nhân gián tiếp gây ra tử vong ở người cao tuổi. Việc phát hiện và cảnh báo nhanh chóng trong “thời gian vàng” giúp rút ngắn thời gian cứu hộ cho người bị ngã, tránh được các biến chứng ảnh hưởng về sau. Phát hiện sớm còn giúp giảm thiểu
+
+P340 [Content]: Có gần 30% người cao tuổi sống một mình, không có người giám sát. Nhu cầu về các thiết bị giám sát từ xa vô cùng cấp thiết, giúp người thân và bộ phận y tế theo dõi các bất thường trong hoạt động thường ngày. Bên cạnh đó, cho phép người cao tuổi duy trì lối sống độc lập an toàn dưới sự giám sát y tế liên tục.
+
+P341 [Heading 2]: Các phương pháp phát hiện và cảnh báo té ngã hiện nay:
+
+P342 [Heading 3]: Phương pháp sử dụng thiết bị đeo:
+
+P343 [Content]: Thiết bị đeo là một công cụ giúp giám sát trực tiếp các hoạt động của người sử dụng tại mọi thời điểm. Tuy nhiên, các nghiên cứu về thiết bị đeo chỉ chiếm khoảng 4,5% và đang giảm dần độ phổ biến. Lý do không chỉ là sự phiền phức khi đang sử dụng nhưng thiết bị hết dung lượng pin, gây bất tiện trong các hoạt động thường ngày và có nhiều người cao tuổi từ chối việc đeo các thiết bị trên người.
+
+P344 [Content]: Mặc dù độ phổ biến có xu hướng giảm dần, nhưng đây cũng là một trong những phương pháp tiêu chuẩn để so sánh với các công nghệ mới.
+
+P345 [Content]: Các loại thiết bị đeo như: đồng hồ thông minh, thiết bị gắn thắt lưng, nhẫn, dây chuyền, vòng tay thông minh,…
+
+P347 [Caption]: Hình 1.1 Các thiết bị đeo phát hiện té ngã
+
+P348 [Content]: Thuật toán sử dụng: dựa trên ngưỡng, học máy (Machine Learning), học sâu (Deep Learning),…
+
+P349 [Content]: Ưu điểm:
+
+P350 [Content]: Kích thước nhỏ gọn, có thể mang đi bất cứ đâu.
+
+P351 [Content]: Bảo vệ quyền riêng tư người dùng.
+
+P352 [Content]: Dữ liệu theo thời gian thực, độ chính xác cao.
+
+P353 [Content]: Chi phí tầm trung.
+
+P354 [Content]: Nhược điểm:
+
+P355 [Content]: Sau thời gian dài sử dụng thời lượng pin giảm, cần phải sạc thường xuyên.
+
+P356 [Content]: Phải luôn đeo bên người, người già thường quên mang thiết bị hoặc không đeo thiết bị khi tắm.
+
+P357 [Content]: Một số thiết bị đeo gây vướng víu, nặng nề trong các hoạt động thường ngày.
+
+P358 [Content]: Giới hạn cho một người sử dụng.
+
+P359 [Heading 3]: Phương pháp sử dụng camera:
+
+P360 [Content]: Phương pháp này thu thập các hình ảnh hoặc nhiệt độ cơ thể để phân tích hoạt động của con người. Đây là phương pháp đang dần thay thế cho các phương pháp đeo trên người nhờ giám sát thụ động.
+
+P361 [Content]: Cảm biến sử dụng: camera giám sát, cảm biến nhiệt, camera hồng ngoại, camera độ sâu,…
+
+P362 [Content]: Thuật toán sử dụng: trích xuất khung xương, vùng bao (Bounding Box), học sâu (DL),…
+
+P363 [Content]: Ưu điểm:
+
+P364 [Content]: Độ chính xác cao.
+
+P365 [Content]: Không cần đeo thiết bị trên người.
+
+P366 [Content]: Cung cấp dữ liệu trực quan.
+
+P367 [Content]: Nhược điểm:
+
+P368 [Content]: Xâm phạm quyền riêng tư.
+
+P369 [Content]: Điểm mù: camera chỉ quan sát được trong phạm vi đường thẳng, nếu bị vật thể che khuất thì không nhìn thấy được.
+
+P370 [Content]: Môi trường: một số camera không hỗ trợ hồng ngoại trong không tối sẽ hoạt động kém, ảnh hưởng của nhiệt độ.
+
+P371 [Content]: Chi phí cao.
+
+P373 [Caption]: Hình 1.2 Hệ thống cảnh báo té ngã bằng hình ảnh
+
+P374 [Heading 3]: Phương pháp phân tích âm thanh:
+
+P375 [Content]: Tận dụng âm thanh phát ra từ môi trường xung quanh để nhận diện sự cố. Đây là một giải pháp mang tính bổ trợ cao, đặt biệt  là trong các không gian  kín.
+
+P376 [Content]: Cảm biến sử dụng: micro đơn lẻ hoặc mảng micro, các hệ thống thu âm tích hợp trong robot di động và loa thông minh.
+
+P377 [Content]: Thuật toán sử dụng: phân tích phổ âm, học sâu để phân loại tiếng động (tiếng va chạm, tiếng nói chuyện, tiếng kêu cứu, tiếng đổ vỡ).
+
+P378 [Content]: Ưu điểm:
+
+P379 [Content]: Không xâm lấn: không sử dụng hình ảnh bảo vệ quyền riêng tư người dùng.
+
+P380 [Content]: Lắp đặt được tại các không gian kín như nhà tắm, phòng ngủ.
+
+P381 [Content]: Nhược điểm:
+
+P382 [Content]: Phần cứng: yêu cầu cần phải có micro có độ nhạy cao.
+
+P383 [Content]: Lắp đặt bất tiện: thường gắn micro trên người hoặc tích hợp vào robot di động.
+
+P384 [Content]: Nhiễu tín hiệu: nhầm lẫn với các âm thanh sinh hoạt thường ngày.
+
+P385 [Content]: Không hỗ trợ trực tiếp trong tình huống khẩn cấp.
+
+P386 [Heading 3]: Phương pháp sử dụng radar:
+
+P387 [Content]: PHTN dựa trên sự phản xạ của sóng trong dải tần số từ 60GHz đến 65GHz kết hợp với sự thay đổi đột ngột về vận tốc và gia tốc.
+
+P388 [Content]: Cảm biến sử dụng: CW Radar, FMCW Radar, UWB Radar,…
+
+P389 [Content]: Thuật toán sử dụng: xử lý tín hiệu cơ bản FFT/STFT, dựa trên ngưỡng, ML, DL,…
+
+P391 [Caption]: Hình 1.3 Mô hình phát hiện té ngã bằng radar
+
+P392 [Content]: Ưu điểm:
+
+P393 [Content]: Bảo vệ quyền riêng tư: không ghi lại hình ảnh thực tế phù hợp lắp đặt ở các khu vực nhạy cảm như phòng tắm, phòng ngủ.
+
+P394 [Content]: Hoạt động trong mọi điều kiện: không bị ảnh hưởng bởi ánh sáng, hoạt động tốt trong môi trường bóng tối.
+
+P395 [Content]: Không cần thiết bị đeo: khắc phục được nhược điểm người già hay quên đeo hoặc quên sạc pin các thiết bị.
+
+P396 [Content]: Khả năng xuyên vật cản: có thể phát hiện chuyển động xuyên qua tường mỏng hoặc đồ nội thất.
+
+P397 [Content]: Nhược điểm:
+
+P398 [Content]: Chi phí và độ phức tạp: các hệ thống radar độ phân giải cao (mmWave) thường có giá thành đắt hơn camera thông thường và yêu cầu tài nguyên tính toán lớn để xử lý PC 3D.
+
+P399 [Content]: Nhiễu môi trường: dễ bị nhiễu bởi các vật thể kim loại gây phản xạ đa đường hoặc các thiết bị như di dộng, quạt máy.
+
+P400 [Content]: Hạn chế về góc nhìn: độ chính xác thường giảm dần khi đối tượng di chuyển ra xa trung tâm quan sát hoặc ở các góc nghiêng lớn hơn so với ăng-ten.
+
+P401 [Content]: Báo động giả: các hoạt động có đặc điểm động học tương tự té ngã như ngồi xuống quá nhanh hoặc cúi người có thể gây nhầm lẫn cho thuật toán.
+
+P402 [Heading 2]: Nghiên cứu và mô hình liên quan:
+
+P403 [Heading 3]: Nghiên cứu về thiết bị đeo trên tay của tác giả Magnus Michael Marquez Musngi:
+
+P404 [Heading 4]: Mục tiêu:
+
+P405 [Content]: PHTN bằng cách tích hợp các cảm biến vào smartwatch thương mại, bao gồm: gia tốc kế ba trục, con quay hồi chuyển, cảm biến áp suất khí quyển. Nghiên cứu này sử dụng hai thuật toán giám sát với nhiều tham số để nhận diện các giai đoạn.
+
+P406 [Content]: Gia tốc thẳng đứng - VA(az): Phát hiện cú va chạm mạnh với mặt đất.
+
+P407 [Content]: Vận tốc thẳng đứng - VV(vz): nhận diện chuyển động nhanh trong quá trình ngã.
+
+P408 [Content]: Vận tốc thẳng đứng trung bình - AVV: Lọc các chuyển động tay ngắn và mạnh trong sinh hoạt.
+
+P409 [Content]: Sự thay đổi độ cao - DA (): xác định sự thay đổi vị trí từ cao xuống thấp thông qua cảm biến áp suất.
+
+P410 [Content]: Góc cẳng tay - FA: thông số dùng để phân biệt ngã với các hoạt động khác.
+
+P411 [Content]: Diện tích độ lớn tín hiệu (SMA): dùng để đánh giá mức độ vận động của cổ tay trước va chạm (Descent SMA) và sau khi va chạm (Post-Impact SMA).
+
+P413 [Caption]: Hình 1.4 Nghiên cứu về thiết bị đeo trên tay
+
+P414 [Content]: Thuật toán 1: Thuật toán này bắt đầu bằng cách theo dõi tốc độ của chuỗi để phát hiện mức độ giảm tốc độ. Khi tốc độ đạt ngưỡng, tiếp tục theo dõi gia tốc thẳng đứng trong vòng 0.8 giây để phát hiện tác động. Việc phát hiện này sẽ kích hoạt theo dõi các tham số còn lại (trừ góc cẳng tay). Nếu tất cả tham số đều vượt qua ngưỡng đã được thiết lập trong thời gian theo dõi thì sự kiện được xác định là một cú ngã.
+
+P415 [Content]: Thuật toán 2: được chia thành 2 đường dẫn riêng biệt.
+
+P416 [Content]: Đường dẫn thứ nhất (Path 1) bổ sung theo dõi góc cẳng tay sau khi tiếp đất cùng với các tham số được sử dụng trong thuật toán 1 (ngoại trừ vận tốc thẳng đứng trung bình).
+
+P417 [Content]: Đường dẫn thứ hai (Path 2) sử dụng các tham số tương tự như thuật toán 1 nhưng ngoại trừ sự thay đổi độ cao. Hơn nữa, ngưỡng cho gia tốc thẳng đứng, VV và AVV được đặt cao hơn so với thuật toán 1 để bù đắp cho việc thiếu FA và DA.
+
+P418 [Content]: Đường dẫn thứ 2 này được thiết kế cho các trường hợp ngã hiếm gặp, cẳng tay vẫn ở trạng thái thẳng đứng hướng xuống.
+
+P419 [Heading 4]: Kết quả thực nghiệm và đánh giá hiệu năng:
+
+P420 [Content]: Trong phòng thí nghiệm:
+
+P421 [Content]: Tỷ lệ nhận diện chính xác đạt mức tuyệt đối 100%. Trong mọi kịch bản thử nghiệm, không có bất kỳ sự kiện té ngã nào bị bỏ sót.
+
+P422 [Content]: Đối với các hành động sinh hoạt thông thường độ đặc hiệu đạt 97.2%.
+
+P423 [Content]: Đối với các tình huống dễ gây nhầm lẫn như suýt ngã hay cử động mạnh đột ngột, độ đặc hiệu khoảng 97.1%.
+
+P424 [Content]: Nếu loại bỏ tham số góc cẳng tay và chỉ số SUP, độ đặc hiệu trong các tình huống không ngã giảm đáng kể chỉ còn khoảng 78.9% nêu dễ bị cảnh báo sai.
+
+P425 [Content]: Thử nghiệm thực tế đo liên tục:
+
+P426 [Content]: Trong bài kiểm tra kéo dài 15 phút mô phỏng chuỗi hành vi phức tạp của đời sống thực tế. Thuật toán 2 duy trì độ ổn định cao với chỉ ba lần cảnh báo sai. Các trường hợp báo nhầm này chủ yếu là do hành vi của người dùng dồn lực mạnh xuống cánh tay khi tựa vào ghế để điều chỉnh trọng tâm cơ thể lúc ngồi.
+
+P427 [Heading 4]: Kết luận:
+
+P428 [Content]: Nghiên cứu chứng minh rằng việc kết hợp các cảm biến quán tính với cảm biến áp suất thông qua bộ lọc Kalman, cùng với logic kiểm chứng tư thế sau ngã (góc cẳng tay) và ổn định áp suất (SUP) đã biến một thiết bị đeo ở cổ tay vốn có độ nhiễu cao thành một hệ thống PHTN có đọ chính xác vượt trội so với các nghiên cứu trước đây chỉ dùng gia tốc kế.
+
+P429 [Heading 3]: Nghiên cứu về thiết bị đeo trên thân của tác giả Magnus Michael Marquez Musngi:
+
+P430 [Heading 4]: Mục tiêu:
+
+P431 [Content]: Sử dụng gia tốc kế ba trục, con quay hồi chuyển ba trục và cảm biến áp suất khí quyển để đo vận tốc thẳng đứng, gia tốc thẳng đứng và góc thân người.
+
+P433 [Caption]: Hình 1.5 Nghiên cứu về thiết bị đeo trên người
+
+P434 [Content]: VA: sự tăng tốc độ đột ngột theo phương thẳng đứng được tạo ra khi thân người đang di chuyển từ vận tốc xuống tối đa (cuối giai đoạn ngã) rồi sau đó dừng lại.
+
+P435 [Content]: VV và DA: trong sự kiện té ngã, VV được sử dụng để phát hiện chuyển động đi xuống nhanh đột ngột của thân từ vị trí cao đến vị trí thấp hơn. DA là sự chênh lệch độ cao được sử dụng để ghi lại sự khác biệt về độ cao của thân.
+
+P436 [Content]: AVV: trong quá trình cố gắng giữ thăng bằng khi suýt ngã (hoặc trong các ADL liên quan đến chuyển động đi xuống nhanh), các chuyển động bất ngờ có thể tạo ra VV cao hơn. Tuy nhiên, thời gian duy trì vận tốc này thường ngắn hơn so với quá trình té ngã thực sự. Bằng cách tính trung bình giữa hai sự kiện này, ta có thể thấy rõ sự khác biệt.
+
+P437 [Content]: Góc thân (TA): sau khi ngã, cơ thể được giả định là ở tư thế nằm. TA được sử dụng để phát hiện tư thế này bằng cách đo góc của thân theo hướng của động lực.
+
+P438 [Content]: Thuật toán 4: Bắt đầu từ việc theo dõi VV để phát hiện sự kiện ngã, khi chạm ngưỡng VA sẽ được theo dõi trong 0.8 giây để phát hiện sự va chạm. Việc phát hiện va chạm là điểm khởi đầu để theo dõi đồng thời sự khác biệt về DA, AVV, TA. Khi tất cả các thông số trên đều đạt đến giá trị ngưỡng được đặt trước trong khoảng thời gian theo dõi, đó được xác định là một sự kiện ngã.
+
+P439 [Content]: Thuật toán 1, 2, 3: tương tự như thuật toán 4, ngoài việc loại trừ sự khác biệt về DA or/and AVV. Tất cả tham số được điều chỉnh ngưỡng để đạt được độ nhạy 100% với độ đặc hiệu tối đa có thể dựa trên cường độ cực đại tối thiếu và mối quan hệ thời gian tương đối giữa các tham số từ tất cả các thử nghiệm.
+
+P440 [Heading 4]: Kết quả thực nghiệm và đánh giá hiệu năng:
+
+P441 [Content]: Trong phòng thí nghiệm:
+
+P442 [Content]: Hiệu suất được đánh giá qua bộ dữ liệu gồm 166 cú ngã, 95 tình huống suýt ngã và 150 ADL.
+
+P443 [Content]: Với tỷ lệ nhận diện chính xác tuyệt đối 100%, hệ thống không bỏ sót bất kỳ sự kiện té ngã nào.
+
+P444 [Content]: Độ đặc hiệu với các ADL đạt mức 99.3%. Với các tình huống dễ gây nhầm lẫn như suýt ngã, vận động mạnh độ đặc hiệu đạt 99.6%.
+
+P445 [Content]: Thử nghiệm thực tế:
+
+P446 [Content]: Khả năng lọc nhiễu: tham số AVV loại bỏ hoàn toàn các báo động giả từ tình huống suýt ngã bằng cách làm mịn các xung đột ngắn bất ngờ,
+
+P447 [Content]: Các trường hợp báo nhầm còn xuất hiện chủ yếu trong các kiểm tra nằm xuống giường. Nguyên nhân do đặc điểm động học của hành động này có sự tương đồng rất lớn với một cú ngã thật sự, gây khó khăn cho trong việc phân biệt rõ ràng.
+
+P448 [Heading 4]: Kết luận:
+
+P449 [Content]: Nghiên cứu đánh giá thành công việc tích hợp chênh lệch cao độ và vận tốc thẳng đứng trung bình vào thuật toán PHTN sử dụng cảm biến quán tính và cảm biến áp suất khí quyển.
+
+P450 [Content]: Kết quả thực nghiệm chứng minh việc kết hợp đa tham số, đặt biệt là tận dụng dữ liệu áp suất để tính toán vận tốc trung bình giúp nâng cao độ đặc hiệu của hệ thống. Điều này biến một thiết bị đeo vốn dễ bị nhiễu bởi các ADL thành một hệ thống cảnh báo té ngã có độ tin cậy và độ chính xác vượt trội.
+
+P451 [Heading 3]: Hệ thống té ngã dựa trên thị giác máy tính:
+
+P452 [Heading 4]: Mục tiêu:
+
+P453 [Content]: Phương pháp này sẽ trích xuất dữ liệu từ các cảm biến RGB, cảm biến nhiệt độ, cảm biến độ sâu hoặc thậm chí là kết hợp cả ba cảm biến này. Sau đó, dữ liệu trích xuất được các thuật toán thị giác máy tính sử dụng để phát hiện bất kỳ thay đổi bất thường nào về quỹ đạo, tư thế hoặc hình dạng cơ thể để xác định té ngã chính xác ngay cả khi ánh sáng yếu vốn là điểm yếu của các hệ thống camera giám sát truyền thống.
+
+P454 [Content]: Sử dụng các camera RGB góc hẹp từ bộ dữ liệu Le2i và hai camera đặt ở góc khác nhau từ bộ dữ liệu URFD. Bài báo trình bày một giải pháp theo dõi dựa trên phương pháp DL để phát hiện các cú ngã trong video bằng việc kết hợp theo dõi trực tuyến theo thời gian thực với số liệu Deep SORT và YOLO.
+
+P456 [Caption]: Hình 1.6 Quy trình phát hiện té ngã bằng hình ảnh
+
+P457 [Content]: Nghiên cứu triển khai một khung làm việc (framework) gồm hai giai đoạn để xử lý các chuỗi video RGB:
+
+P458 [Content]: Giai đoạn 1 (Tiền xử lý): các khung hình video thu được sẽ được tối ưu hóa bẳng thuật toán ước tính độ sáng kép (DUAL). Mục tiêu là điều chỉnh độ sáng, độ tương phản và chi tiết để các giai đoạn sau có thể phát hiện ngã chính xác hơn.
+
+P459 [Content]: Giai đoạn 2 (Theo dõi và phát hiện): thực hiện phương pháp theo dõi bằng phát hiện (tracking by detection) trên các khung hình đã được cải thiện. Hệ thống phân tích các mẫu chuyển động và quỹ đạo của đối tượng được theo dõi để xác định thời điểm xảy ra cú ngã.
+
+P460 [Content]: Thuật toán DUAL: dựa trên lý thuyết Retinex, thuật toán này ước tính bản đồ chiếu sáng theo cả hướng thuận và hướng nghịch để khôi phục hình ảnh có độ phơi sáng chuẩn từ các vùng quá tối hoặc quá sáng.
+
+P461 [Content]: Thuật toán YOLOv7: được sử dụng làm mô hình phát hiện đối tượng chính nhờ hiệu suất tính toán cao và tốc độ suy luận nhanh (phương pháp tích chập tái tham số hóa).
+
+P462 [Content]: Thuật toán Deep SORT: theo dõi đa đối tượng kết hợp bộ lọc Kalman và thuật toán Hungarian với một chỉ số liên kết sâu (đặc trưng nhận diện) để duy trì quỹ đạo ngay cả khi đối tượng bị che khuất một phần bởi chướng ngại vật.
+
+P463 [Heading 4]: Kết quả thực nghiệm và đánh giá hiệu năng:
+
+P464 [Content]: Trên bộ dữ liệu Le2i phương pháp để xuất đạt độ chính xác 94.5% và chỉ số mAP đạt 0.986, vượt trội so với YOLOv7 (90.5%), YOLOv5 (86%), RetinaNet (59.02%).
+
+P465 [Content]: Trên bộ dữ liệu URFD: đạt độ chính xác 93.2%, mAP đạt 0.96 và độ chính xác của lớp té ngã đạt 0.92.
+
+P466 [Content]: Việc tích hợp thuật toán DUAL giúp giảm đáng kể tỷ lệ cảnh báo giả, nhận diện đúng các cú ngã trong bóng tối mà các mô hình thông thường dễ bị nhầm lẫn.
+
+P467 [Content]: Kiểm định McNemar xác nhận rằng hiệu suất của YOLOv7 vượt trội rõ rệt so với các mô hình đối chứng như RetinaNet trên cả hai bộ dữ liệu.
+
+P468 [Heading 4]: Kết luận:
+
+P469 [Content]: Việc tích hợp DUAL với khung theo dõi YOLOv7 và Deep SORT tạo ra một giải pháp PHTN hiệu quả, có khả năng xử lý các kịch bản thực tế phức tạp với ánh sáng kém và vật cản.
+
+P470 [Content]: Sự kết hợp giữa tăng cường hình ảnh và theo dõi đối tượng sâu mang lại độ chính xác và độ tin cậy cao hơn cho việc giám sát an toàn trong nhà.
+
+P471 [Heading 3]: Hệ thống phát hiện té ngã bằng radar mmWave:
+
+P472 [Heading 4]: Mục tiêu:
+
+P473 [Content]: Bài báo xây dựng một hệ thống PHTN cho người cao tuổi không cần thiết bị đeo, không xâm lấn, đảm bảo quyền riêng tư và hoạt động tốt trong mọi điều kiện ánh sáng. Bên cạnh đó, còn chứng minh được chỉ cần sử dụng PC một chiều kết hợp với vận tốc Doppler là đủ để nhận diện cú ngã, thay vì dùng PC 3D phức tạp, giúp giảm chi phí tính toán.
+
+P474 [Content]: Sử dụng module đánh giá IWR6843AOP (mmWave FMCW radar) của TI, hoạt động ở dải tần số 60GHz đến 64GHz. Kết hợp máy chủ và mạng truyền thông để gửi thông báo đẩy đến ứng dụng di động của người chăm sóc.
+
+P476 [Caption]: Hình 1.7 Quy trình xử lý dữ liệu phát hiện té ngã bằng radar
+
+P477 [Content]: Các kịch bản thử nghiệm bao gồm: đi bộ, đứng, ngồi ghế, ngủ trên giường, mở cửa, cầm cột truyền dịch, uống nước và ngã mô phỏng. Được thực hiện bởi 10 tình nguyện viên trong 5 loại phòng khác nhau: phòng trống, phòng ngủ, phòng khách, nhà vệ sinh, phòng bệnh).
+
+P478 [Content]: Sau khi có được tín hiệu đầu vào, tín hiệu radar được biến đối thành PC và vận tốc Doppler. Nghiên cứu tập trung vạo việc sử dụng PC theo trục z (chiều cao) vì đây là thay đổi rõ rệt nhất khi ngã.
+
+P479 [Content]: Thuật toán cốt lõi:
+
+P480 [Content]: Xử lý tín hiệu: sử dụng các phép biến đổi FFT bao gồm Range-FFT, Doppler-FFT, Angle-FFT để trích xuất dữ liệu.
+
+P481 [Content]: Sau quá trình xử lý tín hiệu sử dụng thuật toán LSTM để phân loại hành vi vì khả năng học các phụ thuộc theo chuỗi thời gian, rất phù hợp với dữ liệu cảm biến về các sự kiện té ngã.
+
+P482 [Heading 4]: Kết quả thực nghiệm và đánh giá hiệu năng:
+
+P483 [Content]: Hệ thống đạt độ chính xác huấn luyện là 98.9% và độ chính xác là 98.5% chỉ sau khoảng 200 epoch.
+
+P484 [Content]: Việc chỉ dùng hai đặc trưng đầu vào (trục z và Doppler) giúp đạt độ chính xác cao hơn và tiêu tốn ít tài nguyên hơn so với việc dùng toàn bộ dữ liệu 3D.
+
+P485 [Content]: Kết quả cho thấy sự thay đổi của PC trục z và vận tốc Doppler khi ngã (vận tốc dao động từ -0.96m/s đến 0.84m/s) khác biệt hoàn toàn so với các ADL.
+
+P486 [Content]: Hệ thống vẫn hoạt động chính xác ngay cả khi có các cử động mạnh như vung tay chân hoặc trong các môi trường có nhiều vật cản.
+
+P487 [Heading 4]: Kết luận:
+
+P488 [Content]: Nghiên cứu khẳng định chỉ cần PC một chiều theo trục z kết hợp vận tốc Doppler là đủ để xây dựng một hệ thống phát hiện tea ngã thông minh và hiệu quả.
+
+P489 [Content]: Hệ thống có khả năng triển khai thực tế trong các môi trường phức tạp như nhà ở, bệnh viện nhờ hoạt động theo thời gian thực và cấu trúc thuật toán tinh gọn.
+
+P490 [Heading 2]: Định hướng đề tài:
+
+P491 [Content]: Đề tài định hướng xây dựng một hệ thống giám sát y tế thông minh, không tiếp xúc bằng cách sử dụng radar mmWave để trích xuất dữ liệu, đảm bảo tuyệt đối quyền riêng tư so với các giải pháp đeo trên người hoặc camera truyền thống.
+

@@ -1,0 +1,740 @@
+P493 [Heading 1]: CƠ SỞ LÝ THUYẾT
+
+P494 [Heading 2]: Tổng quan về công nghệ Radar:
+
+P495 [Heading 3]: Khái niệm Radar:
+
+P496 [Content]: Radar (Radio Detection and Range) – là một hệ thống sử dụng sóng vô tuyến để xác định khoảng cách, góc, vận tốc của các vật thể trong môi trường xung quanh. Radar là một hệ thống cảm biến chủ động. Khác với các hệ thống cảm biến thụ động, suy nghĩ hạn chế như thị giác con người. Những hệ thống này tự tạo ra các tín hiệu vô tuyến và sau đó thu thập tiếng vang hoặc tín hiệu phản xạ từ vật thể để thu thập thông tin.
+
+P497 [Heading 3]: Lịch sử phát triển:
+
+P498 [Content]: Kể từ Chiến tranh Thế giới thứ II, radar đã được sử dụng. Tuy nhiên ở thời điểm này, các thành phần của ống dẫn sóng rời rạc của radar tần số thấp thường rất đắt đỏ và cồng kềnh, việc ứng dụng vào các lĩnh vực dân sự và thương mại trở nên khó khăn.
+
+P499 [Content]: Sự phát triển của công nghệ Mạch tích hợp sóng milimet (MMIC) cho phép tích hợp các thành phần của radar vào một con chip đơn lẻ có kích thước chỉ bằng bàn tay. MMIC tích hợp đầy đủ lần đầu tiên được Infineon công bố vào năm 2008. Sau đó, chip radar tích hợp cao, bao gồm chuỗi xử lý tín hiệu kỹ thuật số được Texas Instruments (TI) cho ra mắt vào năm 2017. Điều này giúp làm giảm đáng kể giá thành và kích thước của con chip, từ đó thúc đẩy mạnh mẽ việc ứng dụng radar trong các lĩnh vực mới như hỗ trợ lái xe, giám sát sức khỏe và nhà thông minh. Đặt biệt, các nghiên cứu về radar trong PHTN đã bùng nổ từ sau năm 2000.
+
+P500 [Heading 3]: Nguyên lý hoạt động của radar:
+
+P501 [Content]: Về nguyên lý cơ bản, radar phát một sóng điện từ vào không gian, khi gặp một vật thể (con người), sóng sẽ phản xạ ngược lại và được ăng-ten thu ghi nhận.
+
+P503 [Caption]: Hình 2.1 Đặc điểm thu phát của radar
+
+P504 [Heading 4]: Radar xung (Pulsed Radar):
+
+P505 [Content]: Bộ phát gửi đi một xung vô tuyến và bộ thu ghi nhận lại phản xạ từ vật thể. Mặc dù loại này yêu cầu công suất cao và bộ chuyển đổi ADC có tốc độ lấy mẫu rất lớn, nhưng nó cho phép đo đạc đồng thời cả vận tốc và khoảng cách mục tiêu xa hàng trăm km (thường ứng dụng trong lĩnh vực quân sự)
+
+P506 [Content]: Quãng đường sóng đi:
+
+P507 [Content]: Radar → vật thể (R).
+
+P508 [Content]: Sau đó phản xạ ngược lại từ vật thể → radar (R)
+
+P509 [Content]: Tổng quãng đường sóng di chuyển R + R = 2R 					(2-1)
+
+P510 [Content]: Từ công thức vật lý cơ bản: Quãng đường = vận tốc x thời gian
+
+P511 [Content]: Áp dụng vào radar: 2R = c x t0									(2-2)
+
+P512 [Content]: Khoảng cách từ radar đến vật thể: R = 						(2-3)
+
+P513 [Content]: Trong đó: R: khoảng cách thực tế của vật thể; c: tốc độ lan truyền của sóng điện từ trong không gian tự do ( 3x108m/s); t0: độ trễ lan truyền cần thiết.
+
+P515 [Caption]: Hình 2.2 Dạng sóng của radar
+
+P516 [Content]: Khoảng cách tối đa mà radar có thể phát hiện được, tương ứng với khoảng cách xa nhất mà một xung có thể đi và phản xạ ngược lại trong khoảng thời gian truyền xung liên tục T còn được gọi là khoảng lặp xung (PRI - Pulse Receptition Interval). Tần số lặp xung (PRF – Pulse Receptition Frequency) là nghịch đảo của T.
+
+P517 [Content]: Rmax =  = 									(2-4)
+
+P518 [Heading 4]: Radar sóng liên tục (CW Radar):
+
+P519 [Content]: Phát tín hiệu liên tục không bị gián đoạn cho phép đo tốc độ của một vật thể. Radar CW sử dụng các ăng-ten khác nhau để phát và nhận tín hiệu phản xạ từ mục tiêu cùng lúc. Vì phát liên tục nên công suất trung bình bằng công suất đỉnh.
+
+P520 [Content]: Tần số sóng phản xạ thay đổi khi sóng radar chạm vào một vật thể đang di chuyển. Sự chênh lệch này là độ dịch Doppler (fd). Radar không điều chỉnh có thể đo tốc độ bằng cách sử dụng hiệu ứng Doppler, nhưng nó không thể đo khoảng cách mục tiêu.
+
+P522 [Caption]: Hình 2.3 Đặc điểm máy thu và máy phát của radar CW
+
+P523 [Content]: Công thức được sử dụng để xác định sự thay đổi khoảng cách theo thời gian:
+
+P524 [Content]: R(t) = R0 + 										(2-5)
+
+P525 [Content]: Trong đó: R0: khoảng cách ban đầu; : vận tốc; : góc di chuyển; : tạo ra sự dịch chuyển tần số (Doppler shift).
+
+P526 [Content]: Ngoài việc chuyển động toàn bộ cơ thể, các giới hạn như một người đang bước tới, các bộ phận khác như đầu, tay, chân cũng chuyển động với tốc độ khác nhau. Những chuyển động nhỏ này gây ra các dịch chuyển Doppler phụ gọi là micro-Doppler. Các đặc trưng micro-Doppler này cung cấp thông tin quý giá để nhận diện các hành vi cụ thể như phân biệt giữa đi bộ và té ngã.
+
+P528 [Caption]: Hình 2.4 Biểu đồ quang phổ của Doppler
+
+P529 [Heading 4]: Radar sóng liên tục bước tần số (SFCW):
+
+P530 [Content]: Radar SFCW là một radar sóng liên tục trong đó tần số không thay đổi tuyến tính theo thời gian mà thay đổi theo từng bước rời rạc. Radar này hoạt động bằng cách phát ra một nhóm gồm N xung sóng liên tục (CW pulses). Việc duy trì tính liên tục về pha giữa các xung cho phép hệ thống trích xuất thông tin khoảng cách và vận tốc chính xác. Tần số của các xung này không cố định mà được tăng dần từ xung này sang xung khác theo một bước nhảy tần số cố định.
+
+P532 [Caption]: Hình 2.5 Chu kỳ sóng của SFCW
+
+P533 [Content]: Băng thông tổng cộng (B): được xác định bởi số lượng xung và bước nhảy tần số giữa chúng.
+
+P534 [Content]: B = (N – 1). 											(2-6)
+
+P535 [Content]: Trong đó: N: số lượng xung trong một nhóm chirp; : bước nhảy tần số cố định.
+
+P536 [Content]: Độ phân giải khoảng cách (:  = 								(2-7)
+
+P537 [Content]: Thời gian của một chuỗi xung: T = N.Tpulse								(2-8)
+
+P538 [Content]: Trong đó: Tpulse là thời gian tồn tại của một xung đơn lẻ.
+
+P539 [Heading 4]: Radar sóng liên tục điều tần (FMCW Radar):
+
+P540 [Content]: Khác với radar sóng xung truyền các tín hiệu ngắt quãng công suất cao. Radar FMCW truyền tín hiệu sóng vô tuyến được điều chế tần số liên tục để xác định khoảng cách, vận tốc và góc mục tiêu hoạt động ở chế độ song công (Full-duplex), cho phép truyền và nhận tín hiệu đồng thời với công suất thấp.
+
+P541 [Content]: Radar FMCW truyền một tín hiệu có tần số tăng hoặc giảm tuyến tính theo thời gian được gọi là Chirp. Một khung (frame) là một tập hợp các liên kết Chirp. Tín hiệu truyền đi được tính với công thức:
+
+P542 [Content]: tx(t) = exp (j2(fct + Kt2))								(2-9)
+
+P543 [Content]: Trong đó: fc: tần số bắt đầu; K hoặc S: độ dốc của chirp.
+
+P544 [Content]: Độ dốc của chirp được tính bằng băng thông chia cho thời gian chirp :
+
+P545 [Content]: S =
+
+P547 [Caption]: Hình 2.6 Các dạng sóng FMCW
+
+P548 [Content]: Tín hiệu phản xạ từ mục tiêu (RX) sẽ chậm hơn tín hiệu truyền đi (TX). Một tín hiệu tần số trung gian (IF) còn gọi là tần số nhịp được tạo ra khi hai tín hiệu này được trộn trong bộ trộn (mixer).
+
+P549 [Content]: Công thức tính tần số nhịp (Best Frequency):
+
+P550 [Content]: fIF =  S. = 											(2-10)
+
+P552 [Caption]: Hình 2.7 Tín hiệu IF trong radar FMCW
+
+P553 [Heading 3]: So sánh các công nghệ radar:
+
+P555 [Caption]: Bảng 2.1 Bảng so sánh các công nghệ Radar
+
+P556 [Heading 2]: Công nghệ radar mmWave:
+
+P557 [Content]: Công nghệ sóng milimet (mmWave) là một phân nhóm của công nghệ radar. Hệ thống mmWave hiện đại chủ yếu sử dụng kỹ thuật FMCW.
+
+P558 [Content]: Sóng milimet là dải sóng điện từ có tần số từ 30GHz đến 300GHz. Trong thực tế, tần số trên 24GHz được coi là sóng milimet, nằm trong dải bước Microwave và chồng chéo với sóng hồng ngoại, vì vậy nó có đặc điểm của cả hai phổ này. Theo Liên minh Viễn thông Quốc tế, đây là dải tần số cực cao. Trong các ứng dụng giám sát sức khỏe và PHTN, dải tần trong khoảng 60GHz đến 64GHz thường được ưu tiên do khả năng hấp thụ khí quyển giúp hạn chế nhiễu, còn dải nằm trong khoảng 76GHz đến 81GHz dùng phổ biến trong radar oto.
+
+P560 [Caption]: Hình 2.8 Các dải tần số radar
+
+P561 [Content]: mmWave có bước sóng cực ngắn, từ 1mm đến 10mm. Nhờ bước sóng ngắn, các thành phần RF và ăng-ten có thể được thu nhỏ đáng kể, cho phép tích hợp hệ thống ăng-ten mảng MIMO trực tiếp lên một con chip có kích thước bằng lòng bàn tay. Côsng thức tính bước sóngb như sau:
+
+P562 [Content]: (2-11)
+
+P563 [Content]: Trong đó: C: vận tốc ánh sáng (3x108 m/s); fc: tần số sóng mang.
+
+P564 [Heading 3]: Đặc tính lan truyền của mmWave:
+
+P565 [Content]: Sự lan truyền tín hiệu mmWare đặc trưng bởi:
+
+P566 [Content]: Tổn thất đường truyền trong không gian tự do.
+
+P567 [Content]: Sự suy giảm trong khí quyển (hấp thụ bởi oxy và hơi nước).
+
+P568 [Content]: Phản xạ khuếch tán.
+
+P569 [Content]: Khả năng xuyên thấu hạn chế.
+
+P570 [Heading 4]: Tổn thất đường truyền trong không gian tự do:
+
+P571 [Content]: Sự giảm hiệu suất của sóng truyền dẫn vô tuyến khi lan truyền trong môi trường trên một khoảng cách gọi là tổn thất đường truyền tín hiệu. Tổn thất đường truyền trong không gian tự do không bao gồm các yếu tố như độ lợi của ăng-ten được sử dụng tại máy thu và máy phát, cũng như bất kỳ mất mát liên quan đến phần cứng. Phương trình sau đây mô tả các giá trị tuyệt đối cho sự suy giảm phụ thuộc vào tần số và khoảng cách giữa hai hướng ăng-ten đẳng hướng:
+
+P572 [Content]: FSL = ()2											(2-12)
+
+P573 [Content]: Trong đó: FSL: tổn thất truyền dẫn trong không gian tự do; : bước sóng tín hiệu (m);          d: khoảng cách giữa trạm thu và trạm phát (m).
+
+P574 [Content]: Suy hao FSL trong ước tính dB:
+
+P575 [Content]: FSL(dB) = 20log10(d) + 20log10(f) + 92.45						(2-13)
+
+P576 [Content]: Trong đó: FSL(dB): tổn thất truyền dẫn trong không gian tự do (dB); d: khoảng cách giứa trạm thu và trạm phát (km); f: tần số tín hiệu (GHz).
+
+P578 [Caption]: Hình 2.9 Sự tổn thất đường truyền ở các tần số khác nhau
+
+P579 [Heading 4]: Sự suy giảm trong khí quyển:
+
+P580 [Content]: Đặt điểm của tryền dẫn sóng milimet là suy giảm do không khí. Sóng điện từ có thể bị hấp thụ bởi hơi nước và oxy trong không khí. Do đó, việc nghiên cứu các ứng dụng công nghệ tập trung vào Atmospheric windows (AW) và Attenuation Peaks (AP).
+
+P581 [Content]: AW: là những dải tần mà tại đó sóng điện từ ít bị phản xạ, hấp thụ hay tán xạ nhất, giúp duy trì độ truyền dẫn cao. Tần số nằm trong khoảng 35GHz, 45GHz, 94GHz, 140GHz, 220GHz. Phù hợp cho các kết nối truyền thông.
+
+P582 [Content]: AP: ngược lại với AW, tại một số dải tần nhất định, các phân tử khí hấp thụ năng lượng sóng rất mạnh, khiển tín hiệu bị yếu đi nhanh chóng theo khoảng cách. Các tần số thường nằm quanh ngưỡng 60GHz, 120GHz, 180GHz. Ứng dụng trong các mạng nội bộ, phạm vi hẹp đáp ứng yêu cầu an ninh.
+
+P583 [Heading 4]: Phản xạ khuếch tán:
+
+P584 [Content]: Khác với các sóng có bước sóng dài dựa vào cơ chế hoạt động tương tự như ánh sáng chiếu vào gương để vượt qua các vật cản. mmWave gặp phải thách thức lớn do kích thước bước sóng cực nhỏ của chúng.
+
+P585 [Content]: Đối với mmWave, trong thực tế hầu hết các bề mặt không được bằng phẳng. Khi bước sóng tương đương hoặc nhỏ hơn độ gồ ghề của bề mặt, hiện tượng phản xạ khuếch tán sẽ xảy ra. Thay vì phản xạ lại theo một hướng duy nhất, năng lượng sóng bị phân tán ra nhiều hướng khác nhau. Kết quả là lượng sóng phản xạ thực tế đến ăng-ten thu bị giảm đáng kể.
+
+P587 [Caption]: Hình 2.10 Hướng tán xạ trên bề mặt phẳng và bề mặt gồ ghề
+
+P588 [Content]: Do đặc điểm phản xạ kém hiệu quả và khả năng đâm xuyên thấp, mmWave rất nhạy cảm với các vật cản (hiện tượng shadowing). Để duy trì kết nối ổn định, mmWave cần có tầm nhìn thẳng. Nếu đường truyền trực tiếp bị chặn, tín hiệu sẽ bị suy giảm. Từ các hạn chế này, các hệ thống mmWave thường được thiết kế cho các khoảng cách ngắn hoặc yêu cầu lắp đặt ăng-ten ở vị trí thông thoáng để đảm bảo kết nối không bị gián đoạn.
+
+P589 [Heading 4]: Khả năng xuyên thấu hạn chế:
+
+P590 [Content]: Một trong những rào cản lớn nhất của mmWave là sự khó khăn khi đi qua các vật thể rắn. do bước sóng cực ngắn, năng lượng sóng dễ bị hấp thụ hoặc phản xạ ngay tại bề mặt thay vì xuyên sâu vào bên trong.
+
+P591 [Content]: Khả năng đâm xuyên của mmWave bị suy giảm đáng kể khi gặp các vật liệu phổ biến. Các nghiên cứu chỉ ra rằng, tín hiệu có thể bị giảm từ 1dB đến 6dB trên mỗi cm độ dày của vật liệu.
+
+P592 [Content]: Các yếu tố tự nhiên cũng trở thành vật cản đáng kể. Trong môi trường ngoài trời, các tán cây dày đặc có thể chặn đứng gần như toàn bộ sóng. Mưa hoặc hơi ẩm cũng là nguyên nhân gây suy yếu đường truyền.
+
+P593 [Content]: Chính vì khả năng đâm xuyên kém, mmWave bị giới hạn chủ yếu trong các ứng dụng trong nhà. Nếu lắp đặt ngoài trời, đòi hỏi phải có mật độ dày đặc các trạm phát và các vị trí lắp đặt phải cực kỳ thông thoáng để tránh các điểm mù tín hiệu do vật cản gây ra.
+
+P594 [Heading 3]: Ưu điểm của mmWave:
+
+P595 [Content]: Bên cạnh các đặc điểm gây suy giảm đường truyền, mmWave có vài lợi thế vượt trội:
+
+P596 [Content]: Với đặc tính bước sóng ngắn, các linh kiện phần cứng như ăng-ten, bộ lọc,.. của hệ thống mmWave có kích thước nhỏ hơn rất nhiều so với linh kiện ở Microwave truyền thống. Vì thế, cho phép tích hợp và thu nhỏ tối đa các thiết bị.
+
+P597 [Content]: Băng thông rộng lớn: dải tần mmWave cung cấp một kho tài nguyên tần số khổng lồ. Ngay cả khi trừ đi các đoạn bị khí quyển hấp thụ, con số này gấp năm lần tổng toàn bộ băng thông của các dải tần dưới mức vi ba cộng lại, giải quyết triệt để tình trạng khan hiếm tần số hiện nay.
+
+P598 [Content]: Chống nhiễu: băng thông rộng giúp loại bỏ hiệu quả các hiệu ứng đa đường và tín hiệu phản xạ nhiễu.
+
+P599 [Content]: Độ nhạy cao: nhờ hiệu ứng Doppler lớn khi mục tiêu di chuyển theo phương hướng tâm, khả năng phát hiện chính xác các vật thể chuyển động chậm hoặc vật thể đang rung động.
+
+P600 [Content]: Với cùng một kích thước ăng-ten, mmWave tạo ra chùm sóng hẹp hơn nhiều so với Microwave, giúp hệ thống phân biệt được các mục tiêu nằm gần nhau hoặc quan sát chi tiết vật thể một cách rõ nét.
+
+P601 [Content]: Viễn thông: cho phép tái sử dụng tần số trong không gian hẹp, hỗ trợ lượng lớn người dùng cùng lúc truy cập băng thông cao trong một khu vực nhất định.
+
+P602 [Heading 2]: Xử lý dữ liệu:
+
+P603 [Content]: Hệ thống sử dụng các phép biến đổi Fourier nhanh (FFT) để trích xuất thông tin từ tín hiệu IF. Phép biến đổi FFT chuyển đổi tín hiệu IF từ miền thời gian sang miền tần số.
+
+P604 [Heading 3]: Đo khoảng cách (Range-FFT):
+
+P605 [Content]: Được thực hiện để xác định khoảng cách của mục tiêu bằng cách sử dụng “fast-time” dữ liệu trong từng chirp. Tần số fIF  thu được tại cái đỉnh tỉ lệ thuận với khoảng cách từ radar đến vật thể.
+
+P606 [Content]: Từ công thức tính tần số nhịp, ta suy ra được khoảng cách d:
+
+P607 [Content]: d = 													(2-14)
+
+P608 [Heading 3]: Đo vận tốc (Doppler-FFT/Velocity-FFT):
+
+P609 [Content]: Thực hiện trong chiều “slow-time” giữa các chirps liên tiếp trong một khung dữ liệu). Để xác định tâm hướng chuyển động của đối tượng, quá trình này đo lường sự thay đổi pha giữa các chirps.
+
+P610 [Content]: Sự thay đổi pha ():  = 									(2-15)
+
+P611 [Content]: Vận tốc (): 										(2-16)
+
+P612 [Heading 3]: Đo góc tới (Angle-FFT/AoA):
+
+P613 [Content]: Trong các radar có nhiều ăng-ten thu (MIMO), một FFT thứ ba được thục hiện dọc theo chiều của các ăng-ten để xác định góc tới (AoA), bao gồm cả góc phương vị () và góc ngẩng (). Sử dụng mảng ăng-ten MIMO để xác định góc dựa trên sự chênh lệch pha giũa các kênh thu.
+
+P614 [Content]: Góc tới ():  = sin-1 ()										(2-17)
+
+P615 [Content]: Trong đó: là khoảng cách giữa các ăng-ten (thường chọn =  )
+
+P616 [Content]: Độ phân giải góc (): =  	với N là số lượng ăng-ten				(2-18)
+
+P618 [Caption]: Hình 2.11 Ước tính góc tới
+
+P619 [Content]: Góc phương vị (): tính toán từ dữ liệu thu thập từ các ăng-ten được sắp xếp theo chiều ngang. Sự lệch pha theo phương ngang của các ăng-ten này cho thấy mục tiêu nằm ở vị trí nào trong mặt phẳng ngang so với radar.
+
+P620 [Content]: Góc ngẩng (): tính toán từ dữ liệu thu được từ các ăng-ten được sắp xếp theo chiều dọc. sự lệch pha theo phương dọc giữa hai ăng-ten này cho thấu độ cao của tiêu điểm so với radar. Thuật toán MUSIC được sử dụng để cải thiện độ phân giải góc. Đặt biệt hữu ích khi cần phân biệt các mục tiêu gần nhau mà Angle-FFT không thể thực hiện được. Để đạt được độ chính xác cao hơn, MUSIC thường được ưu tiên trong các nghiên cứu để tính toán góc phương vị ).
+
+P622 [Caption]: Hình 2.12 So sánh sự khác nhau giữa các radar
+
+P623 [Heading 3]: Chuyển đổi tọa độ:
+
+P624 [Content]: Sau khi sử dụng các chuỗi biến đổi FFT để ước tính các tham số cốt lỗi bao gồm khoảng cách, vận tốc Doppler và góc tới.Dữ liệu thu được vẫn nằm trong hệ tọa độ cầu (Spherical Coordinates) tương đối của radar. Tuy nhiên, để theo dõi và nhận dạng hành vi của con người trong môi trường thực tế, dữ liệu này cần được đưa về hệ tọa độ Descartes (x,y,z).
+
+P625 [Content]: x,y,z trong hệ tọa độ Descartes được tính toán như sau:
+
+P626 [Content]: => đại diện cho chiều ngang				(2-19)
+
+P627 [Content]: ). cos( => đại diện cho chiều sâu				(2-20)
+
+P628 [Content]: ) => đại diện cho chiều cao						(2-21)
+
+P629 [Content]: Trên thực tế, radar thường được đặt trên tường ở độ cao h và nghiêng một góc tilt  xuống dưới để tối đa hóa tầm nhìn. Ta sử dụng ma trận và vector tịnh tiến để đưa ra các điểm về hệ tọa độ mặt đất/sàn nhà. Kết quả của phép tính ma trận này cho phép hệ thống xác định chính xác vị trí của từng điểm phản xạ so với mặt sàn và tường của nơi lắp đặt.
+
+P630 [Content]: =   + 			(2-22)
+
+P631 [Heading 2]: Đám mây điểm (Point Cloud):
+
+P632 [Content]: PC là kết quả của quá trình xử lý tín hiệu bao gồm các phép biến đổi FFT và thuật toán phát hiện mục tiêu. Sóng radar phản xạ từ các bộ phận khác nhau của cơ thể người (thân, tay, chân) tạo thành các điểm phản xạ riêng biệt.
+
+P633 [Content]: Mỗi điểm phản xạ trong đám mây không chỉ chứa thông tin vị trí mà còn là một vector đặc trưng, thường bieur diễn dưới dạng:
+
+P634 [Content]: (2-23)
+
+P635 [Content]: Trong đó: (x, y, z): tọa độ không gian 3D sau khi đã chuyển đổi; v (Doppler velocity): vận tốc hướng tâm của điểm phản xạ đó so với radar; SNR (hoặc  – RCS): cường độ năng lượng phản xạ, giúp phân biệt bộ phận cơ thể người (thân người thường có cường độ cao và ổn định hơn so với các chi).
+
+P636 [Heading 2]: Phân cụm:
+
+P637 [Content]: Giai đoạn phân cụm đóng vai trò quan trọng trong việc nhóm các điểm phản xạ thưa thớt (tay, chân, thân, đầu) từ PC thành các thực thể duy nhất đại diện cho con người, đồng thời loại bỏ nhiễu và tách biệt nhiều đối tượng trong cùng một không gian.
+
+P638 [Heading 3]: Thuật toán DBSCAN:
+
+P639 [Content]: DBSCAN là thuật toán dựa trên mật độ điểm được sử dụng rộng rãi nhất vì nó không yêu cầu xác định trước số lượng cụm, rất phù hợp khi radar không biết trước có bao nhêu người trong phòng. Thuật toán xác định cụm bằng cách tìm các vùng có mật độ điểm cao. Một điểm được gọi là “core” nếu trong vùng lân cận bán kính  (epsilon – khoảng cách tối đa giữa hai điểm để được coi là lân cận) của nó có ít nhất minPts (số lượng điểm tối thiểu để hình thành một cụm). Các cụm được hình thành từ các điểm có thể kết nối mật độ với nhau, trong khi các điểm nằm ở vùng thưa thớt bị coi là nhiễu (noise).
+
+P641 [Caption]: Hình 2.13 Phân cụm với MinPts = 5
+
+P642 [Heading 3]: Dynamic DBSCAN:
+
+P643 [Content]: Một đặc điểm của radar là khi người đứng yên, số lượng điểm phản xạ thu được rất ít và có cường độ SNR thấp, dẫn đến việc DBSCAN thông thường có thể bỏ sót mục tiêu. Giải pháp là thay đổi tham số dựa trên mức SNR.
+
+P644 [Content]: Điểm có SNR cao (thân người): áp dụng tham số “nới lỏng” để đảm bảo không bỏ lỡ các điểm năng lượng cao.
+
+P645 [Content]: VD: SNR > 300 => chọn  = 1, minPts = 2
+
+P646 [Content]: Điểm có SNR thấp: áp dụng tham số “chặt chẽ” hơn để loại bỏ nhiễu môi trường.
+
+P647 [Content]: VD: SNR > 200 => chọn  = 0.7, minPts = 3.
+
+P648 [Heading 3]: Phân cụm dựa trên lưới (Gird based):
+
+P649 [Content]: Để giảm độ phức tạp tính toán và tăng tốc độ xử lý, tọa độ x, y của mỗi khung hình có thể được mã hóa thành một bản đồ lưới 2D.
+
+P650 [Content]: Hệ thống chia không gian thành các ô lưới. Các ô lưới có số lượng điểm vượt quá ngưỡng sẽ được coi là trung tâm để mở rộng và nhóm các ô lân cận thành một cụm duy nhất.
+
+P652 [Caption]: Hình 2.14 Phân cụm lưới Gird
+
+P653 [Heading 3]: Một số phương pháp phân cụm khác:
+
+P654 [Content]: Thuật toán K-means phân cụm bằng cách tối thiểu hóa tổng bình phương khoảng cách từ các điểm đến tâm cụm của chúng, thường dùng để loại bỏ các điểm ngoại lai ban đầu.
+
+P655 [Content]: Mô hình tổng hợp GMM (Gaussian Mixture Model) xem mỗi cụm dữ liệu tuân theo một phân phối GMM riêng biệt. GMM hiệu quả trong việc phân biệt các loại mục tiêu khác nhau dựa trên kích thước và cường độ phản xạ.
+
+P656 [Content]: Theo dõi theo nhóm Group Tracking: một số hệ thống sử dụng thuật toán Group Tracking để gộp các điểm phản xạ trực tiếp vào các quỹ đạo di chuyển của trọng tâm, kết hợp cả bước phân cụm và theo dõi đối tượng.
+
+P657 [Heading 2]: Theo dõi đối tượng (Target Tracking):
+
+P658 [Content]: Giai đoạn theo dõi đối tượng là bước quan trọng sau khi phân cụm, nhằm duy trì danh tính (Track ID) và quỹ đạo của đối tượng trong không gian theo thời gian, đồng thời làm mượt dữ liệu để chuẩn bị cho việc nhận dạng hành vi.
+
+P659 [Heading 3]: Ước tính trạng thái và dự đoán:
+
+P660 [Content]: Hệ thống thường sử dụng bộ lọc Kalman hoặc bộ lọc Kalman mở rộng (EKF) để cập nhật và dự báo vị trí tiếp theo của đối tượng.
+
+P661 [Content]: Mô hình vận tốc không đổi CV (Constant Velocity): trạng thái được biểu diễn bằng vector 6 chiều:
+
+P662 [Content]: sk = [x, y, z, vx, vy, vz]T										(2-24)
+
+P663 [Content]: Mô hình gia tốc không đổi CA (Constant Acceleration): trạng thái được biểu diễn bằng vector 9 chiều:
+
+P664 [Content]: sk = [x, y, z, vx, vy, vz, ax, ay, az]T								(2-25)
+
+P665 [Content]: Công thức dự báo (Prediction):  =  + Qk					(2-26)
+
+P666 [Content]: Trong đó: F: ma trận chuyển trạng thái (dựa trên mô hình CA hoặc CV); Qk: ma trận hiệp phương sai nhiễu quá trình.
+
+P667 [Content]: Thay vì theo dõi từng điểm riêng lẻ, hệ thống tính toán và theo dõi trọng tâm của cụm điểm đại diện cho cơ thể người.
+
+P668 [Heading 3]: Khởi tạo quỹ đạo:
+
+P669 [Content]: Trước khi chính thức theo dõi, hệ thống cần xác định xem một cụm điểm mới phát hiện là người thật hay chỉ là nhiễu.
+
+P670 [Content]: Dựa trên ràng buộc về vận tốc cực đại (Vmax) và cực tiểu (Vmin), khoảng cách Dij giữa hai cụm ở khung hình t và t – 1 phải đạt điều kiện:
+
+P671 [Content]: VminTs  Dij  VmaxTs										(2-27)
+
+P672 [Content]: Trong đó: Ts là khoảng thời gian lấy mẫu khung hình.
+
+P673 [Content]: Một quỹ đạo chỉ được xác định Confirmed khi xuất hiện ít nhất M lần trong N khung hình liên tiếp. Nếu không đạt ngưỡng này, cụm điểm bị coi là nhiễu tĩnh hoặc “điểm ma” và bị loại bỏ.
+
+P674 [Heading 3]: Gán dữ liệu:
+
+P675 [Content]: Mục tiêu là liên kết các cụm điểm (clusters) mới phát hiện ở khung hình hiện tại với các quỹ đạo đã tồn tại từ các khung hình trước.
+
+P676 [Content]: Xác định một vùng không gian xung quanh vị trí dự đoán bằng cổng elip, chỉ các điểm rơi vào cổng này mới được xem xét để gán vào quỹ đạo.
+
+P677 [Content]: Một số hệ thống tính toán xác suất liên kết Pclu dựa trên sự tương quan về vị trí (Cpos) và hình dáng (Cshape) của cụm.
+
+P678 [Content]: Pclu = Cpos + Cshape + Epos + Eshape							(2-28)
+
+P679 [Content]: Trong đó:  Epos, Eshape: sai lệch so với giá trị kỳ vọng ; : các hệ số trọng số.
+
+P680 [Content]: Một số hệ thống sử dụng khoảng cách Mahalanobis để xác định xem một phép đo mới có nằm trong vùng dự báo của quỹ đạo hay không.
+
+P681 [Content]: = (uj – H())T(uj - H())  G					(2-29)
+
+P682 [Content]: Trong đó: uj : vector đo lường (khoảng cách, góc phương vị, góc ngẩng, vận tốc Doppler); H(): hàm quan sát phi tuyến chuyển đổi trạng thái dự đoán sang hệ tọa độ cầu; CG: ma trận hiệp phương sai thặng dư, tính đến kích thước vật lý của mục tiêu và nhiễu đo lường; G: ngưỡng của sóng.
+
+P683 [Heading 3]: Quản lý và duy trì quỹ đạo:
+
+P684 [Content]: Hệ thống sử dụng một máy trạng thái để quản lý vòng đời của một quỹ đạo qua các bước:
+
+P685 [Content]: Tự do (Free)  Phát hiện (Detect)  Hoạt động (Active)
+
+P686 [Content]: Xử lý che khuất: nếu đối tượng tạm thời bị che khuất, bước liên kết dữ liệu sẽ thất bại. Khi đó, bộ lọc Kalman sẽ tự động “dự đoán” vị trí tiếp theo dựa trên vận tốc và gia tốc cuối cùng đã biết để duy trì Track ID và quỹ đạo ở trạng thái Active cho đến khi đối tượng xuất hiện trở lại.
+
+P687 [Content]: Xóa quỹ đạo: nếu một quỹ đạo không được cập nhật dữ liệu mới trong một khoảng thời gian (ví dụ 1-2 giây), nó sẽ được đánh dấu là mất dấu và bị xóa khỏi bộ nhớ.
+
+P688 [Heading 2]: Trích xuất đặc trưng:
+
+P689 [Content]: Sau quá trình xử lý PC trích xuất đặt trưng là biến đổi dữ liệu thành các vector thông tin có ý nghĩa vật lý để máy tính có thể phân biệt giữa té ngã và các hoạt động thường ngày.
+
+P690 [Heading 3]: Đặc trưng miền thời gian – tần số:
+
+P691 [Content]: Dựa trên hiệu ứng micro-Doppler, trong đó các chuyển động vi mô của các bộ phận cơ thể như tay, chân tạo ra các chuyển tần số đặc trưng xung quanh chuyển động của thân mình.
+
+P692 [Content]: Biến đổi Fourier thời gian ngắn (STFT) dùng để thu được bản đồ phổ biểu thị sự thay đổi năng lượng theo thời gian và tần số.
+
+P693 [Content]: S[n, m] = 						(2-30)
+
+P694 [Content]: Trong đó: w[n]: hàm cửa sổ; x[k]: tín hiệu thời gian; m: chỉ số tần số.
+
+P695 [Content]: Đường cong năng lượng bùng phát (PBC) đo tổng năng lượng tín hiệu ngoại trừ các dải tần số thấp của nhiễu tĩnh để xác định thời điểm bắt đầu và kết thúc hành động.
+
+P696 [Content]: S[n] = 2 - 2					(2-31)
+
+P697 [Content]: Trong đó: M1, M2 là dải tần số thấp bị loại bỏ.
+
+P698 [Content]: Ước tính vận tốc hiệu dụng của vật phản xạ bằng cách sử dụng bộ lọc phân phối Gaussian.
+
+P699 [Content]: Vận tốc (un):
+
+P700 [Content]: un = 								(2-32)
+
+P701 [Content]: Gia tốc (an):
+
+P702 [Content]: an = 											(2-33)
+
+P703 [Content]: Trong đó:  G[m]: bộ lọc GMM; f[m]: thành phần tần số; u: vận tốc; : khoảng thời gian giữa các khung hình.
+
+P704 [Heading 3]: Đặc trưng động học từ trọng tâm:
+
+P705 [Content]: Để theo dõi quỹ đạo người, hệ thống tính trung bình tọa độ các điểm thuộc về một đối tượng trong khung hình t.
+
+P706 [Content]: = 						(2-34)
+
+P707 [Content]: Trong đó: Nt  là số lượng điểm hợp lệ trong khung hình.
+
+P708 [Content]: Tỷ lệ vận tốc hướng xuống đo lường tính nhất quán của chuyển động rơi bằng cách tính tỷ lệ khung hình có vận tốc thẳng đứng âm trong một cửa sổ quan sát N.
+
+P709 [Content]: rv-z  = 										(2-35)
+
+P710 [Content]: Trong đó: 1 là hàm chỉ thị, bằng 1 nếu vận tốc thẳng đứng âm.
+
+P711 [Content]: Độ dịch chuyển cao độ (): đo lường sự thay đổi độ cao trong một của sổ quan sát gồm N khung hình:
+
+P712 [Content]: = zmax - zmin											(2-36)
+
+P713 [Heading 3]: Đặc trưng phân phối và cường độ:
+
+P714 [Content]: Diện tích độ lớn tín hiệu (SMA): thường dùng để đo lường mức độ hoạt động thể chất tổng thể thông qua gia tốc:
+
+P715 [Content]: SMA[k] =  x[l]| + |ay[l]| + |az[l]|)					(2-37)
+
+P716 [Content]: Tiết diện phản xạ (RCS): thể hiện cường độ năng lượng phản xạ, thay đổi đáng kể khi cơ thể chuyển từ tư thế đứng sang tư thế nằm đai trên sàn.
+
+P717 [Content]: = 10log10(r4) + SNR + noise								(2-38)
+
+P718 [Heading 3]: Đặc trưng hình học và hình dáng:
+
+P719 [Content]: Các tham số này giúp hệ thóng nhận diện tư thể thông qua cấu trúc của PC.
+
+P720 [Content]: Khung giới hạn 3D đặc tả chiều rộng (w), chiều dài (l), chiều cao (h) và góc hướng ().
+
+P721 [Content]: Chỉ số 3D dùng để đo lường độ tương đồng giữa hình dáng dự đoán và thực tế:
+
+P722 [Content]: IoU3D = 							(2-39)
+
+P723 [Content]: Trong đó: : diện tích chồng lấp; : độ chồng lấp trên trục x.
+
+P724 [Content]: Đặc trưng elipse dử dụng momen không gian để ước tính hình elip bao quanh đối tượng:
+
+P725 [Content]: = arctan()	với upq là các momen trung tâm. 			(2-40)
+
+P726 [Heading 2]: Phân loại hành vi:
+
+P727 [Heading 3]: Phương pháp dựa trên ngưỡng (TBM - Threshold-Based Methods):
+
+P728 [Content]: Hệ thống sẽ liên tục theo dõi các biến số động học. Một cú ngã được ghi nhận khi các thông số này thỏa mãn một cấu trúc logic nhất định (thường là vượt ngưỡng trong một khoảng thời gian cụ thể. Đây là phương pháp truyền thống, có chi phí tính toán thấp và khả năng phản hồi thời gian thực nhanh chóng nhưng đòi hỏi sự tinh chỉnh kỹ lưỡng dựa trên thực nghiệm. Hệ thống quét các cửa sổ thời gian để tìm kiếm các giá trị đặc trưng vượt ngưỡng xác định (vận tốc rơi, độ cao thấp nhất).
+
+P729 [Content]: Hệ thống thường sử dụng kết hợp nhiều thông số để tăng độ chính xác:
+
+P730 [Content]: Vận tốc thẳng đứng (Vz): thông số quan trọng nhất để nhận diện giai đoạn rơi. Các nghiên cứu cho thấy vận tốc khi rơi của một cú ngã thường đạt mức 3m/s hoặc giá trị âm khoảng từ -0.65m/s đến -1.5m/s tùy thiết lập.
+
+P731 [Content]: Gia tốc thẳng đứng (Az): dùng để phát hiện va chạm khi cơ thể. Khi tiếp đất, gia tốc sẽ thay đổi đột ngột. Ngưỡng gia tốc này thường được đặt trong khoảng 10m/s2 đến 20m/s2 tùy vào vị trí đặt cảm biến.
+
+P732 [Content]: Độ giảm cao độ trọng tâm (): đo lường sự thay đổi cao độ từ vị trí sang vị trí nằm sát sàn nhà. Một ngưỡng phổ biến cho tham số này là 0.6m.
+
+P733 [Content]: Cao độ tối thiểu (zmin): để phân biệt té ngã với việc ngồi nhanh, hệ thống kiểm tra xem trọng tâm có đạt mức sát mặt sàn hay không.
+
+P734 [Content]: Đường cong năng lượng xung năng lượng (PBC): một ngưỡng trên PBC được dùng để kích hoạt bộ phân lai. Nếu năng lượng tín hiệu vượt ngưỡng, hệ thống mới bắt đầu phân tích xem đó có phải là cú ngã hay không để tiết kiệm năng lượng.
+
+P735 [Content]: Một cú ngã thường được kích hoạt bởi sự kết hợp vận tốc và cao độ:
+
+P736 [Content]: Vz(t) < V)  (Pz(t) < P										(2-41)
+
+P737 [Content]: Trong đó: Vz(t): vận tốc thẳng đứng (giá trị âm khi rơi); Pz(t): cao độ trọng tâm tại thời điểm t; V, P: các ngưỡng vận tốc và độ cao tối thiểu.
+
+P738 [Content]: Để lọc các hoạt động như ngòi nhanh, hệ thống kiểm tra cao độ sau khi va chạm bằng cách:
+
+P739 [Content]: Pz(tend) < still												(2-42)
+
+P740 [Content]: Tầng thông tin vật lý (SPI - Subject’s Physical Information): đây là một cải tiến của phương pháp ngưỡng, áp dụng các ràng buộc vật lý thực tế của con người làm “cổng” kiểm soát. Một cú ngã chỉ được tuyên bố khi tất cả các điều kiện SPI được thỏa mãn đồng thời:
+
+P741 [Content]: (zmin  zthr)  ( zmin)  (rv-r  rv-z,thr)						(2-43)
+
+P742 [Content]: Trong đó: rv-z là tỷ lệ vận tốc hướng xuống trong cửa sổ quan sát, phản ánh tính nhất quán của chuyển động rơi.
+
+P743 [Heading 3]: Phương pháp học máy truyền thống (ML):
+
+P744 [Content]: Các thuật toán hoạt động hiệu quả trên các tập dữ liệu có cấu trúc và yêu cầu con người xác định trước các đặc trưng quan trọng (như vận tốc, gia tốc trung bình, phương sai). Sử dụng các mô hình toán học để phân chia không gian đặc trưng thành các lớp khác nhau.
+
+P745 [Content]: SVM (Support Vector Machine): tìm kiếm một siêu phẳng (hyperplane) tối ưu để tách biệt các lớp dữ liệu trong không gian đa chiều.
+
+P747 [Caption]: Hình 2.15 Học máy bằng SVM
+
+P748 [Content]: One-Class SVM (OCSVM) trực tuyến: thường dùng cho phát hiện bất thường (té ngã được coi là một sự kiện hiếm gặp so với các hoạt động thường ngày). Với hàm quyết định:
+
+P749 [Content]: = 				(2-44)
+
+P750 [Content]: Với là trạng thái bình thường.
+
+P751 [Content]: là trạng thái bất thường.
+
+P752 [Content]: k-Nearest Neighbors (kNN): phân loại hành vi dựa trên khoảng cách tới các mẫu dữ liệu huấn luyện gần nhất. Thuật toán này đơn giản, dễ triển khai nhưng hiệu suất phụ thuộc nhiều vào việc chọn số lượng lân cận k và độ sạch của dữ liệu kết hợp với dữ liệu Doppler hoặc mảng ăng-ten MIMO.
+
+P753 [Content]: Cây quyết định (Decision Trees): sử dụng một chuỗi các quy tắc logic để phân loại. Các mô hình xác suất và logic giúp hiểu rõ quá trình ra quyết định, thường dùng làm nền tảng so sánh cho các mô hình phức tạp hơn.
+
+P754 [Heading 3]: Phương pháp học sâu (DL):
+
+P755 [Content]: Phương pháp học sâu DL trong PHTN là một tập hợp con chuyên biệt của ML, sử dụng các kiến trúc phân lớp mô phỏng cấu trúc thần kinh não người để thực hiện các phép biến đổi dữ liệu phi tuyến tính. Khác với các phương pháp truyền thống, DL có khả năng tự học các đặc trưng phân cấp từ dữ liệu thô (như tín hiệu radar, PC, bản đồ Doppler), giúp loại bỏ bước trích xuất đặc trưng thủ công phức tạp và tốn kém.
+
+P756 [Heading 4]: Mạng noron tích chập (CNN):
+
+P757 [Content]: CNN khai thác mối quan hệ phụ thuộc dữ liệu cục bộ để giảm thiểu trọng lượng có thể học, cho phép xây dựng các mạng sâu hơn để nhận diện đặc trưng phức tạp thông qua các bộ lọc tích chập.
+
+P759 [Caption]: Hình 2.16 Mạng CNN
+
+P760 [Content]: 1D-CNN: phù hợp cho dữ liệu chuỗi thời gian (vị trí, vận tốc biến thiên), với các bộ lọc trượt dọc theo một chiều để trích xuất các đặc trưng động học từ quỹ đạo hoặc tín hiệu 1D.
+
+P761 [Content]: 2D-CNN: tối ưu cho dữ liệu nhiều đặc trưng như hình ảnh, thường dùng để phân loại các bản đồ phổ Micro-Doppler hoặc bản đồ Ranger-Doppler.
+
+P762 [Content]: 3D-CNN: được thiết kế cho dữ liệu đa chiều như PC hoặc các tập hợp bản đồ nhiệt không gian – thời gian để học đồng thời cả đặc trưng không gian và diễn biến thời gian.
+
+P763 [Heading 4]: Mạng noron hồi quy (RNN) và LSTM/GRU:
+
+P764 [Content]: Do các hoạt động của con người diễn ra liên tục, chiều thời gian là yếu tố quan trọng để hiểu hành vi.
+
+P765 [Content]: LSTM giải quyết vấn đề mất mát gradient trong RNN truyền thống bằng cách sử dụng các cổng (input, forget, output) để học các phụ thuộc dài hạn. LSTM cực kỳ hiệu quả trong việc phân biệt cú ngã với các hành động thường ngày có đặc điểm tương tự nhờ khả năng ghi nhớ diễn biến chuyển động.
+
+P766 [Content]: Forget gate: quyết định thông tin nào từ trạng thái trước đó (ht-1) bị loại bỏ.
+
+P767 [Content]: ft = (Wf[ht-1, xt] + bf)										(2-45)
+
+P768 [Content]: Input gate: quyết định thông tin mới nào (xt) được đưa vào bộ nhớ.
+
+P769 [Content]: it = (Wi[ht-1, xt] + bi)										(2-46)
+
+P770 [Content]: Cập nhật trạng thái ô:
+
+P771 [Content]: Ct = ftCt-1 + it											(2-47)
+
+P772 [Content]: Output gate: xác định giá trị đầu ra dựa trên trạng thái ô đã cập nhật.
+
+P773 [Content]: ot = (Wo[ht-1, xt] + bo)										(2-48)
+
+P774 [Content]: Trạng thái ẩn:
+
+P775 [Content]: ht = ottanh(Ct)											(2-49)
+
+P776 [Content]: Trong đó: : hàm sigmoid; W: ma trận trọng số; b: độ lệch.
+
+P778 [Caption]: Hình 2.17 Mạng LSTM
+
+P779 [Content]: GRU (Gated Recurrent Unit) là một biến thể đơn giản hơn của LSTM với ít cổng hơn, giúp thời gian huấn luyện nhanh hơn nhưng vẫn duy trì khả năng học các chuỗi thời gian dài.
+
+P780 [Content]: Bi-LSTM: phân tích dữ liệu theo cả hai hướng tiến và lùi, cung cấp cái nhìn toàn diện hơn về chuỗi hoạt động.
+
+P781 [Heading 4]: Xử lý trực tiếp PC (PointNet):
+
+P782 [Content]: PointNet là kiến trúc đột phá cho phép tiêu thụ trực tiếp dữ liệu PC 3D thô mà không cần chuyển đổi sang dạng ảnh hay bản đồ 2D. Kiến trúc này sử dụng các mạng chuyển đổi (T-net) để học các đặc trưng bất biến với phép xoay tịnh tiến. Điều này giúp bảo toàn thông tin không gian nguyên bản và cải thiện độ chính xác trong việc nhận diện tư thế người.
+
+P783 [Content]: Hàm tiêu chuẩn cho T-net:
+
+P784 [Content]: Treg = ||I – KKT|											(2-50)
+
+P785 [Content]: Trong đó: I: ma trận đơn vị; K: ma trận căn chỉnh đặc trưng do T-net dự đoán.
+
+P786 [Heading 4]: Mạng Capsule:
+
+P787 [Content]: Thay vì sử dụng các giá trị vô hướng như CNN, Capsule sử dụng các vector để biểu diễn các thực tế, giúp giữ lại các mối quan hệ không gian tốt hơn. Đặt biệt hiệu quả trong việc xử lý các tập dữ liệu nhỏ và mất cân bằng lớp.
+
+P788 [Content]: Hàm phi tuyến tính (Squashing) giúp rút ngắn vector dài về gần 1 và vector ngắn về gần 0 để biểu thị xác suất tồn tại của đối tượng.
+
+P789 [Content]: zj = 												(2-51)
+
+P790 [Content]: Hàm mất mát (Margin Loss) cho phép nhận diện nhiều lớp đồng thời.
+
+P791 [Content]: Lr = yrmax(0, m+ - ||zr||2) + 0.5(1 – yr)max(0, ||zr|| - m-)2				(2-52)
+
+P792 [Content]: Trong đó: yr: nhãn lớp; m+ = 0.9 và m- = 0.1: ngưỡng thực nghiệm.
+
+P793 [Heading 4]: Cơ chế Attention và Transformer:
+
+P794 [Content]: Cơ chế Attention cho phép mô hình gán trọng số khác nhau cho các khung hình hoặc bộ phận cơ thể khác nhau, tập trung vào những khoảnh khắc có sự thay đổi vận tốc hoặc tư thế thay đổi đột ngột.
+
+P795 [Content]: Transformer loại bỏ hoàn toàn cấu trúc RNN, thay vào đó dựa trên Self-attention để xử lý song song và hiểu các mối quan hệ phức tạp trong dữ liệu chuỗi. Mô hình này giúp giảm báo động giả bằng cách nắm bắt các thay đổi tinh vi nhất trong chuyển động.
+
+P796 [Content]: Cơ chế Self-attention là mô hình dựa trên ba thành phần Q (queries), K (keys) và V (Values), tất cả đều có nguồn gốc từ cùng một chuỗi đầu vào.
+
+P797 [Content]: Attention(Q, K, V) = softmax()V							(2-53)
+
+P798 [Content]: Trong đó: dk: chiều của vector K giúp chuẩn hóa giá trị.
+
+P799 [Heading 4]: Học không giám sát (VAE):
+
+P800 [Content]: Trong thực tế, việc thu thập dữ liệu té ngã có nhãn là rất khó khăn. Các phương pháp như VAE học cách tái cấu trúc dữ liệu bình thường và coi té ngã là một sự bất thường dựa trên sai số tái cấu trúc cao.
+
+P801 [Content]: Hàm mất mát của VAE:
+
+P802 [Content]: LVAE  = KLD{q(z|X)||p(z)} – Eq(z|X)[logp(X|z)]						(2-54)
+
+P803 [Content]: Trong đó:
+
+P804 [Content]: Thành phần thứ nhất là khoảng cách KLD (Kullback-Leibeler divergence) giữa phân phối tiềm ẩn dự đoán và phân phối chuẩn.
+
+P805 [Content]: Thành phần thứ hai là kỳ vọng của log-likelihood, đo lường khả năng tái cấu trúc dữ liệu.
+
+P806 [Heading 4]: Các chiến lược học đặc biệt:
+
+P807 [Content]: Phát hiện bất thường (Anomaly Detection) sử dụng các mô hình như VAE hoặc RNN để chỉ học các mẫu hoajrt động bình thường. Khi xảy ra té ngã (một hành động chưa từng biết) mô hình sẽ tạo ra sai số tái cấu trúc lớn, từ đó kích hoạt cảnh báo.
+
+P808 [Content]: Học tương phản (Contrastive Learning- SCL-Fall) giúp mô hình trích xuất các đặc trưng không biến đổi qua các môi trường khác nhau bằng cách so sánh các cặp dữ liệu tương đồng và khác biệt, năng cao khả năng tổng quát hóa của hệ thống.
+
+P809 [Heading 2]: Phương thức giao tiếp và truyền thông:
+
+P810 [Heading 3]: Chuẩn giao tiếp UART:
+
+P811 [Heading 4]: UART là gì?
+
+P812 [Content]: UART (Universial Asynchronous Receiver/Transmitter) là chuẩn giao tiếp nối tiếp bất đồng bộ rất phổ biến trong các hệ thống nhúng và điện tử. UART có nhiệm vụ chuyển đổi dữ liệu song song thành dữ liệu nối tiếp để truyền đi (TX – Transmit), đồng thời chuyển dữ liệu nối tiếp nhận được thành dữ liệu song song để thiết bị xử lý (RX – Receive).
+
+P813 [Content]: Vì là giao tiếp bất đối xứng, UART không có tín hiệu xung nhịp chung giữa bên gửi và bên nhận. Thay vào đó, nó sử dụng tốc độ Baud Rate để đồng bộ hóa thời gian, đảm bảo dữ liệu được truyền chính xác.
+
+P815 [Caption]: Hình 2.18 Giao thức UART
+
+P816 [Heading 4]: Cấu trúc khung dữ liệu UART:
+
+P817 [Content]: Trong quá trình truyền nhận qua UART, dữ liệu được đóng gói dưới dạng các khung ký tự. Mỗi gói bao gồm:
+
+P819 [Caption]: Hình 2.19 Gói tin UART
+
+P820 [Content]: 1 bit bắt đầu (Start bit): kích hoạt bằng một tín hiệu mức thấp (low) để phân biệt với trạng thái nghỉ.
+
+P821 [Content]: 5 đến 9 bit dữ liệu (Data bits): chứa thông tin thực tế.
+
+P822 [Content]: 0 đến 1 bit kiểm tra (Parity bit): tùy chọn chẵn hoặc lẻ để kiểm tra lỗi truyền dẫn, có thể được loại bỏ tùy thiết kế.
+
+P823 [Content]: 1 đến 2 bit kết thúc (Stop bit): nằm ở cuối khung để báo hiệu hoàn thành việc nhận một khung dữ liệu.
+
+P824 [Heading 4]: Các phương thức hoạt động:
+
+P825 [Content]: UART hỗ trợ ba phương thức truyền thông chính tùy thuộc vào nhu cầu hệ thống:
+
+P826 [Content]: Simplex: dữ liệu chỉ truyền theo một hướng duy nhất.
+
+P827 [Content]: Half-duplex: cả hai thiết bị đều có thể gửi và nhận, nhưng tại một thời điểm chỉ có một bên được phép truyền trong khi bên kia ở trạng thái nghỉ.
+
+P828 [Content]: Full-duplex: bên gửi và bên nhận có thể hoạt động đồng thời, thường chỉ cần hai dây dữ liệu nối tiếp TX và RX và một dây nối đất GND.
+
+P829 [Heading 4]: Quá trình hoạt động của UART:
+
+P830 [Content]: Trước khi bắt đầu truyền, đường truyền luôn duy trì ở mức cao (high), gọi là bit nghỉ (Indle). Trạng thái này giúp hệ thống phân biệt rõ ràng khi nào một tín hiệu truyền thực sự bắt đầu.
+
+P831 [Content]: Khi có dữ liệu cần truyền:
+
+P832 [Content]: Dữ liệu song song được đưa vào bộ đệm TX theo nguyên tắc FIFO.
+
+P833 [Content]: Module gửi lấy dữ liệu từ bộ đệm và đóng gói chúng vào khung (Packet).
+
+P834 [Content]: UART chuyển đổi dữ liệu song song thành dạng nối tiếp và gửi đi từng bit một thông qua chân TX.
+
+P835 [Content]: Đồng bộ hóa Baud Rate: bộ tạo tốc độ Baud sẽ cung cấp tần số truyền tương ứng cho cả hai module truyền và nhận. Hai bên giao tiếp được phải thiết lập cùng một tốc độ Baud để dữ liệu được đọc đúng thời điểm.
+
+P836 [Content]: Khi tín hiệu được truyền đến chân RX:
+
+P837 [Content]: Module nhận bắt đầu tính toán thời gian ngay khi nhận được bit Start cho đến khi gặp bit Stop.
+
+P838 [Content]: Sau đó nhận dữ liệu từng bit một và tái cấu trúc lại thành các byte dữ liệu.
+
+P839 [Content]: UART chuyển đổi dữ liệu nối tiếp nhận được trở lại dạng song song để thiết bị có thể xử lý.
+
+P840 [Content]: Dữ liệu sau đó được lưu vào bộ đệm RX để chờ được đọc cũng theo nguyên tắc FIFO.
+
+P841 [Content]: Kết thúc quá trình: khi module nhận phát hiện thấy bit Stop, nó sẽ ngừng thu dữ liệu. Nếu định dạng dữ liệu không chính xác so với cấu hình thiết lập, UART có thể phát ra thông báo lỗi hoặc dừng hoạt động.
+
+P842 [Heading 3]: Giao thức truyền GPIO:
+
+P843 [Content]: GPIO (General Purpose Input/Output) là các chân nhập/xuất đa năng trên bộ vi điều khiển, cho phép hệ thống tương tác với các linh kiện ngoại vi thông qua các tín hiệu kỹ thuật số. Nó được sử dung để kiểm soát các công tắc hoặc các trạng thái logic của phần cứng. Khác với UART có định dạng khung dữ liệu cố định, GPIO chỉ là điều chỉnh điện áp (cao/thấp) trên chân cắm để kích hoạt hoặc nhận biết một trạng thái vật lý cụ thể.
+
+P844 [Heading 3]: TCP/IP và Internet:
+
+P845 [Content]: Kết nối Internet là một sự kết hợp để biến một thiết bị phát hiện đơn lẻ thành một hệ thống giám sát y tế từ xa.
+
+P846 [Content]: Hệ thống sử dụng các mạng truyền thông như 4G, 5G hoặc Wifi/Ethernet để gửi thông báo từ thiết bị radar đến hệ thống máy chủ.
+
+P848 [Caption]: Hình 2.20 Giao thức truyền thông TCP/IP
+
+P849 [Content]: Hệ thống giám sát thường được triển khai dưới dạng dịch vụ trên nền tảng Web cho phép nhân viên y tế theo dõi trạng thái bệnh nhân từ bất kỳ trình duyệt nào khi có kết nối mạng. Hoặc ứng dụng Mobile cho cá nhân để giám sát người cao tuổi.
+
+P850 [Content]: Giao thức HTTP (Hypertext Transfer Protocol) là giao thức chính được sử dụng để kích hoạt các cảnh báo khẩn cấp. Khi PHTN, hệ thống sẽ thực hiện một yêu cầu HTTP tới các nền tảng đám mây.
+
+P851 [Content]: Thông qua giao thức HTTP, hệ thống gửi các lệnh tới API của Twilio để thực hiện cuộc gọi tự động hoặc gửi tin nhắn SMS khẩn cấp tới số điện thoại của người thân hoặc bác sĩ.
+
+P852 [Content]: Một số nghiên cứu sử dụng module thông báo dựa trên Gmail API để gửi thư điện tử cảnh báo ngay lập tức kèm theo thông tin chi tiết về sự cố.
+
+P853 [Content]: Kiến trúc kết nối Internet trong các hệ thống này thường theo mô hình phân tầng:
+
+P854 [Content]: Tầng thiết bị: cảm biến thu thập dữ liệu và chuyển sang bộ vi xử lý/máy tính nhúng (RP).
+
+P855 [Content]: Cổng kết nối (Gateway): dữ liệu sau khi xử lý được truyền qua một thiết bị cổng hoặc kết nối trực tiếp với mạng Internet.
+
+P856 [Content]: Tầng đám mây (Cloud): các máy chủ đám mây nhận dữ liệu, thực hiện lưu trữ Databse và khớp đối tượng bị ngã với danh sách người chăm sóc tương ứng.
+
+P857 [Content]: Thông báo: cuối cùng máy chủ gửi thông báo tới Website hoặc ứng dụng di động của người chăm sóc qua mạng Internet để yêu cầu can thiệp.
+
+P858 [Heading 3]: Lưu trữ dữ liệu Cloud (Firebase):
+
+P860 [Caption]: Hình 2.21 Nền tảng Cloud (Firebase)
+
+P861 [Content]: Nền tảng Cloud của Firebase cung cấp một hệ sinh thái quản lý dữ liệu toàn diện, giải quyết từ bài toán lưu trữ dữ liệu có cấu trúc cho đến dữ liệu phi cấu trúc. Hệ thống này hoạt động hoàn toàn trên hạ tầng điện toán đám mây có sẵn của Google với ba dịch vụ cốt lõi:
+
+P862 [Heading 4]: Cloud Firestore (CSDL NoSQL):
+
+P863 [Content]: Đây là hệ quản trị CSDL phi cấu trúc được thiết kế theo mô hình hướng tài liệu (Document-orinted database). Dữ liệu trong Firestore được tổ chức theo cấu trúc phân cấp bao gồm:
+
+P864 [Content]: Documents là một đơn vị lưu trữ chứa các cặp Key-Value, hỗ trợ nhiều định dạng dữ liệu phức tạp như chuỗi, số, mảng và các đối tượng lồng nhau.
+
+P865 [Content]: Collection đóng vai trò làm container chứa các Document có cùng tính chất.
+
+P866 [Content]: Firestore sử dụng kết nối (WebSockets/Long-polling) để tự động ghi nhận và cập nhật các thay đổi dữ liệu từ Server xuống tất cả các thiết bị client đang kết nối gần như ngay lập tức, giảm thiểu độ trễ.
+
+P867 [Content]: Khi mất kết nối mạng, Firestore tự động chuyển sang sử dụng bộ nhớ đệm (Cache) cục bộ trên thiết bị để ghi nhận các thao tác đọc/ghi của người dùng. Ngay khi thiết bị được kết nối trở lại, hệ thống sẽ tự động đồng bộ và giải quyết xung đột dữ liệu với Cloud Server.
+
+P868 [Heading 4]: Firebase Realtime Database:
+
+P869 [Content]: Bên cạnh Firestore, Firebase vẫn duy trì Realtime database đối với các bài toán tối ưu độ trễ. Khác với Firestore, dịch vụ này lưu trữ toàn bộ dữ liệu dưới dạng một cây đói tượng JSON (JSON Tree) duy nhất. Tất cả các nút dữ liệu đều có thể được truy cập thông qua các đường dẫn URL.
+
+P870 [Content]: Thực thi tối ưu với các tác vụ yêu cầu phản hồi siêu tốc độ và liên tục nhờ cấu trúc dữ liệu tối giản. Tuy nhiên, do tính chất phân cấp dạng cây, việc mở rông quy mô dữ liệu lớn hoặc thực hiện các truy vấn phức tạp sẽ bị hạn chế hơn so với Cloud Firestore.
+
+P871 [Heading 4]: Cloud Storage:
+
+P872 [Content]: Đây là giải pháp để lưu trữ các dữ liệu phi cấu đtrúc dung lượng lớn, không thể lưu trữ trực tiếp vào CSDL như hình ảnh, video, âm thanh, tệp.
+
+P873 [Content]: Dịch vụ này hoạt động dựa trên nền tảng hạ tầng Google Cloud Storage, mang lại khả năng lưu trữ ở quy mô Exabyte với độ sẵn sàng cao. Được thiết kế tối ưu cho môi trường mạng di động, SDK của Cloud Storage tự động quản lý tiến trình Upload/Download. Nếu kết nối mạng bị gián đoạn, tiến trình sẽ tạm dừng và tiếp tục ngay khi có mạng trở lại mà không phải truyền tải lại từ đầu.
+
+P874 [Heading 4]: Đánh giá ưu điểm và nhược điểm của Firebase:
+
+P875 [Content]: Ưu điểm:
+
+P876 [Content]: Khả năng đồng bộ thời gian thực với cơ chế tự động đẩy dữ liệu từ Cloud xuống client giúp tối ưu hóa luồng dữ liệu cho các ứng dụng cần cập nhật liên tục.
+
+P877 [Content]: Hỗ trợ tối ưu cho môi trường mạng không ổn định. Tính năng tự động lưu trữ và xử lý dữ liệu cache khi mất mạng, sau đó đồng bộ ngược lên Cloud khi có kết nối trở lại giúp nâng đáng kể độ tin cậy của ứng dụng, đảm bảo tính toàn vẹn của dữu liệu.
+
+P878 [Content]: Được vận hành trên nền tảng hạ tầng toàn cầu của Google Cloud, hệ thống CSDL của Firebase có khả năng tự động phân mảnh và mở rộng năng suất xử lý (tăng băng thông và dung lượng) để đáp ứng lượng truy cập đột biến mà không yêu cầu can thiệp quản trị hệ thống.
+
+P879 [Content]: Mô hình BaaS giúp loại bỏ hoàn toàn giai đoạn thiết kế API, cấu hình máy chủ, cài đặt hệ quản trị CSDL và tối ưu hóa cổng mạng. Điều này giúp các nhà phát triển tập trung hoàn toàn vào việc xử lý logic và khai thác dữ liệu ở tầng ứng dụng.
+
+P880 [Content]: Sự kết hợp chặt chẽ giữa Firebase Authentication và Firebase Security Rules tạo ra một hàng rào bảo mật tầng Cloud mạnh mẽ, cho phép phân quyền truy cập dữ liệu chi tiết hoặc từng tập tin cụ thể.
+
+P881 [Content]: Nhược điểm:
+
+P882 [Content]: Do Cloud Firestore và Realtime Database hoạt động theo mô hình NoSQL, hệ thống không hỗ trợ các câu lệnh truy vấn phức tạp như liên kết bảng, truy vấn lồng hoặc tìm kiếm nâng cao. Việc tổ chức dữ liệu đòi hỏi kỹ thuật Denormalization, dễ dẫn đến tình trạng trùng lặp dữ liệu và khó khăn trong việc đảm bảo tính nhất quán khi cập nhật.
+
+P883 [Content]: Toàn bộ cấu trúc lưu trữ, cơ chế bảo mật và mã nguồn tương tác đểu phụ thuộc vào SDK và hệ sinh thái độc quyền của Google Firebase. Nếu dự án có nhu cầu chuyển sang hệ thống khác hoặc về máy chủ nội bộ, việc tái cấu trúc CSDL và viết lại mã nguồn sẽ tốn rất nhiều chi phí và công sức.
+
+P884 [Content]: Chính sách vận hành của Firebase tính phí dựa trên số lượng thao tác đọc/ghi/xóa dữ liệu và băng thông truyền tải, thay vì tính theo dung lượng lưu trữ cố định.
+

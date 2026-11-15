@@ -1,0 +1,103 @@
+Created At: 2026-11-02T20:56:55+07:00
+Completed At: 2026-11-02T20:56:55+07:00
+Showing lines 1-100 of 236
+1: #include <Wire.h>
+2: #include <Adafruit_MPU6050.h>
+3: #include <Adafruit_Sensor.h>
+4: #include <BLEDevice.h>
+5: #include <BLEServer.h>
+6: #include <BLEUtils.h>
+7: #include <BLE2902.h>
+8: 
+9: #include "config.h"
+10: 
+11: // Đối tượng cảm biến gia tốc MPU6050
+12: Adafruit_MPU6050 mpu;
+13: bool mpuFound = false;
+14: 
+15: // Biến Bluetooth (BLE)
+16: BLEServer* pServer = NULL;
+17: BLECharacteristic* pCharacteristicFall = NULL;
+18: bool deviceConnected = false;
+19: bool oldDeviceConnected = false;
+20: 
+21: // Trạng thái còi hú & rung khi té ngã
+22: bool isAlarmActive = false;
+23: unsigned long alarmStartTime = 0;
+24: 
+25: // Callbacks để bắt sự kiện kết nối BLE từ App điện thoại
+26: class MyServerCallbacks: public BLEServerCallbacks {
+27:     void onConnect(BLEServer* pServer) {
+28:       deviceConnected = true;
+29:       Serial.println("📱 APP ĐÃ KẾT NỐI BLUETOOTH!");
+30:     };
+31: 
+32:     void onDisconnect(BLEServer* pServer) {
+33:       deviceConnected = false;
+34:       Serial.println("📱 APP ĐÃ NGẮT KẾT NỐI!");
+35:     }
+36: };
+37: 
+38: // Hàm đo khoảng cách bằng cảm biến siêu âm HC-SR04 (Đã tối ưu cho ESP32-S3)
+39: float getDistanceCm() {
+40:   // 1. Tạo xung kích Trig sạch sẽ (khóa ngắt tạm thời để tránh méo xung)
+41:   noInterrupts();
+42:   digitalWrite(HC_TRIG_PIN, LOW);
+43:   delayMicroseconds(5);
+44:   digitalWrite(HC_TRIG_PIN, HIGH);
+45:   delayMicroseconds(12);
+46:   digitalWrite(HC_TRIG_PIN, LOW);
+47:   interrupts();
+48: 
+49:   // 2. Đọc thời gian Echo phản hồi bằng pulseIn (timeout 40ms ~ 7 mét)
+50:   unsigned long duration = pulseIn(HC_ECHO_PIN, HIGH, 40000UL);
+51: 
+52:   // 3. Cơ chế dự phòng bằng micros() nếu pulseIn bị 0 trên ESP32-S3
+53:   if (duration == 0) {
+54:     noInterrupts();
+55:     digitalWrite(HC_TRIG_PIN, LOW);
+56:     delayMicroseconds(5);
+57:     digitalWrite(HC_TRIG_PIN, HIGH);
+58:     delayMicroseconds(15);
+59:     digitalWrite(HC_TRIG_PIN, LOW);
+60:     interrupts();
+61: 
+62:     unsigned long t0 = micros();
+63:     while (digitalRead(HC_ECHO_PIN) == LOW) {
+64:       if (micros() - t0 > 35000) return -1; // Không có phản hồi
+65:     }
+66:     unsigned long startEcho = micros();
+67:     while (digitalRead(HC_ECHO_PIN) == HIGH) {
+68:       if (micros() - startEcho > 35000) return -2; // Xung quá dài
+69:     }
+70:     duration = micros() - startEcho;
+71:   }
+72: 
+73:   // Vận tốc âm thanh ~ 0.0343 cm/us
+74:   return (float)duration * 0.0343 / 2.0;
+75: }
+76: 
+77: void setup() {
+78:   Serial.begin(115200);
+79:   delay(1000);
+80: 
+81:   Serial.println("\n========================================================");
+82:   Serial.println("   KHỞI ĐỘNG GẬY THÔNG MINH (SMART CANE HARDWARE)");
+83:   Serial.println("   - BLE: App Phone & GPS định vị");
+84:   Serial.println("   - MPU6050: Phát hiện té ngã");
+85:   Serial.println("   - HC-SR04: Cảm biến khoảng cách vật cản (VCC: 3.3V)");
+86:   Serial.println("   - Mosfet: Motor rung cảnh báo (GPIO 6)");
+87:   Serial.println("========================================================");
+88:   
+89:   // 1. Cài đặt các chân I/O
+90:   pinMode(BUZZER_PIN, OUTPUT);
+91:   pinMode(VIBRATOR_PIN, OUTPUT);
+92:   pinMode(HC_TRIG_PIN, OUTPUT);
+93:   pinMode(HC_ECHO_PIN, INPUT_PULLDOWN); // Chống trôi chân Echo
+94: 
+95:   digitalWrite(HC_TRIG_PIN, LOW);
+96:   digitalWrite(VIBRATOR_PIN, LOW);
+97:   digitalWrite(BUZZER_PIN, LOW);
+98: 
+99:   // 2. Tự kiểm tra (Self-Test) Motor rung và Còi lúc khởi động
+100:   Serial.println(">> Đang kiểm tra rung và còi trong 0.3 giây...");

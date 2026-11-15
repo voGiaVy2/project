@@ -1,0 +1,24 @@
+P1321 [Heading 1N]: KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
+
+P1322 [Content]: Kết luận
+
+P1323 [Content]: Qua quá trình nghiên cứu và thực nghiệm thực tế, đề tài “Hệ thống phát hiện và cảnh báo té ngã bằng radar mmWave kết hợp trí tuệ nhân tạo” đã hoàn thiện được sản phẩm mẫu và được kết quả cốt lõi:
+
+P1324 [Content]: Về mặt phần cứng: thiết kế và phối hợp thành công cấu trúc phần cứng. Cảm biến mmWave C1001 hoạt động ổn định, bộ xử lý trung tâm xử lý logic mượt mà. Đặc biệt, việc tích hợp còi buzzer và module SIM 4G tạo ra cơ chế báo động đa lớp tại chỗ hiệu quả.
+
+P1325 [Content]: Về mặt phần mềm và thuật toán: xây dựng thành công phân tích chuỗi đám mây điểm, vận tốc Doppler và các chỉ số chuyển động. Hệ thống có khả năng phân biệt tương đối chính xác giữa các hành vi ngã thật sự và các ADL, giảm tỉ lệ báo động giả.
+
+P1326 [Content]: Về mặt triển khai thực tế: thiết kế vỏ hộp in 3D kết hợp nguồn pin sạc dự phòng đã giải quyết triệt để bài toán thi công lắp đặt thực tế. Thiết bị có thể treo cơ động, linh hoạt tại cái vị trí, bảo đảm an toàn tuyệt đối về điện và hoạt động bền bỉ ngay cả khi mất kết nối điện hay mất Wifi.
+
+P1327 [Content]: Hạn chế của đề tài: vì là phiên bản sản phẩm mẫu và thời gian nghiên cứu giới hạn, thiết bị vẫn còn phụ thuộc vào chu kỳ sạc lại của pin dự phòng, kích thước tổng quát của hệ thống còn khá to và đôi khi vẫn còn nhiễu nếu trong phòng có nhiều thiết bị gây nhiễu.
+
+P1328 [Content]: Hướng phát triển
+
+P1329 [Content]: Tối ưu hóa kiến trúc và nguồn cấp: thay thế pin dự phòng bằng giải pháp cấp nguồn chung với dây mạng LAN. Giải pháp này vừa truyền dữ liệu tốc độ cao, vừa cấp nguồn ổn định 24/24 mà không lo hết pin.
+
+P1330 [Content]: Mở rộng quy mô hệ thống: kết hợp với các hệ thống giám sát nhịp tim, hơi thở để đo chính xác và song song với các tình huống té ngã.
+
+P1331 [Content]: Quy mô hệ thống nhà thông minh: kết nối với hệ sinh thái như Google Home, Home Assistant. Khi có ngã, hệ thống sẽ tự động mở khóa của thông minh để các biện pháp ứng cứu được diễn ra kịp thời.
+
+P1352 [Heading 1N]: PHỤ LỤC
+

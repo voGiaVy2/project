@@ -1,0 +1,147 @@
+1: [Normal] BỘ CÔNG THƯƠNG
+2: [Normal] TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP THÀNH PHỐ HỒ CHÍ MINH
+3: [Normal] KHOA CÔNG NGHỆ ĐIỆN TỬ
+7: [Normal] HỌ TÊN SINH VIÊN
+8: [Normal] PHAN THỊ NHƯ HUỲNH – 21077771
+9: [Normal] TRƯƠNG ĐĂNG LUÂN - 21061261
+11: [Normal] HỆ THỐNG PHÁT HIỆN VÀ CẢNH BÁO TÉ NGÃ BẰNG RADAR MMWARE KẾT HỢP                      TRÍ TUỆ NHÂN TẠO
+18: [Normal] KHÓA LUẬN TỐT NGHIỆP
+19: [Normal] THÀNH PHỐ HỒ CHÍ MINH, NĂM 2026
+20: [Normal] THÔNG TIN CHUNG
+24: [Normal] SĐT:                    	: 0981058458
+30: [Normal] SĐT	: 0332350173
+36: [Normal] SĐT	: 0982065889
+42: [Normal] NHẬN XÉT CỦA GIÁO VIÊN HƯỚNG DẪN
+65: [Normal] NHẬN XÉT CỦA GIÁO VIÊN PHẢN BIỆN
+88: [Normal] LỜI CẢM ƠN
+103: [Heading 1N] MỤC LỤC
+124: [Heading 1N] DANH MỤC HÌNH ẢNH
+194: [Heading 1N] DANH MỤC BẢNG BIỂU
+219: [Heading 1N] DANH MỤC TỪ VIẾT TẮT
+260: [Heading 1N] MỞ ĐẦU
+261: [Content] 1. Đặt vấn đề:
+267: [Content] 2. Mục tiêu của đề tài:
+275: [Content] 3. Đối tượng và phạm vi nghiên cứu:
+289: [Content] 4. Ý nghĩa thực tiễn của đề tài:
+319: [Heading 1] TỔNG QUAN VỀ ĐỀ TÀI
+320: [Heading 2] Thực trạng:
+321: [Heading 3] Thực trạng té ngã trong xã hội:
+324: [Heading 3] Ảnh hưởng của té ngã:
+325: [Heading 4] Đối với cá nhân người bị ngã:
+329: [Heading 4] Đối với gia đình:
+333: [Heading 4] Đối với xã hội:
+337: [Heading 3] Nhu cầu phòng tránh té ngã:
+341: [Heading 2] Các phương pháp phát hiện và cảnh báo té ngã hiện nay:
+342: [Heading 3] Phương pháp sử dụng thiết bị đeo:
+359: [Heading 3] Phương pháp sử dụng camera:
+374: [Heading 3] Phương pháp phân tích âm thanh:
+386: [Heading 3] Phương pháp sử dụng radar:
+402: [Heading 2] Nghiên cứu và mô hình liên quan:
+403: [Heading 3] Nghiên cứu về thiết bị đeo trên tay của tác giả Magnus Michael Marquez Musngi:
+404: [Heading 4] Mục tiêu:
+419: [Heading 4] Kết quả thực nghiệm và đánh giá hiệu năng:
+427: [Heading 4] Kết luận:
+429: [Heading 3] Nghiên cứu về thiết bị đeo trên thân của tác giả Magnus Michael Marquez Musngi:
+430: [Heading 4] Mục tiêu:
+440: [Heading 4] Kết quả thực nghiệm và đánh giá hiệu năng:
+448: [Heading 4] Kết luận:
+451: [Heading 3] Hệ thống té ngã dựa trên thị giác máy tính:
+452: [Heading 4] Mục tiêu:
+463: [Heading 4] Kết quả thực nghiệm và đánh giá hiệu năng:
+468: [Heading 4] Kết luận:
+471: [Heading 3] Hệ thống phát hiện té ngã bằng radar mmWave:
+472: [Heading 4] Mục tiêu:
+482: [Heading 4] Kết quả thực nghiệm và đánh giá hiệu năng:
+487: [Heading 4] Kết luận:
+490: [Heading 2] Định hướng đề tài:
+493: [Heading 1] CƠ SỞ LÝ THUYẾT
+494: [Heading 2] Tổng quan về công nghệ Radar:
+495: [Heading 3] Khái niệm Radar:
+497: [Heading 3] Lịch sử phát triển:
+500: [Heading 3] Nguyên lý hoạt động của radar:
+504: [Heading 4] Radar xung (Pulsed Radar):
+518: [Heading 4] Radar sóng liên tục (CW Radar):
+529: [Heading 4] Radar sóng liên tục bước tần số (SFCW):
+534: [Content] B = (N – 1). 											(2-6)
+539: [Heading 4] Radar sóng liên tục điều tần (FMCW Radar):
+545: [Content] S =
+553: [Heading 3] So sánh các công nghệ radar:
+556: [Heading 2] Công nghệ radar mmWave:
+564: [Heading 3] Đặc tính lan truyền của mmWave:
+570: [Heading 4] Tổn thất đường truyền trong không gian tự do:
+572: [Content] FSL = ()2											(2-12)
+579: [Heading 4] Sự suy giảm trong khí quyển:
+583: [Heading 4] Phản xạ khuếch tán:
+589: [Heading 4] Khả năng xuyên thấu hạn chế:
+594: [Heading 3] Ưu điểm của mmWave:
+602: [Heading 2] Xử lý dữ liệu:
+604: [Heading 3] Đo khoảng cách (Range-FFT):
+608: [Heading 3] Đo vận tốc (Doppler-FFT/Velocity-FFT):
+612: [Heading 3] Đo góc tới (Angle-FFT/AoA):
+623: [Heading 3] Chuyển đổi tọa độ:
+631: [Heading 2] Đám mây điểm (Point Cloud):
+636: [Heading 2] Phân cụm:
+638: [Heading 3] Thuật toán DBSCAN:
+642: [Heading 3] Dynamic DBSCAN:
+648: [Heading 3] Phân cụm dựa trên lưới (Gird based):
+653: [Heading 3] Một số phương pháp phân cụm khác:
+657: [Heading 2] Theo dõi đối tượng (Target Tracking):
+659: [Heading 3] Ước tính trạng thái và dự đoán:
+668: [Heading 3] Khởi tạo quỹ đạo:
+674: [Heading 3] Gán dữ liệu:
+683: [Heading 3] Quản lý và duy trì quỹ đạo:
+688: [Heading 2] Trích xuất đặc trưng:
+690: [Heading 3] Đặc trưng miền thời gian – tần số:
+704: [Heading 3] Đặc trưng động học từ trọng tâm:
+713: [Heading 3] Đặc trưng phân phối và cường độ:
+718: [Heading 3] Đặc trưng hình học và hình dáng:
+726: [Heading 2] Phân loại hành vi:
+727: [Heading 3] Phương pháp dựa trên ngưỡng (TBM - Threshold-Based Methods):
+743: [Heading 3] Phương pháp học máy truyền thống (ML):
+754: [Heading 3] Phương pháp học sâu (DL):
+756: [Heading 4] Mạng noron tích chập (CNN):
+763: [Heading 4] Mạng noron hồi quy (RNN) và LSTM/GRU:
+781: [Heading 4] Xử lý trực tiếp PC (PointNet):
+786: [Heading 4] Mạng Capsule:
+793: [Heading 4] Cơ chế Attention và Transformer:
+799: [Heading 4] Học không giám sát (VAE):
+806: [Heading 4] Các chiến lược học đặc biệt:
+809: [Heading 2] Phương thức giao tiếp và truyền thông:
+810: [Heading 3] Chuẩn giao tiếp UART:
+811: [Heading 4] UART là gì?
+816: [Heading 4] Cấu trúc khung dữ liệu UART:
+824: [Heading 4] Các phương thức hoạt động:
+829: [Heading 4] Quá trình hoạt động của UART:
+842: [Heading 3] Giao thức truyền GPIO:
+844: [Heading 3] TCP/IP và Internet:
+858: [Heading 3] Lưu trữ dữ liệu Cloud (Firebase):
+862: [Heading 4] Cloud Firestore (CSDL NoSQL):
+868: [Heading 4] Firebase Realtime Database:
+871: [Heading 4] Cloud Storage:
+874: [Heading 4] Đánh giá ưu điểm và nhược điểm của Firebase:
+892: [Heading 1] PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG
+893: [Heading 2] Phân tích yêu cầu thiết kế:
+894: [Heading 3] Yêu cầu người dùng:
+902: [Heading 3] Yêu cầu kỹ thuật:
+909: [Heading 2] Sơ đồ khối hệ thống:
+922: [Heading 2] Sơ đồ nguyên lý hệ thống:
+925: [Heading 2] Lưu đồ giải thuật:
+994: [Content] 1. Trạng thái chờ tín hiệu:
+998: [Content] 2. Kích hoạt luồng gọi khẩn cấp:
+1003: [Content] 3. Thực hiện cuộc gọi và thiết lập thời gian:
+1160: [Heading 2] Bộ xử lý trung tâm và các module:
+1161: [Heading 3] Cảm biến phát hiện người (C1001 mmWave Human Detection Sensor):
+1166: [Heading 3] Bộ xử lý trung tâm (Raspberry Pi 4 Model B):
+1171: [Content] RAM: 2GB, 4GB, 8GB.
+1187: [Heading 3] Module Sim 4G A7680C:
+1196: [Heading 3] Buzzer 5V MH-FMD:
+1202: [Heading 3] Nguồn pin dự phòng 5V:
+1209: [Heading 2] Thiết kế vỏ bảo vệ hệ thống (In 3D):
+1224: [Heading 2] Thiết kế phần mềm hệ thống giám sát:
+1233: [Heading 1] THỰC NGHIỆM VÀ ĐÁNH GIÁ KẾT QUẢ
+1234: [Heading 2] Mục đích và phạm vi thực nghiệm:
+1236: [Heading 2] Mô hình và môi trường thực nghiệm:
+1239: [Heading 2] Quá trình thực nghiệm:
+1305: [Heading 2] Đánh giá chung:
+1321: [Heading 1N] KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
+1352: [Heading 1N] PHỤ LỤC

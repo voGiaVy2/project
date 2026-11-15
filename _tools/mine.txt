@@ -1,0 +1,272 @@
+P0 <Normal> 
+P1 <Normal> BỘ CÔNG THƯƠNG
+P2 <Normal> TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP THÀNH PHỐ HỒ CHÍ MINH
+P3 <Normal> KHOA CÔNG NGHỆ ĐIỆN TỬ
+P4 <Normal> 
+P5 <Normal>  [IMG]
+P6 <Normal> 
+P7 <Normal> HỌ TÊN SINH VIÊN
+P8 <Normal> VÕ GIA VỸ – 22642971
+P9 <Normal> ĐÀO HUỲNH PHONG VŨ – 22679141
+P10 <Normal>  
+P11 <Normal> THIẾT KẾ GẬY THÔNG MINH HỖ TRỢ NGƯỜI CAO TUỔI SỬ DỤNG ESP32, TÍCH HỢP CẢM BIẾN PHÁT HIỆN NGÃ, ĐỊNH VỊ GPS, CẢNH BÁO ÂM THANH VÀ TỰ ĐỘNG GỬI THÔNG BÁO GIÁM SÁT ĐẾN NGƯỜI THÂN QUA ỨNG DỤNG TRÊN ĐIỆN THOẠI
+P12 <Normal> 
+P13 <Normal> Chuyên ngành: Công Nghệ Kỹ Thuật Máy Tính
+P14 <Normal> Mã chuyên ngành: 7480108
+P15 <Normal> Giảng viên hướng dẫn: ThS. Vũ Tuấn Anh
+P16 <Normal> KHÓA LUẬN TỐT NGHIỆP
+P17 <Normal> THÀNH PHỐ HỒ CHÍ MINH, NĂM 2026
+P18 <Normal> THÔNG TIN CHUNG
+P19 <Normal> Họ và tên sinh viên: Võ Gia Vỹ	MSSV: 22642971	
+P20 <Normal> Lớp	: DHDTMT18A	Khóa: 18	
+P21 <Normal> Chuyên ngành	: Công nghệ kỹ thuật máy tính	 Mã chuyên ngành: 7480108	
+P22 <Normal> SĐT:                    	: 0349793189		
+P23 <Normal> Email	: giavylyson@gmail.com		
+P24 <Normal> Địa chỉ liên hệ	: 195/2 Đông A, phường Đông Hòa, thành phố Hồ Chí Minh	
+P25 <Normal> Họ và tên sinh viên: Đào Huỳnh Phong Vũ	MSSV: 22679141	
+P26 <Normal> Lớp	: DHDTMT18A	Khóa: 18	
+P27 <Normal> Chuyên ngành	: Công nghệ kỹ thuật máy tính	Mã chuyên ngành: 7480108	
+P28 <Normal> SĐT	: 0938294593		
+P29 <Normal> Email	: daohuynhphongvu2004@gmail.com	
+P30 <Normal> Địa chỉ liên hệ	: 195/2 Đông A, phường Đông Hòa, thành phố Hồ Chí Minh	
+P31 <Normal> Tên đề tài	: Thiết kế gậy thông minh hỗ trợ người cao tuổi sử dụng ESP32, tích hợp cảm biến phát hiện ngã, định vị GPS, cảnh báo âm thanh và tự động gửi thông báo giám sát đến người thân qua ứng dụng trên điện thoại	
+P32 <Normal> Người hướng dẫn	: ThS. Vũ Tuấn Anh
+P33 <Normal> SĐT	: ..........................
+P34 <Normal> Email	: ..........................
+P35 <Normal> Cơ quan công tác	: Khoa Công Nghệ Điện Tử, Đại học Công nghiệp TPHCM
+P36 <Normal> Hồ Chí Minh, ngày     tháng      năm 2026
+TABLE0 rows=1
+   | Người hướng dẫn / (Ký và ghi rõ họ tên) | Sinh viên / (Ký và ghi rõ họ tên) | Sinh viên / (Ký và ghi rõ họ tên)
+P37 <Normal> NHẬN XÉT CỦA GIÁO VIÊN HƯỚNG DẪN
+P38 <Normal> 	
+P39 <Normal> 	
+P40 <Normal> 	
+P41 <Normal> 	
+P42 <Normal> 	
+P43 <Normal> 	
+P44 <Normal> 	
+P45 <Normal> 	
+P46 <Normal> 	
+P47 <Normal> 	
+P48 <Normal> 	
+P49 <Normal> 	
+P50 <Normal> 	
+P51 <Normal> 	
+P52 <Normal> 	
+P53 <Normal> 	
+P54 <Normal> 	
+P55 <Normal> 
+TABLE1 rows=3
+   |  | Hồ Chí Minh, ngày      tháng      năm 2026
+   |  |  / Giảng viên hướng dẫn
+   |  | (Ký và ghi rõ họ tên)
+P56 <Normal> 
+P57 <Normal>  [PAGEBREAK]
+P58 <Normal> NHẬN XÉT CỦA GIÁO VIÊN PHẢN BIỆN
+P59 <Normal> 	
+P60 <Normal> 	
+P61 <Normal> 	
+P62 <Normal> 	
+P63 <Normal> 	
+P64 <Normal> 	
+P65 <Normal> 	
+P66 <Normal> 	
+P67 <Normal> 	
+P68 <Normal> 	
+P69 <Normal> 	
+P70 <Normal> 	
+P71 <Normal> 	
+P72 <Normal> 	
+P73 <Normal> 	
+P74 <Normal> 	
+P75 <Normal> 
+TABLE2 rows=3
+   |  | Hồ Chí Minh, ngày      tháng      năm 2026
+   |  |  / Giảng viên phản biện
+   |  | (Ký và ghi rõ họ tên)
+P76 <Normal> 
+P77 <Normal> 
+P78 <Normal> 
+P79 <Normal> 
+P80 <Normal> LỜI CẢM ƠN [PAGEBREAK]
+P81 <Content> Bốn năm đại học sắp khép lại bằng cuốn khóa luận tốt nghiệp này, và chúng em hiểu rằng để đi đến chặng cuối cùng, không chỉ có nỗ lực của riêng hai người thực hiện.
+P82 <Content> Trước hết, chúng em xin bày tỏ lòng biết ơn sâu sắc đến Trường Đại học Công nghiệp Thành phố Hồ Chí Minh và Khoa Công nghệ Điện tử, nơi đã ươm mầm cho chúng em từ những kiến thức nền tảng đầu tiên cho đến khả năng tự tay biến một ý tưởng thành sản phẩm thực tế. Xin cảm ơn quý thầy cô đã không chỉ truyền đạt kiến thức, mà còn truyền cả sự tận tâm và nghiêm túc trong nghiên cứu khoa học.
+P83 <Content> Chúng em xin gửi lời tri ân đặc biệt đến Thầy ThS. Vũ Tuấn Anh – người đã đồng hành cùng chúng em từ những ngày đề tài còn là một ý tưởng sơ khai. Những buổi trao đổi, những lần chỉnh sửa và cả những góp ý thẳng thắn của Thầy đã giúp chúng em nhìn rõ hơn con đường mình đang đi, để đề tài này không chỉ hoàn thành mà còn thực sự có ý nghĩa. Sự kiên nhẫn và tâm huyết của Thầy là điều chúng em sẽ luôn ghi nhớ.
+P84 <Content> Với mong muốn góp một giải pháp nhỏ giúp người cao tuổi an tâm hơn khi di chuyển và giúp con cháu yên lòng hơn khi ở xa, chúng em đã dồn nhiều tâm huyết vào đề tài này. Tuy nhiên, do thời gian và kinh nghiệm thực tế còn hạn chế, khóa luận khó tránh khỏi những thiếu sót. Chúng em rất mong nhận được sự góp ý của quý thầy cô để đề tài được hoàn thiện hơn.
+P85 <Normal> 
+P86 <Normal> 
+P87 <Normal> 
+P88 <Normal> 
+P89 <Normal> 
+P90 <Normal> 
+P91 <Normal> 
+P92 <Normal> 
+P93 <Heading 1N> MỤC LỤC
+P94 <Normal> 
+P95 <Normal> 
+P96 <Normal> 
+P97 <Normal> 
+P98 <Normal> 
+P99 <Normal> 
+P100 <Normal> 
+P101 <Normal> 
+P102 <Normal> 
+P103 <Normal> 
+P104 <Normal> 
+P105 <Normal> 
+P106 <Normal> 
+P107 <Normal> 
+P108 <Normal> 
+P109 <Normal> 
+P110 <Normal> 
+P111 <Normal> 
+P112 <Normal> 
+P113 <Normal> 
+P114 <Heading 1N> DANH MỤC HÌNH ẢNH
+P115 <Normal> No table of figures entries found.
+P116 <Normal> 
+P117 <Normal> 
+P118 <Normal> 
+P119 <Heading 1N> DANH MỤC BẢNG BIỂU
+P120 <table of figures> Bảng 2.1 Bảng so sánh các công nghệ Radar	29
+P121 <table of figures> Bảng 3.1 Thông số kỹ thuật của cảm biến mmWave C10001	96
+P122 <table of figures> Bảng 3.2 Thông số kỹ thuật module SIM 4G	99
+P123 <table of figures> Bảng 3.3 Lệnh AT được sử dụng	100
+P124 <Normal> 
+P125 <Normal> 
+P126 <Normal> 
+P127 <Normal> 
+P128 <Heading 1N> DANH MỤC TỪ VIẾT TẮT
+P129 <Content> ESP32		Vi điều khiển Wi-Fi/Bluetooth của Espressif Systems
+P130 <Content> IMU		Inertial Measurement Unit (Cảm biến đo lường quán tính)
+P131 <Content> GPS		Global Positioning System (Hệ thống định vị toàn cầu)
+P132 <Content> UART		Universal Asynchronous Receiver-Transmitter
+P133 <Content> I2C		Inter-Integrated Circuit
+P134 <Content> NMEA		National Marine Electronics Association
+P135 <Content> SVM		Signal Vector Magnitude (Độ lớn vector tín hiệu tổng hợp)
+P136 <Content> IoT		Internet of Things (Internet vạn vật)
+P137 <Content> PWM		Pulse Width Modulation (Điều chế độ rộng xung)
+P138 <Content> ADC		Analog to Digital Converter
+P139 <Content> GPIO		General Purpose Input/Output
+P140 <Content> MEMS		Micro-Electro-Mechanical Systems
+P141 <Content> CEP		Circular Error Probable (Sai số vòng tròn xác suất)
+P142 <Content> BLE		Bluetooth Low Energy
+P143 <Content> DOF		Degrees of Freedom (Bậc tự do)
+P144 <Content> TBM		Threshold-Based Method (Phương pháp dựa trên ngưỡng)
+P145 <Content> 
+P146 <Heading 1N> MỞ ĐẦU
+P147 <Content> 1. Lý do chọn đề tài:
+P148 <Content> Việt Nam đang bước vào giai đoạn già hóa dân số với tốc độ nhanh hàng đầu khu vực, kéo theo nhu cầu chăm sóc và giám sát sức khỏe người cao tuổi ngày càng cấp thiết, đặc biệt khi nhiều gia đình có con cái đi làm xa, không thể túc trực chăm sóc thường xuyên. Té ngã là một trong những nguyên nhân hàng đầu gây thương tích, tàn phế và tử vong ở người cao tuổi; nếu không được phát hiện và hỗ trợ kịp thời, một cú ngã tưởng chừng đơn giản có thể dẫn đến hậu quả nghiêm trọng.
+P149 <Content> Trên thị trường hiện đã có một số thiết bị hỗ trợ theo dõi sức khỏe như đồng hồ thông minh, vòng đeo tay, camera giám sát... Tuy nhiên, thiết bị đeo tay dễ bị quên đeo hoặc tháo ra khi sinh hoạt, trong khi camera lại vướng vấn đề riêng tư và bị giới hạn trong không gian lắp đặt cố định. Trong khi đó, cây gậy chống là vật dụng quen thuộc, gắn bó thường xuyên với người cao tuổi khi di chuyển – đây chính là vị trí lý tưởng để tích hợp các cảm biến giám sát mà không tạo cảm giác bất tiện khi sử dụng.
+P150 <Content> Xuất phát từ thực tế đó, nhóm chọn đề tài "Thiết kế gậy thông minh hỗ trợ người cao tuổi sử dụng ESP32, tích hợp cảm biến phát hiện ngã, định vị GPS, cảnh báo âm thanh và tự động gửi thông báo giám sát đến người thân qua ứng dụng trên điện thoại" nhằm xây dựng một giải pháp hỗ trợ giám sát an toàn, chi phí hợp lý, dễ triển khai và gần gũi với thói quen sinh hoạt hằng ngày của người cao tuổi.
+P151 <Content> 2. Mục tiêu của đề tài:
+P152 <Content> Mục tiêu chính: thiết kế và thi công một cây gậy thông minh tích hợp vi điều khiển ESP32, có khả năng tự động phát hiện té ngã, định vị vị trí và gửi cảnh báo tức thời đến người thân.
+P153 <Content> Mục tiêu cụ thể:
+P154 <Content> Xây dựng thuật toán phát hiện té ngã dựa trên dữ liệu từ cảm biến IMU MPU6050 (gia tốc kế và con quay hồi chuyển).
+P155 <Content> Tích hợp module định vị GPS NEO-6M để xác định vị trí người dùng theo thời gian thực.
+P156 <Content> Xây dựng cơ chế cảnh báo tại chỗ bằng còi buzzer và cảnh báo từ xa qua ứng dụng Blynk (push notification).
+P157 <Content> Thực nghiệm, đánh giá độ chính xác phát hiện ngã, độ trễ cảnh báo, độ chính xác định vị và thời lượng hoạt động của hệ thống.
+P158 <Content> Viết báo cáo tổng hợp kết quả nghiên cứu và triển khai hệ thống.
+P159 <Content> 3. Đối tượng và phạm vi nghiên cứu:
+P160 <Content> Đối tượng nghiên cứu:
+P161 <Content> Vi điều khiển ESP32 làm bộ xử lý trung tâm.
+P162 <Content> Cảm biến IMU MPU6050 phát hiện té ngã.
+P163 <Content> Module GPS NEO-6M định vị vị trí người dùng.
+P164 <Content> Module còi buzzer cảnh báo tại chỗ và nền tảng IoT Blynk cảnh báo từ xa.
+P165 <Content> Phạm vi nghiên cứu:
+P166 <Content> Phạm vi không gian: thử nghiệm trong nhà và ngoài trời có tín hiệu GPS.
+P167 <Content> Phạm vi công nghệ: thuật toán ngưỡng gia tốc/góc nghiêng để phát hiện ngã; chưa triển khai thử nghiệm lâm sàng trên người cao tuổi thực tế.
+P168 <Content> 4. Ý nghĩa thực tiễn của đề tài:
+P169 <Content> Đề tài mang nhiều ý nghĩa thực tiễn, đóng góp vào các quy mô ứng dụng khác nhau:
+P170 <Content> Đối với người cao tuổi: giảm sự phụ thuộc vào người chăm sóc, an tâm hơn khi di chuyển một mình.
+P171 <Content> Đối với gia đình: tiết kiệm thời gian túc trực chăm sóc, yên tâm giám sát sức khỏe người thân từ xa.
+P172 <Content> Đối với xã hội: góp phần thúc đẩy ứng dụng công nghệ IoT chi phí thấp trong chăm sóc y tế và an sinh xã hội cho người cao tuổi.
+P173 <Content> Đối với nghiên cứu và đào tạo: là cơ sở cho các nghiên cứu tiếp theo về thiết bị đeo/cầm tay hỗ trợ giám sát sức khỏe, đồng thời là tài liệu tham khảo cho các chương trình đào tạo kỹ thuật liên quan.
+P174 <Normal>  [PAGEBREAK]
+P175 <Heading 1> 	TỔNG QUAN VỀ ĐỀ TÀI
+P176 <Heading 2> Thực trạng
+P177 <Heading 3> Thực trạng già hóa dân số và té ngã ở người cao tuổi
+P178 <Content> Việt Nam chính thức bước vào giai đoạn già hóa dân số từ năm 2011 và được dự báo trở thành quốc gia có dân số già vào khoảng năm 2036-2038, với tốc độ già hóa thuộc nhóm nhanh nhất thế giới. Theo Tổ chức Y tế Thế giới (WHO), té ngã là nguyên nhân gây thương tích không chủ ý đứng hàng thứ hai dẫn đến tử vong trên toàn cầu, trong đó người trên 65 tuổi là nhóm chịu ảnh hưởng nặng nề nhất. Ước tính mỗi năm khoảng 28-35% người cao tuổi từng trải qua ít nhất một lần té ngã.
+P179 <Heading 3> Ảnh hưởng của té ngã
+P180 <Heading 4> Đối với cá nhân
+P181 <Content> Té ngã ở người cao tuổi thường để lại hậu quả nghiêm trọng do loãng xương, phản xạ chậm và khả năng hồi phục kém: gãy xương hông, gãy cổ tay, chấn thương sọ não. Nhiều trường hợp người cao tuổi ngã và không thể tự đứng dậy, nằm bất động trong thời gian dài, có thể dẫn đến mất nước, hạ thân nhiệt và tăng nguy cơ tử vong dù chấn thương ban đầu không quá nghiêm trọng.
+P182 <Heading 4> Đối với gia đình
+P183 <Content> Khi người cao tuổi bị té ngã mà không được phát hiện kịp thời, gia đình phải đối mặt với chi phí điều trị, phục hồi chức năng kéo dài và áp lực tâm lý lo lắng thường trực, đặc biệt với các gia đình có con cái đi làm xa.
+P184 <Heading 4> Đối với xã hội
+P185 <Content> Chi phí y tế và chăm sóc dài hạn liên quan đến biến chứng do té ngã tạo gánh nặng đáng kể lên hệ thống y tế và an sinh xã hội.
+P186 <Heading 3> Nhu cầu về thiết bị hỗ trợ giám sát người cao tuổi
+P187 <Content> Thiết bị lý tưởng cần đáp ứng: gắn liền với thói quen sinh hoạt hằng ngày để tránh bị quên sử dụng, chi phí hợp lý, đơn giản khi sử dụng, và có khả năng cảnh báo tức thời, chính xác, hạn chế tối đa cảnh báo nhầm.
+P188 <Heading 2> Các phương pháp phát hiện và cảnh báo té ngã hiện nay
+P189 <Heading 3> Phương pháp sử dụng thiết bị đeo
+P190 <Content> Vòng tay, đồng hồ thông minh tích hợp gia tốc kế và con quay hồi chuyển là hướng phổ biến nhờ chi phí thấp. Nhược điểm lớn nhất là người cao tuổi thường quên đeo hoặc tháo ra khi sinh hoạt.
+P191 <Heading 3> Phương pháp sử dụng camera
+P192 <Content> Camera kết hợp thị giác máy tính có độ chính xác cao nhưng bị giới hạn phạm vi lắp đặt cố định, gây lo ngại về quyền riêng tư và chi phí xử lý hình ảnh cao.
+P193 <Heading 3> Phương pháp phân tích âm thanh và radar
+P194 <Content> Phân tích âm thanh dễ bị nhiễu bởi tạp âm môi trường. Radar sóng milimet cho phép phát hiện không tiếp xúc nhưng chi phí thiết bị cao và cũng giới hạn trong không gian lắp đặt cố định.
+P195 <Heading 3> Phương pháp tích hợp trên gậy chống (định hướng của đề tài)
+P196 <Content> Việc tích hợp cảm biến trực tiếp lên cây gậy chống – vật dụng người cao tuổi sử dụng thường xuyên và chủ động cầm theo khi di chuyển – giúp khắc phục đồng thời hạn chế "quên sử dụng" của thiết bị đeo và hạn chế "giới hạn không gian" của camera hay radar cố định. Đây là hướng tiếp cận được nhóm lựa chọn phát triển trong đề tài này.
+P197 <Heading 2> Nghiên cứu và mô hình liên quan
+P198 <Content> Nhiều nghiên cứu trong và ngoài nước đã chứng minh tính khả thi của việc sử dụng cảm biến gia tốc 3 trục kết hợp con quay hồi chuyển để phát hiện té ngã dựa trên đặc trưng động học: gia tốc tăng đột biến tại thời điểm va chạm, theo sau bởi trạng thái tĩnh kéo dài khi người dùng nằm bất động sau ngã, với độ chính xác báo cáo dao động 85-97% tùy điều kiện thử nghiệm. Các nghiên cứu về gậy/ba lô thông minh tích hợp GPS cũng cho thấy việc kết hợp định vị vệ tinh với nền tảng IoT là giải pháp khả thi, chi phí thấp để hỗ trợ người thân theo dõi từ xa theo thời gian thực.
+P199 <Heading 2> Định hướng đề tài
+P200 <Content> Trên cơ sở phân tích trên, đề tài định hướng thiết kế một cây gậy thông minh với các chức năng: phát hiện té ngã tự động dựa trên cảm biến MPU6050 với thuật toán ngưỡng hai giai đoạn; định vị vị trí người dùng bằng GPS NEO-6M; cảnh báo tại chỗ bằng buzzer; gửi thông báo tức thời kèm tọa độ đến điện thoại người thân qua Blynk; thiết kế phần cứng gọn nhẹ, dùng nguồn pin Li-ion sạc lại được.
+P201 <Normal>  [PAGEBREAK]
+P202 <Heading 1> 		CƠ SỞ LÝ THUYẾT
+P203 <Heading 2> Tổng quan vi điều khiển ESP32
+P204 <Content> ESP32 là vi điều khiển 32-bit lõi kép Xtensa LX6, tốc độ xử lý đến 240 MHz, tích hợp sẵn Wi-Fi 802.11 b/g/n và Bluetooth 4.2/BLE, cùng 34 chân GPIO hỗ trợ UART, I2C, SPI, ADC 12-bit và PWM. Nhờ mức tiêu thụ điện thấp, kích thước nhỏ gọn và giá thành hợp lý, ESP32 là lựa chọn phù hợp cho gậy thông minh, nơi vừa cần xử lý dữ liệu cảm biến thời gian thực, vừa cần kết nối mạng để gửi cảnh báo từ xa.
+P205 <Heading 2> Cảm biến quán tính MPU6050
+P206 <Heading 3> Cấu tạo và nguyên lý gia tốc kế, con quay hồi chuyển
+P207 <Content> MPU6050 là cảm biến quán tính 6 bậc tự do, tích hợp gia tốc kế 3 trục và con quay hồi chuyển 3 trục, giao tiếp I2C (địa chỉ 0x68). Gia tốc kế đo gia tốc tuyến tính dựa trên lực quán tính tác động lên khối lượng thử MEMS; con quay hồi chuyển đo tốc độ góc quay dựa trên hiệu ứng Coriolis, hỗ trợ xác nhận tư thế ngã (thân người đổ nghiêng đột ngột).
+P208 <Heading 3> Thuật toán phát hiện té ngã dựa trên ngưỡng (Threshold-Based)
+P209 <Content> Đề tài áp dụng thuật toán ba giai đoạn: (1) Tính độ lớn vector gia tốc tổng hợp SVM = căn bậc hai của (ax² + ay² + az²); (2) Phát hiện va chạm khi SVM vượt ngưỡng hiệu chỉnh thực nghiệm (khoảng 2.0-2.5g); (3) Xác nhận trạng thái bất động sau ngã trong 2-3 giây kế tiếp – nếu độ lệch SVM duy trì thấp kết hợp góc nghiêng thay đổi lớn, hệ thống xác nhận té ngã thật và kích hoạt cảnh báo; ngược lại cảnh báo bị hủy, giúp giảm báo động giả.
+P210 <Heading 2> Module định vị GPS NEO-6M
+P211 <Content> Module GPS NEO-6M dùng chipset u-blox 6, thu tín hiệu vệ tinh để tính tọa độ dựa trên nguyên lý đo thời gian truyền sóng từ tối thiểu 4 vệ tinh, giao tiếp UART với chuẩn dữ liệu NMEA 0183 (baud 9600). ESP32 dùng thư viện TinyGPS++ để bóc tách các câu lệnh GPGGA/GPRMC, chuyển sang tọa độ thập phân. Độ chính xác định vị khoảng 2.5m CEP ở điều kiện quang đãng, thời gian bắt tín hiệu nguội khoảng 27 giây.
+P212 <Heading 2> Chuẩn giao tiếp UART và I2C
+P213 <Content> UART là chuẩn giao tiếp nối tiếp không đồng bộ (TX/RX), dùng để ESP32 giao tiếp với module GPS. I2C là chuẩn giao tiếp nối tiếp đồng bộ hai dây (SDA/SCL), dùng để ESP32 đọc dữ liệu liên tục từ cảm biến MPU6050.
+P214 <Heading 2> Nền tảng IoT Blynk
+P215 <Content> Blynk là nền tảng IoT cung cấp hạ tầng cloud và ứng dụng di động cho phép giám sát thiết bị nhúng từ xa theo thời gian thực qua các virtual pin. Blynk hỗ trợ hiển thị bản đồ GPS, biểu đồ lịch sử và đặc biệt là push notification – gửi thông báo đẩy trực tiếp đến điện thoại người thân ngay khi ESP32 phát hiện té ngã.
+P216 <Heading 2> Module còi cảnh báo (Buzzer) và nguồn pin
+P217 <Content> Cảnh báo âm thanh tại chỗ dùng module buzzer tích cực nối trực tiếp GPIO của ESP32. Hệ thống dùng pin Li-ion 18650 (3.7V, 2200-3000mAh) kết hợp mạch sạc/bảo vệ TP4056 và mạch boost 5V để cấp nguồn ổn định, đảm bảo an toàn và thời gian hoạt động dài.
+P218 <Normal>  [PAGEBREAK]
+P219 <Heading 1> PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG
+P220 <Heading 2> Phân tích yêu cầu thiết kế
+P221 <Content> Yêu cầu người dùng: thiết bị gọn nhẹ, tích hợp trong thân gậy, không thay đổi thao tác sử dụng quen thuộc; hoạt động tự động không cần thao tác phức tạp; người thân theo dõi được trạng thái, vị trí mọi lúc mọi nơi; cảnh báo kịp thời, hạn chế tối đa báo nhầm.
+P222 <Content> Yêu cầu kỹ thuật: ESP32 đủ mạnh xử lý dữ liệu IMU thời gian thực và duy trì Wi-Fi ổn định; cảm biến IMU lấy mẫu đủ nhanh; module GPS có thời gian bắt tín hiệu và độ chính xác chấp nhận được; nguồn pin đảm bảo hoạt động liên tục tối thiểu một ngày; toàn bộ mạch bố trí gọn trong vỏ bảo vệ chống va đập nhẹ.
+P223 <Heading 2> Sơ đồ khối hệ thống
+P224 <Content> Hệ thống gồm: Khối cảm biến (MPU6050 đo gia tốc/góc nghiêng, GPS NEO-6M định vị) → Khối xử lý trung tâm (ESP32 thực hiện thuật toán phát hiện ngã, đọc/phân tích GPS) → Khối cảnh báo tại chỗ (Buzzer) và Khối truyền thông (Wi-Fi kết nối Blynk Cloud, gửi push notification) → Khối nguồn (Pin Li-ion 18650 + mạch sạc TP4056 + boost 5V).
+P225 <Heading 2> Sơ đồ nguyên lý và kết nối phần cứng
+P226 <Content> Kết nối chân: MPU6050 (SDA→GPIO21, SCL→GPIO22, giao tiếp I2C); GPS NEO-6M (TX→GPIO16/RX2, RX→GPIO17/TX2, giao tiếp UART2); Buzzer (IN→GPIO4); khối nguồn (mạch sạc TP4056 + boost 5V → VIN của ESP32).
+P227 <Heading 2> Lưu đồ giải thuật
+P228 <Heading 3> Lưu đồ chính của hệ thống
+P229 <Content> Sau khi khởi động, ESP32 kết nối Wi-Fi và Blynk Cloud, khởi tạo MPU6050 và bắt đầu nhận dữ liệu GPS. Vòng lặp chính thực hiện song song hai luồng: đọc/xử lý IMU để phát hiện té ngã, và đọc/phân tích GPS để cập nhật tọa độ lên Blynk theo chu kỳ.
+P230 <Heading 3> Lưu đồ phát hiện té ngã
+P231 <Content> Đọc gia tốc 3 trục → tính SVM → so sánh với ngưỡng va chạm; nếu vượt ngưỡng, giám sát trạng thái bất động trong 2-3 giây; nếu xác nhận bất động và góc nghiêng thay đổi lớn → kích hoạt buzzer, lấy tọa độ GPS hiện tại, gửi cảnh báo kèm tọa độ lên Blynk (push notification), ghi log thời điểm cảnh báo.
+P232 <Heading 3> Lưu đồ xử lý GPS
+P233 <Content> Đọc luồng byte từ UART2 → đưa vào bộ phân tích NMEA (TinyGPS++) → kiểm tra checksum/số vệ tinh khóa được → cập nhật tọa độ mới nhất → định kỳ gửi tọa độ lên Blynk để cập nhật bản đồ.
+P234 <Heading 2> Thiết kế cơ khí thân gậy
+P235 <Content> Mạch điện, cảm biến, pin và module GPS được bố trí gọn trong khoang chứa tích hợp ở phần tay cầm hoặc thân trên của gậy, có nắp đậy tháo lắp để bảo trì và sạc pin. Module GPS đặt ở vị trí ít bị che chắn (gần đầu gậy) để tối ưu bắt tín hiệu vệ tinh. Vỏ bảo vệ dự kiến dùng nhựa ABS in 3D hoặc ống nhựa PVC gia công.
+P236 <Heading 2> Thiết kế phần mềm
+P237 <Content> Firmware lập trình bằng C/C++ trên Arduino IDE, tổ chức thành các module: đọc MPU6050 (thư viện Wire/MPU6050), phân tích GPS (TinyGPS++), thuật toán phát hiện ngã, và giao tiếp Blynk. Dashboard Blynk trên điện thoại người thân hiển thị trạng thái kết nối, vị trí GPS trên bản đồ, lịch sử cảnh báo và nhận push notification tức thời khi có sự cố.
+P238 <Normal>  [PAGEBREAK]
+P239 <Heading 1> THỰC NGHIỆM VÀ ĐÁNH GIÁ KẾT QUẢ
+P240 <Content> Lưu ý: số liệu trong chương này là số liệu giả định/dự kiến, xây dựng dựa trên tham khảo các nghiên cứu tương tự để minh họa cách trình bày kết quả thực nghiệm; cần thay bằng số liệu đo đạc thật khi nhóm hoàn thiện thi công.
+P241 <Heading 2> Mục đích, phạm vi và môi trường thực nghiệm
+P242 <Content> Thực nghiệm đánh giá bốn nhóm chỉ tiêu: độ chính xác phát hiện té ngã, độ trễ cảnh báo, độ chính xác định vị GPS và thời lượng pin. Thiết bị được thử nghiệm trong nhà (nền gạch, ánh sáng đầy đủ, ~20m²) và ngoài trời (sân trống, tầm nhìn bầu trời thoáng), với người tình nguyện mô phỏng các tư thế/tình huống ngã có kiểm soát trên đệm lót an toàn, mỗi kịch bản lặp lại 10 lần.
+P243 <Heading 2> Kết quả phát hiện té ngã
+P244 <Content> Với 80 lượt thử (40 lượt sinh hoạt bình thường, 30 lượt mô phỏng ngã thật, 10 lượt ngã rồi tự đứng ngay), hệ thống đạt tỷ lệ chính xác tổng hợp khoảng 91.7%: không báo nhầm ở khoảng 95% các tình huống sinh hoạt bình thường (đi bộ, ngồi xuống, cúi người, gõ gậy), phát hiện đúng khoảng 90% các tình huống ngã thật, và đúng khoảng 90% khi người dùng tự đứng dậy ngay sau ngã (không kích hoạt cảnh báo không cần thiết).
+P245 <Heading 2> Kết quả độ trễ cảnh báo
+P246 <Content> Thời gian từ va chạm đến xác nhận ngã trung bình khoảng 2.5 giây (bao gồm thời gian giám sát trạng thái bất động); thời gian gửi push notification khi Wi-Fi ổn định khoảng 1-2 giây. Tổng độ trễ cảnh báo trung bình từ thời điểm ngã đến khi người thân nhận được thông báo khoảng 4 giây.
+P247 <Heading 2> Kết quả độ chính xác định vị GPS và thời lượng pin
+P248 <Content> Ngoài trời, tầm nhìn thoáng: thời gian bắt tín hiệu khoảng 28-35 giây, sai số định vị trung bình 3-5m. Trong nhà gần cửa sổ: thời gian bắt tín hiệu khoảng 45-60 giây, sai số 8-12m. Trong nhà không có tầm nhìn bầu trời: không bắt được tín hiệu ổn định. Với pin Li-ion 2200mAh, hệ thống hoạt động liên tục ước tính đạt khoảng 10-14 giờ trước khi cần sạc lại.
+P249 <Heading 2> Đánh giá chung
+P250 <Content> Ưu điểm: hệ thống phát hiện được phần lớn tình huống té ngã mô phỏng với độ chính xác dự kiến trên 90%; cơ chế xác nhận trạng thái bất động sau ngã giúp hạn chế đáng kể cảnh báo nhầm; độ trễ cảnh báo ở mức chấp nhận được; chi phí phần cứng thấp, dễ nhân rộng, tích hợp gọn trong thân gậy quen thuộc với người cao tuổi.
+P251 <Content> Hạn chế: độ chính xác định vị GPS suy giảm đáng kể trong nhà hoặc khu vực bị che khuất tầm nhìn bầu trời; thuật toán ngưỡng đơn giản có thể chưa phân biệt tốt mọi loại chuyển động mạnh trong thực tế đa dạng của người cao tuổi, cần tập dữ liệu thực nghiệm lớn hơn để hiệu chỉnh; hệ thống phụ thuộc kết nối Wi-Fi để gửi cảnh báo từ xa, chưa hoạt động được khi không có Wi-Fi nếu không bổ sung module SIM/4G.
+P252 <Normal>  [PAGEBREAK]
+P253 <Heading 1N> KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
+P254 <Content> Kết luận:
+P255 <Content> Đề tài đã hoàn thành thiết kế mô hình gậy thông minh tích hợp vi điều khiển ESP32, cảm biến IMU MPU6050, module định vị GPS NEO-6M, còi cảnh báo buzzer và kết nối nền tảng IoT Blynk để tự động phát hiện té ngã, xác định vị trí và gửi cảnh báo tức thời đến người thân qua ứng dụng điện thoại. Thuật toán phát hiện ngã dựa trên ngưỡng hai giai đoạn đã cho thấy hiệu quả bước đầu trong việc cân bằng giữa độ nhạy phát hiện và hạn chế cảnh báo nhầm. Hệ thống đáp ứng được mục tiêu ban đầu là một giải pháp hỗ trợ giám sát an toàn cho người cao tuổi với chi phí hợp lý, dễ triển khai và gần gũi với thói quen sinh hoạt hằng ngày.
+P256 <Content> Hướng phát triển:
+P257 <Content> - Bổ sung module SIM 4G để gửi cảnh báo (SMS/gọi khẩn cấp) ngay cả khi không có Wi-Fi, mở rộng phạm vi sử dụng ra ngoài gia đình.
+P258 <Content> - Ứng dụng học máy nhẹ chạy trực tiếp trên vi điều khiển (TinyML) để cải thiện độ chính xác phân biệt các loại chuyển động, thay dần thuật toán ngưỡng cố định.
+P259 <Content> - Tích hợp thêm cảm biến nhịp tim, nhiệt độ cơ thể để mở rộng khả năng giám sát sức khỏe toàn diện hơn.
+P260 <Content> - Thử nghiệm mở rộng trên nhóm người cao tuổi thực tế để thu thập dữ liệu thực, hiệu chỉnh ngưỡng phát hiện ngã sát với đặc điểm sinh lý thực tế hơn.
+P261 <Content> - Tối ưu hóa thiết kế cơ khí, giảm trọng lượng và cải thiện khả năng chống nước, chống bụi để phù hợp sử dụng ngoài trời lâu dài.

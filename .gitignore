@@ -1,0 +1,26 @@
+# Build output
+build/
+.dart_tool/
+.gradle/
+.android/
+*.iml
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Flutter/Dart generated
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages

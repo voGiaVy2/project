@@ -1,0 +1,15 @@
+P119: 3.4	Thiết kế cơ khí và vỏ bảo vệ gậy thông minh (Mô hình 3D)	78
+P120: 3.5	Thiết kế lưu đồ giải thuật hệ thống	82
+P121: 3.6	Thiết kế phần mềm ứng dụng di động Flutter	91
+P122: CHƯƠNG 4	THỰC NGHIỆM VÀ ĐÁNH GIÁ KẾT QUẢ	104
+P123: 4.1	Mục đích và môi trường thực nghiệm	104
+P124: 4.2	Thực nghiệm kiểm thử thuật toán phát hiện té ngã	106
+P125: 4.3	Thực nghiệm kiểm thử cảm biến phát hiện chướng ngại vật	112
+P126: 4.4	Thực nghiệm kiểm thử hệ thống truyền thông và đo đạc độ trễ	116
+P127: 4.5	Thực nghiệm kiểm thử khả năng hoạt động ngoại tuyến (Offline Resiliency)	120
+P128: 4.6	Thực nghiệm đo đạc dòng tiêu thụ và thời lượng pin	123
+P129: 4.7	Đánh giá so sánh tổng hợp với các giải pháp trên thị trường	126
+P130: KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN	129
+P131: TÀI LIỆU THAM KHẢO	131
+P132: PHỤ LỤC	132
+P133: Phụ lục 1	Toàn văn mã nguồn phần cứng ESP32-S3	132

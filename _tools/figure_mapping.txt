@@ -1,0 +1,70 @@
+Total media in docx rels: 35
+P138: Hình 1.1	Các phương pháp phát hiện và cảnh báo té ngã hiện nay	13 -> None
+P139: Hình 1.2	Mô hình tổng quan hệ thống gậy thông minh tích hợp IoT và di động	25 -> None
+P140: Hình 2.1	Kiến trúc vi điều khiển ESP32-S3 và phân bố ngoại vi trên chip	28 -> None
+P141: Hình 2.2	Cấu trúc phân tầng và GATT Profile của Bluetooth Low Energy	33 -> None
+P142: Hình 2.3	Chuẩn giao tiếp I2C giữa vi điều khiển ESP32-S3 và cảm biến MPU6050	38 -> None
+P143: Hình 2.4	Hệ trục tọa độ không gian 3 chiều và cảm biến quán tính 6-DOF MPU6050	40 -> None
+P144: Hình 2.5	Dạng sóng vector gia tốc tổng hợp SVM khi đi bộ, va chạm và nằm bất động	42 -> None
+P145: Hình 2.6	Giản đồ thời gian phát xung kích Trig và phản hồi Echo của cảm biến HC-SR04	45 -> None
+P146: Hình 2.7	Nguyên lý phản xạ quang học của cảm biến vật cản hồng ngoại E18-D50NK	47 -> None
+P147: Hình 2.8	Sơ đồ nguyên lý mạch kích công suất motor rung sử dụng MOSFET và diode dập xung	50 -> None
+P148: Hình 2.9	Nguyên lý định vị toàn cầu GPS dựa trên giao điểm mặt cầu vệ tinh	54 -> None
+P149: Hình 2.10	Cơ chế đồng bộ dữ liệu hai chiều thời gian thực trên Firebase Realtime Database	58 -> None
+P150: Hình 2.11	Kiến trúc đa tầng của Framework lập trình di động Flutter	63 -> None
+P151: Hình 2.12	Cơ chế hoạt động đa luồng Isolate của Flutter Background Service trên Android	65 -> None
+P152: Hình 3.1	Sơ đồ khối chức năng hoàn chỉnh của toàn bộ hệ thống gậy thông minh	71 -> None
+P153: Hình 3.2	Sơ đồ nguyên lý kết nối chi tiết phần cứng trên vi điều khiển ESP32-S3	74 -> None
+P154: Hình 3.3	Bản vẽ thiết kế 3D công thái học thân gậy và bố trí khoang cảm biến	79 -> None
+P155: Hình 3.4	Lưu đồ thuật toán chính của Firmware điều khiển trên ESP32-S3	83 -> None
+P156: Hình 3.5	Lưu đồ hoạt động của dịch vụ chạy ngầm trên máy Người Dùng Gậy	87 -> None
+P157: Hình 3.6	Lưu đồ hoạt động giám sát và cảnh báo trên máy Người Giám Hộ	90 -> None
+P158: Hình 3.7	Giao diện màn hình Đăng nhập và Ghép nối vai trò thiết bị	94 -> None
+P159: Hình 3.8	Giao diện màn hình Người Dùng Gậy ở trạng thái bình thường và trạng thái té ngã	97 -> None
+P160: Hình 3.9	Giao diện màn hình Dashboard giám sát bản đồ và Lịch sử sự cố của Giám hộ	100 -> None
+P161: Hình 4.1	Đồ thị thực nghiệm gia tốc SVM trong các kịch bản té ngã và sinh hoạt thường nhật (ADL)	107 -> None
+P162: Hình 4.2	Mô hình thực nghiệm kết nối cảm biến gia tốc MPU6050 với bo mạch vi điều khiển ESP32-S3	108 -> None
+P163: Hình 4.3	Giao diện Serial Monitor Arduino IDE ghi nhận sự kiện phát hiện té ngã thời gian thực từ phần cứng	109 -> None
+P164: Hình 4.4	Ma trận độ chính xác phân loại các kịch bản té ngã và hoạt động sinh hoạt thông thường	111 -> None
+P165: Hình 4.5	Đồ thị sai số đo khoảng cách và đặc tuyến phát hiện chướng ngại vật của cảm biến siêu âm HC-SR04	113 -> None
+P166: Hình 4.6	Mô hình thực nghiệm kết nối hoàn chỉnh cảm biến siêu âm HC-SR04 và module rung MOSFET với ESP32-S3	114 -> None
+P167: Hình 4.7	Mạch MOSFET kích hoạt đèn báo trạng thái rung khi phát hiện chướng ngại vật trong cự ly cảnh báo	115 -> None
+P168: Hình 4.8	Dữ liệu khoảng cách và trạng thái đóng/ngắt rung hiển thị trực tiếp trên Serial Monitor Arduino IDE	116 -> None
+P169: Hình 4.9	Phân rã thời gian đáp ứng và độ trễ toàn trình của chuỗi cảnh báo khẩn cấp SOS	118 -> None
+P170: Hình 4.10	Khối nguồn thực nghiệm gồm cell pin sạc 18650 và module MH-CD42 cấp điện cho ESP32-S3 hoạt động độc lập	124 -> None
+P171: Hình 4.11	Thực nghiệm nạp điện qua cổng Type-C và kiểm tra khả năng vừa sạc vừa cấp nguồn (Pass-through Charging)	125 -> None
+P245: Hình 1.1 Sơ đồ phân loại các phương pháp phát hiện và cảnh báo té ngã hiện nay -> ['image2.png']
+P289: Hình 1.2 Mô hình kiến trúc tổng thể của hệ thống gậy thông minh kết hợp IoT và thiết bị di động -> ['image3.png']
+P303: Hình 2.1 Sơ đồ kiến trúc vi điều khiển ESP32-S3 N16R8 và các khối ngoại vi tích hợp -> ['image4.png']
+P321: Hình 2.2 Cấu trúc phân tầng và GATT Profile của Bluetooth Low Energy trong hệ thống -> ['image5.png']
+P332: Hình 2.3 Chuẩn giao tiếp I2C giữa vi điều khiển ESP32-S3 và cảm biến MPU6050 -> ['image6.png']
+P334: Hình 2.4 Hệ trục tọa độ không gian 3 chiều và cảm biến quán tính 6-DOF MPU6050 -> ['image7.png']
+P344: Hình 2.5 Dạng sóng vector gia tốc tổng hợp SVM khi đi bộ, va chạm té ngã và nằm bất động -> ['image8.png']
+P355: Hình 2.6 Giản đồ thời gian phát xung kích Trig và phản hồi Echo của cảm biến HC-SR04 -> ['image9.png']
+P365: Hình 2.7 Nguyên lý phản xạ quang học của cảm biến vật cản hồng ngoại E18-D50NK -> ['image10.png']
+P372: Hình 2.8 Sơ đồ nguyên lý mạch kích công suất motor rung sử dụng MOSFET và diode dập xung -> ['image11.png']
+P381: Hình 2.9 Nguyên lý định vị toàn cầu GPS dựa trên giao điểm mặt cầu vệ tinh -> ['image12.png']
+P389: Hình 2.10 Cơ chế đồng bộ dữ liệu hai chiều thời gian thực trên Firebase Realtime Database -> ['image13.png']
+P400: Hình 2.11 Kiến trúc đa tầng của Framework lập trình di động Flutter -> ['image14.png']
+P409: Hình 2.12 Cơ chế hoạt động đa luồng Isolate của Flutter Background Service trên Android -> ['image15.png']
+P428: Hình 3.1 Sơ đồ khối chức năng hoàn chỉnh của toàn bộ hệ thống gậy thông minh -> ['image16.png']
+P455: Hình 3.2 Sơ đồ nguyên lý kết nối chi tiết phần cứng trên vi điều khiển ESP32-S3 -> ['image17.png']
+P467: Hình 3.3 Bản vẽ thiết kế 3D công thái học thân gậy và bố trí khoang cảm biến -> ['image18.jpg']
+P478: Hình 3.4 Lưu đồ thuật toán chính của Firmware điều khiển trên ESP32-S3 -> ['image19.png']
+P493: Hình 3.5 Lưu đồ hoạt động của dịch vụ chạy ngầm trên máy Người Dùng Gậy -> ['image20.png']
+P505: Hình 3.6 Lưu đồ hoạt động giám sát và cảnh báo trên máy Người Giám Hộ -> ['image21.png']
+P525: Hình 3.7 minh họa giao diện màn hình Đăng nhập và màn hình Ghép nối vai trò (Role Selection). Điểm đặc biệt trong kiến trúc của hệ thống là cơ chế 'Single Account - Dual Roles' (Một tài khoản - Hai vai trò): Cả gia đình chỉ cần đăng ký duy nhất một tài khoản Email/Password trên Firebase. Khi chiếc điện thoại thứ nhất đăng nhập và chọn vai trò 'Người Giám Hộ', hệ thống lưu deviceId của máy đó lên Firebase. Khi chiếc điện thoại thứ hai đăng nhập, ứng dụng tự động nhận diện vai trò 'Người Dùng Gậy' còn lại để hoàn tất ghép nối. -> ['image22.png']
+P527: Hình 3.7 Giao diện màn hình Đăng nhập và Ghép nối vai trò thiết bị -> ['image22.png']
+P532: Hình 3.8 Giao diện màn hình Người Dùng Gậy ở trạng thái bình thường và trạng thái té ngã -> ['image23.png']
+P537: Hình 3.9 Giao diện màn hình Dashboard giám sát bản đồ và Lịch sử sự cố của Giám hộ -> ['image24.png']
+P568: Hình 4.1 Đồ thị thực nghiệm gia tốc SVM trong các kịch bản té ngã và sinh hoạt thường nhật (ADL) -> ['image25.png']
+P570: Hình 4.2 Mô hình thực nghiệm kết nối cảm biến gia tốc MPU6050 với bo mạch vi điều khiển ESP32-S3 -> ['image26.png']
+P572: Hình 4.3 Giao diện Serial Monitor Arduino IDE ghi nhận sự kiện phát hiện té ngã thời gian thực từ phần cứng -> ['image27.png']
+P579: Hình 4.4 Ma trận độ chính xác phân loại các kịch bản té ngã và hoạt động sinh hoạt thông thường -> ['image28.png']
+P585: Hình 4.5 Đồ thị sai số đo khoảng cách và đặc tuyến phát hiện chướng ngại vật của cảm biến siêu âm HC-SR04 -> ['image29.png']
+P587: Hình 4.6 Mô hình thực nghiệm kết nối hoàn chỉnh cảm biến siêu âm HC-SR04 và module rung MOSFET với ESP32-S3 -> ['image30.png']
+P589: Hình 4.7 Mạch MOSFET kích hoạt đèn báo trạng thái rung khi phát hiện chướng ngại vật trong cự ly cảnh báo -> ['image31.png']
+P591: Hình 4.8 Dữ liệu khoảng cách và trạng thái đóng/ngắt rung hiển thị trực tiếp trên Serial Monitor Arduino IDE -> ['image32.png']
+P602: Hình 4.9 Phân rã thời gian đáp ứng và độ trễ toàn trình của chuỗi cảnh báo khẩn cấp SOS -> ['image33.png']
+P617: Hình 4.10 Khối nguồn thực nghiệm gồm cell pin sạc 18650 và module MH-CD42 cấp điện cho ESP32-S3 hoạt động độc lập -> ['image34.png']
+P619: Hình 4.11 Thực nghiệm nạp điện qua cổng Type-C và kiểm tra khả năng vừa sạc vừa cấp nguồn (Pass-through Charging) -> ['image35.png']

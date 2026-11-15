@@ -1,0 +1,4 @@
+--- P80
+<w:p><w:pPr><w:jc w:val="center"/><w:rPr><w:b/><w:bCs/><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr></w:pPr><w:r><w:br w:type="page"/></w:r><w:r><w:rPr><w:b/><w:bCs/><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:lastRenderedPageBreak/><w:t>LỜI C</w:t></w:r><w:r><w:rPr><w:b/><w:bCs/><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>Ả</w:t></w:r><w:r><w:rPr><w:b/><w:bCs/><w:sz w:val="26"/><w:szCs w:val="26"/></w:rPr><w:t>M ƠN</w:t></w:r></w:p>
+--- P81
+<w:p><w:pPr><w:pStyle w:val="Content"/><w:rPr><w:lang w:eastAsia="zh-CN"/></w:rPr></w:pPr><w:r><w:rPr><w:lang w:eastAsia="zh-CN"/></w:rPr><w:t>Bốn năm đại học sắp khép lại bằng cuốn khóa luận tốt nghiệp này, và chúng em hiểu rằng để đi đến chặng cuối cùng, không chỉ có nỗ lực của riêng hai người thực hiện.</w:t></w:r></w:p>

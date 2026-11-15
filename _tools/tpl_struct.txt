@@ -1,0 +1,203 @@
+﻿TABLE0 rows=1
+P41 <Normal>  [PAGEBREAK]
+TABLE1 rows=3
+TABLE2 rows=3
+P88 <Normal> LỜI CẢM ƠN [PAGEBREAK]
+P103 <Heading 1N> MỤC LỤC
+P124 <Heading 1N> DANH MỤC HÌNH ẢNH
+P194 <Heading 1N> DANH MỤC BẢNG BIỂU
+P219 <Heading 1N> DANH MỤC TỪ VIẾT TẮT
+P259 <Normal>  [SECT]
+P260 <Heading 1N> MỞ ĐẦU
+P319 <Heading 1> 			TỔNG QUAN VỀ ĐỀ TÀI
+P320 <Heading 2> Thực trạng:
+P321 <Heading 3> Thực trạng té ngã trong xã hội:
+P324 <Heading 3> Ảnh hưởng của té ngã:
+P325 <Heading 4> Đối với cá nhân người bị ngã:
+P329 <Heading 4> Đối với gia đình:
+P333 <Heading 4> Đối với xã hội:
+P337 <Heading 3> Nhu cầu phòng tránh té ngã:
+P341 <Heading 2> Các phương pháp phát hiện và cảnh báo té ngã hiện nay:
+P342 <Heading 3> Phương pháp sử dụng thiết bị đeo:
+P347 <Caption> Hình . Các thiết bị đeo phát hiện té ngã
+P359 <Heading 3> Phương pháp sử dụng camera:
+P373 <Caption> Hình . Hệ thống cảnh báo té ngã bằng hình ảnh
+P374 <Heading 3> Phương pháp phân tích âm thanh:
+P386 <Heading 3> Phương pháp sử dụng radar:
+P391 <Caption> Hình . Mô hình phát hiện té ngã bằng radar
+P402 <Heading 2> Nghiên cứu và mô hình liên quan:
+P403 <Heading 3> Nghiên cứu về thiết bị đeo trên tay của tác giả Magnus Michael Marquez Musngi:
+P404 <Heading 4> Mục tiêu:
+P413 <Caption> Hình . Nghiên cứu về thiết bị đeo trên tay
+P419 <Heading 4> Kết quả thực nghiệm và đánh giá hiệu năng:
+P427 <Heading 4> Kết luận:
+P429 <Heading 3> Nghiên cứu về thiết bị đeo trên thân của tác giả Magnus Michael Marquez Musngi:
+P430 <Heading 4> Mục tiêu:
+P433 <Caption> Hình . Nghiên cứu về thiết bị đeo trên người
+P440 <Heading 4> Kết quả thực nghiệm và đánh giá hiệu năng:
+P448 <Heading 4> Kết luận:
+P451 <Heading 3> Hệ thống té ngã dựa trên thị giác máy tính:
+P452 <Heading 4> Mục tiêu:
+P456 <Caption> Hình . Quy trình phát hiện té ngã bằng hình ảnh
+P463 <Heading 4> Kết quả thực nghiệm và đánh giá hiệu năng:
+P468 <Heading 4> Kết luận:
+P471 <Heading 3> Hệ thống phát hiện té ngã bằng radar mmWave:
+P472 <Heading 4> Mục tiêu:
+P476 <Caption> Hình . Quy trình xử lý dữ liệu phát hiện té ngã bằng radar
+P482 <Heading 4> Kết quả thực nghiệm và đánh giá hiệu năng:
+P487 <Heading 4> Kết luận:
+P490 <Heading 2> Định hướng đề tài:
+P493 <Heading 1> 				CƠ SỞ LÝ THUYẾT
+P494 <Heading 2> Tổng quan về công nghệ Radar:
+P495 <Heading 3> Khái niệm Radar:
+P497 <Heading 3> Lịch sử phát triển:
+P500 <Heading 3> Nguyên lý hoạt động của radar:
+P503 <Caption> Hình . Đặc điểm thu phát của radar
+P504 <Heading 4> Radar xung (Pulsed Radar): 
+P515 <Caption> Hình . Dạng sóng của radar
+P518 <Heading 4> Radar sóng liên tục (CW Radar): 
+P522 <Caption> Hình . Đặc điểm máy thu và máy phát của radar CW
+P528 <Caption> Hình . Biểu đồ quang phổ của Doppler
+P529 <Heading 4> Radar sóng liên tục bước tần số (SFCW):
+P532 <Caption> Hình . Chu kỳ sóng của SFCW
+P539 <Heading 4> Radar sóng liên tục điều tần (FMCW Radar):
+P547 <Caption> Hình . Các dạng sóng FMCW
+P552 <Caption> Hình . Tín hiệu IF trong radar FMCW
+P553 <Heading 3> So sánh các công nghệ radar:
+P555 <Caption> Bảng . Bảng so sánh các công nghệ Radar
+TABLE3 rows=7
+P556 <Heading 2> Công nghệ radar mmWave:
+P560 <Caption> Hình . Các dải tần số radar
+P564 <Heading 3> Đặc tính lan truyền của mmWave:
+P570 <Heading 4> Tổn thất đường truyền trong không gian tự do:
+P578 <Caption> Hình . Sự tổn thất đường truyền ở các tần số khác nhau
+P579 <Heading 4> Sự suy giảm trong khí quyển:
+P583 <Heading 4> Phản xạ khuếch tán:
+P587 <Caption> Hình . Hướng tán xạ trên bề mặt phẳng và bề mặt gồ ghề
+P589 <Heading 4> Khả năng xuyên thấu hạn chế:
+P594 <Heading 3> Ưu điểm của mmWave:
+P602 <Heading 2> Xử lý dữ liệu:
+P604 <Heading 3> Đo khoảng cách (Range-FFT): 
+P608 <Heading 3> Đo vận tốc (Doppler-FFT/Velocity-FFT): 
+P612 <Heading 3> Đo góc tới (Angle-FFT/AoA): 
+P618 <Caption> Hình . Ước tính góc tới
+P622 <Caption> Hình . So sánh sự khác nhau giữa các radar
+P623 <Heading 3> Chuyển đổi tọa độ:
+P631 <Heading 2> Đám mây điểm (Point Cloud):
+P636 <Heading 2> Phân cụm:
+P638 <Heading 3> Thuật toán DBSCAN:
+P641 <Caption> Hình . Phân cụm với MinPts = 5
+P642 <Heading 3> Dynamic DBSCAN:
+P648 <Heading 3> Phân cụm dựa trên lưới (Gird based):
+P652 <Caption> Hình . Phân cụm lưới Gird
+P653 <Heading 3> Một số phương pháp phân cụm khác:
+P657 <Heading 2> Theo dõi đối tượng (Target Tracking):
+P659 <Heading 3> Ước tính trạng thái và dự đoán:
+P668 <Heading 3> Khởi tạo quỹ đạo:
+P674 <Heading 3> Gán dữ liệu:
+P683 <Heading 3> Quản lý và duy trì quỹ đạo:
+P688 <Heading 2> Trích xuất đặc trưng:
+P690 <Heading 3> Đặc trưng miền thời gian – tần số:
+P704 <Heading 3> Đặc trưng động học từ trọng tâm:
+P713 <Heading 3> Đặc trưng phân phối và cường độ:
+P718 <Heading 3> Đặc trưng hình học và hình dáng:
+P726 <Heading 2> Phân loại hành vi:
+P727 <Heading 3> Phương pháp dựa trên ngưỡng (TBM - Threshold-Based Methods):
+P743 <Heading 3> Phương pháp học máy truyền thống (ML):
+P747 <Caption> Hình . Học máy bằng SVM
+P754 <Heading 3> Phương pháp học sâu (DL):
+P756 <Heading 4> Mạng noron tích chập (CNN):
+P759 <Caption> Hình . Mạng CNN
+P763 <Heading 4> Mạng noron hồi quy (RNN) và LSTM/GRU:
+P778 <Caption> Hình . Mạng LSTM
+P781 <Heading 4> Xử lý trực tiếp PC (PointNet):
+P786 <Heading 4> Mạng Capsule:
+P793 <Heading 4> Cơ chế Attention và Transformer:
+P799 <Heading 4> Học không giám sát (VAE):
+P806 <Heading 4> Các chiến lược học đặc biệt:
+P809 <Heading 2> Phương thức giao tiếp và truyền thông:
+P810 <Heading 3> Chuẩn giao tiếp UART:
+P811 <Heading 4> UART là gì?
+P815 <Caption> Hình . Giao thức UART
+P816 <Heading 4> Cấu trúc khung dữ liệu UART:
+P819 <Caption> Hình . Gói tin UART
+P824 <Heading 4> Các phương thức hoạt động:
+P829 <Heading 4> Quá trình hoạt động của UART:
+P842 <Heading 3> Giao thức truyền GPIO:
+P844 <Heading 3> TCP/IP và Internet:
+P848 <Caption> Hình . Giao thức truyền thông TCP/IP
+P858 <Heading 3> Lưu trữ dữ liệu Cloud (Firebase):
+P860 <Caption> Hình . Nền tảng Cloud (Firebase)
+P862 <Heading 4> Cloud Firestore (CSDL NoSQL):
+P868 <Heading 4> Firebase Realtime Database:
+P871 <Heading 4> Cloud Storage:
+P874 <Heading 4> Đánh giá ưu điểm và nhược điểm của Firebase:
+P892 <Heading 1> 		PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG
+P893 <Heading 2> Phân tích yêu cầu thiết kế:
+P894 <Heading 3> Yêu cầu người dùng:
+P902 <Heading 3> Yêu cầu kỹ thuật:
+P909 <Heading 2> Sơ đồ khối hệ thống:
+P911 <Caption> Hình . Sơ đồ khối hệ thống
+P922 <Heading 2> Sơ đồ nguyên lý hệ thống:
+P924 <Caption> Hình . Sơ đồ nguyên lý hệ thống
+P925 <Heading 2> Lưu đồ giải thuật:		
+P937 <Caption> Hình . Lưu đồ chính của hệ thống
+P957 <Caption> Hình . Lưu đồ hoạt động của Luồng 1
+P984 <Caption> Hình . Lưu đồ hoạt động của Luồng 2
+P1011 <Caption> Hình . Lưu đồ hoạt động của Luồng 3
+P1033 <Caption> Hình . Lưu đồ hoạt động của Luồng 4
+P1051 <Caption> Hình . Lưu đồ hoạt động của C1001
+P1066 <Caption> Hình . Lưu đồ quy trình phát hiện sự hiện diện của con người
+P1094 <Caption> Hình . Lưu đồ quy trình tạo Point Cloud
+P1138 <Caption> Hình . Lưu đồ logic phát hiện té ngã
+P1159 <Caption> Hình . Lưu đồ logoc trạng thái cư trú tĩnh
+P1160 <Heading 2> Bộ xử lý trung tâm và các module:
+P1161 <Heading 3> Cảm biến phát hiện người (C1001 mmWave Human Detection Sensor):
+P1163 <Caption> Bảng . Thông số kỹ thuật của cảm biến mmWave C10001
+TABLE4 rows=6
+P1165 <Caption> Hình . Cảm biến mmWave C1001
+P1166 <Heading 3> Bộ xử lý trung tâm (Raspberry Pi 4 Model B):
+P1168 <Caption> Hình . Sơ đồ chân Raspberry Pi
+P1187 <Heading 3> Module Sim 4G A7680C:
+P1192 <Caption> Bảng . Thông số kỹ thuật module SIM 4G
+TABLE5 rows=6
+P1194 <Caption> Hình . Module SIM 4G
+P1195 <Caption> Bảng . Lệnh AT được sử dụng
+TABLE6 rows=4
+P1196 <Heading 3> Buzzer 5V MH-FMD:
+P1199 <Caption> Hình . Buzzer
+P1202 <Heading 3> Nguồn pin dự phòng 5V:
+P1208 <Caption> Hình . Nguồn pin dự phòng 5V
+P1209 <Heading 2> Thiết kế vỏ bảo vệ hệ thống (In 3D):
+P1221 <Caption> Hình . Thiết kế in 3D
+P1223 <Caption> Hình . Sản phẩm in 3D
+P1224 <Heading 2> Thiết kế phần mềm hệ thống giám sát:
+P1228 <Caption> Hình . Giao diện ứng dụng giám sát
+P1231 <Caption> Hình . Giao diện lịch sử té ngã
+P1233 <Heading 1> 		THỰC NGHIỆM VÀ ĐÁNH GIÁ KẾT QUẢ
+P1234 <Heading 2> Mục đích và phạm vi thực nghiệm:
+P1236 <Heading 2> Mô hình và môi trường thực nghiệm:
+P1239 <Heading 2> Quá trình thực nghiệm:
+P1243 <Caption> Hình . Vị trí lắp đặt thực nghiệm
+P1246 <Caption> Hình . Mô phỏng đứng bình thường dưới radar
+P1251 <Caption> Hình . Mô phỏng đứng khom lưng dưới radar
+P1255 <Caption> Hình . Mô phỏng ngồi trên ghế dưới radar
+P1257 <Caption> Hình . Mô phỏng té ngã
+P1259 <Caption> Hình . Mô phỏng bất tỉnh sau khi ngã
+P1264 <Caption> Hình . Mô phỏng cử động sau khi ngã
+P1268 <Caption> Hình . Dữ liệu được xử lý
+P1274 <Caption> Hình . Biểu đồ đi lại
+P1276 <Caption> Hình . Biểu đồ ngã bất tỉnh
+P1281 <Caption> Hình . Biểu đồ ngã bình thường
+P1285 <Caption> Hình . Dữ liệu JSON từ Firebase
+P1289 <Caption> Hình . Giao diện khi không có người - không té ngã
+P1291 <Caption> Hình . Giao diện khi có người – không té ngã
+P1294 <Caption> Hình . Giao diện cảnh báo té ngã
+P1295 <Caption> a) Té ngã nhưng còn cử động. 
+P1296 <Caption> b) Té ngã nhung bất động
+P1301 <Caption> Hình . Giao diện theo dõi bất động 
+P1302 <Caption> a) Không có bất động lâu 
+P1303 <Caption> b) Bất động quá 3 phút
+P1305 <Heading 2> Đánh giá chung:
+P1321 <Heading 1N> KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
+P1352 <Heading 1N> PHỤ LỤC

@@ -1,0 +1,88 @@
+P260 [Heading 1N]: MỞ ĐẦU
+
+P261 [Content]: 1. Đặt vấn đề:
+
+P262 [Content]: Trượt ngã và té ngã là những nguyên nhân phổ biến dẫn đến các chấn thương ở người. Với các trường hợp nhẹ, người bị ngã có thể tự đứng dậy và chỉ bị trầy xước nhẹ, vết thương hồi phục trong thời gian ngắn. Nhưng với các trường hợp nặng, người bị ngã có thể bất động và chấn thương rất lớn. Các trường hợp té ngã nhưng không được phát hiện sớm còn có thể dẫn đến nguy hiểm như gãy xương, chấn thương sọ não, đặt biệt là người cao tuổi. Ngoài các ảnh hưởng về thể chất, té ngã còn để lại ảnh hưởng về mặt tâm lý, gây ra các hội chứng “sợ ngã”, mất tự tin, cô lập… và ảnh hưởng cả về mặt kinh tế lẫn chất lượng sống khi phải tốn nhiều chi phí phẫu thuật, phục hồi và cần có người chăm sóc. Do đó, nhu cầu phát triển một hệ thống phát hiện và cảnh báo té ngã tự động là hết sức cần thiết.
+
+P263 [Content]: Hiện nay, trên thị trường đã có nhiều giải pháp giám sát như camera hoặc thiết bị đeo trên người. Tuy nhiên, các biện pháp này còn nhiều hạn chế. Hệ thống camera gây lo ngại về quyền riêng tư và hoạt động không ổn định trong các trường hợp thiếu ánh sáng hoặc vật cản. Các thiết bị đeo trên người gây bất tiện trong việc sinh hoạt, phải mang theo thường xuyên và khó áp dụng cho người cao tuổi.
+
+P264 [Content]: Với các hạn chế trên, công nghệ Radar mmWare được xem là một giải pháp tiềm năng trong việc giám sát an toàn mà không xâm phạm đến quyền riêng tư, do không cần ảnh thật như camera mà chỉ trích xuất điểm ảnh, hoạt động tốt trong điều kiện thiếu sáng, bị che khuất và không cần phải mang theo bên người.
+
+P265 [Content]: Đề tài “Hệ thống phát hiện và cảnh báo té ngã bằng radar mmWave kết hợp trí tuệ nhân tạo” được thực hiện nhằm cung cấp một giải pháp công nghệ giám sát sức khỏe hiện đại đáng tin cậy có thể giám sát từ xa 24/7.
+
+P267 [Content]: 2. Mục tiêu của đề tài:
+
+P268 [Content]: Mục tiêu chính: nghiên cứu, thiết kế và triển khai hệ thống phát hiện và cảnh báo té ngã hoạt động trong nhà bằng công nghệ radar mmWare sử dụng thuật toán tạo ảnh PC kết hợp xử lý theo thời gian thực.
+
+P269 [Content]: Mục tiêu cụ thể:
+
+P270 [Content]: Nghiên cứu nguyên lý hoạt động của radar mmWare, RP để nhận và xử lý dữ liệu.
+
+P271 [Content]: Thiết kế và triển khai thu thập, lưu trữ dữ liệu chuẩn bị cho quá trình xử lý dữ liệu đa nhiệm.
+
+P272 [Content]: Xây dựng hệ thống cảnh báo từ xa, thông báo được gửi qua ứng dụng và gọi điện trực tiếp cho số điện thoại người thân hoặc SOS.
+
+P273 [Content]: Thực nghiệm, đánh giá và phân tích hiệu quả hoạt động của hệ thống trong kịch bản thực tế, từ đó đề xuất hướng phát triển và mở rộng.
+
+P274 [Content]: Viết báo cáo tổng hợp kết quả nghiên cứu và triển khai hệ thống.
+
+P275 [Content]: 3. Đối tượng và phạm vi nghiên cứu:
+
+P276 [Content]: Đối tượng nghiên cứu:
+
+P277 [Content]: Cảm biến phát hiện con người, phát hiện té ngã.
+
+P278 [Content]: Bộ xử lý trung tâm nhận dữ liệu và điều khiển các thiết bị kết nối.
+
+P279 [Content]: Module đầu ra cho cảnh báo khi phát hiện có té ngã.
+
+P280 [Content]: Thuật toán PC và vận tốc Doppler để phát hiện các điểm rơi.
+
+P281 [Content]: Giao diện người dùng phục vụ giám sát và cảnh báo từ xa.
+
+P283 [Content]: Phạm vi nghiên cứu:
+
+P284 [Content]: Phạm vi không gian: Lắp đặt trong nhà, phòng tắm, phòng ngủ, phòng thí nghiệm diện tích khoảng 4m2  đến 5m2.
+
+P285 [Content]: Phạm vi công nghệ:
+
+P286 [Content]: Công nghệ sóng radar trong y tế.
+
+P287 [Content]: Thuật toán đám mây điểm phân tích chuyển động của con người.
+
+P288 [Content]: Hệ thống phần mềm chạy thử nghiệm trên máy tính và thiết bị di động.
+
+P289 [Content]: 4. Ý nghĩa thực tiễn của đề tài:
+
+P290 [Content]: Đề tài mang nhiều ý nghĩa thực tiễn quan trọng, đóng góp vào các quy mô mở rộng phương pháp bảo vệ sức khỏe.
+
+P291 [Content]: Đối với người cao tuổi:
+
+P292 [Content]: Giảm sự phụ thuộc vào người chăm sóc hoặc trong hoàn cảnh sống neo đơn một mình.
+
+P293 [Content]: Không còn lo lắng về các thiết bị gây phiền toái trong sinh hoạt hằng ngày.
+
+P294 [Content]: Đối với gia đình:
+
+P295 [Content]: Tiết kiệm được thời gian phải ở cạnh chăm sóc người thân.
+
+P296 [Content]: Giảm bớt gánh nặng kinh tế gia đình.
+
+P297 [Content]: Yên tâm giám sát sức khỏe người cao tuổi từ xa.
+
+P298 [Content]: Đối với xã hội:
+
+P299 [Content]: Góp phần thúc đẩy công nghệ hóa, hiện đại hóa trong các lĩnh vực y tế.
+
+P300 [Content]: Đáp ứng nhu cầu ngày càng cao của người tiêu dùng về một hệ thống giám sát với độ chính xác cao mà không làm mất đi quyền riêng tư của khách hàng.
+
+P301 [Content]: Mở ra quy mô được ứng dụng rộng rãi trong môi trường đời sống xã hội.
+
+P302 [Content]: Đối với nghiên cứu và đào tạo:
+
+P303 [Content]: Làm cơ sở cho các nghiên cứu tiếp theo về ứng dụng AI nâng cao.
+
+P304 [Content]: Là tài liệu tham khảo cho các chương trình đào tạo kỹ thuật, giám sát trong y học.
+
+P305 [Content]: Cung cấp mô hình mẫu có khả năng mở rộng cho các ứng dụng khác.
+

@@ -1,0 +1,16 @@
+[80] style=Normal text=LỜI CẢM ƠN
+[81] style=Content text=Bốn năm đại học sắp khép lại bằng cuốn khóa luận tốt nghiệp này, và chúng em hiểu rằng để đi đến chặng cuối cùng, không chỉ có nỗ lực của riêng hai người thực hiện.
+[82] style=Content text=Trước hết, chúng em xin bày tỏ lòng biết ơn sâu sắc đến Trường Đại học Công nghiệp Thành phố Hồ Chí Minh và Khoa Công nghệ Điện tử, nơi đã ươm mầm cho chúng em từ những kiến thức nền tảng đầu tiên cho đến khả năng tự tay biến một ý tưởng thành sản phẩm thực tế. Xin cảm ơn quý thầy cô đã không chỉ truyền đạt kiến thức, mà còn truyền cả sự tận tâm và nghiêm túc trong nghiên cứu khoa học.
+[83] style=Content text=Chúng em xin gửi lời tri ân đặc biệt đến Thầy ThS. Vũ Tuấn Anh – người đã đồng hành cùng chúng em từ những ngày đề tài còn là một ý tưởng sơ khai. Những buổi trao đổi, những lần chỉnh sửa và cả những góp ý thẳng thắn của Thầy đã giúp chúng em nhìn rõ hơn con đường mình đang đi, để đề tài này không chỉ hoàn thành mà còn thực sự có ý nghĩa. Sự kiên nhẫn và tâm huyết của Thầy là điều chúng em sẽ luôn ghi nhớ.
+[84] style=Content text=Với mong muốn góp một giải pháp nhỏ giúp người cao tuổi an tâm hơn khi di chuyển và giúp con cháu yên lòng hơn khi ở xa, chúng em đã dồn nhiều tâm huyết vào đề tài này. Tuy nhiên, do thời gian và kinh nghiệm thực tế còn hạn chế, khóa luận khó tránh khỏi những thiếu sót. Chúng em rất mong nhận được sự góp ý của quý thầy cô để đề tài được hoàn thiện hơn.
+[85] style=Normal text=
+[86] style=Normal text=
+[87] style=Normal text=
+[88] style=Normal text=
+[89] style=Normal text=
+[90] style=Normal text=
+[91] style=Normal text=
+[92] style=Normal text=
+[93] style=Heading 1N text=MỤC LỤC
+[94] style=Normal text=
+[95] style=Normal text=

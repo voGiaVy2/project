@@ -1,0 +1,110 @@
+=== P1 XML ===
+<w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
+  <w:pPr>
+    <w:pStyle w:val="TOC1"/>
+    <w:tabs>
+      <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+    </w:tabs>
+  </w:pPr>
+  <w:r>
+    <w:rPr>
+      <w:b/>
+    </w:rPr>
+    <w:t>DANH MỤC HÌNH ẢNH</w:t>
+  </w:r>
+  <w:r>
+    <w:tab/>
+  </w:r>
+  <w:r>
+    <w:t>vi</w:t>
+  </w:r>
+</w:p>
+
+
+=== P2 XML ===
+<w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
+  <w:pPr>
+    <w:pStyle w:val="TOC1"/>
+    <w:tabs>
+      <w:tab w:val="left" w:pos="1440"/>
+      <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+    </w:tabs>
+  </w:pPr>
+  <w:r>
+    <w:rPr>
+      <w:b/>
+    </w:rPr>
+    <w:t>CHƯƠNG 1</w:t>
+  </w:r>
+  <w:r>
+    <w:tab/>
+  </w:r>
+  <w:r>
+    <w:rPr>
+      <w:b/>
+    </w:rPr>
+    <w:t>TỔNG QUAN VỀ ĐỀ TÀI</w:t>
+  </w:r>
+  <w:r>
+    <w:tab/>
+  </w:r>
+  <w:r>
+    <w:t>5</w:t>
+  </w:r>
+</w:p>
+
+
+=== P3 XML ===
+<w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
+  <w:pPr>
+    <w:pStyle w:val="TOC2"/>
+    <w:tabs>
+      <w:tab w:val="left" w:pos="960"/>
+      <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+    </w:tabs>
+  </w:pPr>
+  <w:r>
+    <w:t>1.1</w:t>
+  </w:r>
+  <w:r>
+    <w:tab/>
+  </w:r>
+  <w:r>
+    <w:t>Thực trạng già hóa dân số và nguy cơ té ngã ở người cao tuổi</w:t>
+  </w:r>
+  <w:r>
+    <w:tab/>
+  </w:r>
+  <w:r>
+    <w:t>5</w:t>
+  </w:r>
+</w:p>
+
+
+=== P4 XML ===
+<w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
+  <w:pPr>
+    <w:pStyle w:val="TableofFigures"/>
+    <w:tabs>
+      <w:tab w:val="left" w:pos="1200"/>
+      <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+    </w:tabs>
+  </w:pPr>
+  <w:r>
+    <w:t>Hình 1.1</w:t>
+  </w:r>
+  <w:r>
+    <w:tab/>
+  </w:r>
+  <w:r>
+    <w:t>Các phương pháp phát hiện và cảnh báo té ngã hiện nay</w:t>
+  </w:r>
+  <w:r>
+    <w:tab/>
+  </w:r>
+  <w:r>
+    <w:t>13</w:t>
+  </w:r>
+</w:p>
+
+

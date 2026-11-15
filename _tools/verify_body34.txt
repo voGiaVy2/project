@@ -1,0 +1,24 @@
+Thiết kế cơ khí và vỏ bảo vệ gậy thông minh (Mô hình 3D):
+
+Thiết kế cơ khí của cây gậy đóng vai trò quyết định đến độ bền, độ an toàn và sự thoải mái của người sử dụng. Dựa trên các nguyên lý công thái học (Ergonomics), nhóm nghiên cứu đã thiết kế mô hình 3D hoàn chỉnh cho cây gậy thông minh như minh họa trên Hình 3.3:
+
+
+
+Hình 3.3 Bản vẽ thiết kế 3D công thái học thân gậy và bố trí khoang cảm biến
+
+Các điểm nhấn nổi bật trong thiết kế cơ khí của gậy:
+
+1. Tay cầm công thái học (Ergonomic Handle): Được tạo hình uốn lượn theo các rãnh ngón tay của bàn tay người, sử dụng vật liệu nhựa composite bọc cao su mềm chống trơn trượt khi tay bị đổ mồ hôi. Hình dáng tay cầm dạng móc gập chữ L giúp phân bổ đều trọng lượng cơ thể lên xương cẳng tay, giảm tải áp lực dồn lên các khớp ngón tay và khớp cổ tay của người cao tuổi.
+
+2. Nút bấm khẩn cấp SOS tích hợp: Được bố trí ngay tại đỉnh đầu của tay cầm với màu đỏ nổi bật. Nút bấm có kích thước lớn, vừa vặn với ngón tay cái, giúp người già có thể dễ dàng nhấn giữ trong trường hợp khẩn cấp (như cảm thấy hoa mắt, tức ngực, chóng mặt cần trợ giúp) mà không cần phải nhìn vào điện thoại.
+
+3. Khoang chứa cảm biến và mạch điện tử (Sensor Pod): Được gắn chắc chắn tại phần thân trên của gậy, ngay bên dưới tay cầm. Khoang chứa được thiết kế dạng module khép kín bằng nhựa ABS in 3D chống va đập, bảo vệ toàn bộ bo mạch ESP32-S3, cảm biến MPU6050, pin Li-ion và còi báo động bên trong. Phía mặt trước của khoang bố trí hai mắt phát/thu của cảm biến siêu âm HC-SR04 hướng hơi chếch xuống một góc 15 độ so với phương thẳng đứng để tập trung phát hiện các chướng ngại vật ở cự ly bước chân tiếp theo của người già.
+
+4. Đèn LED rọi đường ban đêm: Được tích hợp ở phần dưới của khoang cảm biến, rọi một chùm ánh sáng vàng dịu xuống khoảng đất phía trước chân người đi, hỗ trợ tối đa việc đi lại an toàn trong bóng tối hoặc khi người già thức dậy đi vệ sinh ban đêm.
+
+5. Đế cao su chống trượt đa hướng (Anti-slip Rubber Tip): Đáy gậy được trang bị đệm cao su tổng hợp chịu mài mòn cao với bề mặt hoa lốp khía rãnh sâu, giúp tăng diện tích tiếp xúc và độ ma sát bám dính chắc chắn trên các bề mặt trơn trượt như nền gạch hoa ướt nước hay đường dốc.
+
+Thiết kế lưu đồ giải thuật hệ thống:
+
+Lưu đồ thuật toán chính của Firmware điều khiển trên ESP32-S3:
+

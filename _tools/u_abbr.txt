@@ -1,0 +1,36 @@
+--- P144
+<w:p><w:pPr><w:pStyle w:val="Content"/></w:pPr><w:r><w:t>TBM</w:t></w:r><w:r><w:tab/></w:r><w:r><w:tab/><w:t>Threshold-Based Method (Phương pháp dựa trên ngưỡng)</w:t></w:r></w:p>
+--- P145
+<w:p><w:pPr><w:pStyle w:val="Content"/></w:pPr></w:p>
+--- P146
+<w:p><w:pPr><w:pStyle w:val="Heading1N"/></w:pPr><w:bookmarkStart w:id="7" w:name="_Toc239235712"/><w:r><w:lastRenderedPageBreak/><w:t>MỞ ĐẦU</w:t></w:r><w:bookmarkEnd w:id="7"/></w:p>
+--- P147
+<w:p><w:pPr><w:pStyle w:val="Content"/><w:rPr><w:b/></w:rPr></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>1. Lý do chọn đề tài:</w:t></w:r></w:p>
+--- P148
+<w:p><w:pPr><w:pStyle w:val="Content"/></w:pPr><w:r><w:t>Việt Nam đang bước vào giai đoạn già hóa dân số với tốc độ nhanh hàng đầu khu vực, kéo theo nhu cầu chăm sóc và giám sát sức khỏe người cao tuổi ngày càng cấp thiết, đặc biệt khi nhiều gia đình có con cái đi làm xa, không thể túc trực chăm sóc thường xuyên. Té ngã là một trong những nguyên nhân hàng đầu gây thương tích, tàn phế và tử vong ở người cao tuổi; nếu không được phát hiện và hỗ trợ kịp thời, một cú ngã tưởng chừng đơn giản có thể dẫn đến hậu quả nghiêm trọng.</w:t></w:r></w:p>
+--- P149
+<w:p><w:pPr><w:pStyle w:val="Content"/></w:pPr><w:r><w:t>Trên thị trường hiện đã có một số thiết bị hỗ trợ theo dõi sức khỏe như đồng hồ thông minh, vòng đeo tay, camera giám sát... Tuy nhiên, thiết bị đeo tay dễ bị quên đeo hoặc tháo ra khi sinh hoạt, trong khi camera lại vướng vấn đề riêng tư và bị giới hạn trong không gian lắp đặt cố định. Trong khi đó, cây gậy chống là vật dụng quen thuộc, gắn bó thường xuyên với người cao tuổi khi di chuyển – đây chính là vị trí lý tưởng để tích hợp các cảm biến giám sát mà không tạo cảm giác bất tiện khi sử dụng.</w:t></w:r></w:p>
+--- P150
+<w:p><w:pPr><w:pStyle w:val="Content"/></w:pPr><w:r><w:t>Xuất phát từ thực tế đó, nhóm chọn đề tài "Thiết kế gậy thông minh hỗ trợ người cao tuổi sử dụng ESP32, tích hợp cảm biến phát hiện ngã, định vị GPS, cảnh báo âm thanh và tự động gửi thông báo giám sát đến người thân qua ứng dụng trên điện thoại" nhằm xây dựng một giải pháp hỗ trợ giám sát an toàn, chi phí hợp lý, dễ triển khai và gần gũi với thói quen sinh hoạt hằng ngày của người cao tuổi.</w:t></w:r></w:p>
+--- P151
+<w:p><w:pPr><w:pStyle w:val="Content"/><w:rPr><w:b/></w:rPr></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>2. Mục tiêu của đề tài:</w:t></w:r></w:p>
+--- P152
+<w:p><w:pPr><w:pStyle w:val="Content"/></w:pPr><w:r><w:t>Mục tiêu chính: thiết kế và thi công một cây gậy thông minh tích hợp vi điều khiển ESP32, có khả năng tự động phát hiện té ngã, định vị vị trí và gửi cảnh báo tức thời đến người thân.</w:t></w:r></w:p>
+--- P153
+<w:p><w:pPr><w:pStyle w:val="Content"/></w:pPr><w:r><w:t>Mục tiêu cụ thể:</w:t></w:r></w:p>
+--- P154
+<w:p><w:pPr><w:pStyle w:val="Content"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="85"/></w:numPr></w:pPr><w:r><w:lastRenderedPageBreak/><w:t>Xây dựng thuật toán phát hiện té ngã dựa trên dữ liệu từ cảm biến IMU MPU6050 (gia tốc kế và con quay hồi chuyển).</w:t></w:r></w:p>
+--- P155
+<w:p><w:pPr><w:pStyle w:val="Content"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="85"/></w:numPr></w:pPr><w:r><w:t>Tích hợp module định vị GPS NEO-6M để xác định vị trí người dùng theo thời gian thực.</w:t></w:r></w:p>
+--- P156
+<w:p><w:pPr><w:pStyle w:val="Content"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="85"/></w:numPr></w:pPr><w:r><w:t>Xây dựng cơ chế cảnh báo tại chỗ bằng còi buzzer và cảnh báo từ xa qua ứng dụng Blynk (push notification).</w:t></w:r></w:p>
+--- P157
+<w:p><w:pPr><w:pStyle w:val="Content"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="85"/></w:numPr></w:pPr><w:r><w:t>Thực nghiệm, đánh giá độ chính xác phát hiện ngã, độ trễ cảnh báo, độ chính xác định vị và thời lượng hoạt động của hệ thống.</w:t></w:r></w:p>
+--- P158
+<w:p><w:pPr><w:pStyle w:val="Content"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="85"/></w:numPr></w:pPr><w:r><w:t>Viết báo cáo tổng hợp kết quả nghiên cứu và triển khai hệ thống.</w:t></w:r></w:p>
+--- P159
+<w:p><w:pPr><w:pStyle w:val="Content"/><w:rPr><w:b/></w:rPr></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>3. Đối tượng và phạm vi nghiên cứu:</w:t></w:r></w:p>
+--- P160
+<w:p><w:pPr><w:pStyle w:val="Content"/></w:pPr><w:r><w:t>Đối tượng nghiên cứu:</w:t></w:r></w:p>
+--- P161
+<w:p><w:pPr><w:pStyle w:val="Content"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="86"/></w:numPr></w:pPr><w:r><w:t>Vi điều khiển ESP32 làm bộ xử lý trung tâm.</w:t></w:r></w:p>

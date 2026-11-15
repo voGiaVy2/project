@@ -1,0 +1,2 @@
+Total sections: 1
+Section 0: start_type=NEW_PAGE (2), orientation=PORTRAIT (0), page_w=7772400, page_h=10058400

@@ -1,0 +1,326 @@
+// ==============================================================================
+// ĐỀ TÀI: GẬY THÔNG MINH HỖ TRỢ NGƯỜI CAO TUỔI (SMART CANE)
+// VI ĐIỀU KHIỂN: ESP32-S3 N16R8
+// BẢN MÃ NGUỒN CÓ CHÚ THÍCH CHI TIẾT PHỤC VỤ ĐỌC HIỂU VÀ THUYẾT TRÌNH BẢO VỆ ĐỒ ÁN
+// ==============================================================================
+
+// ==============================================================================
+// KHỐI 1: KHAI BÁO CÁC THƯ VIỆN CẦN THIẾT
+// ==============================================================================
+// Giải thích cho thuyết trình:
+// - Wire.h: Thư viện giao tiếp chuẩn I2C 2 dây, dùng để nói chuyện với cảm biến MPU6050 qua chân SDA và SCL.
+// - Adafruit_MPU6050.h & Adafruit_Sensor.h: Bộ thư viện chuẩn của hãng Adafruit giúp đọc dữ liệu gia tốc (m/s2)
+//   và góc quay (rad/s) từ cảm biến gia tốc quán tính MPU6050.
+// - BLEDevice.h, BLEServer.h, BLEUtils.h, BLE2902.h: Bộ thư viện điều khiển Bluetooth năng lượng thấp (BLE 5.0)
+//   có sẵn trên ESP32, giúp gậy kết nối với ứng dụng Flutter trên smartphone người già mà không tốn pin.
+// - "config.h": File cấu hình chứa toàn bộ định nghĩa chân nối GPIO và các tham số khoảng cách, UUID Bluetooth.
+#include <Wire.h>
+#include <Adafruit_MPU6050.h>
+#include <Adafruit_Sensor.h>
+#include <BLEDevice.h>
+#include <BLEServer.h>
+#include <BLEUtils.h>
+#include <BLE2902.h>
+
+#include "config.h"
+
+// ==============================================================================
+// KHỐI 2: KHAI BÁO CÁC ĐỐI TƯỢNG VÀ BIẾN TOÀN CỤC (GLOBAL VARIABLES)
+// ==============================================================================
+// 1. Đối tượng quản lý cảm biến gia tốc MPU6050
+Adafruit_MPU6050 mpu;       // Tạo biến đại diện cho module phần cứng MPU6050
+bool mpuFound = false;      // Cờ ghi nhận MPU6050 đã tìm thấy hay chưa (để tránh treo chương trình nếu lỏng dây)
+
+// 2. Các đối tượng quản lý truyền thông Bluetooth Low Energy (BLE)
+BLEServer* pServer = NULL;                   // Con trỏ quản lý máy chủ BLE (GATT Server trên cây gậy)
+BLECharacteristic* pCharacteristicFall = NULL; // Đặc tính (Characteristic) gửi dữ liệu báo té ngã cho điện thoại
+bool deviceConnected = false;                // Trạng thái hiện tại: Điện thoại có đang kết nối hay không
+bool oldDeviceConnected = false;             // Trạng thái kết nối ở chu kỳ trước (dùng để phát hiện lúc bị rớt kết nối)
+
+// 3. Các biến kiểm soát trạng thái báo động khẩn cấp
+bool isAlarmActive = false;         // Cờ báo động: true = đang có sự cố té ngã (còi hú, rung), false = bình thường
+unsigned long alarmStartTime = 0;   // Lưu mốc thời gian (millis) bắt đầu hú còi để tự động tắt sau đúng 3 giây
+
+// ==============================================================================
+// KHỐI 3: BỘ LẮNG NGHE SỰ KIỆN KẾT NỐI BLUETOOTH (BLE CALLBACKS)
+// ==============================================================================
+// Giải thích cho thuyết trình:
+// - Lớp này kế thừa từ BLEServerCallbacks của thư viện ESP32 BLE.
+// - Khi người già cầm điện thoại lại gần và App tự kết nối thành công: hàm onConnect() lập tức được gọi tự động.
+// - Khi người già đi quá xa (ngoài 10m) hoặc điện thoại hết pin ngắt kết nối: hàm onDisconnect() sẽ kích hoạt,
+//   giúp gậy biết đường tự động phát sóng quảng bá (Advertising) trở lại để chờ kết nối bù.
+class MyServerCallbacks: public BLEServerCallbacks {
+    // Sự kiện khi App trên điện thoại kết nối vào gậy
+    void onConnect(BLEServer* pServer) {
+      deviceConnected = true;
+      Serial.println("📱 APP ĐÃ KẾT NỐI BLUETOOTH!");
+    };
+
+    // Sự kiện khi App trên điện thoại bị ngắt kết nối
+    void onDisconnect(BLEServer* pServer) {
+      deviceConnected = false;
+      Serial.println("📱 APP ĐÃ NGẮT KẾT NỐI!");
+    }
+};
+
+// ==============================================================================
+// KHỐI 4: HÀM ĐO KHOẢNG CÁCH BẰNG CẢM BIẾN SIÊU ÂM HC-SR04 (ĐÃ TỐI ƯU CHO ESP32-S3)
+// ==============================================================================
+// Giải thích cho thuyết trình:
+// - Nguyên lý: Gậy bắn ra một xung siêu âm 40 kHz qua chân Trig. Sóng gặp vật cản phản xạ dội ngược lại đầu thu Echo.
+// - Thời gian sóng đi rồi về (Time-of-Flight) nhân với vận tốc âm thanh (0.0343 cm/us) rồi chia đôi ra khoảng cách.
+// - Kỹ thuật chuyên sâu:
+//   1. Hàm noInterrupts() và interrupts() khóa tạm thời các ngắt Wi-Fi/BLE trong vài micro-giây để phát xung kích
+//      Trig cực kỳ chuẩn xác, không bị méo dạng xung.
+//   2. Gọi pulseIn() với timeout an toàn 40000 us (tương đương khoảng cách 6.8m, chống nghẽn CPU).
+//   3. Cơ chế Fallback: Nếu hệ điều hành FreeRTOS trên ESP32 làm pulseIn() trả về 0 sai sót, hàm lập tức
+//      chuyển sang đo trực tiếp bằng bộ đếm vi giây phần cứng micros(), chống tuyệt đối hiện tượng treo vi điều khiển.
+float getDistanceCm() {
+  // Bước 1: Tạo xung kích Trig sạch sẽ (LOW 5us -> HIGH 12us -> LOW)
+  noInterrupts();
+  digitalWrite(HC_TRIG_PIN, LOW);
+  delayMicroseconds(5);
+  digitalWrite(HC_TRIG_PIN, HIGH);
+  delayMicroseconds(12);
+  digitalWrite(HC_TRIG_PIN, LOW);
+  interrupts();
+
+  // Bước 2: Đo độ rộng mức HIGH chân Echo bằng hàm pulseIn chuẩn (chờ tối đa 40ms)
+  unsigned long duration = pulseIn(HC_ECHO_PIN, HIGH, 40000UL);
+
+  // Bước 3: Cơ chế dự phòng bằng hàm đếm phần cứng micros() nếu pulseIn bị trả về 0 do ngắt hệ thống
+  if (duration == 0) {
+    noInterrupts();
+    digitalWrite(HC_TRIG_PIN, LOW);
+    delayMicroseconds(5);
+    digitalWrite(HC_TRIG_PIN, HIGH);
+    delayMicroseconds(15);
+    digitalWrite(HC_TRIG_PIN, LOW);
+    interrupts();
+
+    // Chờ chân Echo bắt đầu lên mức HIGH
+    unsigned long t0 = micros();
+    while (digitalRead(HC_ECHO_PIN) == LOW) {
+      if (micros() - t0 > 35000) return -1; // Quá 35ms không thấy phản hồi -> trả về mã lỗi
+    }
+
+    // Đếm thời gian chân Echo giữ mức HIGH
+    unsigned long startEcho = micros();
+    while (digitalRead(HC_ECHO_PIN) == HIGH) {
+      if (micros() - startEcho > 35000) return -2; // Sóng phản xạ bất thường quá dài -> trả về lỗi
+    }
+    duration = micros() - startEcho;
+  }
+
+  // Bước 4: Tính ra khoảng cách thực tế (cm) = (thời gian micro-giây * vận tốc âm thanh 0.0343) / 2
+  return (float)duration * 0.0343 / 2.0;
+}
+
+// ==============================================================================
+// KHỐI 5: HÀM KHỞI TẠO CẤU HÌNH BAN ĐẦU - void setup()
+// ==============================================================================
+// Giải thích cho thuyết trình:
+// - Hàm này chỉ chạy 1 lần duy nhất ngay khi bật công tắc nguồn pin của gậy.
+// - Thực hiện 4 nhiệm vụ tuần tự:
+//   1. Cài đặt chế độ INPUT/OUTPUT cho các chân GPIO (Còi, Rung, Trig, Echo).
+//   2. Self-test: Rung motor và hú còi nhẹ 0.2 giây để người già biết gậy đã lên nguồn sẵn sàng.
+//   3. Bật bus I2C và kiểm tra cảm biến gia tốc MPU6050, chỉnh thang đo gia tốc +-8g.
+//   4. Khởi tạo BLE Server với tên "SmartCane", tạo Service và Characteristic báo ngã, sau đó bắt đầu phát sóng quảng bá.
+void setup() {
+  // 1. Mở cổng Serial Monitor với máy tính ở tốc độ baud 115200 để quan sát log thực nghiệm
+  Serial.begin(115200);
+  delay(1000);
+
+  Serial.println("\n========================================================");
+  Serial.println("   KHỞI ĐỘNG GẬY THÔNG MINH (SMART CANE HARDWARE)");
+  Serial.println("   - BLE: App Phone & GPS định vị");
+  Serial.println("   - MPU6050: Phát hiện té ngã");
+  Serial.println("   - HC-SR04: Cảm biến khoảng cách vật cản (VCC: 3.3V)");
+  Serial.println("   - Mosfet: Motor rung cảnh báo (GPIO 6)");
+  Serial.println("========================================================");
+  
+  // 2. Cấu hình chế độ cho các chân GPIO
+  pinMode(BUZZER_PIN, OUTPUT);          // Chân GPIO 5 điều khiển còi hú
+  pinMode(VIBRATOR_PIN, OUTPUT);        // Chân GPIO 6 kích cổng Gate của MOSFET rung
+  pinMode(HC_TRIG_PIN, OUTPUT);         // Chân GPIO 16 phát xung kích siêu âm
+  pinMode(HC_ECHO_PIN, INPUT_PULLDOWN); // Chân GPIO 17 nhận xung phản hồi, dùng trở kéo xuống chống trôi
+
+  // Ban đầu kéo hết các ngõ ra về mức LOW (tắt còi, tắt rung, tắt trig)
+  digitalWrite(HC_TRIG_PIN, LOW);
+  digitalWrite(VIBRATOR_PIN, LOW);
+  digitalWrite(BUZZER_PIN, LOW);
+
+  // 3. Khối Self-Test (Tự kiểm tra phần cứng lúc khởi động)
+  // Cho motor rung và còi hú kêu nhẹ trong 0.2 giây để xác nhận linh kiện hoạt động tốt
+  Serial.println(">> Đang kiểm tra rung và còi trong 0.2 giây...");
+  digitalWrite(VIBRATOR_PIN, HIGH);
+  digitalWrite(BUZZER_PIN, HIGH);
+  delay(200);
+  digitalWrite(VIBRATOR_PIN, LOW);
+  digitalWrite(BUZZER_PIN, LOW);
+  Serial.println(">> Rung & Còi hoạt động tốt!");
+
+  // 4. Khởi động giao tiếp I2C và cảm biến MPU6050
+  Wire.begin(I2C_SDA_PIN, I2C_SCL_PIN); // SDA = GPIO 8, SCL = GPIO 9
+  if (!mpu.begin()) {
+    // Nếu chưa cắm cảm biến hoặc lỏng dây, báo cảnh báo trên Serial nhưng không làm treo máy
+    Serial.println("⚠️ CẢNH BÁO: Chưa tìm thấy MPU6050 (Kiểm tra chân SDA/SCL). Hệ thống vẫn tiếp tục chạy!");
+    mpuFound = false;
+  } else {
+    Serial.println("✅ MPU6050 đã kết nối thành công!");
+    // Cài đặt dải đo gia tốc +-8g (phù hợp với các cú va chạm mạnh khi ngã)
+    mpu.setAccelerometerRange(MPU6050_RANGE_8_G);
+    mpuFound = true;
+  }
+
+  // 5. Khởi động mạng không dây Bluetooth Low Energy (BLE)
+  BLEDevice::init(BLE_DEVICE_NAME);       // Đặt tên thiết bị phát sóng là "SmartCane"
+  pServer = BLEDevice::createServer();    // Tạo máy chủ GATT Server
+  pServer->setCallbacks(new MyServerCallbacks()); // Gắn bộ lắng nghe sự kiện kết nối/ngắt kết nối
+
+  // Tạo dịch vụ BLE chính (Service) bằng mã UUID định danh độc nhất
+  BLEService *pService = pServer->createService(BLE_SERVICE_UUID);
+
+  // Tạo đặc tính (Characteristic) gửi dữ liệu báo ngã lên App
+  // Thuộc tính: Đọc (READ) và Thông báo chủ động (NOTIFY)
+  pCharacteristicFall = pService->createCharacteristic(
+                      BLE_CHARACTERISTIC_FALL,
+                      BLECharacteristic::PROPERTY_READ   |
+                      BLECharacteristic::PROPERTY_NOTIFY
+                    );
+  pCharacteristicFall->addDescriptor(new BLE2902()); // Cần CCCD để App Android nhận thông báo Notify
+  pCharacteristicFall->setValue("0"); // Trạng thái mặc định là "0" (bình thường, chưa ngã)
+
+  pService->start(); // Kích hoạt Service hoạt động
+  
+  // Thiết lập phát sóng quảng bá (BLE Advertising) để điện thoại quét thấy gậy
+  BLEAdvertising *pAdvertising = BLEDevice::getAdvertising();
+  pAdvertising->addServiceUUID(BLE_SERVICE_UUID);
+  pAdvertising->setScanResponse(false);
+  pAdvertising->setMinPreferred(0x0);
+  BLEDevice::startAdvertising(); // Bắt đầu phát sóng ra môi trường xung quanh
+  
+  Serial.println("✅ Bluetooth đang phát sóng! Đợi App kết nối...");
+  Serial.println("========================================================\n");
+}
+
+// ==============================================================================
+// KHỐI 6: VÒNG LẶP CHÍNH CỦA HỆ THỐNG - void loop() (Chạy lặp lại liên tục)
+// ==============================================================================
+// Giải thích cho thuyết trình:
+// - Vòng lặp này chạy lặp lại liên tục với chu kỳ 100ms (10 lần/giây), chịu trách nhiệm điều phối 3 tác vụ:
+//   1. Quản lý trạng thái BLE: Nếu App điện thoại đi xa bị mất sóng, gậy tự động phát sóng lại để khi App lại gần sẽ tự kết nối lại.
+//   2. Thuật toán phát hiện té ngã MPU6050: Đọc gia tốc 3 trục ax, ay, az. Tính độ lớn vector tổng SVM = sqrt(ax^2 + ay^2 + az^2).
+//      Nếu SVM > 25.0 m/s2 (tương đương cú va đập sàn > 2.5g): hú còi 2000Hz, rung gậy, và bắn ngay ký tự "1" qua BLE cho App.
+//   3. Tự động ngắt còi hú sau 3 giây: Tránh gây hoảng loạn xung quanh, đưa hệ thống về trạng thái sẵn sàng.
+//   4. Cảm biến siêu âm HC-SR04 quét vật cản: Nếu phía trước có vật cản từ 3cm đến 80cm, bật rung ở tay cầm để báo cho người già.
+void loop() {
+  // ----------------------------------------------------------------------------
+  // NHIỆM VỤ 1: QUẢN LÝ TỰ ĐỘNG PHÁT SÓNG LẠI BLUETOOTH KHI RỚT KẾT NỐI
+  // ----------------------------------------------------------------------------
+  // Nếu vừa bị ngắt kết nối (deviceConnected = false nhưng oldDeviceConnected = true)
+  if (!deviceConnected && oldDeviceConnected) {
+      delay(500); 
+      pServer->startAdvertising(); // Bật lại phát sóng BLE
+      Serial.println("🔄 Bắt đầu phát sóng lại Bluetooth...");
+      oldDeviceConnected = deviceConnected;
+  }
+  // Nếu vừa được kết nối thành công
+  if (deviceConnected && !oldDeviceConnected) {
+      oldDeviceConnected = deviceConnected;
+  }
+
+  // ----------------------------------------------------------------------------
+  // NHIỆM VỤ 2: THUẬT TOÁN PHÁT HIỆN TÉ NGÃ QUA CẢM BIẾN GIA TỐC MPU6050
+  // ----------------------------------------------------------------------------
+  if (mpuFound) {
+    sensors_event_t a, g, temp;
+    mpu.getEvent(&a, &g, &temp); // Lấy giá trị gia tốc hiện tại trên 3 trục X, Y, Z
+
+    // Công thức tính vector gia tốc tổng hợp SVM (Signal Vector Magnitude)
+    // SVM = căn bậc 2 của (ax^2 + ay^2 + az^2)
+    // Bình thường đứng yên hoặc bước chậm: SVM xấp xỉ gia tốc trọng trường g = 9.8 m/s2
+    float totalAccel = sqrt(a.acceleration.x * a.acceleration.x + 
+                            a.acceleration.y * a.acceleration.y + 
+                            a.acceleration.z * a.acceleration.z);
+
+    // NGƯỠNG TÉ NGÃ: Khi có va chạm tiếp đất mạnh, gia tốc tổng vượt ngưỡng 25.0 m/s2 (~ 2.55g)
+    // và cờ báo động chưa được bật trước đó:
+    if (totalAccel > 25.0 && !isAlarmActive) {
+      Serial.println("\n🚨🚨🚨 PHÁT HIỆN TÉ NGÃ! 🚨🚨🚨");
+      
+      // Bật rung cảnh báo và còi hú báo động tại chỗ
+      digitalWrite(VIBRATOR_PIN, HIGH);
+      digitalWrite(BUZZER_PIN, HIGH); 
+      tone(BUZZER_PIN, 2000); // Phát âm báo tần số 2000 Hz âm lượng lớn
+      
+      isAlarmActive = true;
+      alarmStartTime = millis(); // Ghi lại mốc thời gian xảy ra cú ngã
+
+      // BẮN TÍN HIỆU CỨU NẠN: Gửi giá trị "1" qua Bluetooth BLE cho điện thoại người già
+      // Khi nhận được "1", điện thoại sẽ bật còi đếm ngược 15s, lấy GPS và đẩy lên Firebase / gửi SMS SOS
+      if (deviceConnected) {
+        pCharacteristicFall->setValue("1");
+        pCharacteristicFall->notify(); // Bắn thông báo đẩy tức thời (Notify)
+        Serial.println("📡 Đã bắn tín hiệu BÁO TÉ NGÃ lên App!");
+      }
+    }
+  }
+
+  // ----------------------------------------------------------------------------
+  // NHIỆM VỤ 3: TỰ ĐỘNG TẮT CÒI VÀ RUNG BÁO NGÃ SAU 3 GIÂY
+  // ----------------------------------------------------------------------------
+  // Sau khi hú còi đủ 3 giây (3000 ms), tắt còi trên gậy để tránh làm người già hoảng sợ
+  if (isAlarmActive && (millis() - alarmStartTime > 3000)) {
+    digitalWrite(VIBRATOR_PIN, LOW);
+    digitalWrite(BUZZER_PIN, LOW);
+    noTone(BUZZER_PIN); // Tắt âm còi hú
+    isAlarmActive = false;
+    
+    // Gửi giá trị "0" qua BLE để thông báo cho App biết phần cứng gậy đã hoàn tất chu kỳ báo động
+    if (deviceConnected) {
+      pCharacteristicFall->setValue("0");
+      pCharacteristicFall->notify();
+    }
+    Serial.println("✅ Đã tắt báo động té ngã phần cứng.\n");
+  }
+
+  // ----------------------------------------------------------------------------
+  // NHIỆM VỤ 4: PHÁT HIỆN VẬT CẢN BẰNG CẢM BIẾN SIÊU ÂM HC-SR04 & RUNG PHẢN HỒI
+  // ----------------------------------------------------------------------------
+  // Lưu ý: Chỉ quét vật cản khi gậy ĐANG KHÔNG TRONG TRẠNG THÁI BÁO NGÃ (để ưu tiên cứu nạn)
+  static bool wasObstacle = false;
+
+  if (!isAlarmActive) {
+    float distance = getDistanceCm(); // Đọc khoảng cách từ gậy đến vật cản phía trước (cm)
+
+    // Kiểm tra xem khoảng cách đo được có nằm trong phạm vi cảnh báo nguy hiểm không
+    // Cài đặt trong config.h: từ 3.0 cm đến 80.0 cm (cự ly 1-2 bước chân của người già)
+    bool isCurrentObstacle = (distance >= OBSTACLE_DISTANCE_MIN_CM && distance < OBSTACLE_DISTANCE_MAX_CM);
+
+    if (isCurrentObstacle) {
+      // TRƯỜNG HỢP 1: CÓ VẬT CẢN TRƯỚC MẶT -> Kích hoạt motor rung ở tay cầm qua MOSFET
+      digitalWrite(VIBRATOR_PIN, HIGH);
+
+      // In log 1 lần khi bắt đầu phát hiện vật cản (tránh in tràn màn hình Serial)
+      if (!wasObstacle) {
+        Serial.print("🚧 CÓ VẬT CẢN! Khoảng cách: ");
+        Serial.print(distance, 1);
+        Serial.println(" cm (Đang rung cảnh báo...)");
+        wasObstacle = true;
+      }
+    } 
+    else {
+      // TRƯỜNG HỢP 2: ĐƯỜNG ĐI THÔNG THOÁNG -> Tắt motor rung để người dùng thoải mái và tiết kiệm pin
+      digitalWrite(VIBRATOR_PIN, LOW);
+
+      if (wasObstacle) {
+        Serial.println("✅ Đường thoáng - Hết vật cản (Đã tắt rung).");
+        wasObstacle = false;
+      }
+    }
+  }
+
+  // Nghỉ 100ms giữa các lần quét -> tần số lấy mẫu đạt 10 Hz (đáp ứng tức thời trong 0.1 giây)
+  delay(100); 
+}

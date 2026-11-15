@@ -1,0 +1,618 @@
+P892 [Heading 1]: PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG
+
+P893 [Heading 2]: Phân tích yêu cầu thiết kế:
+
+P894 [Heading 3]: Yêu cầu người dùng:
+
+P895 [Content]: Trong bối cảnh già hóa dân số, nhu cầu giám sát người cao tuổi càng được quan tâm. Hệ thống được đề xuất cần đáp ứng các yêu cầu thực tiễn từ người dùng, cụ thẻ:
+
+P896 [Content]: Lắp đặt: vì hệ thống radar lắp đặt trên cao nên cần phải được thiết kế nhỏ gọn, tối ưu hóa linh kiện và nguồn.
+
+P897 [Content]: Dễ sử dụng: người dùng có thể quan sát và thao tác đơn giản, kể cả người không có kiến thức chuyên sâu về kỹ thuật.
+
+P898 [Content]: Độ tin cậy: hệ thống hoạt động tốt trong các môi trường ẩm ướt hoặc thiếu sáng như nhà tắm, phòng ngủ.
+
+P899 [Content]: Độ chính xác: phát hiện và cảnh báo theo thời gian thực, thông báo ngay đến người giám sát khi xảy ra sự cố.
+
+P900 [Content]: Độ bảo mật: bảo mật tuyệt đối, không xâm phạm hình ảnh hay bất kỳ thông tin cá nhân của người dùng.
+
+P901 [Content]: Tiết kiệm năng lượng và chi phí: tiêu thụ điện thấp, vận hành ổn định, giảm thiểu chi phí lắp đặt và bảo trì.
+
+P902 [Heading 3]: Yêu cầu kỹ thuật:
+
+P903 [Content]: Dựa trên yêu cầu của người dùng, thiết bị cần đáp ứng các tiêu chí kỹ thuật như sau:
+
+P904 [Content]: Cảm biến té ngã không chỉ PHTN mà còn phải xác định được các yếu nghiêm trọng của sự cố. Phân biệt được các trường hợp có thể là nhiễu gây ảnh hưởng đến kết quả như ngồi, nằm. Bên cạnh đó, phạm vi phát hiện phải đủ lớn để không bỏ sót các góc di chuyển của người.
+
+P905 [Content]: Bộ điều khiển trung tâm sử dụng máy tính nhúng RP có khả năng thu thập và xử lý dữ liệu. Bên cạnh đó, bộ điều khiển này còn đảm nhận nhiệm vụ điều khiển các thiết bị ngoại vi bổ trợ cho việc xác định hệ thống hoạt động theo đúng yêu cầu người dùng và kết nối Wifi để truyền dữ liệu đến hệ quản trị CSDL.
+
+P906 [Content]: Thiết bị cảnh báo gửi tín hiệu khẩn cấp trực tiếp bằng loa, thông báo, gọi điện khi có sự cố. Hoạt động tốt ngay cả khi không có kết nối mạng.
+
+P907 [Content]: Chuyển đổi bộ nguồn 12V để cung cấp đủ năng lượng cho toàn bộ thành phần trong thiết bị, đảm bảo hoạt động liên tục và ổn định.
+
+P908 [Content]: Các thiết bị phần cứng cần được thiết kế và lắp đặt chắc chắn để treo trực tiếp trên trần nhà. Hạn chế tối đa các vật liệu từ kim loại gây ra nhiễu thiết bị nhưng vẫn đảm bảo được độ bền vật liệu.
+
+P909 [Heading 2]: Sơ đồ khối hệ thống:
+
+P911 [Caption]: Hình 3.1 Sơ đồ khối hệ thống
+
+P913 [Content]: Chi tiết sơ đồ khối như sau:
+
+P914 [Content]: Khối cảm biến (C1001 60GHz): là cảm biến chính của hệ thống. Nó sử dụng công nghệ radar mmWave băng tần 60GHz để quét không gian, theo dõi chuyển động, vị trí và trạng thái tĩnh của con người theo thời gian thực. Khi phát hiện sự thay đổi đột ngột về độ cao và tư thế, cảm biến sẽ xử lý tín hiệu và gửi dữ liệu cảnh báo này sang khối xử lý trung tâm.
+
+P915 [Content]: Khối MCU (Raspberry Pi): đóng vai trò là bộ não của toàn bộ hệ thống. Tiếp nhận các dữ liệu từ khối cảm biến để chạy các thuật toán phân tích và xác thực té ngã, phân tích báo động giả và điều phối lệnh xuất một cách đồng bộ đến các khối thực thi.
+
+P916 [Content]: Khối cảnh báo (bao gồm Buzzer và Module SIM):
+
+P917 [Content]: Buzzer: phát âm thanh cảnh báo ngay tại khu vực lắp đặt. Khi nhận lệnh từ khối trung tâm, buzzer sẽ kêu to để thu hút sự chú ý của những người xung quanh đến hỗ trợ kịp thời hoặc để người dùng biết hệ thống đã ghi nhận cú ngã.
+
+P918 [Content]: Module SIM (4G/LTE): sử dụng hạ tầng mạng di động để thực hiện cuộc gọi hoặc gửi tin nhắn trực tiếp đến số điện thoại khẩn cấp, hoạt động ngay cả khi hệ thống wifi gặp sự cố kết nối.
+
+P919 [Content]: Khối truyền thông (Firebase Realtime Database): trung tâm lưu trữ trực tuyến. Dữ liệu từ RP được đẩy lên theo cơ chế thời gian thực, đóng vai trò làm trung gian đồng bộ trạng thái, lưu trữ lịch sử phục vụ cho các phân tích y tế sau này.
+
+P920 [Content]: Khối giám sát (User App): giao diện tương tác người dùng từ xa. Thông qua cơ chế đồng bộ hóa dữ liệu tự động với khối đám mây, ứng dụng trên điện thoại sẽ đưa ra các cảnh báo để người giám sát nhận biết tình huống nguy hiểm mọi lúc mọi nơi.
+
+P922 [Heading 2]: Sơ đồ nguyên lý hệ thống:
+
+P924 [Caption]: Hình 3.2 Sơ đồ nguyên lý hệ thống
+
+P925 [Heading 2]: Lưu đồ giải thuật:
+
+P926 [Content]: Kiến trúc và nguyên lý hoạt động của hệ thống giám sát đến ngã
+
+P927 [Content]: Giai đoạn 1: Khởi tạo và thiết lập cấu hình cảm biến
+
+P928 [Content]: Ngay khi hệ thống vừa khởi động, bước đầu tiên là thiết lập trạng thái an toàn cho các thiết bị ngoại vi. Chân điều khiển còi báo động (GPIO 17) được kéo lên mức cao để đảm bảo còi không mỹ hú vô điều kiện lúc khởi động. Song song đó, 2 cổng giao tiếp nối tiếp dành cho cảm biến radar và module 4G được thiết lập tham số kết nối (BAUD_RATE = 115200). Các thông tin nền tảng như địa chỉ Firebase URL và số điện thoại khẩn cấp cũng được nạp sẵn vào bộ nhớ.
+
+P929 [Content]: Giai đoạn 2: Cấp phát tài nguyên dùng chung và khởi tạo đa luồng
+
+P930 [Content]: Để các tiến trình độc lập có thể giao tiếp với nhau mà không gây xung đột, hệ thống khởi tạo một cấu trúc dữ liệu chung là radar_data (lưu trữ các trạng thái hiện diện, chuyển động, chỉ số cơ thể, té ngã và mốc thời gian). Đồng thời, hai công cụ đồng bộ quan trọng được thiết lập:
+
+P931 [Content]: data_lock : Đóng vai trò như một người gác cổng, đảm bảo tại một thời điểm chỉ có duy nhất một lần được quyền ghi hoặc đọc dữ liệu để tránh hiện tượng sai lệch dữ liệu.
+
+P932 [Content]: call_trigger: cơ chế phát tín hiệu sự kiện, giúp luồng xử lý radar kích hoạt luồng, gọi điện ngay lập tức khi phát hiện sự cố.
+
+P933 [Content]: Giai đoạn 3: Phân nhánh đa luồng và vòng lặp chính
+
+P934 [Content]: Sau khi chuẩn bị xong tài nguyên, hệ thống đồng loạt kích hoạt 4 luồng chảy song song bao gồm: luồng đọc radar (luồng 1), luồng đẩy dữ liệu lên Cloud (luồng 2), luồng xử lý cuộc gọi khẩn cấp (luồng 3), luồng xếp hàng gửi tin nhắn (luồng 4).
+
+P935 [Content]: Lúc này chương trình chính sẽ lùi về phía sau, đóng vai trò duy trì sự sống cho hệ thống= cách kiểm tra trạng thái định kỳ mỗi giây một lần. Hệ thống sẽ giữ trạng thái lập vô hạn này cho đến khi nhận được tín hiệu dừng từ người dùng. Khi đó, một quy trình dọn dẹp sẽ diễn ra, tắt còi báo động, giải phóng các chân GPIO để đưa thiết bị về trạng thái an toàn trước khi kết thúc hoàn toàn chương trình.
+
+P937 [Caption]: Hình 3.3 Lưu đồ chính của hệ thống
+
+P938 [Content]: Quy trình xử lý chi tiết luồng 1 - đọc và phân tích dữ liệu radar
+
+P939 [Content]: Bước 1: Tiếp nhận dữ liệu và chống tràn bộ đệm
+
+P940 [Content]: Luồng 1 bắt đầu bằng việc mở cổng kết nối serial với radar và làm sạch bộ nhớ đệm ban đầu. Trong vòng lặp vô hạn, luồng liên tục giám sát số lượng byte đen chờ trong hàng đợi nhập liệu.
+
+P941 [Content]: Nếu bộ đệm vượt ngưỡng an toàn (>2000 byte): hải thống lập tức thực hiện lệnh xóa dữ liệu cũ nhằm loại bỏ các dữ liệu rác hoặc dữ liệu bị dồn ứ, đảm bảo tính thời gian thực cho các gói tin tiếp theo.
+
+P942 [Content]: Nếu bộ đệm ổn định: luồng kiểm tra xem có dữ liệu mới hay không. Nếu trống, luồng sẽ chủ động nghỉ 0.01 giây để giảm tải cho MCU. Nếu có dữ liệu, lệnh readline() Sẽ bóc tách chính xác từng dòng văn bản được mã hóa UTF-8 từ cảm biến gửi về.
+
+P943 [Content]: Bước 2: Phân loại và đều hướng xử lý chuỗi ký tự
+
+P944 [Content]: Sau khi đọc được một dòng hoàn chỉnh, thuật toán tiến hành phân tích cú pháp để nhận diện loại thông tin dựa trên các từ khóa đặc trưng từ radar:
+
+P945 [Content]: Existing information (thông tin hiện diện): Xác định có người trong vùng quét hay không và cập nhật trạng thái vào bộ nhớ đệm chung.
+
+P946 [Content]: Motion information (thông tin chuyển động): Ghi nhận các trạng thái đóng học cơ bản (đứng yên, di chuyển chậm, di chuyển nhanh).
+
+P947 [Content]: Body mevement parameters (chỉ số chuyển động cơ thể): Trích xuất chỉ số biên độ dịch chuyển của cơ thể để phục vụ cho các thuậtc toán phân tích sâu ở các bước sau.
+
+P948 [Content]: Bước 3: Logic xử lý nâng cao và kích hoạt cảnh báo
+
+P949 [Content]: Nhánh xử lý bất động lâu (Stationary dwell status): Khi radar trả về trạng thái đứng im hoặc nằm im quá lâu, hệ thống sẽ kiểm tra điều kiện thời gian. Nếu thời gian bất động đạt đến mửa nghiêm trọng, hệ thống lập tức xác định đây là tình huống khẩn cấp, đưa ra cảnh báo bất tỉnh tại chỗ và đóng gói nội dung để đẩy vào hàng đợi có lần gửi tin nhắn (luồng 4).
+
+P950 [Content]: Nhánh xử lý thế nhã phức tạp (Fall status): đây là phân đoạn 4 duy quan trọng nhất của luồng 1. Khi nhận tín hiệu Fall status:
+
+P951 [Content]: Trường hợp phản hồi là false (không ngã): Hệ thống lập tức xóa bỏ các trạng thái té ngã trước đó, ra lệnh tắt còi báo động đồng thời gửi lệnh dập máy để hủy cuộc gọi khẩn cấp.
+
+P952 [Content]: Trường hợp phản hồi là true (xác nhận có ngã xảy ra): thuật toán không đưa ra cảnh báo ngay mà tiến hành phân loại mức độ nguy hiểm dựa trên dữ liệu biên độ chuyển động trong chu kỳ 5 giây gần nhất:
+
+P953 [Content]: Nếu chỉ số chuyển động lớn nhất trong 5 giây 2:  Hệ thống kết luận nạn nhân bị “NGÃ BẤT TỈNH”.
+
+P954 [Content]: Nếu chỉ số chuyển động >2: hệ thống các luận nạn nhân bị “NGÃ BÌNH THƯỜNG”.
+
+P955 [Content]: Sau khi phân lọai xong trạng thái ngã, hệ thống đồng thời kích hoạt 2 phản ứng khẩn cấp: bật còi báo động trực tiếp tại hiện trường (mở chân GPIO17) và gửi tín hiệu qua call_trigger để ra lệnh cho lùn xử lý cuộc gọi (luồng 3) thực hiện quay số gọi điện cứu hộ ngay lập tức.
+
+P957 [Caption]: Hình 3.4 Lưu đồ hoạt động của Luồng 1
+
+P958 [Content]: Quy trình xử lý chi tiết luồng 2 – đồng bộ dữ liệu đám mây
+
+P959 [Content]: Quá trình đồng bộ thông tin từ hệ thống cảnh báo lên CSDL đám mây được đảm nhiệm bởi một luồng xử lý bất đồng bộ độc lập. Cơ chế này giúp tách biệt hoàn toàn tác vụ truyền thông mạng với tác vụ đọc cảm biến thời gian thực, đảm bảo hệ thống không bị nghẽn mạch. Quy trình xử lý logic của luồng được thực hiện tuần tự qua các giai đoạn sau:
+
+P962 [Content]: Giai đoạn 1: Khởi tạo tiến trình và cấu hình mốc thời gian
+
+P963 [Content]: Ngay khi luồng gửi dữ liệu được kích hoạt tại thời điểm hệ thống khởi chạy, chương trình thực hiện xuất thông báo [*]Luong Firebase dang chay…ra màn hình giám sát để xác nhận trạng thái hoạt động. Đồng thời, hệ thống thiết lập giá trị ban đầu cho biến quản lý thời gian(last_upload_tine = 0), đóng vai trò làm điểm neo gốc để tính toán chu kỳ cho các lượt cấu trúc và đẩy dữ liệu kế tiếp.
+
+P964 [Content]: Giai đoạn 2: Cơ chế kiểm soát tần suất gửi
+
+P965 [Content]: Nhằm tối ưu hóa băng thông đường truyền và tránh lãng phí tài nguyên của hệ thống, luồng vậnn hành một vòng lặp vô hạn kết hợp bộ lọc thời gian thực. Tại mỗi chu kỳ, giải thuật gọi hàm time.time() để xác định mất thời gian hiện tại (current_time) và kiểm tra hiệu số thời gian tích lũy giữa 2 lần gửi lần gần nhất:
+
+P966 [Content]: Nếu khoảng thời gian trôi qua chưa đạt ngưỡng 2 giây, hệ thống sẽ bỏ qua lượt truyền này, thực hiện lệnh time.sleep(0.5) nhằm giảm tải cho MCU trước khi quay lại bước kiểm tra.
+
+P967 [Content]: Nếu khoảng thời gian trôi qua vượt ngưỡng 2 giây, luồng sẽ chính thức cấp phép cho tiến trình chuyển sang giai đoạn đóng gói dữ liệu.
+
+P968 [Content]: Giai đoạn 3: Khóa tài nguyên và trích xuất dữ liệu an toàn
+
+P969 [Content]: Do dữ liệu biến đổi liên tục bởi luồng đọc cảm biến radar chạy song song, giải thuật thiết lập cơ chế khóa dữ liệu độc quyền sử dụng with data_lock. Cơ chế này tạm thời phong tỏa tài nguyên tại thời điểm sao chép, thực hiện lệnh nhân bản cấu trúc dữ liệu radar_data.copy() sang một biến trung gian độc lập mang tên payload. Việc thiết lập này ngăn cản khóa này triệt tiêu hoàn toàn hiện tượng tranh chấp tài nguyên. Lỗi có thể dẫn đến sai lệch thông tin khi hai luồng cùng can thiệp vào một ô nhớ. Gói cấu trúc payload sau khi bóc tách sẽ bao gồm toàn bộ các tham số định danh: chỉ số chuyển động, trạng thái hiện diện, mốc thời gian, trạng thái đứng yên và phân loại hành vi ngã.
+
+P971 [Content]: Giai đoạn 4: Bộ lộc kiểm tra tính toàn vẹn của dữ liệu
+
+P972 [Content]: Trước khi phát lệnh truyền thông qua môi trường mạng, hệ thống kiểm tra tính hợp lệ của trường dữ liệu thời gian (payload[“thoi_gian”]:
+
+P973 [Content]: Trong trường hợp trường này trống (chưa được luồng radar định danh hoặc định dạng lỗi do phần cứng), hệ thống nhận diện đây là gói tin lỗi. Để tránh đẩy dữ liệu rác lên đám mây, luồng lập tức hủy lệnh gửi, cập nhật mốc last_upload_time = current_time, cho hệ thống tạm nghỉ 0.5 giây và chuyển tiếp sang chu kỳ giám sát tiếp theo.
+
+P974 [Content]: Trong trường hợp dữ liệu thời gian hợp lệ, gói tin sẽ được chuyển qua phân đoạn thực thi lệnh post HTTP.
+
+P975 [Content]: Giai đoạn 5: Thực thi truyền dữ liệu và cơ chế bắt lỗi ngoại lệ
+
+P976 [Content]: Thào tác đẩy dữ liệu lên Cloud được bao bọc trong một khối lệnh kiểm soát an toàn thông qua phương thức post của thư viện request. Nhằm ngăn chặn trạng thái treo luồng vô thời hạn do mất mạng kết nối đột ngột, giải thuật thiết lập thời gian chờ tối đa (timeout) nghiêm ngặt là 5 giây.
+
+P977 [Content]: Kịch bản thành công (khối try): gói dữ liệu JSON được cấu trúc và đồng bộ hóa thành công lên máy chủ Firebase, hệ thống ghi nhận trạng thái và sẳn sàng cho việc in thông báo debug ra terminal.
+
+P978 [Content]: Kịch bản xảy ra sự cố (khối except): nếu xuất hiện các biến cố về hạ tầng mạng (mất tín hiệu internet, gián đoạn kết nối wifi hoặc sai lệch địa chỉ URL), bộ xử lý ngoại lệ sẽ lập tức bắt giữ phân đoạn lỗi này và xuất cảnh báo ra bảng điều khiển. Cơ chế bảo vệ này giúp cô lạc hoàn toàn sự cố truyền thông, đảm bảo ứng dụng cốt lõi vẫn vận hành ổn định mà không bị sập đột ngột (crash).
+
+P981 [Content]: Giai đoạn 6: Tái thiết lập chu kỳ luồng
+
+P982 [Content]: Kết thúc mỗi chu kỳ xử lý, bất kể gói dữ liệu được truyền phát thành công hay gặp sự cố gián đoạn mạng, luồng đều tiến hành đồng bộ lại biến mốc thời gian. Sau đó, lệnh time.sleep(0.5) được thực thi nhằm giải phóng dung lượng xử lý của MCU, đưa luồng quay trở lại trạng thái chờ sẳn sàng cho một chu kỳ đồng bộ hóa tiếp theo.
+
+P984 [Caption]: Hình 3.5 Lưu đồ hoạt động của Luồng 2
+
+P985 [Content]: Quy trình xử lý chi tiết luồng 3 - xử lý cuộc gọi khẩn cấp qua module 4G
+
+P986 [Content]: Giai đoạn 1: Khởi động và kiểm tra kết nối phần cứng
+
+P987 [Content]: Bắt đầu: hệ thống được kích hoạt.
+
+P988 [Content]: Mở cổng giao tiếp: hệ thống thực hiện mở cổng serial kết nối module SIM qua đường dẫn thiết bị /dev/serial0.
+
+P989 [Content]: Kiểm tra kết nối (cổng serial SIM 4G kết nối thành công?):
+
+P990 [Content]: Nếu thất bại (false): hệ thống báo lỗi và dừng lại hoặc không thể tiếp tục luồng gọi.
+
+P991 [Content]: Nếu thành công (true): hệ thống báo “Kết nối ok” chính thức bước vào vòng lặp giám sát sự cố.
+
+P992 [Content]: Giai đoạn 2: Vòng lập giám sát và thực hiện cuộc gọi khẩn cấp
+
+P993 [Content]: Sau khi kết nối thành công hệ thống sẽ chạy một vòng lặp liên tục để kiểm tra trạng thái kích hoạt gọi điện:
+
+P994 [Content]: 1. Trạng thái chờ tín hiệu:
+
+P995 [Content]: Hệ thống liên tục kiểm tra điều kiện: call_trigger đang được set? (tín hiệu này được kích hoạt từ luồng PHTN trước đó)
+
+P996 [Content]: Nếu chưa kích hoạt: hệ thống sẽ tạm nghỉ 1 giây rồi quay lại tiếp tục kiểm tra.
+
+P997 [Content]: Nếu đã được kích hoạt hệ thống ngay lập tức chuyển sang chế độ xử lý khẩn cấp.
+
+P998 [Content]: 2. Kích hoạt luồng gọi khẩn cấp:
+
+P999 [Content]: Thông báo hệ thống: in ra màn hình console để debug/thông báo.
+
+P1000 [Content]: Kiểm tra lỗi gửi lệnh (quá trình xử lý bị xảy ra lỗi?): trước hoặc trong khi gửi lệnh, hệ thống kiểm tra xem đường truyền hay module có lỗi gì không.
+
+P1001 [Content]: Nếu có lỗi (true): xuất thông báo lỗi cụ thể, sau đó quay ngược trở lại vòng lặp chờ ban đầu để thử lại ở chu kỳ sau.
+
+P1002 [Content]: Nếu không lỗi (false): tiến hành gửi lệnh gọi điện.
+
+P1003 [Content]: 3. Thực hiện cuộc gọi và thiết lập thời gian:
+
+P1004 [Content]: Gửi lệnh gọi: hệ thống gửi lệnh AT command qua cổng serial đến module 4G để bắt đầu quay số đến số điện thoại cứu hộ.
+
+P1005 [Content]: Duy trì cuộc gọi: hệ thống sẽ chờ trong 20 giây để cuộc gọi được diễn ra cho (đổ chuông hoặc người nhà nghe máy).
+
+P1006 [Content]: Ngắt cuộc gọi: sau 20 giây hệ thống chủ động cửa lệnh dập máy.
+
+P1007 [Content]: Xác nhận kết thúc: ghi nhận trạng thái kết thúc cuộc gọi.
+
+P1008 [Content]: Thời gian giãn cách: hệ thống bắt buộc phải chờ thêm 10 giây trước khi có thể thực hiện bất kỳ cuộc gọi lại nào tiếp theo. Điều này giúp tránh module bị nghẽn lệnh hoặc gọi liên tục gây cháy sim.
+
+P1009 [Content]: Sau khi hết 10 giây chờ luồng dữ liệu tự động quay trở lại vị trí điểm kiểm tra để tiếp tục chu kỳ giám sát mới.
+
+P1011 [Caption]: Hình 3.6 Lưu đồ hoạt động của Luồng 3
+
+P1012 [Content]: Quy trình xử lý chi tiết luồng 4 – xử lý và gửi tin nhắn khẩn cấp
+
+P1013 [Content]: Luồng gửi tin nhắn hoạt động hoàn toàn độc lập và không đồng bộ, đóng vai trò như một hệ thống hậu cần phản ứng nhanh. Thay vì trực tiếp can thiệp vào tiến trình đọc dữ liệu của radar, lẩu này liên tục túc trực để thực hiện các yêu cầu cảnh báo được đóng gói và đẩy vào hàng đợi từ luồng 1 khi có sự cố.
+
+P1014 [Content]: Bước 1: Khởi tạo luồng và cơ chế phòng vệ ngoại lệ
+
+P1015 [Content]: Luồng bắt đầu chạy với lệnh thông báo hệ thống trực quan. Ngay sau đó, lầu bước vào một vòng lặp vô hạn được bao bọc chặt chẽ bởi một khối xử lý (try). Cơ chế phòng vệ này đảm bảo rằng nếu có bất kỳ sự cố kết nối, phần cứng module 4G hoặc lỗi định dạng chuỗi xảy ra, tiến trình sẽ không bị sập hoàn toàn. Nếu khối try gặp lỗi (false), hệ thống bắt ngoại lệ, anh ra thông báo Lỗi ở luồng SMS, tạm dừng 1 giây để thiết bị ổn định lại rồi tự động quay về đầu vòng lặp để tiếp tục làm việc.
+
+P1016 [Content]: Bước 2: Kiểm tra trạng thái và khai thác hàng đợi
+
+P1017 [Content]: Bên trong cấu trúc lặp ổn định,, lâu thực hiện lệnh truy xuất phần tử: phone_number, message = sms_que.get(timeout=1).
+
+P1018 [Content]: Kịch bản hàng đợi rỗng (false): nếu trong vòng 1 giây không có bất kỳ cảnh báo nào được nạp vào hệ thống, một lỗi ngoại lệ có kiểm soát sẽ được kích hoạt. Luồng thực hiện lệnh continue để bỏ qua các bước xử lý phía sau, quay trở lại trạng thái chờ đợi mà không làm tiêu tốn tài nguyên xử lý của MCU.
+
+P1019 [Content]: Kịch bản phát hiện cảnh báo (true): khi luồn 1 phát hiện sự cố và đẩy dữ liệu vào, luồng SMS sẽ lập tức lấy giở gói tin, trích xuất chính xác số điện thoại người nhận cùng một nội dung tin nhắn khẩn cấp, sằn sàng chuyển sang giai đoạn điều khiển phần cứng.
+
+P1020 [Content]: Bước 3: Khóa serial và thực thi giao thức lệnh AT
+
+P1021 [Content]: Để ngăn chặn tuyệt đối tình trạng xung đột tài nguyên trên đường truyền vật lý (khi luồn gọi điện khẩn cấp và luồng SMS cùng gửi tín hiệu đến module 4G cho đến khi tiến trình SMS hoàn thành công việc.
+
+P1022 [Content]: Chuỗi lệnh AT tiêu chuẩn để gửi SMS: sau khi độc chiếm đường truyền, luồng thực hiện chuỗi lệnh Điều khiển tuần tự với các khoản trễ được căn chỉnh tối ưu:
+
+P1023 [Content]: Gửi lệnh AT+CMGF=1: Cấu hình chuyển sang chế độ văn bản thay vì chế độ PDU phức tạp.
+
+P1024 [Content]: Gửi lệnh AT+CSCS=”GSM” và chờ 0.5 giây: Thiết lập bảng mã ký tự GSM tiêu chuẩn.
+
+P1025 [Content]: Gửi lệnh AT+CMGS=”SĐT” và chờ 1 giây: khai báo số điện thoại đích và mở luồng nhập nội dung tin nhắn.
+
+P1026 [Content]: Truyền tải nội dung và kết thúc lệnh: gửi chuỗi ký tự văn bản cảnh báo, kèm theo ký tự điều khiển đặc biệt để phát lệnh xuất tin nhắn đi, sau đó duy trì trạng thái chờ 3 giây để module xử lý và truyền phát sóng vô tuyến.
+
+P1027 [Content]: Bước 4: Xác nhận giải phóng tác vụ và tái thiết lập trạng thái nghỉ
+
+P1028 [Content]: Sau khi hoàn thành chuỗi lệnh, hệ thống xuất thông báo gửi tin nhắn thành công ra màn hình chỉ thị.
+
+P1029 [Content]: Hành động cuối cùng nhưng quan trọng trong quá trình xử lý hàng đợi là gọi lệnh sms_quêu.task_done(). Lệnh này gửi một tín hiệu xác nhận đến hệ thống quản lý bộ nhớ, báo cáo rằng tết vụ cụ thể trong hàng đợi đã được xử lý triệt để và an toàn, giải phóng các tài nguyên định danh nên quan.
+
+P1030 [Content]: Kết thúc một chu kỳ xử lý tin nhắn, tự động nhả khóa serial_4g_lock để nhường đường truyền cho các luồng khác, rồi quay trở lại vạch xuất phát tại đầu vòng lặp.
+
+P1033 [Caption]: Hình 3.7 Lưu đồ hoạt động của Luồng 4
+
+P1034 [Content]: Nguyên lý vận hành tổng quan của radar C1001 60GHz
+
+P1035 [Content]: Chương trình điều khiển hệ thống PHTN sử dụng cảm biến radar mmWave C1001  được xây dựng dựa trên cấu trúc phân tầng logic chặt chẽ, chia làm hai giai đoạn vận hành độc lập:
+
+P1037 [Content]: Giai đoạn cấu hình và khởi tạo hệ thống
+
+P1038 [Content]: Ngay khi hệ thống được cấp nguồn, cảm biến thực hiện chu trình thiết lập phần cứng và định hình môi trường giám sát nhằm đảm bảo tính ổn định tối đa trước khi vào hoạt động chính thức:
+
+P1039 [Content]: Kiểm tra kết nối phần cứng: để phòng các sự cố lỏng dây hoặc phần cứng chưa sẵn sàng, hệ thống vận hành một vòng lặp kiểm tra trạng thái liên tục. Nếu phát hiện lỗi kết nối, hệ thống sẽ phát tín hiệu cảnh báo lỗi và tự động thử lại sau mỗi khoảng thời gian 1 giây cho đến khi việc đồng bộ phần cứng hoàn tất.
+
+P1040 [Content]: Cài đặt chế độ vận hành: sau khi thiết lập liên kết thành công, cảm biến được thiết lập lệnh chuyển đổi trạng thái làm việc sang chế độ chuyên biệt là PHTN. Quá trình chuyển đổi này được giám sát chặt chẽ, hệ thống sẽ liên tục thử lại nếu cấu hình lỗi nhằm đảm bảo radar không vận hành sai chức năng.
+
+P1041 [Content]: Nạp tham số môi trường thực tế: khi các bước kiểm tra hoạt động hoàn tất, hệ thống tiến hành cấu hình các thông số kỹ thuật cốt lõi trực tiếp vào thanh ghi của radar để tối ưu hóa thuật toán nhận diện bao gồm: kích hoạt hệ thống đèn led chỉ thị vật lý trên module, khai báo thông số chiều cao lắp đặt thực tế của cảm biến so với mặt sàn nhằm định vị ma trận không gian và xác lập mặt phẳng tham chiếu nền đất, cài đặt bộ lọc thời gian xác thực té ngã là 5 giây nhằm loại bỏ báo động giả từ các hành vi thường ngày. Thiết lập thời gian trễ xác nhận vắng người là 1 giây cùng thời gian cảnh báo trạng thái tĩnh là 200 giây, đồng thời chỉnh độ nhạy của thuật toán xử lý va chạm lên mức tối đa.
+
+P1042 [Content]: Đồng bộ ngược và kiểm tra dữ liệu: để các thông số trên có hiệu lực module thực hiện lệnh tái khởi động tiến trình quét phần mềm. Cuối cùng, hệ thống thực hiện một chương trình đọc ngược dữ liệu từ cảm biến để đối chiếu, xuất màn hình giám sát toàn bộ trạng thái cấu hình thực tế nhằm đảm bảo tính toàn vẹn dữ liệu trước khi chuyển sang vòng lập chính.
+
+P1043 [Content]: Giai đoạn vòng lập giám sát thời gian thực
+
+P1044 [Content]: Sau khi hoàn thành tiến trình khởi tạo, hệ thống chuyển sang chế độ quét đa nhiệm lập lại liên tục với chu kỳ 1 giây. Tại mỗi chu kỳ quét, C1001 sẽ liên tục phát sóng điện từ, thu nhận tín hiệu phản xạ, tự xử lý nội bộ bằng các thuật toán xử lý tín hiệu số và trả về nhóm các thông tin trạng thái động học:
+
+P1045 [Content]: Trạng thái hiện diện: xác định sự tồn tại của thực thể người trong vùng không gian giám sát, phân tách rõ ràng giữa trạng thái có người hoặc không có người để kích hoạt các kịch bản xử lý tương ứng.
+
+P1046 [Content]: Trạng thái động lực học: phân tích chi tiết hành vi của thực thể là đang di chuyển hay đang ở trạng thái tĩnh. Cơ chế này giúp hệ thống nhận diện được đối tượng ngay cả khi họ không di chuyển nhờ vào các vi chuyển động như nhịp thở.
+
+P1047 [Content]: Chỉ số biên độ chuyển động: định lượng cường độ vận động của cơ thể dựa trên các tương tác vật lý trong không gian 3D thành các thông số học trực quan.
+
+P1048 [Content]: Trạng thái té ngã: đây là trạng thái cốt lõi của toàn bộ hệ thống. Khi thuật toán radar phân tích thấy vận tốc thay đổi đột ngột theo phương thẳng đứng hướng xuống, kết hợp với sự dịch chuyển ma trận PC tiệm cận sát mặt phẳng nền đất và duy trì vượt quá ngữơng thời gian trễ 5 giây, hệ thống sẽ lập tức chuyển sang trạng thái ghi nhận té ngã.
+
+P1049 [Content]: Trạng thái cư trú tỉnh: giám sát các trường hợp đối tượng nằm bất động hoàn toàn sau khi ngã, ngất xỉu hoặc đột qụy vượt quá thời gian cấu hành cho phép, từ đó đưa ra cảnh báo khẩn cấp để kích hoạt các kịch bản cứu hộ từ xa.
+
+P1051 [Caption]: Hình 3.8 Lưu đồ hoạt động của C1001
+
+P1052 [Content]: Quy trình phát hiện sự hiện diện của con người
+
+P1053 [Content]: Quy trình nhận biết và đưa ra kết luận phân loại cuối cùng về sự hiện diện của con người trong vùng giám sát của cảm biến radar mmWave được thực hiện liên tục theo thời gian thực (real time). Thuật toán xử lý và đưa quyết định được chia thành 3 bước logic tuần tự như sau:
+
+P1054 [Content]: Giai đoạn 1: Thu thập và xử lý tín hiệu gốc
+
+P1055 [Content]: Hệ thống khởi đầu bằng việc phát các chùm sóng vô tuyến liên tục điều tần (FMCW) ở băng tần cực cao 60GHz vào không gian. Sóng radar phản xạ từ môi trường xung quanh được ăngten thu nhận và chuyển đổi qua bộ trộn tín hiệu để tạo thành tín hiệu trung tần (IF). Tại bộ xử lý trung tâm tín hiệu thô này trải qua các thuật toán biến đổi FFT nhiều lớp và ước tính góc để loại bỏ nhiễu môi trường tĩnh như tường, bàn ghế, đồng thời thiết lập nên cấu trúc hình học không gian 3D dưới dạng đám mây điểm (PC).
+
+P1056 [Content]: Gia đoạn 2: Tầng lọc và phân tách đặc trưng chuyển động
+
+P1057 [Content]: Dựa trên dữ liệu PC thu được, thuật toán chia quy trình kiểm tra trạng thái thực thể thành 2 tầng lọc riêng biệt nhằm tối ưu hóa độ chính xác:
+
+P1058 [Content]: Tầng quét chuyển động vĩ mô (Macro-motion Detection): thuật toán thực hiện kiểm tra biến động tọa độ không gian của các cụm điểm theo thời gian. Nếu phát hiện các dịch chuyển lớn, rõ ràng mang tín liên tục (đi lại, chạy nhảy, giơ tay hoặc thay đổi tư thế của đối tượng), hệ thống lập tức bỏ qua các bước xác minh sâu hơn và chuyển thẳng đến trạng thái kết luận có mục tiêu chuyển động.
+
+P1059 [Content]: Tầng quét chuyển động vi mô (Micro-motion Detection): trong trường hợp không xuất hiện chuyển động lớn (đối tượng đang ngồi, im đọc sách hoặc nằm ngủ), hệ thống không kết luận khu vực trống ngay lập tức mà kích hoạt thuật toán bám đuôi pha. Tầng lọc này tiến hành bóc tách và phân tích các rung động cực nhỏ có  biên độ milimet trong dải tần số thấp (từ 0.1 Hz đến 0.5 Hz). Đây là dải tần số đặc trưng cho các hoạt động sinh học tự nhiên của con người bao gồm nhịp thở (lồng ngực phập phồng) và nhịp tim.
+
+P1060 [Content]: Giai đoạn 3: Đánh giá điều kiện và xuất kết quả đầu ra
+
+P1061 [Content]: Sau khi trải qua các tầng phân tích dữ liệu đặc trưng thuật toán logic đưa ra phán quyết nhịy phân cuối cùng:
+
+P1062 [Content]: Điều kiện CÓ NGƯỜI thỏa mãn: khi hệ thống ghi nhận được bất kỳ dấu hiệu nào từ chuyển động vĩ mô hoặc chuyển động vi mô. Trạng thái đầu ra cuối cùng được xác nhận là CÓ NGƯỜI. Cơ chế duy trì này giúp hệ thống hoạt động ổn định, tránh hiện tượng mất dấu mục tiêu khi con người ở trạng thái tĩnh hoàn toàn.
+
+P1063 [Content]: Điều kiện KHÔNG CÓ NGƯỜI thỏa mãn: khi cả hai tầng quét chuyển rộng lớn và chuyển động nhỏ đều không trả về tín hiệu hợp lệ (không có dịch chuyển tọa độ và không tồn tại tần số hô hấp). Hệ thống sẽ xác định đây là các chuyển động nhiễu nền của môi trường vật lý như rèm cửa đung đưa, quạt gió và xuất ra trạng thái kết luận cuối cùng là KHÔNG CÓ NGƯỜI.
+
+P1064 [Content]: Chu trình này sau đó lập tức được reset và tái khởi động vòng quét mới để đảm bảo tính liên tục và cập nhật tức thời của hệ thống cảnh báo.
+
+P1066 [Caption]: Hình 3.9 Lưu đồ quy trình phát hiện sự hiện diện của con người
+
+P1067 [Content]: Quy trình toán học và logic nhận diện té ngã trên cảm biến radar mmWave C1001
+
+P1068 [Content]: Quy trình nhận hiện té ngã trên cảm biến mmWave được thực hiện thông qua luồng xử lý tín hiệu số DSP và thuật toán Heuristic (logic vật lý). Quá trình từ lúc bắt đầu quét đến khi phát tín hiệu cảnh báo được chia làm 4 giai đoạn liên tiếp:
+
+P1069 [Content]: Giai đoạn 1: Thu thập và tiền xử lý dữ liệu
+
+P1070 [Content]: Giai đoạn này biến đổi các tín hiệu vật lý thô thành dữ liệu không gian hữu ích thông qua 4 bước:
+
+P1071 [Content]: Bước 1. Thu thập PC: radar phát sóng 60GHz và nhận lại tín hiệu phản xạ. Dữ liệu thô ban đầu radar đo được cho mỗi điểm là tọa độ cực bao gồm:
+
+P1072 [Content]: R (Range): khoảng cách từ radar đến vật thể.
+
+P1073 [Content]: (Azimuth): góc phương vị (trái/phải).
+
+P1074 [Content]: (Elevation): góc ngẩng (lên/xuống).
+
+P1075 [Content]: Bước 2. Chuyển đổi tọa độ tương đối của radar sang hệ tọa độ descartes của mặt đất (x, y, z)
+
+P1076 [Content]: Để chuyển đổi từ tọa độ mà radar phát hiện sang hệ tọa độ trên mặt đất chúng ta cần thực hiện các phép tính lượng giác dựa trên hình học không gian.
+
+P1077 [Content]: Quá trình chuyển đổi diễn ra qua 2 bước chính:
+
+P1078 [Content]: Bước 2.1. Chuyển từ tọa độ radar sang tọa độ tạm thời.
+
+P1079 [Content]: Đầu tiên ta tính tọa độ (xr, yr, zr) trong hệ quy chiếu lấy radar làm gốc tọa độ:
+
+P1080 [Content]: xr = R.cos().sin										(3-1)
+
+P1081 [Content]: yr = R.cos().cos() 										(3-2)
+
+P1082 [Content]: zr = R.sin() 												(3-3)
+
+P1083 [Content]: Bước 2.2. Phép quay và tịnh tiến theo vị trí lắp đặt:
+
+P1084 [Content]: Vì zadar được lắp ở độ cao h và góc nghiêng titlt xuống dưới, ta cần xoay hệ tọa độ này quanh trục x và dời gốc tọa độ xuống mặt sàn.
+
+P1085 [Content]: Trục x (ngang) không đổi so với bước 1.
+
+P1086 [Content]: x = xr 													(3-4)
+
+P1087 [Content]: Trục y (chiều sâu): bị ảnh hưởng bởi góc nghiêng.
+
+P1088 [Content]: y = yr.cos(titlt) – zr.sin(titlt) 									(3-5)
+
+P1089 [Content]: Trục z (chiều cao so với sàn): xoay và tịnh tiến theo vị trí lắp đặt. Cảm biến được lắp ở độ cao h và góc nghiêng titlt chúi xuống. Chiều cao thực tế so với mặt sàn z được tính bằng ma trận xoay quanh trục x.
+
+P1090 [Content]: z = h – (yr.sin(titlt) + zr.cos(titlt)) 								(3-6)
+
+P1091 [Content]: Bước 3: Gộp L khung hình (Accumulation): do dữ liệu một khung hình thưa thớt, hệ thống gộp L khung hình liên tiếp (ví dụ L = 20) để tạo hình dáng người rõ nét.Tập hợp điểm sau khi gộp: X=frame1,…,frameL.
+
+P1092 [Content]: Bước 4. Lọc nhiễu tĩnh và chuẩn hóa: loại bỏ các điểm có vận tốc Doppler như bàn ghế, tủ và dời điểm về gốc tọa độ để làm sạch dữ liệu.
+
+P1094 [Caption]: Hình 3.10 Lưu đồ quy trình tạo Point Cloud
+
+P1095 [Content]: Giai đoạn 2: Biểu diễn và theo dõi chủ chuyển động (Motion Tracking)
+
+P1096 [Content]: Dữ liệu sạch được tổ chức thành chuỗi thời gian để theo dõi hành vi:
+
+P1097 [Content]: Đặc trưng điểm dữ liệu: mỗi điểm phản xạ thu được  mang 4 giá trị cốt lõi: , , , . Trong đó x, y, z là tọa độ trong không gian 3D và D là thông tin hiệu ứng Doppler (thế hiện vận tốc và hướng di chuyển của điểm đó).
+
+P1098 [Content]: Tính toán trọng tâm: tại mỗi khung hình, hệ thống tính toán trung bình tọa độ để tìm ra một điểm trọng tâm duy nhất đại diện cho toàn bộ cơ thể người. Ví dụ khung hình đầu tiên trong chuỗi có trọng tâm () và khung hình thứ L có trọng tâm ().
+
+P1099 [Content]: Để tính toán trọng tâm (Centroid) của một PC, hệ thống sử dụng một phép toán cực kỳ cơ bản trong thống kê là tính trung bình cộng tọa độ của tất cả các điểm. Dưới đây là chi tiết công thức toán học và các con chip thực hiện.
+
+P1100 [Content]: Tọa độ của trọng tâm C(xc, yc, zc) được tính bằng cách lấy tổng tọa độ của tất cả các điểm chia cho tổng số lượng điểm (N):
+
+P1101 [Content]: Trục X (ngang):
+
+P1102 [Normal (Web)]: =  =        								(3-7)
+
+P1103 [Normal (Web)]: Trục Y (sâu):
+
+P1104 [Normal (Web)]: =  =     								(3-8)
+
+P1105 [Content]: Trục Z (cao):
+
+P1106 [Normal (Web)]: =  =    								(3-9)
+
+P1107 [Content]: Trong bài toán phát hiện tiếng ngã chụp Z là quan trọng nhất, là cơ sở để đưa ra quyết định ngã hay không ngã.
+
+P1108 [Content]: Cơ chế cửa sổ trượt (Sliding Window): hệ thống duy trì ma trận chứa giá trị trọng tâm của L khung hình gần nhất: = [, ,…, ].  Cửa sổ này trượt liên tục theo thời gian thực để không bỏ số bất kỳ biến động nào.
+
+P1109 [Content]: Giai đoạn 3:  Phân tích động lực học phát hiện cú rơi (khoảng 1 giây đầu)
+
+P1110 [Content]: Thuật toán Heuristic liên tục kiểm tra sự thay đổi của ma trận :
+
+P1111 [Content]: Sự sụt giảm độ cao đột ngột: kiểm tra chênh lệch chiều cao ()  ngưỡng (>0.7m).
+
+P1112 [Content]: Vận tốc rơi: quá trình sụt giảm  phải diễn ra nhanh chóng, tương ứng với gia tốc rơi tự do của cơ thể, v  1.5m/s đạt điều kiện nghi ngờ té ngã . 	(3-10)
+
+P1113 [Content]: Kết quả: nếu thỏa mãn, hệ thống chuyển sang trạng thái nghi ngờ té ngã (Suspected Fall) và kích hoạt bộ đếm thời gian (timer).
+
+P1114 [Content]: Giai đoạn 4: Xác nhận trạng thái tĩnh (chờ 3 đến 5 giây).
+
+P1115 [Content]: Đây là cơ chế chống nhiễu để phân biệt té ngã thật sự với các hành động sinh hoạt bình thường.
+
+P1116 [Content]: Bắt đầu đếm ngược: khi người dùng ngã xuống, hệ thống theo dõi tọa độ zc trong 3 đến 5 giây tiếp theo.
+
+P1117 [Content]: Trường hợp 1 (huỷ báo động): nếu zc tăng vọt trở lại mức an toàn ( 0,7m) trong thời gian chờ chứng tỏ người đó tự đứng lên được hệ thống tự động hủy bộ đếm.
+
+P1118 [Content]: Trường hợp 2 (xác nhận): nếu hết thời gian chờ mà tọa độ zc vẫn duy trì liên tục ở mức rất thấp (<0,7m), thuật toán kết luận nạn nhân đang nằm bất động.
+
+P1119 [Content]: Quy trình giải thuật xử lý dữ liệu và phát hiện ngã từ hệ thống radar
+
+P1120 [Content]: Hệ thống xử lý dữ liệu từ C1001 hoạt động dựa trên cơ chế vòng lặp bất đồng bộ nhằm tối ưu hóa tốc độ truyền và triệt tiêu độ trễ đường truyền, với quy trình vận hành cụ thể như sau:
+
+P1121 [Content]: Giai đoạn 1: Khởi tạo cấu hành và làm sạch bộ đệm
+
+P1122 [Content]: Hệ thống bắt đầu bằng việc thiết lập kết nối giao tiếp serial với C1001 thông qua các tham số định sẵn (cổng kết nối và tốc độ Baud rate). Ngay sau khi kết nối được thiết lập, lệnh xóa bộ đệm đầu vào sẽ được kích hoạt nhằm giải phóng toàn bộ dữ liệu rác trước đó, đồng thời làm trống biến lưu trữ dòng tạm thời (buffer_label) để chuẩn bị đón luồng dữ liệu mới.
+
+P1123 [Content]: Giai đoạn 2: Quản lý bộ đệm và xử lý lỗi phân tách dòng
+
+P1124 [Content]: Khi bước vào vòng lặp giám sát liên tục, hệ thống áp dụng cơ chế kiểm soát băng thông nghiêm ngặt. Nếu lượng dữ liệu tồn đọng trong bộ đệm vật ng	ưỡng 2000 byte, hệ thống nhận diện đây là hiện tượng nghẽn tín hiệu gây trễ và sẽ chủ động xoá sạch bộ đệm để thiết lập lại chu kỳ. Ngược lại, nếu bộ đệm trống, luồng sẽ tạm nghỉ một khoảng cực ngắn để giảm tải cho MCU.
+
+P1125 [Content]: Trong quá trình đọc dữ liệu, để khắc phục triệt để lỗi tự động xuống hàng ngắt quãng từ phần cứng radar, giải thuật kiểm tra nếu một dòng lệnh kết thúc, hệ thống sẽ giữ lại chuỗi này làm nhãn tạm thời. Gói dữ liệu hoàn chỉnh chỉ được hình thành khi ghép nhãn tạm thời này với dòng dữ liệu kế tiếp.
+
+P1126 [Content]: Giai đoạn 3: Phân tích từ khóa và phân loại dữ liệu đa luồng
+
+P1127 [Content]: Sau khi cấu trúc được chuỗi dữ liệu hoàn chỉnh, hệ thống tiến hành bóc tách và phân loại dựa trên các từ khóa nhận diện từ cảm biến thông qua cơ chế khóa dữ liệu an toàn, tránh xung đột giữa các tiến trình.
+
+P1128 [Content]: Giai đoạn 4: Thuật toán xác định trạng thái ngã và điều khiển cảnh báo khẩn cấp
+
+P1129 [Content]: Khi hệ thống ghi nhận từ khóa Fall status, một giải thuật phân tích thành vi ngã theo chu kỳ thời gian thực 5 giây sẽ được kích hoạt để đưa ra kết luận chính xác nhất:
+
+P1130 [Content]: Trường hợp phát hiện tín hiệu ngã (Fallen): nếu là thời điểm bắt đầu chu kỳ ngã mới, hệ thống kích hoạt biến trạng thái khẩn cấp, ghi nhận mốc thời gian và so sánh với cường độ chuyển động đỉnh trong mảng lịch sử 5 giây trước đó. Nếu cường độ này duy trì ở mức cực thấp 2, đối tượng được phân loại là “ngã bất tỉnh”, ngược lại sẽ là “ngã bình thường”.
+
+P1131 [Content]: Nếu trạng thái ngã tiếp tục kéo dài, hệ thống liên tục giám sát biên độ dịch chuyển lớn nhất. Khi chu kỳ ngã tích lũy đủ hoặc vượt quá ngữơng 5 giây, hệ thống sẽ tái đánh giá và kết luận dựa trên biên độ đỉnh này trước khi thiết lập một chu kỳ giám sát mới.
+
+P1132 [Content]: Trường hợp không phát hiện ngã (Not Fallen): hệ thống đưa trạng thái về mức an toàn.
+
+P1133 [Content]: Dựa trên kết quả phân tích cuối cùng, hệ thống sẽ thực hiện điều khiển các thiết bị ngoại vi. Nếu xác định có hành vi ngã (bất tỉnh hoặc bình thường), luồng sẽ kích hoạt tín hiệu gọi điện, đồng thời xuất mức logic thấp để bật còi báo động vật lý. Ngược lại, khi đối tượng thoát khỏi trạng thái nguy hiểm, tín hiệu gọi điện sẽ bị xóa và còi báo động sẽ được tắt lập tức để đưa hệ thống về trạng thái giám sát thông thường.
+
+P1134 [Content]: Giai đoạn phụ: Cập nhật trạng thái tĩnh và đóng dấu thời gian
+
+P1135 [Content]: Đối với từ khoá Stationary dwell status, hệ thống thực hiện trích xuất dữ liệu đứng im của đối tượng, in trực tiếp ra màn hình giám sát, đồng thời đóng dấu mốc thời gian thực tế (ngày/tháng/năm) vào gói tin để phục vụ cho các tiến trình đồng bộ dữ liệu nên nền tảng đám mây ở các luồng kế tiếp.
+
+P1136 [Content]: Toàn bộ giải thuật được bao bọc trong một khối kiểm soát ngoại lệ (try-except). Nếu xảy ra các sự cố phần cứng đột xuất như mất kết nối vật lý với radar, hệ thống sẽ tự động bắt lỗi, đưa ra cảnh báo lên hệ thống, tạm dừng 1 giây và tự động thực hiện lại quy trình kết nối mà không làm sập toàn bộ chương trình.
+
+P1138 [Caption]: Hình 3.11 Lưu đồ logic phát hiện té ngã
+
+P1139 [Content]: Quy trình logic xác nhận trạng thái cư trú tĩnh
+
+P1140 [Content]: Quy trình này vận hành như một nhánh xử lý song song và độc lập với nhánh PHTN. Mục tiêu chính là xác định trạng thái bất động kéo dài của đối tượng thông qua việc theo dõi sự ổn định của trọng tâm PC theo thời gian.
+
+P1141 [Content]: Giai đoạn 1: Cơ sở dữ liệu đầu vào
+
+P1142 [Content]: Quy trình dựa trên hai nguồn dữ liệu cốt lõi và được tiền xử lý từ các giai đoạn trước.
+
+P1143 [Content]: Trạng thái hiện diện (Human Presence): xác nhận có người trong vùng quét để kích hoạt logic đếm.
+
+P1144 [Content]: Trạng thái chuyển động (eHumanMovement): được phân loại dựa trên phổ Doppler thu được từ PC để xác định đối tượng đang hoạt động hay đứng yên.
+
+P1145 [Content]: Tham số thời gian cư trú (eResidenceTime): ngữơng thời gian mục tiêu (ví dụ 200 giây) được thiết lập làm điều kiện cần để xác định trạng thái cư trú tĩnh.
+
+P1146 [Content]: Giai đoạn 2: Phân loại trạng thái tĩnh
+
+P1147 [Content]: Thay vì chỉ giám sát tọa độ x, y, z một cách cơ học, hệ thống xác định tính chất tĩnh thông qua việc phân tích đặc trưng PC:
+
+P1148 [Content]: Nhận diện vi chuyển động (Micro motion): radar phát hiện các dao động cực nhỏ nhu nhịp thở, để phân biệt thực thể sống với các thực thể tĩnh khác.
+
+P1149 [Content]: Xác lập trạng thái đứng yên (Still):  khi các biến động lớn (Macro motion) biến mất và trọng tâm PC không có sự dịch chuyển đáng kể, hệ thống phân loại đối tượng vào trạng thái tĩnh.
+
+P1150 [Content]: Thiết lập điểm neo logic: tại thời điểm trạng thái tĩnh được xác lập hệ thống ghi nhận tọa độ trọng tâm tức thời làm điểm tham chiếu để theo dõi tính ổn định.
+
+P1151 [Content]: Giai đoạn 3: Tích lũy thời gian và cơ chế reset
+
+P1152 [Content]: Đây là quy trình phễu lọc thời gian thực để xác nhận hành vi cư trú tỉnh bền vững.
+
+P1153 [Content]: Cơ chế đếm thời gian (Timer): bộ đếm thời gian cư trú bắt đầu tích lũy khi đối tượng duy trì liên tục trong trạng thái tĩnh.
+
+P1154 [Content]: Cơ chế ngắt quãng (Reset): nếu xuất hiện tín hiệu chuyển động mạnh khiến hệ thống phân loại lại đối tượng sang trạng thái hoạt động (Active) hoặc nếu tọa độ trọng tâm, zc thay đổi đột ngột (đối tượng đứng dậy hoặc di chuyển) bộ đếm sẽ lập tức quay về giá trị 0.
+
+P1155 [Content]: Duy trì và ổn định: quy trình yêu cầu trạng thái tĩnh phải diễn ra liên tục, không ngắt quãng cho đến khi đạt ngữơng thời gian đã cài đặt.
+
+P1156 [Content]: Giai đoạn 4: Kết luận và xuất trạng thái
+
+P1157 [Content]: Sau khi chu kỳ tích lũy thời gian hoàn tất, cảm biến chốt lại trạng thái là “Stationary dwell present”.
+
+P1159 [Caption]: Hình 3.12 Lưu đồ logoc trạng thái cư trú tĩnh
+
+P1160 [Heading 2]: Bộ xử lý trung tâm và các module:
+
+P1161 [Heading 3]: Cảm biến phát hiện người (C1001 mmWave Human Detection Sensor):
+
+P1162 [Content]: Đây là một mudule cảm biến phát hiện sự hiện diện của con người bằng sóng mmWave, hoạt động ở dải tần số 60GHz đến 61.5GHz. Ngoài ra, nó còn hỗ trợ giám sát giấc ngủ, đo nhịp tim khi thở và PHTN.
+
+P1163 [Caption]: Bảng 3.1 Thông số kỹ thuật của cảm biến mmWave C10001
+
+P1165 [Caption]: Hình 3.13 Cảm biến mmWave C1001
+
+P1166 [Heading 3]: Bộ xử lý trung tâm (Raspberry Pi 4 Model B):
+
+P1168 [Caption]: Hình 3.14 Sơ đồ chân Raspberry Pi
+
+P1169 [Content]: RP 4 Model B là một dòng máy tính nhúng với nhiều cải tiến vượt trội hơn so với các phiên bản trước đây. Các thông số kỹ thuật chính:
+
+P1170 [Content]: CPU: 1.5GHz quad-core 64-bit ARM Cortẽ-A72 giúp tốc độ xử lý nhanh, mượt mà.
+
+P1171 [Content]: RAM: 2GB, 4GB, 8GB.
+
+P1172 [Content]: Module Wifi 2.4GHz và 5.0GHz, bluetooh 5.0.
+
+P1173 [Content]: Trang bị 2 cổng USB 3.0 và 2 cổng USB 2.0.
+
+P1174 [Content]: Hỗ trợ 2 cổng xuất màn hình qua HDMI lên tới 4K.
+
+P1175 [Content]: Có khe cắm SD lưu trữ dữ liệu.
+
+P1176 [Content]: 40 chân  GPIO hỗ trợ UART, PWM, ADC,…
+
+P1177 [Content]: Nguồn 5V DC, điện áp 3A.
+
+P1178 [Content]: Nhiệt độ hoạt động từ 0oC đến 50oC.
+
+P1179 [Content]: RP đóng vai trò là bộ não trung tâm, chịu trách nhiệm quản lý, tính toán, cập nhật dữ liệu lên Cloud và đưa ra quyết định xử lý các thiết bị ngoại vi.
+
+P1180 [Content]: RP ghi nhận dữ liệu được gửi liên tục từ module cảm biến. Nhờ cấu hình mạnh mẽ, RP đóng vai trò kiểm định lại dữ liệu từ cảm biến, từ đó xác định các tình huống như:
+
+P1181 [Content]: Sau khi ngã có cử động không? Nếu có => Ngã bình thường, nếu không => Ngã bất tỉnh.
+
+P1182 [Content]: Thời gian bất động lâu có vượt quá ngưỡng chưa? Nếu có => bất tỉnh => cảnh báo.
+
+P1183 [Content]: Là cầu nối, dữ liệu được đóng gói và gửi lên nền tảng đám mây (Firebase Realtime Database) giúp phát triển các hệ thống ứng dụng cảnh báo đồng bộ theo thời gian thực.
+
+P1184 [Content]: Kích hoạt các thiết bị cảnh báo ngoại vi, khi có sự số RP sẽ ngay lập tức thực hiện chuỗi hành động: báo còi tại chỗ, gọi điện hoặc gửi tin nhắn đến người giám sát.
+
+P1185 [Content]: Lưu trữ log để theo dõi trực quan hóa dữ liệu ở dạng biểu đồ.
+
+P1186 [Content]: Việc xử lý đa nhiệm và điều phối luồng giúp tối ưu hóa chi phí và hiệu năng cho hệ thống.
+
+P1187 [Heading 3]: Module Sim 4G A7680C:
+
+P1188 [Content]: Khác với các ứng dụng phụ thuộc vào Internet, A7680C cho phép hệ thống thực hiện các cuộc gọi trực tiếp và gửi tin nhắn SMS đến số điện thoại của người thân hoặc bác sĩ. Cuộc gọi trực tiếp mang lại hiệu quả tương tác cao hơn, giúp người giám sát có những biện pháp can thiệp y tế kịp thời.
+
+P1189 [Content]: Ngoài các tác vụ viễn thông cơ bản, module còn hỗ trợ các giao thức như TCP/IP, HTTP, MQTT. Điều này cho phép RP gửi dữ liệu, nhật ký sự kiện hoặc thông báo lên Server/Cloud thông qua mạng di động khi cần thiết.
+
+P1190 [Content]: Việc lựa chọn module này mang lại nhiều lợi thế công nghệ vượt trội hơn so với các dòng module thế hệ cũ. A7680C sử dụng hoàn toàn hạ tầng mạng 4G LTE, giúp tối ưu tốc độ truyền tải thông tin và đảm bảo thiết bị hoạt động lâu dài trong bối cảnh các nhà mạng dần bỏ hoàn toàn sóng 2G/3G.
+
+P1191 [Content]: Bên cạnh đó kích thước module nhỏ gọn, tiêu thụ năng lượng tối ưu và giao tiếp UART đơn giản làm cho việc thiết kế hệ thống dễ dàng và ổn định hơn.
+
+P1192 [Caption]: Bảng 3.2 Thông số kỹ thuật module SIM 4G
+
+P1194 [Caption]: Hình 3.15 Module SIM 4G
+
+P1195 [Caption]: Bảng 3.3 Lệnh AT được sử dụng
+
+P1196 [Heading 3]: Buzzer 5V MH-FMD:
+
+P1197 [Content]: Khi RP xác nhận có sự kiện té ngã, module này sẽ phát ra âm thanh tần số cao với cường độ lớn tương tự như còi báo. Điều này đặt biệt hữu ích trong môi trường gia đình, viện dưỡng lão hoặc bệnh viện, giúp người xung quanh phát hiện người gặp nạn mà không cần phụ thuộc vào điện thoại.
+
+P1199 [Caption]: Hình 3.16 Buzzer
+
+P1200 [Content]: Không chỉ dừng lại ở việc báo động tai nạn, buzzer còn được lập trình bằng kỹ thuật điều chế độ rộng xung PWM hoặc các chu kỳ ngắt quãng để phản ánh các trạng thái hoạt động khác nhau của thiết bị.
+
+P1201 [Content]: Khác với các loại loa thông thường cần mạch khuếch đại công suất, MH-FMD tích hợp sẵn mạch đệm điều khiển bên trong, cho phép RP kích dòng trực tiếp từ chân GPIO mà không sợ quá tải. Thiết bị còn có giá thành thấp, kích thước nhỏ gọn, vận hành ổn định trong thời gian dài và tiêu thụ điện năng không đáng kể.
+
+P1202 [Heading 3]: Nguồn pin dự phòng 5V:
+
+P1203 [Content]: Đặc thù của hệ thống cảnh báo té ngã sử dụng C1001 mmWave là yêu cầu thiết bị phải được lắp đặt cố định ở vị trí trên cao (trần nhà hoặc góc tường) để tối ưu hóa góc quét và bao quát toàn bộ không gian phòng mà không bị che khuất bởi các vậy cản.
+
+P1204 [Content]: Tuy nhiên, qua khảo sát thực nghiệm tại không gian triển khai mẫu, hạ tầng tại trần nhà không có sẵn các nguồn điện dân dụng AC. Việc đi dây nguồn trực tiếp gây mất thẩm mĩ và tăng nguy cơ rò rỉ điện, không đảm bảo các tiêu chuẩn an toàn kỹ thuật.
+
+P1205 [Content]: Do đó, trong giai đoạn phát triển sản phẩm mẫu này, nhóm nghiên cứu đã lựa chọn phương án sử dụng pin sạc dự phòng dung lượng cao làm nguồn cấp chính.
+
+P1206 [Content]: Thiết bị hoàn toàn độc lập với hạ tầng lưới điện, cho phép triển khai ngay lập tức tại bất kỳ vị trí trần nhà nào. Giúp sản phẩm gọn nhẹ hơn trong quá trình thực nghiệm. Về tính duy trì vẫn đảm bảo hệ thống hoạt động ổn định để thu thập thông tin, PHTN và cảnh báo khẩn cấp.
+
+P1208 [Caption]: Hình 3.17 Nguồn pin dự phòng 5V
+
+P1209 [Heading 2]: Thiết kế vỏ bảo vệ hệ thống (In 3D):
+
+P1210 [Content]: Để tích hợp và bảo vệ tính toàn vẹn, hệ thống được trang bị một vỏ bảo vệ chuyên dụng thiết kế riêng và chế tạo bằng công nghệ in 3D chất liệu từ nhựa. Kích thước và cấu trúc của vỏ hợp được tính toán kỹ lưỡng nhằm đáp ứng các yêu cầu kỹ thuật sau:
+
+P1211 [Content]: Vị trí mặt dưới của vỏ hộp được khoét rỗng để đặt radar mmWave, đảm bảo sóng radar không bị che khuất bởi vật cản như kim loại hoặc nhựa quá dày.
+
+P1212 [Content]: Bố trí linh kiện khoa học, sắp xếp gọn gàng các thiết bị bên trong để tối ưu hóa không gian, giảm kích thước sản phẩm, đồng thời khoét sẵn các lỗ cho cổng kết nối, khe cắm và giúp lưu thông khí, tránh hiện tượng quá nhiệt gây treo hệ thống.
+
+P1213 [Content]: Quy trình thiết kế mô hình 3D và thi công:
+
+P1214 [Content]: Đo đạc kích thước vật lý thực tế của từng thiết bị, tính toán khoảng cách để các vị trị được cố định.
+
+P1215 [Content]: Lên ý tưởng thiết kế, tối ưu hóa không gian, chừa khoảng trống để đi dây, giúp việc lắp đặt cũng như bảo trì hệ thống dễ dàng thực hiện.
+
+P1216 [Content]: Sử dụng phần mềm chuyên dụng (SolidWorks/Autodesk Fusion 360) để dựng mô hình 3D cho vỏ hộp. Thiết kế bao gồm: phần thân hộp, các thanh kéo đẩy có thể tháo rời và phần nắp đóng mở.
+
+P1217 [Content]: Xuất file thiết kế sang định dạng .STL và tiến hành nạp vào máy in 3D. Vật liệu được lựa chọn là nhựa PLA do có độ bền cơ học tốt, không bị co trong quá trình in và thân thiện với môi trường.
+
+P1221 [Caption]: Hình 3.18 Thiết kế in 3D
+
+P1223 [Caption]: Hình 3.19 Sản phẩm in 3D
+
+P1224 [Heading 2]: Thiết kế phần mềm hệ thống giám sát:
+
+P1225 [Content]: Ứng dụng di động đóng vai trò là lớp giao tiếp người dùng cuối trong hệ thống. Phần mềm được thiết kế nhằm mục đích đồng bộ dữ liệu thời gian thực từ bộ xử lý trung tâm, đồng thời đảm bảo khả năng tiếp nhận và xử lý các thông báo khẩn cấp một cách tức thời trên các thiết bị di động.
+
+P1226 [Content]: Giao diện người dùng được thiết kế tối giản, trực quan hướng tới đối tượng người dùng cần tiếp cận thông tin nhanh chóng như người thân hoặc bác sĩ.
+
+P1228 [Caption]: Hình 3.20 Giao diện ứng dụng giám sát
+
+P1229 [Content]: Giao diện hệ thống phát hiện và cảnh báo té ngã hiển thị thông tin vị trí lắp đặt thiết bị, thông tin sự hiện diện, thông tin chuyển động, chỉ số chuyển động và theo dõi bất động. Đồng thời hiển thị các trạng thái cảnh báo khẩn cấp khi có té ngã. Khi có té ngã, hệ thống phân biệt mức độ nguy hiểm dựa trên màu sắc cảnh báo. Trường hợp sau khi ngã, người bị ngã vẫn còn cử động hoặc có thể tự đứng lên, cảnh báo ở mức màu cam là ngã bình thường. Trường hợp ngã dẫn đến bất tỉnh, cảnh báo đỏ sẽ xuất hiện cho biết trạng thái khẩn cấp, cần can thiệp y tế ngay.
+
+P1231 [Caption]: Hình 3.21 Giao diện lịch sử té ngã
+
+P1232 [Content]: Bên cạnh đó, giao diện còn có chức năng xem lại lịch sử các sự kiện té ngã đã được ghi nhận và cho phép xuất dữ liệu ra tệp tin báo cáo, giúp cơ sở y tế phân tích các sự kiện té ngã, từ đó đưa ra các biện pháp chăm sóc y tế thích hợp.
+

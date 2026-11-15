@@ -1,0 +1,31 @@
+﻿dashboard_screen.dart:29: bool? _lastIsElderlyOnline;
+dashboard_screen.dart:35: bool _isElderlyOnline = true;
+dashboard_screen.dart:61: Permission.ignoreBatteryOptimizations,
+dashboard_screen.dart:124: if (data.containsKey('is_online')) {
+dashboard_screen.dart:125: final currentOnline = data['is_online'] == true;
+dashboard_screen.dart:126: if (_lastIsElderlyOnline != null && _lastIsElderlyOnline != currentOnline) {
+dashboard_screen.dart:127: if (!currentOnline) {
+dashboard_screen.dart:133: _lastIsElderlyOnline = currentOnline;
+dashboard_screen.dart:134: _isElderlyOnline = currentOnline;
+dashboard_screen.dart:136: _isElderlyOnline = true;
+dashboard_screen.dart:180: content: Text('Cập nhật: Có 1 sự cố té ngã xảy ra trong lúc Người Già mất kết nối mạng!'),
+dashboard_screen.dart:290: content: const Text('Phát hiện ông/bà vừa té ngã. Bản đồ đã cập nhật vị trí mới nhất!'),
+dashboard_screen.dart:546: FlutterMap(
+dashboard_screen.dart:557: MarkerLayer(
+dashboard_screen.dart:558: markers: [
+dashboard_screen.dart:559: Marker(
+dashboard_screen.dart:576: Marker(
+dashboard_screen.dart:587: Marker(
+dashboard_screen.dart:654: top: !_isElderlyOnline ? 90 : 16,
+dashboard_screen.dart:682: if (!_isElderlyOnline)
+dashboard_screen.dart:712: top: (!_isCaneConnected && !_isElderlyOnline) ? 164 : ((!_isCaneConnected || !_isElderlyOnline) ? 90 : 16),
+dashboard_screen.dart:737: // Lớp phủ Trạng thái Ngã
+elderly_screen.dart:62: Permission.ignoreBatteryOptimizations,
+elderly_screen.dart:221: FlutterMap(
+elderly_screen.dart:232: MarkerLayer(
+elderly_screen.dart:233: markers: [
+elderly_screen.dart:234: Marker(
+elderly_screen.dart:245: Marker(
+elderly_screen.dart:253: Marker(
+elderly_screen.dart:330: // Trạng thái Ngã (Chỉ hiện khi bị ngã)
+elderly_screen.dart:353: // Cột trái: Trạng thái kết nối
